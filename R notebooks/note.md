@@ -9,7 +9,7 @@
 
 # R Versions
 
-In this course, you will learn the modeling-based approach to marketing with the use of data sets, models, and interpreting the results. We take a hands-on approach with databases and working in R in order to equip you with tools that can be used immediately on the job. During the computer lab sessions, you will work with the theory in R. During the individual assignments, we will test your R skills and theory knowledge. In order to corporate during the computer lab sessions, we advise you to update your R version to version 4.1.1 "kick things". 
+In this course, you will learn the modeling-based approach to marketing with the use of data sets, models, and interpreting the results. We take a hands-on approach with databases and working in R in order to equip you with tools that can be used immediately on the job. During the computer lab sessions, you will work with the theory in R. During the individual assignments, we will test your R skills and theory knowledge. In order to corporate during the computer lab sessions, we advise you to update your R version to version **4.1.1 "kick things"**. 
 
  
 
