@@ -22,8 +22,8 @@ We will examine a few different contexts using models to analyze customer behavi
   - Random Forests
 * **Collaborative filtering, next-product-to-buy models:** Which products should be recommended to which customers?
 * **Long term prediction models for Customer Lifetime value:** How different are customers? How does their behavior change over time? What's the value of the customer over his or her lifecycle to the firm?  How does that change as a function of recency and frequency?  
-  - Contractual settings
-  - Non-contractual settings
+  - Contractual settings (sBG)
+  - Non-contractual settings (BG/BB, Pareto/NBD and BG/NBD)
  
 
 ## Course Purpose:
