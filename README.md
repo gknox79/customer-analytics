@@ -1,6 +1,6 @@
 # Customer Analytics
 
-This repo hosts the course content of Customer Analytics, taught at Tilburg University by George Knox.  This meant as a resource for teachers and students.  Corrections and comments are always welcome.  Excellent course assistance provided by Gijs van Bussel & Anne van der Vliet.  All errors are mine.  
+This repo hosts the course content of Customer Analytics, taught at Tilburg University by George Knox.  This is meant as a resource for teachers and students in the spirit of open education.  Corrections and comments are always welcome.  Excellent course assistance provided by Gijs van Bussel & Anne van der Vliet.  All errors are mine.  
 
 ## Course Description
 
