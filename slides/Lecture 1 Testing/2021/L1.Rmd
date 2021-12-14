@@ -1,0 +1,624 @@
+---
+title: "Exploratory Data Analysis, Uncertainty, Test & Roll"
+author: "GEORGE KNOX"
+date: "Computer Lab 1"
+output: 
+  html_document:
+    highlight: haddock
+    theme: journal
+    number_sections: no
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+---
+
+# Introduction: Exploratory Data Analysis and prep
+
+In the first part, we go slowly over loading packages, loading a data set.  Then we discuss uncertainty.  Estimates have uncertainty. Here we look at the mean and its sampling distribution for a continuous and a binary scaled variables. We calculate the mean and its standard error using the normal approximation and using the bootstrap.  
+
+## Installing the packages 
+
+```{r}
+
+# Begin by deleting any previously defined variables
+rm(list = ls())
+
+# Let's install packages a number of useful packages.
+# To make things easy, the following snippet of code will download
+# and install everything you'll need.
+# But for future reference, remember that to install a package
+# you only have to type
+# > install.packages("<packagename>")
+# And then you can load it with
+# > library(lib)
+
+packages <- c("devtools"
+  ,"randomForest" 
+  ,"rpart" # decision tree
+  ,"rpart.plot" # enhanced tree plots
+  ,"ROCR"
+  ,"Hmisc"
+  ,"corrplot"
+  ,"texreg"
+  ,"glmnet"
+  ,"reshape2"
+  ,"knitr"
+  ,"xtable"
+  ,"lars"
+  ,"ggplot2"
+  ,"matrixStats"
+  ,"plyr"
+  ,"stargazer"
+  ,"foreign"
+  ,"data.table"
+  ,"VGAM"
+  ,"dplyr")
+
+
+not_installed <- !packages %in% installed.packages()
+if (any(not_installed)) install.packages(packages[not_installed])
+lapply(packages,require,character.only=TRUE)
+
+library(dplyr)
+```
+
+## Loading the data 
+
+Set your working directory; write the path where the folder with the data is located. What I do is have a directory with the R notebooks ("R notebooks/RFM & logistic"), where this .rmd file is saved. Then within that I have a folder where the data is ("R notebooks/RFM & logistic/data").  Note you have do a forward slash "/" not backslash. We are going to use data from eBeer which we mentioned in lecture. 
+
+**Note you have to close the notebook if you want to rerun the code to generate the notebook**
+
+```{r}
+# set your working directory
+# write the path where the folder containing the files is located
+# setwd("/Users/munyikz/Documents/tutorial")
+setwd("/Users/gknox/Dropbox/Customer Analytics/R notebooks/RFM & logistic")
+
+ebeer<-read.csv('data/ebeer.csv')
+
+# set working directory as wherever this .rmd file is saved
+# Note: comment this line out below if you want to knit the full doc.  
+
+getwd()
+
+```
+
+Set the seed so that random draws are the same for everyone.  This is important!
+
+```{r}
+set.seed(19312)
+```
+
+## Inspecting the data
+
+Let's take a look at the dataset: how many observations, how many variables?
+
+```{r}
+dim(ebeer)
+install.packages("kableExtra")
+library(kableExtra)
+```
+
+What do the first observations look like?
+```{r}
+head(ebeer)
+#ebeer %>%
+#  kbl() %>%
+#  kable_styling()
+```
+
+We have 
+
+Account number
+Gender  (1=male)
+time since last purchase (Recencey)
+total number of purchases (Frequency) 
+euro's average transaction (M)
+Time since first purchase 
+age class (0-8)
+customer is single 
+customer is student
+mailing received
+response to mailing
+
+How about summary statistics about the variables?
+```{r}
+summary(ebeer)
+```
+
+Let's take a look at the variable monetary value.  This is the average amount per transaction spent by customer.  I'm going to refer to it as the monetary value.  Here's its histogram.
+
+```{r}
+par(mai=c(.9,.8,.2,.2))  
+hist(ebeer$M, main="Monetary", xlab="Monetary amount")
+```
+
+How does average amount spent (monetary) and its standard deviation vary by whether customers responded to the mailing?  
+
+```{r}
+ebeer %>% 
+  group_by(respmail) %>% summarize(mean=mean(M), sd=sd(M), n=n())
+```
+
+The above was done using pipes, "%>%". In general, there are many different ways to compute something in R.  (for more info on using pipes: https://www.datacamp.com/community/tutorials/pipe-r-tutorial#howto)
+You can use any method that works for you.  
+
+---
+
+### Comprehension Check
+
+> *Do you see how respmail has a lot of NA's?  What's going on there?  Does it make sense?*
+
+> [DISCUSS HERE]
+
+---
+
+# Uncertainty
+
+## Classical Uncertainty
+
+
+What is the mean monetary value, its variance, and standard error?  
+
+Remember the sample mean is:
+$$
+\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
+$$
+And the variance of it is:
+$$
+var(\bar{x}) = var \left( \frac{1}{n} \sum_{i=1}^{n} x_i \right) =  \frac{1}{n^2} \sum_{i=1}^{n} var(x_i) =  \frac{\sigma^2}{n}
+$$
+where $\sigma^2 = \frac{1}{n-1}\sum_{i=1}^{n} (x_i - \bar{x})^2$ is the variance. The variance goes inside the parentheses because we assume each customer is independent. And the standard error is $se(\bar{x}) = \frac{\sigma}{\sqrt{n}}$. (I'm ignoring finite sample adjustment here.)
+
+```{r}
+nrow(ebeer)  # number of obs.
+xbar <- mean(ebeer$M) #sample mean
+xbse <-  sqrt(var(ebeer$M)/nrow(ebeer)) # sample standard error
+
+xbar
+xbse
+```
+
+What is the sampling distribution of the mean?  If we were able to get a new sample from the same data-generating process what would it be?  According to the central limit theorem, the distribution is normal, $\bar{x} \sim N(\bar{x}, var(\bar{x}))$. This distribution below:
+
+```{r}
+
+xx <- seq(89,95,length=1000)
+
+par(mai=c(.9,.8,.2,.2))
+plot(xx, dnorm(xx, xbar, xbse),main="Distribution of Sample Mean", type="l", col="royalblue", lwd=1.5,
+     xlab="average monetary value", ylab="density")
+
+```
+When we want to plot over a set of points, `seq(start,end,# points)` is a usefule command that creates a number of points from start to end.
+
+You can create a 95% confidence interval by cutting off the left and right 2.5% of the distribution. Since the distribution is normal, we use the `qnorm()` function, which computes quantiles of the normal distribution.
+
+```{r}
+qnorm(c(0.025, 0.975), mean=xbar, sd=xbse)
+```
+
+Another way to compute the distribution is using the bootstrap.  The idea is to resample your data *with replacement*, calculating the statistic each time, e.g., $\bar{x}_1, \bar{x}_2, \dots \bar{x}_B$ and using that to calculate the distribution of the statistic.  
+
+```{r}
+# nonparametric bootstrap
+B <- 10000 # number of bootstrap samples
+mub <- c() # where we are going to collect the mean
+set.seed(19312) # setting seed right before sampling
+for (b in 1:B){
+  samp_b = sample.int(nrow(ebeer), replace=TRUE) # sample with replacement
+  mub <- c(mub, mean(ebeer$M[samp_b])) # store the mean of the sample 
+}
+
+head(mub)  # the mean of the first few bootstrap samples
+ 
+sd(mub) # standard deviation (compare with standard error xbse calculated above)
+xbse 
+
+par(mai=c(.8,.8,.2,.2))
+hist(mub, main="Distribution of bootstrap mean", xlab="average monetary value", breaks = 100,
+     col=8, border="grey90", freq=FALSE)
+lines(xx, dnorm(xx, xbar, xbse), col="royalblue", lwd=1.5)
+```
+
+Compare the standard errors from the normal approximation and the bootstrap sample.  You can create a 95% confidence interval around the mean using the standard error from the bootstrap.
+
+```{r}
+qnorm(c(0.025, 0.975), mean=mean(mub), sd=sd(mub))
+```
+
+The bootstrapped sampled with replacement.  In the last sample, you can see person 1 was sampled twice, person 2 also twice, etc.:
+
+```{r}
+sort(samp_b)[1:10]
+```
+
+## Bayesian updating
+
+### Prior
+
+#### Beta
+
+The prior represents our beliefs before the seeing the data: could be from past experience or it could be noninformative (flat or diffuse).  Here we use a beta distribution: $p$ comes from a common beta distribution where $a$ and $b$ are parameters.  
+$$ f(p | a,b) \propto p^{a-1} (1-p)^{b-1}, \qquad a>0, b>0$$
+The mean of the beta distribution is $E[p|a,b]=\frac{a}{a+b}$. Here are some of the [shapes](https://shiny.stat.ncsu.edu/bjreich/Beta_PDF/) the beta distribution can take on.
+
+
+
+```{r}
+xx=seq(0,1,length=1000)
+
+prior_a = 1
+prior_b = 36
+
+plot(xx, y=dbeta(xx, shape1=prior_a, shape2 = prior_b), 
+     type="l", col="black", xlab="response rate", ylab="prior density")
+abline(v=prior_a/(prior_a+prior_b))
+
+```
+
+---
+
+### Comprehension Check
+
+> *How can you change the above distribution to be a flat, noninformative prior?*
+
+> [DISCUSS HERE]
+
+---
+
+#### Normal
+
+If the dependent variable is continuous, then we use a normal prior.  For example, I would like to know what the mean time-on-site is for the A group and the B group from an A/B test. 
+
+Before I saw this data, I knew nothing about how long people might spend on this website. They might stay for 5 seconds or they might stay for 5 hours.  
+
+Formally, I can describe my prior beliefs with a *prior distribution*: 
+$$\textrm{mean time-on-site for group} \sim N(0, 100^2)$$  
+
+Here is the picture:
+```{r, echo=FALSE}
+# Plot the prior
+plot(x=-300:300, y=dnorm(-300:300, mean=0, sd=100), 
+     type="l", col="gray", xlab="mean time-on-site (m)", ylab="prior density")
+```
+
+Note the range is from -300 to +300: very big.  In other words, we have very little precision.
+
+---
+
+### Comprehension Check
+
+> *How could you change the above distribution so that you were pretty certain that the average time on site is 2 and 8 minutes?*
+
+> [DISCUSS HERE]
+
+---
+
+### Posterior
+
+Bayes rule tells you how you should update your beliefs after you see some data. 
+
+$$ \textrm{posterior} \propto \textrm{likelihood} \times \textrm{prior} $$
+
+#### Beta
+
+We have data from the test below
+
+```{r}
+n = 5000 # number in test sample
+s = 175 # number of responses
+c = 1.5 # cost per mailing
+m = 50 # profit if respond
+```
+
+The posterior mean is beta with parameters $a+s$ and $b+n-s$.  We can see this visually, along with the breakeven response probability.  We can calculate the probability that the posterior is above the breakeven by drawing from a beta distribution with above parameters.
+
+```{r}
+brk = c/m
+B = 10000 # number draws from distribution
+
+prior_a = 1
+prior_b = 36
+post_a= prior_a + s
+post_b = prior_b + n - s
+
+xx=seq(0,.1,length=1000)
+
+plot(xx, y=dbeta(xx, shape1=post_a, shape2 = post_b), 
+     type="l", col="black", xlab="response rate", ylab="posterior density")
+
+plot(xx, y=dbeta(xx, shape1=post_a, shape2 = post_b), 
+     type="l", col="black", xlab="response rate", ylab="posterior density")
+lines(xx, y=dbeta(xx, shape1=prior_a, shape2 = prior_b), type="l", col="gray")
+abline(v=brk)
+legend("topright", col=c("black", "gray"), legend=c("posterior", "prior"), bty="n", lty=1)
+set.seed(19312)
+post_draws<-rbeta(B,post_a,post_b)
+prob = sum(post_draws<brk)/B
+text(x = .02,y= 100, paste("P(p < .03) = ", round(prob,3) ))
+```
+
+
+
+#### Normal
+
+The data from an A/B test comparing the time users spend on your website for two versions of the homepage is in the data frame `test_data`. A summary of the data looks like this: 
+```{r, echo=FALSE}
+# Generate synthetic data
+set.seed(19312)
+group <- c(rep("A", 500), rep("B", 500)) 
+time_on_site <- c(rnorm(500, mean=5.2, sd=2), rnorm(500, mean=5.4, sd=2.2))
+test_data <- data.frame(group, time_on_site)
+rm(group, time_on_site)
+head(test_data)
+```
+
+Here it is by group
+```{r, echo=TRUE, message=FALSE}
+test_data %>% 
+  group_by(group) %>% summarize(mean=mean(time_on_site), sd=sd(time_on_site), n=n())
+```
+It looks like the B version keeps users on the site a bit longer, but how sure are we that B produces longer visits on average? We've only seen 500 visitors in each group.
+
+
+Then Bayes rule tells us that the posterior distribution for mean time-on-site for each group should be: 
+$$\textrm{mean time-on-site (m)} \sim \mathcal{N}\left(\mu, \sigma^2\right) $$
+where
+
+$$ \sigma = \left(\frac{1}{\sigma_{0}^2} + \frac{n}{s^2}\right)^{-1}$$ 
+and
+$$ \mu = \sigma^2 \left(\frac{\mu_0}{\sigma_{0}^2} + \frac{n \bar{y}}{s^2}\right)$$ 
+From the prior, $\sigma_0 = 100$ and $\mu_0=0$.  $s$ is the common standard deviation of the data (assumed known) across both groups, $n$ is the total sample size, and $\bar{y}$ is the mean.  I'm skipping the derivation, you don't need to know this for the exam.  But you can find it [here](http://www.ams.sunysb.edu/~zhu/ams570/Bayesian_Normal.pdf).
+
+
+```{r}
+n_A <- sum(test_data$group=="A") # obs for A
+n_B <- sum(test_data$group=="B") # obs for B
+s <- sd(test_data$time_on_site) # standard deviation of data (approx)
+
+# Posterior standard deviation follows this formula
+post_sd_A <- (1/100^2 + n_A/s^2)^-(1/2)
+post_sd_B <- (1/100^2 + n_B/s^2)^-(1/2)
+
+# sample mean
+ybar_A<-mean(test_data[test_data$group=="A", "time_on_site"])
+ybar_B<-mean(test_data[test_data$group=="B", "time_on_site"])
+
+# Posterior mean is just the mean for each group, 
+post_mean_A <- post_sd_A^2*(0/100^2 + n_A *ybar_A / s^2)
+post_mean_B <- post_sd_B^2*(0/100^2 + n_B *ybar_B / s^2)
+```
+
+
+Note that $\bar{y}_A \approx E[m_A]$ because the prior is so flat.  
+We can plot the posteriors. 
+
+```{r}
+xx=seq(5,6,length=1000) 
+
+plot(x=xx, y=dnorm(xx, mean=post_mean_A, sd=post_sd_A), 
+     type="l", col="blue", xlab="mean time-on-site (m)", ylab="posterior density")
+lines(x=xx, y=dnorm(xx, mean=post_mean_B, sd=post_sd_B), col="red")
+lines(x=xx, y=dnorm(xx, mean=0, sd=100), col="gray")
+legend("topright", col=c("blue", "red", "gray"), legend=c("posterior for A", "posterior for B", "prior"), bty="n", lty=1)
+``` 
+
+Once we have the distribution for the difference in the mean time-on-site, we can compute the probability that the mean of B is greater than the mean of A. 
+
+```{r}
+post_mean_diff <- post_mean_B - post_mean_A
+post_sd_diff <- sqrt(post_sd_B^2 + post_sd_A^2)
+prob=1-pnorm(0, mean=post_mean_diff, sd=post_sd_diff)
+
+plot(x=(-50:60)/100, y=dnorm((-50:60)/100, mean=post_mean_diff, sd=post_sd_diff), 
+     type="l", col="black", 
+     xlab="difference in mean time-on-site (m)", ylab="posterior density")
+abline(v=0)
+text(-0.25, 2.9, "A has higher mean time-on-site")
+text(0.35, 2.9, "B has higher mean time-on-site")
+text(x = .4,y= 1.9, paste("P(m_A < m_B) = ", round(prob,3) ))
+
+```
+
+There is a 95% probability that the average time-on-site for treatment A is:
+```{r}
+qnorm(c(0.025, 0.975), mean=post_mean_A, sd=post_sd_A) # CI for A
+```
+There is a 95% probability that the average time-on-site for treatment B is:
+```{r}
+qnorm(c(0.025, 0.975), mean=post_mean_B, sd=post_sd_B) # CI for B
+```
+
+
+
+# Test and Roll (code from Elea Feit)
+*Test*
+Choose $n_1^*$ and $n_2^*$ customers to send the treatments.  
+Collect data on profit for both treatments.  
+
+*Roll*
+Choose a treatment to deploy to the remaining $N - n_1^* - n_2^*$ customers.
+
+*Objective*
+Maximize combined profit for test stage and the roll stage.   
+
+## Profit-maximizing sample size
+If you have a test where the **profit** earned for each customer is:   
+$y \sim \mathcal{N}(m_1, s)$ for group 1   
+$y \sim \mathcal{N}(m_2, s)$ for group 2   
+
+and your priors are  
+($m_1, m_1 \sim N(\mu, \sigma)$)  
+
+the profit maximizing sample size is:  
+$$n_1 = n_2 = \sqrt{\frac{N}{4}\left( \frac{s}{\sigma} \right)^2 + \left( \frac{3}{4} \left( \frac{s}{\sigma} \right)^2  \right)^2 } -  \frac{3}{4} \left(\frac{s}{\sigma} \right)^2$$
+This new sample size formula is derived in [Feit and Berman (2019) *Marketing Science*](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3274875).
+
+## Compute the sample size in R
+```{r}
+source("nn_functions.R") # some functions I wrote
+N <- 100000 # available population
+mu <- 0.68  # average conversion rate across previous treatments
+sigma <- 0.03 # range of expected conversation rates across previous treatments
+s <- sqrt(mu*(1-mu)) # binomial approximation
+test_size_nn(N=N, s=s, mu=mu, sigma=sigma) # compute the optimal test size
+```
+
+## Why is this the profit-maximizing test size? 
+`test_eval_nn()` computes the profit of a Test & Roll.
+```{r}
+# Optimal test size
+n_star <- test_size_nn(N=N, s=s, mu=mu, sigma=sigma)
+test_eval_nn(n=n_star, N=N, s=s, mu=mu, sigma=sigma)
+```
+
+## Why is this the profit-maximizing test size? 
+```{r}
+# Bigger test
+test_eval_nn(n=c(10000, 10000), N=N, s=s, mu=mu, sigma=sigma)
+```
+```{r}
+# Smaller test
+test_eval_nn(n=c(100, 100), N=N, s=s, mu=mu, sigma=sigma)
+```
+
+## Why is this the profit-maximizing test size? 
+```{r, echo=FALSE}
+# Plot expected profit as a function of test size
+# NHT for comparison
+d <- 0.68*0.02 # 2% lift 
+n_nht <- test_size_nht(s=sqrt(mu*(1-mu)), d=d) # to match the profit maximizing
+eval_nht <- test_eval_nn(n=rep(n_nht, 2), N=N, s=sqrt(mu*(1-mu)), mu=mu, sigma=sigma)
+# Plot
+n <- c(1:19, 2:19*10, 2:19*100, 2:19*1000, 2:5*10000)
+out <- NULL
+for (i in 1:length(n)) {
+  out <- rbind(out, test_eval_nn(n=c(n[i], n[i]), N=N, s=sqrt(mu*(1-mu)), mu=mu, sigma=sigma))
+}
+plot(out$n1, out$profit, type="l", 
+     ylim=c(out$profit_rand[1], out$profit_perfect[1]),
+     xlab=expression("Test Size (n"[1]*"=n"[2]*")"), ylab="Expected Profit")
+abline(v=n_star)
+text(n_star, 0.696*N, "n*=2,284", pos=4)
+abline(v=n_nht, col="gray", lty=3)
+text(n_nht, 0.683*N, expression(n[HT]), col="gray", pos=4)  # hard code
+```
+
+## How often do you deploy the wrong treatment? 
+```{r, echo=FALSE}
+# Plot the error rate as a function of test size
+plot(out$n1, out$error_rate, type="l", ylim=c(0, 0.5),
+     xlab=expression("Test Size (n"[1]*"=n"[2]*")"), ylab="Error Rate")
+abline(v=n_star)
+text(n_star, 0.13, "n*=2,284", pos=4)
+abline(v=n_nht, col="gray", lty=3)
+text(n_nht, 0.3, expression(n[HT]), col="gray", pos=4)
+```
+
+## Profit-maximizing sample size
+The `test_size_nn()` function is making the optimal trade-off between: 
+
+- the opportunity cost of the test (You are sending the wrong treatment to half your customers!)  
+
+and 
+
+- the risk of deploying the wrong treatment 
+
+## How to choose `N`, `mu`, `sigma` and `s`
+
+### What is `N`?
+`N` is the total number of customers you have available, i.e. the size of your email mailing list or the the number of visits that might visit a webpage in the next month.
+
+Let's vary `N` and look at how the profit-maximizing test size changes:
+```{r}
+Ns <- (1:1000)*1000
+test_sizes <- rep(NA, length(Ns))
+for (i in 1:length(Ns)) 
+  test_sizes[i] <- test_size_nn(N=Ns[i], s=s, mu=mu, sigma=sigma)[1]
+```
+```{r, eval=FALSE}
+plot(x=Ns, y=test_sizes, type="l", col="orange",
+     xlab="available population (N)", ylab="profit-maximizing sample size")
+```
+
+
+### What is `N`? 
+Bigger `N` $\rightarrow$ bigger test 
+```{r, echo=FALSE}
+plot(x=Ns, y=test_sizes, type="l", col="orange",
+     xlab="available population (N)", ylab="profit-maximizing sample size")
+```
+
+### What is `mu`? 
+`mu` is the average profit you expect across treatments you might test.
+
+Let's vary `mu`: 
+```{r}
+mus <- (1:1000)/100
+test_sizes <- rep(NA, length(mus))
+for (i in 1:length(mus)) 
+  test_sizes[i] <- test_size_nn(N=N, s=s, mu=mus[i], sigma=sigma)[1]
+```
+```{r, eval=FALSE}
+plot(x=mus, y=test_sizes, type="l", col="orange",
+     xlab="expected average profit per customer (mu)", ylab="profit-maximizing sample size")
+```
+
+### What is `mu`?
+`mu` doesn't effect the test size (when `mu` is the same for both A and B)
+```{r, echo=FALSE}
+plot(x=mus, y=test_sizes, type="l", col="orange",
+     xlab="expected average profit per customer (mu)", ylab="profit-maximizing sample size")
+```
+
+### What is `s`?
+`s` is how variable the profit is from one customer to another.
+
+Let's vary `s`: 
+```{r}
+ss <- (1:1000)/1000
+test_sizes <- rep(NA, length(ss))
+for (i in 1:length(ss)) 
+  test_sizes[i] <- test_size_nn(N=N, s=ss[i], mu=mu, sigma=sigma)[1]
+```
+```{r, eval=FALSE}
+plot(x=ss, y=test_sizes, type="l", col="orange",
+     xlab="noise in profit per customer (s)", ylab="profit-maximizing sample size")
+```
+
+### What is `s`? {.smaller}
+Bigger `s` $\rightarrow$ harder to see what is going on $\rightarrow$ bigger test 
+```{r, echo=FALSE}
+plot(x=ss, y=test_sizes, type="l", col="orange",
+     xlab="noise in profit per customer (s)", ylab="profit-maximizing sample size")
+```    
+
+Hypothesis testing requires much bigger sample sizes (proportional to `s^2` instead of `s`). 
+
+### What is `sigma`? 
+`sigma` defines the difference we expect between average profit for the two treatments.
+```{r}
+plot_prior_effect_nn(mu, sigma, abs=TRUE)
+```
+
+### What is `sigma`? 
+Let's vary `sigma`: 
+```{r}
+sigmas <- (1:1000)/10000
+test_sizes <- rep(NA, length(sigmas))
+for (i in 1:length(sigmas)) 
+  test_sizes[i] <- test_size_nn(N=N, s=s, mu=mu, sigma=sigmas[i])[1]
+```
+```{r, eval=FALSE}
+plot(x=sigmas, y=test_sizes, type="l", col="orange",
+     xlab="prior sd of treatment mean profit (sigma)", ylab="profit-maximizing sample size")
+```
+
+### What is `sigma`?
+Bigger `sigma` $\rightarrow$ bigger difference between A and B  $\rightarrow$ smaller test 
+```{r, echo=FALSE}
+plot(x=sigmas, y=test_sizes, type="l", col="orange",
+     xlab="prior sd of treatment mean profit (sigma)", ylab="profit-maximizing sample size")
+```
+
