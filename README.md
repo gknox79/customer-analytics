@@ -16,6 +16,7 @@ We will examine a few different contexts using models to analyze customer behavi
 * **Next-period response models:** Which customers should be selected for e.g., acquisition, retention, cross-selling, up-selling?
   - RFM analysis
   - Logistic regression
+  - Subset selection
   - LASSO
   - Decision trees
   - Random Forests
