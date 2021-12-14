@@ -1,0 +1,482 @@
+---
+title: "Recommender Systems"
+author: "GEORGE KNOX"
+date: "Computer Lab 5"
+output: 
+  html_document:
+    highlight: haddock
+    theme: journal
+    number_sections: no
+    toc: yes
+    toc_depth: 4
+    toc_float: yes
+  editor_options: 
+  chunk_output_type: console
+---
+    ```{css, echo=FALSE}
+    body .main-container {
+      max-width: 1800px !important;
+      width: 1800px !important;
+    }
+    body {
+      max-width: 1800px !important;
+    }
+    ```
+
+
+# From lecture
+
+## Content filtering
+
+We start with a set of item characteristics.  In our example we used whether the movie had Arnold Schwarzenegger, Julia Roberts as well as some measure of surprise in the script. 
+
+```{r}
+options("scipen"= 200, "digits"=3, width = 100)
+
+rm(list=ls())
+
+row_names<-c("AS", "JR", "surprise")
+col_names<-c("PW", "TR", "EB", "T2", "P")
+
+item <- matrix(c(0,1,0,1,1,
+              1,0,1,0,0,
+              .1,.4,.1,0,.1), byrow = TRUE, nrow = 3, ncol = 5, dimnames=list(row_names,col_names))
+
+item
+```
+
+We have Adam's ratings of the items.  We normalize them so that it is above/below his average rating.
+```{r}
+rating <-matrix(c(3,1,5,2,4),nrow=1,ncol=5)
+rating_m <-rating-mean(rating)
+rating_m
+```
+
+To create the user profile, we need to see how much the users ratings change with the characteristics. We take the inner product of the the item characterstic matrix and the transpose of the normalized rating matrix, and divide by the sum of the total characteristic.  
+$$
+u_i = \frac{\sum_j v_{ij} r_j}{\sum_j v_{ij}} = \frac{1}{\sum_j v_{ij}} V r'
+$$
+
+In other words we take the sum of the product of the item characteristics and rating, and divide by the sum of the characteristics: this tells us how much ratings change with attributes.  We see that the users utility goes up with JR and down with AS.
+
+```{r}
+# t() means taking the transpose of a matrix, M'
+user<-item %*% t(rating_m) / rowSums(item)
+
+user
+```
+
+To make predictions, we calculate the similarity between the user's characteristic preferences and the characteristics of the items.  The closer these two are, the better the fit.  We use cosine similarity as a measure of closeness.  The cosine similarity between user profile and item profile is:
+$$
+\textrm{Cosine Similarity}_{uv} = \frac{\sum_i u_i v_i}{\sqrt{\sum_i u^2_{i}}\sqrt{\sum_i v^2_{i}}}
+$$
+
+```{r}
+row_names<-c("AS", "JR", "surprise")
+col_names<-c("TL", "NH")
+
+new_item <- matrix(c(1,0,
+              0,1,
+              .1,0), byrow = TRUE, nrow = 3, ncol = 2, dimnames=list(row_names,col_names))
+new_item
+
+CS = t(new_item) %*% user / (sqrt(colSums(new_item^2))*sqrt(sum(user^2)))
+
+CS
+```
+
+A larger cosine similarity means a better fit.  Here NH is preferred to TL. 
+
+
+---
+
+#### Comprehension Check
+
+> *Using the item and rating matrix below, calculate the cosine similarity for the 2 movies and decide which to recommend. *
+> [DISCUSS HERE]
+
+---
+
+```{r}
+row_names<-c("Funny", "Romant", "Suspense", "Dark")
+col_names<-c("Sharp Obj", "Arrested Dev", "Arbitrage", "Margin C", "Bojack", "Orphan B", "Hinterland")
+
+item <- matrix(c(0,1,0,1,1,1,0,
+                 1,1,0,0,1,0,0,
+                 1,1,1,0,1,0,1,
+                 1,0,1,1,0,1,1), 
+               byrow = TRUE, nrow = 4, ncol = 7, dimnames=list(row_names,col_names))
+
+item
+
+rating <-matrix(c(4,3,4,5,3),nrow=1,ncol=5)
+
+
+```
+
+## Collaborative filtering
+
+### User based
+
+From lecture we gave an example of 7 users and 6 items. We are trying to predict whether to recommend Predator or Notting Hill to Adam based on his similarity with others.
+
+```{r}
+
+row_names<-c("A", "B", "C", "D", "E", "F", "G")
+col_names<-c("PW", "TR", "EB", "T2", "P", "NH")
+
+util <- matrix(c(2,5,4,2,NA, NA,
+              5,1,2,NA,1,NA,
+              5,5,5,5,5,5,
+              2,5,NA,3,NA,NA,
+              5,4,5,3,NA,5,
+              1,5,NA,NA,NA,1,
+              2,NA,5,NA,5,NA),byrow = TRUE, nrow = 7, ncol = 6, dimnames=list(row_names,col_names))
+util
+
+
+```
+
+Let's take a look at user-based collaborative filtering. We'll use simple correlations between users to see who is more similar to A.
+```{r error=FALSE, warning=FALSE}
+cor(t(util), use="pairwise.complete.obs")
+```
+
+Focus on the first column.  
+
+* B is very negatvely correlated
+* Note C is NA because there is no variation, all ratings are the same.
+* D is positive (but hasn't seen any of the movies)
+* E somewhat positive
+* F and G very positively correlated
+
+We focus only on the 3 most similar customers, B F and G. 
+```{r warning=FALSE}
+m<-cor(t(util), use="pairwise.complete.obs")
+
+m[row=c("B","F","G"),col=c("A")]
+
+```
+
+We normalize the ratings and multiply the correlations by their ratings of the movies in question, P and NH.  Then we average to get the predicted ratings of Adam.
+
+```{r}
+util_n <-util-rowMeans(util, na.rm=TRUE)
+
+predm<-m[row=c("B","F","G"),col=c("A")]*util_n[row=c("B","F","G"),col=c("P","NH")]
+
+pred<-colMeans(predm, na.rm=TRUE)
+```
+
+Adam's ratings would be `r pred[1]` higher than average for P and `r pred[2]` for NH.
+
+### Item based
+
+Now for the item based filtering. We do the correlations across columns instead of rows. 
+
+```{r error=FALSE, warning=FALSE}
+cor(util, use="pairwise.complete.obs")
+
+m<-cor(util, use="pairwise.complete.obs")
+```
+
+Focus on last two columns.
+
+* P is positively correlated with TR and and EB, somewhat negative with PW.
+* NH is positively correlated with PW, somewhat negative with TR.
+
+We focus on the movies that have either perfect positive or negative correlation. For P that is TR and EB, for NH that is PW.
+
+```{r}
+m<-m[row=c("PW", "TR","EB"), col=c("P", "NH")]
+
+# make NA anything less than 1
+m[abs(m)<1]<-NA
+
+m
+```
+
+The prediction is the product of the correlation between the target movie and the other movies and Adam's normalized reviews for the other movies:
+
+```{r}
+predm<-m*util_n[row=c("A"),col=c("PW", "TR","EB")]
+predm
+```
+
+```{r}
+pred<-colMeans(predm, na.rm = TRUE)
+pred
+```
+
+Adam's ratings would be `r pred[1]` higher than average for P and `r pred[2]` than average for NH.
+
+---
+
+#### Comprehension Check
+
+> *Using the rating matrix below, use collaborative filtering to recommend a movie. Who is most useful in predicting Orphan Black and Hinterland?*
+> [DISCUSS HERE]
+
+```{r}
+
+row_names<-c("George", "Adam", "Ben", "Cam", "Dan")
+col_names<-c("Sharp Obj", "Arrested Dev", "Arbitrage", "Margin C", "Bojack", "Orphan B", "Hinterland")
+
+util <- matrix(c(4,3,4,5,3,NA,NA,
+                 4,3,4,4,3,NA,NA,
+                 3,4,3,1,3,5,NA,
+                 4,4,4,4,4,2,4,
+                 2,1,2,3,1,NA,3),byrow = TRUE, nrow = 5, ncol = 7, dimnames=list(row_names,col_names))
+util
+```
+
+---
+
+# Real data examples
+
+We'll use data from [MovieLens](https://grouplens.org/datasets/movielens/), described as follows:
+
+The 100k MovieLense ratings data set. The data was collected through the MovieLens web site
+(movielens.umn.edu) during the seven-month period from September 19th, 1997 through April
+22nd, 1998. The data set contains about 100,000 ratings (1-5) from 943 users on 1664 movies.
+Movie metadata is also provided in MovieLenseMeta.
+
+In R, we'll use the [recommenderlab](https://cran.r-project.org/web/packages/recommenderlab/recommenderlab.pdf) package. The dataset is included in the R package.  
+
+## data
+
+The data are stored in a **sparse** way.  Only non-missing entries are recorded.  This is very useful when it comes to big data.
+
+```{r warnings=FALSE, message=FALSE}
+library(recommenderlab)
+
+data("MovieLense")
+
+MovieLense
+
+getRatingMatrix(MovieLense)[1:10,1:5]
+
+as(MovieLense, "matrix")[1:10, 1:5]
+
+test<-as(MovieLense, "matrix")[1:10,]
+```
+
+See the number of non-rated items (white space) is quite large.
+
+```{r}
+image(MovieLense)
+```
+
+The columns are the movies and the rows are the users who are rating. The most often rated movies and the movies with the highest ratings in the data set are:
+
+```{r}
+count<-colCounts(MovieLense)
+head(sort(count, decreasing = TRUE))
+
+avgrat<-colMeans(MovieLense, na.rm = TRUE)
+head(sort(avgrat, decreasing = TRUE))
+hist(colCounts(MovieLense), xlab="number of reviews", main = "number of reviews per movie")
+
+hist(colMeans(MovieLense), xlab="average movie ratings", main="", breaks=50)
+```
+
+Each user has rated at least 19 movies. 
+
+```{r}
+summary(rowCounts(MovieLense))
+```
+
+## Content Filterting
+
+There are a bunch of metacharacteristics available. We'll use the genres: from unknown to Western as our item characteristics.
+
+```{r}
+head(MovieLenseMeta)
+
+item<-as.matrix(subset(MovieLenseMeta, select = -c(title, year, url)))
+```
+
+We'll take user 1 as our "Adam", our user on which to build our content filtering system.  We normalize his ratings by subtracting off the mean.  We create an index, non_miss of the ratings he gives.
+```{r}
+rating<-as(MovieLense, "matrix")[1,]
+
+rating_m<-rating-mean(rating,na.rm=TRUE)
+
+non_miss<-!is.na(rating_m)
+miss<-is.na(rating_m)
+```
+
+We calculate his user profile using the formula.  Only difference is that the item matrix is the opposite from the above example: movies are rows and attributes are columns.  So we change the matrix multiplication: transpose item matrix and take column sums rather than row sums.
+
+```{r}
+user<-(t(item[non_miss,]) %*% rating_m[non_miss]) / colSums(item[non_miss, ])
+
+user
+```
+
+The user prefers Documentary and Film-Noir; hates Children's movies.
+
+We take all of the movies he/she has not seen, and make our cosine similarity predictions on them.  The top 6 movies predicted (of the 1393 not rated movies) are:
+
+```{r}
+names<-as.matrix(subset(MovieLenseMeta, select = c(title)))
+
+new_item<-item[miss,]
+new_names<-names[miss,]
+
+CS = (new_item) %*% user / (sqrt(rowSums(new_item^2))*sqrt(sum(user^2)))
+
+hist(CS, main = "histogram of cosine similarity with unseen movies", xlab="Cosine Similarity")
+
+new_names[head(order(CS, decreasing = TRUE))]
+```
+
+## Non-personalized recommendations: popularity
+
+### Fake data
+
+Popular normalizes the ratings by user, and takes the average across users.  It doesn't recommend something to someone who has already rated it. But it starts at the top of the list and goes down. Here's our example from earlier:
+
+```{r}
+row_names<-c("A", "B", "C", "D", "E", "F", "G")
+col_names<-c("PW", "TR", "EB", "T2", "P", "NH")
+
+util <- matrix(c(2,5,4,2,NA, NA,
+              5,1,2,NA,1,NA,
+              5,5,5,5,5,5,
+              2,5,NA,3,NA,NA,
+              5,4,5,3,NA,5,
+              1,5,NA,NA,NA,1,
+              2,NA,5,NA,5,NA),byrow = TRUE, nrow = 7, ncol = 6, dimnames=list(row_names,col_names))
+util
+util_n <-util-rowMeans(util, na.rm=TRUE)
+
+```
+
+In our example above in the collaborative filtering part, it would make TR the first, EB the second, etc. If someone had already watched TR, the first recommendation would be EB, then P, etc.
+
+```{r}
+colMeans(util_n,na.rm = TRUE)
+test<- as(util, "realRatingMatrix")
+test_recom<-Recommender(test, method = "POPULAR")
+test_recom@model$topN@items
+
+test_pred<-predict(test_recom, test[1,],type="ratings")
+
+as(test_pred,"matrix")
+```
+
+Adam's average review is `r rowMeans(util, na.rm=TRUE)[1]`. The average rating of P is `r colMeans(util_n,na.rm = TRUE)[5]` compared to the average. Hence the prediction of the popular model is these two quantities added, `r as(test_pred,"matrix")[5]`.
+
+## MovieLense
+
+Users are split into a training set (90%) and a test set (10%). Thus, we will train our models on the ratings of 848 users. On the test set of 95 users, 15 ratings per user will be given to the recommender to make predictions and the other ratings are held out for computing prediction accuracy.
+
+```{r}
+set.seed(19103)
+es <- evaluationScheme(MovieLense, 
+  method="split", train=0.9, given=15)
+
+es
+
+train <- getData(es, "train"); train
+test_known <- getData(es, "known"); test_known
+test_unknown <- getData(es, "unknown"); test_unknown
+```
+
+
+The first recommender is popularity. We create a matrix of how well it does in terms of root mean squared error (RMSE), $\sqrt{\frac{\sum_{ij} (r_{ij} - \hat{r}_{ij})^2}{N}}$, mean squared error, and mean absolute error. $\hat{r}_{ij}$ are the predicted ratings in the unknown test sample and $N$ is the number of unknown test ratings. The closer these metrics are to zero, the less error.
+
+```{r}
+
+popular <-Recommender(train, "POPULAR")
+
+## create predictions for the test users using known ratings
+pred_pop <- predict(popular, test_known, type="ratings"); pred_pop
+
+## evaluate recommendations on "unknown" ratings
+acc_pop <- calcPredictionAccuracy(pred_pop, test_unknown);
+as(acc_pop,"matrix")
+```
+
+Here are the actual and predicted ratings of the first 8 users and 5 items in the test unknown sample.
+
+```{r}
+as(test_unknown, "matrix")[1:8,1:5]
+as(pred_pop, "matrix")[1:8,1:5]
+```
+
+## User-based collaborative filtering
+
+Now we'll use user-based collaborative filtering.  We'll use (pearson) correlation to determine the similarity across users.  And we'll use the 30 most similar users in making our recommendation. 
+
+```{r}
+UBCF<-Recommender(train, "UBCF",
+                        param=list(method="pearson",nn=30))
+
+## create predictions for the test users using known ratings
+pred_ub <- predict(UBCF, test_known, type="ratings"); pred_ub
+
+## evaluate recommendations on "unknown" ratings
+acc_ub <- calcPredictionAccuracy(pred_ub, test_unknown);
+acc<-rbind(POP=acc_pop, UBCF = acc_ub); acc
+
+as(test_unknown, "matrix")[1:8,1:5]
+as(pred_ub, "matrix")[1:8,1:5]
+```
+
+UBCF has higher error metrics than popularity, indicating worse fit.
+
+## Item-based collaborative filtering
+
+Here we use item-based collaborative filtering, using peason correlation to determine similarity across items. And we use the 30 most similiar items.
+
+```{r}
+IBCF <- Recommender(train, "IBCF",
+                        param=list(method="pearson",k=30))
+pred_ib <- predict(IBCF, test_known, type="ratings")
+acc_ib <- calcPredictionAccuracy(pred_ib, test_unknown) 
+acc <- rbind(POP=acc_pop, UBCF = acc_ub, IBCF = acc_ib); acc
+```
+
+Note the error metric is yet worse for IBCF.
+
+## Matrix decomposition
+
+Here we're using a method of decomposition using stochastic gradient descent optimization popularized by
+Simon Funk to minimize the error on the known values.
+
+From the package:
+
+Funk SVD decomposes a matrix (with missing values) into two components $U$ and $V$. The singular
+values are folded into these matrices. The approximation for the original matrix can be obtained by
+$R = U V'$.
+
+This function predict in this implementation folds in new data rows by estimating the $u$ vectors
+using gradient descend and then calculating the reconstructed complete matrix $r$ for these users via
+$r = u V'$.
+
+```{r}
+MAT<- Recommender(train, "SVDF")
+pred_mat <- predict(MAT, test_known, type="ratings")
+acc_mat <- calcPredictionAccuracy(pred_mat, test_unknown) 
+acc <- rbind(POP=acc_pop, UBCF = acc_ub, IBCF = acc_ib, MAT=acc_mat); acc
+```
+
+Note the error is lowest.  
+
+This produces 10 factors for movies and 10 factors for users.  I plot the factor scores of movies for the first two factors, with some names.
+
+```{r}
+movie_factors<-MAT@model$svd$V
+user_factors<-MAT@model$svd$U
+
+some_movie_id = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 122, 365, 121, 405, 311, 117, 22, 299, 281, 1318, 261, 404, 21, 35)
+
+labels<-as.character(MovieLenseMeta[,1])
+plot(movie_factors[,1], movie_factors[,2], xlab="Movie factor 1", ylab="Movie factor 2", col="lightblue", pch=19, cex=2)
+text(movie_factors[some_movie_id,1], movie_factors[some_movie_id,2], labels = labels[some_movie_id], cex=0.5, font=2)
+```
+
+
+How would you interpret these movie factors?  

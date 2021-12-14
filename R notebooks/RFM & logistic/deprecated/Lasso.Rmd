@@ -1,0 +1,10 @@
+---
+  title: "Lasso"
+output:
+  html_document:
+  df_print: paged
+pdf_document: default
+editor_options: 
+  chunk_output_type: console
+---
+ 

@@ -1,0 +1,663 @@
+---
+title: "Logistic regression"
+author: "GEORGE KNOX"
+date: "Computer Lab 3"
+output: 
+  html_document:
+    highlight: haddock
+    theme: journal
+    number_sections: no
+    toc: yes
+    toc_depth: 4
+    toc_float: yes
+---
+```{css, echo=FALSE}
+    body .main-container {
+      max-width: 1600px !important;
+      width: 1600px !important;
+    }
+    body {
+      max-width: 1600px !important;
+    }
+    ```
+
+### Introduction
+
+Logistic regression is the most commonly used statistical technique for binary response data. Many marketing applications are concerning binary consumer decisions: 
+
+* does a consumer respond or not respond to marketing? 
+* do they subscribe or not subscribe?
+* do they churn or not churn?
+
+We'll use a data set on customer churn for a telecommunications company with several different services. We'll use demographic, service usage, and customer history to predict churn. We then apply this model to a new, holdout set of customers.  We calclate the confusion matrix, the lift table, and use it to do targeted proactive churn selection.
+
+### Installing the packages and loading the data
+
+```{r, warning=FALSE, message=FALSE, error=FALSE}
+# install.packages("pRoc")
+# install.packages("plotrix")      # Install plotrix package
+library(car)
+library(tidyverse)
+library(pROC)
+library(plotrix)  # plotting with confidence intervals
+
+options("scipen"=200, "digits"=3)
+
+# set working directory 
+setwd("C:/Users/gknox/Dropbox/Customer Analytics/R notebooks/RFM & logistic")
+
+telco<-read.csv('./data/telco.csv')
+
+```
+
+### Inspecting the data
+
+Every row is a customer. We have data on demographics, the type of services they own, payment methods, and the dependent variable, whether they churn. 
+```{r}
+head(telco)
+```
+
+You can see the summary statistics of the variables.  Tenure, Monthly Charges and Total Charges are the only continuous variables; all the others, including churn, are categorical. 
+```{r}
+summary(telco)
+```
+
+Let's get rid of the ID column, since we never need to use it.  We'll make senior citizen a factor variable, and recode total charges so that it's in thousands of dollars.  We also need to recode Churn for yes/no to 0/1.
+
+```{r}
+# drop the ID column, make senior citizen a factor variable, and divide totalcharges by 1000
+telco<-telco[-c(1)]
+telco$SeniorCitizen<-as.factor(telco$SeniorCitizen)
+telco$TotalCharges<-telco$TotalCharges/1000
+
+# Change Churn from "no" "yes" to 0 1
+
+telco <- telco %>%
+      mutate(Churn = ifelse(Churn == "No",0,1))
+
+```
+### Churn
+
+What fraction of customers churn (quit)?  This is the dependent variable we want to predict.  We need to use the "as.numeric" function to transform it from a factor variable to a 0/1 continuous variable in R.  We report the average churn rate of the customer below. 
+```{r}
+summary(telco$Churn)
+rbar<-mean(telco$Churn)
+```
+
+The average churn rate in the customer base is `r round(rbar,3)`.
+
+### Tenure
+
+One important driver of churn is likely to be **tenure**, how long a customer has been a customer for. 
+We can see below that there is a spike at 1, many customers just started, and a smaller peak at 72.
+```{r}
+par(mai=c(.9,.8,.2,.2))
+hist(telco$tenure, main = "", xlab="Tenure (# months a customer)", breaks = 71)
+```
+
+How does the rate churn vary by tenure?  We create a dataset of length 72, one for each level of tenure.  We calculate the proportion churning, number of churners (n_churn), number of customers in the tenure group, the standard error of the proportion churning (discussed in previous lectures), and the lower and upper confidence intervals.
+
+```{r}
+churn_tenure<-telco %>% as.data.frame() %>% group_by(tenure) %>% summarize(tenure=mean(tenure), p_churn=mean(Churn), n_churners=sum(Churn), n=n(), p_churn_se= sqrt((p_churn)*(1-p_churn)/n)) %>% mutate(lower_CI_pchurn = p_churn - 1.96*p_churn_se, upper_CI_pchurn = p_churn + 1.96*p_churn_se) 
+
+head(churn_tenure)
+
+par(mai=c(.9,.8,.2,.2))
+plot(x = churn_tenure$tenure, y = churn_tenure$p_churn, main="Proportion of customers who churn by tenure", xlab="Tenure (# months a customer)", ylab="proportion of customer churning")
+
+```
+
+The figure shows a clear negative relationship: the longer the customer has been a customer, the lower the probability of churn (churn rate).  
+
+### Contract Type
+
+Another variable likely to be important is the type of contract the customer is on.  There are three types, with this distribution of occurring in the data:
+
+```{r}
+table(telco$Contract)
+```
+
+
+---
+
+#### Comprehension Check
+
+> *Repeat the analysis that we did using tenure on contract type. Which contract type is most likely to churn?*
+
+> [DISCUSS HERE]
+
+---
+
+### Estimating the logistic regression
+
+So far this analysis has only looked at the effect of *one variable at a time* on churn. To investigate how many variables together affect churn, we need to use a model. 
+
+For each customer $i = 1, 2, \dots I$, the probability of churn is a function of the variables $X_i$ for that customer and the coefficients $\beta$ to be estimated.
+
+$$
+P(\textrm{Churn}_i = 1) = \frac{e^{X_{i}'\beta}}{1+e^{X_{i}'\beta}}
+$$
+where $X_i' \beta = \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \dots \beta_P X_{Pi}$ is the sum of the product of the variables (including the intercept) and the coefficients. 
+
+$$
+X_i' \beta = \beta_1 + \beta_2 1\{\textrm{gender}_i = \textrm{male}\} + \beta_2 1\{\textrm{SeniorCitizen}_i=1\} + \dots + \beta_{24} \textrm{tenure}_i
+$$
+The models differ in what is included as in $X$.  They vary in terms of how many variables are included. 
+
+* **Model 0** is the simplest: The only variable is tenure and it is treated as a continuous variable.  We'll fit this model using the `glm` package, or **Generalized Linear Models**.  The basic syntax is `glm(Y ~ X, data = , family = binomial(link="logit"))`.  We also make sure the `predict` function works by comparing its calculation to doing it "by hand".  The syntax `predict(model = , newdata = , type = "response" or "link", se.fit = TRUE)`.  Type response if you want probabilities and link if you want the linear predictor.
+
+```{r}
+# fit 
+model_0<-glm(Churn ~ tenure, data=telco, family = binomial(link="logit"))
+
+# show us coefficients and other model fit statistics
+summary(model_0)
+
+# predict a single observation with tenure = 35
+pred <- predict(model_0, newdata = data.frame(tenure=35), se.fit = TRUE, type = "response")
+
+pred$fit
+
+# by hand, intercept is 1 and tenure = 35
+C <- c(1, 35)
+
+# coef(model_0) gives us the coefficients, 
+# coef(model_0)%*%C gives us \beta_0 * 1 + \beta_1 * Tenure
+
+exp(coef(model_0)%*%C)/(1+exp(coef(model_0)%*%C))
+```
+
+Compare observed proportion of churn by tenure calculated separately for each level of tenure = 1, ... 72; with model predictions.  
+
+```{r}
+# create data set of tenure from 1 to 72
+plotdat <- data.frame(tenure=(1:72))
+
+# put predictions and 95% confidence intervals of those 
+preddat <- predict(model_0,
+               type = "link",
+               newdata=plotdat,
+               se.fit=TRUE) %>% 
+  as.data.frame() %>% 
+  mutate(tenure=(1:72), 
+ # model object model_0 has a component called linkinv that 
+ # is a function that inverts the link function of the GLM:
+         lower = model_0$family$linkinv(fit - 1.96*se.fit), 
+         point.estimate = model_0$family$linkinv(fit), 
+         upper = model_0$family$linkinv(fit + 1.96*se.fit)) 
+
+# plot actual vs. logistic regression
+par(mai=c(.9,.8,.2,.2))
+plot(x = churn_tenure$tenure, y = churn_tenure$p_churn, main="Proportion of customers who churn by tenure", xlab="Tenure (# months a customer)", ylab="proportion of customer churning")
+lines(x=preddat$tenure, y=preddat$point.estimate, col="red", lwd=2)
+legend('topright',legend=c("churn proportion", "logistic regression"),col=c("black","red"),pch=c(1,NA),lty=c(NA,1), lwd=c(NA,2))
+
+eq <- paste0("logit(p) = ",round(coef(model_0)[1],4),
+             ifelse(coef(model_0)[2]<0,round(coef(model_0)[2],4),
+                    paste("+",round(coef(model_0)[2],4))),
+                    paste(" tenure"))
+# puts equation in figure
+mtext(eq, 1,-3)
+```
+
+Compare the confidence intervals of the model predictions (red) to those by doing them separately for each level of tenure. You can see we get quite a reduction in uncertainty by having a model that relates these proportions to each other. The cost of our error reduction is bias -- if the model's functional form deviates from the actual response rate.  In other words, we have reduced variance, but at the expense of bias.  
+
+```{r}
+par(mai=c(.9,.8,.2,.2))
+plotCI(x = churn_tenure$tenure,               # plotrix plot with confidence intervals
+       y = churn_tenure$p_churn,
+       li = churn_tenure$lower_CI_pchurn,
+       ui = churn_tenure$upper_CI_pchurn, main="Proportion of customers who churn by tenure", xlab="Tenure (# months a customer)", ylab="proportion of customer churning")
+
+lines(x=preddat$tenure, y=preddat$point.estimate, col="red", lwd=2, type = "l")
+lines(x=preddat$tenure, y=preddat$lower, col="red", lty=2, lwd=1, type = "l")
+lines(x=preddat$tenure, y=preddat$upper, col="red", lty=2, lwd=1, type = "l")
+
+```
+
+
+* **Model 1** is more complex: every variable is included, not just tenure; tenure is treated as a continuous variable as before.  
+
+* **Creating Formulas**: for many of the models, we will need a "formula". This will be in the format Y ~ X1 + X2 + X3 + .... For more info, see: http://faculty.chicagobooth.edu/richard.hahn/teaching/formulanotation.pdf
+
+```{r}
+options(width = 200)
+model_1 <- glm(Churn ~ gender+SeniorCitizen+Partner+Dependents+PhoneService
+             +MultipleLines+InternetService+OnlineSecurity+OnlineBackup+
+               DeviceProtection+TechSupport+StreamingTV+StreamingMovies+Contract+
+               PaperlessBilling+PaymentMethod+MonthlyCharges+
+               TotalCharges+tenure
+             ,data=telco,family="binomial")
+
+# another way of writing this is "~ ." which means regress Churn on everything else in the data set.
+
+model_1 <- glm(Churn ~ . , data=telco, family="binomial")
+
+summary(model_1)
+
+# stargazer(model_1, type = "text")
+```
+
+* **Model 1** has `r length(coef(model_1))` coefficients.
+
+* **Model 2** is more complex: like Model 1, except that tenure is treated a categorical variable. In other words there is a dummy variable for every level of tenure but one. $\beta_{1} 1\{\textrm{tenure}_i=1\} + \beta_{2} 1\{\textrm{tenure}_i=2\} + \dots \beta_{71} 1\{\textrm{tenure}_i=71\}$. This way, we can flexibly capture a pattern between tenure and churn. In R, all you have to do is write **as.factor(tenure)** instead of **tenure**. 
+
+```{r}
+model_2 <- glm(Churn ~ gender+SeniorCitizen+Partner+Dependents+PhoneService
+             +MultipleLines+InternetService+OnlineSecurity+OnlineBackup+
+              DeviceProtection+TechSupport+StreamingTV+StreamingMovies+Contract+
+              PaperlessBilling+PaymentMethod+MonthlyCharges+
+             TotalCharges+as.factor(tenure)
+             ,data=telco,family="binomial")
+
+# a shorter way is to subtract tenure from everything else and add as.factor(tenure) back: except var1 . - var1
+
+model_2 <- glm(Churn ~ . +as.factor(tenure) -tenure , data=telco, family="binomial")
+summary(model_2, digits=3)
+```
+
+* **Model 2** has `r length(coef(model_2))` coefficients.
+
+* **Model 3** is the most complex: like Model 2, except that there is an interaction between payment type and tenure.  Note in general and interaction is the coefficient on the product of two variables.
+
+$$
+  = \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_2 x_1 + \dots
+$$
+Here we have an interaction between all tenure levels (except one) and all payment levels (except one).  For example, here is one type:
+
+$$
+= \beta_{1} 1\{\textrm{tenure}_i=1\} + \beta_{2} 1\{\textrm{payment_type}_i=\textrm{credit}\} + \beta_{3} 1\{\textrm{payment_type}_i=\textrm{credit}\}  1\{\textrm{tenure}_i=1\}  + \dots.
+$$
+
+```{r}
+# model 3 is too tedious to write out the long way. 
+# the short way is to understand that var1*var2 = var1 + var2 + var1*var2. 
+# So we remove tenure and payment method and add them with the star in betwen. 
+
+model_3 <- glm(Churn ~ . +as.factor(tenure)*as.factor(PaymentMethod) -tenure -PaymentMethod, data=telco, family="binomial")
+summary(model_3, digits=3)
+
+```
+
+* **Model 3** has `r length(coef(model_3))` coefficients.  Note a lot of them have large coefficients and large standard errors.  If a variable is zero almost always, (tenure==34)*(PaymentMethod==Electronic check), there is little variation to estimate the coefficient, making it look unstable.
+
+* So, we've estimated 3 models each one increasing in the number of coefficients.  Let's see how well they predict.
+
+---
+
+#### Comprehension Check
+
+> *Fit a model where the independent variables are: tenure (as continuous), contract type, and their interaction. How would you write the part that goes after the ~ in the model statement?*
+
+> [DISCUSS HERE]
+
+---
+
+
+### Deviance and proportion of deviance explained (R2)
+
+Deviance is an error measure, $-2 \ln(\textrm{likelihood})$. We want it to be as small as possible. If we had a model where there were as many parameters as observations, a fully saturated model, it would be zero.
+
+The residual deviance is the deviance associated with the full model.
+The null deviance is the deviance for a model where there is only an intercept, which is the same as saying that every customer has the same probability of churning, equal to `r rbar`.
+The difference between the residual and the null deviance then gives us some sense of how well our model fits overall, taken together. You can also look at the proportion of deviance explained by the variables in the model.
+
+$$
+R^2 = \frac{D_0 - D}{D_0} = 1 - \frac{D}{D_0}
+$$
+
+```{r}
+
+models <- paste0("model_", 0:3) # list of models
+D<-sapply(models, function(x) get(x)$deviance) # get deviance D for each
+
+D0<-model_0$null.deviance # D_0 is the same for all models
+  
+R2<-1-D/D0
+
+
+par(mai=c(.9,.8,.2,.2))
+barplot(R2, names.arg = c("model 0","model 1", "model 2", "model 3"), main=expression(paste("In-Sample R"^"2")), xlab="Model", ylab=expression(paste("R"^"2")))
+```
+
+Models 0, 1, 2 and 3 are explaining `r round(R2[1],2)*100`% `r round(R2[2],2)*100`%, `r round(R2[3],2)*100`% and `r round(R2[4],2)*100`%, respectively, of the deviance in customer churn.
+
+### Overfitting, K-fold out of sample
+
+**But, is the better performance of model a result of overfitting?**
+
+What we really care about is being able to predict **new** data.  The R2 and deviance measures are all about in-sample, not out-of-sample fit. So it doesn't tell us how well our model performs on other data.
+
+We can mimic the presence of new data by holding out part of the data. 
+
+We use K-fold out of sample validation. Given a dataset of $n$ observations, $\{X_i, Y_i\}_{i=1}^{n}$
+
+* Split the data into $K$ evenly sized random subsets (folds).
+* For $k=1 \dots K$
+  - Fit the coefficients, $\hat{\beta}$, using all except the $k^{\textrm{th}}$ fold of the data.
+  - Record the $R^{2}$ on the fold held out.
+Then we have $K$ out-of-sample $R^2$ measures. These are an estimate of the distribution of the model's predictive performance.  
+
+```{r}
+# you don't need to know how to write this code.
+set.seed(19103)
+n = nrow(telco)
+K = 10 # # folds
+foldid = rep(1:K, each=ceiling(n/K))[sample(1:n)]
+# foldid[1:10]
+OOS <- data.frame(model0=rep(NA, K), model1=rep(NA,K), model2=rep(NA,K), model3=rep(NA,K))
+
+
+## pred must be probabilities (0<pred<1) for binomial
+  deviance <- function(y, pred, family=c("gaussian","binomial")){
+    family <- match.arg(family)
+    if(family=="gaussian"){
+      return( sum( (y-pred)^2 ) )
+    }else{
+      if(is.factor(y)) y <- as.numeric(y)>1
+      return( -2*sum( y*log(pred) + (1-y)*log(1-pred) ) )
+    }
+  }
+
+## get null devaince too, and return R2
+  R2 <- function(y, pred, family=c("gaussian","binomial")){
+  fam <- match.arg(family)
+  if(fam=="binomial"){
+    if(is.factor(y)){ y <- as.numeric(y)>1 }
+  }
+  dev <- deviance(y, pred, family=fam)
+  dev0 <- deviance(y, mean(y), family=fam)
+  return(1-dev/dev0)
+  }  
+
+# this part will take several minutes, fitting 3 models K times each
+  
+for(k in 1:K){
+  train = which(foldid!=k) # data used to train
+  
+  # fit regressions
+  model_0<- glm(Churn ~ tenure, data=telco[train,], family="binomial")
+  summary(model_0)
+  
+  model_1 <- glm(Churn ~ . , data=telco[train,], family="binomial")
+  summary(model_1)
+  
+  model_2 <- glm(Churn ~ . +as.factor(tenure) -tenure, data=telco[train,], family="binomial")
+  summary(model_2)
+  
+  model_3 <- glm(Churn ~ . +as.factor(tenure)*as.factor(PaymentMethod) -tenure -PaymentMethod, data=telco[train,], family="binomial")
+  summary(model_3)
+  
+  
+  # predict on holdout data (-train)
+  pred0<- predict(model_0, newdata=telco[-train,], type = "response")
+  pred1<- predict(model_1, newdata=telco[-train,], type = "response")
+  pred2<- predict(model_2, newdata=telco[-train,], type = "response")
+  pred3<- predict(model_3, newdata=telco[-train,], type = "response")
+  
+  # calculate R2
+  OOS$model0[k]<-R2(y = telco$Churn[-train],pred=pred0, family="binomial")
+  OOS$model1[k]<-R2(y = telco$Churn[-train],pred=pred1, family="binomial")
+  OOS$model2[k]<-R2(y = telco$Churn[-train],pred=pred2, family="binomial")
+  OOS$model3[k]<-R2(y = telco$Churn[-train],pred=pred3, family="binomial")
+  
+  # print progress
+  cat(k, "  ")
+    
+}
+par(mai=c(.9,.8,.2,.2))  
+boxplot(OOS[,1:4], data=OOS, main=expression(paste("Out-of-Sample R"^"2")),
+        xlab="Model", ylab=expression(paste("R"^"2")))
+```
+
+
+* Model 3 had the highest in-sample $R^2$, and now it has the worst out-of-sample $R^2$. It's even **negative**!  In other words, it is worse that random guessing.  It would be better to guess that every customer has a `r rbar` probability of churning rather than using Model 3 to figure out which customers are more likely to churn than others.
+
+* Bottom line: Model 3 is over-fitting. It is capturing patterns in the in-sample data that do not generalize to the out-of-sample data. This is why it does such a poor job at predicting.
+
+* Model 0 is under-fitting. It is not explaining enough in or out of sample.  
+
+* Models 1 and 2 have basically the same out of sample $R^2$. 
+
+* This means favoring the simpler models.  Model 1, being the simplest, and tied for the best predictive performance is the winner.  
+
+* Note the simplest model here won, but that isn't always the case. It depends on the data. The best model might be the "middle" or even the most complex model. You have to check out-of-sample performance.
+
+
+### Interpreting Coefficients
+
+We continue with **model 1**.  Face validity check: do the coefficients make sense?
+
+* Given the figures earlier, we would expect to see a *negative* coefficients on tenure and length of contract. Do we see this?
+
+```{r}
+summary(model_1)
+```
+
+* How do we interpret the quantitative effect of the coefficients?  e.g., how much more or less likely is a senior citizen to churn?
+```{r}
+cat('coefficient:', coef(model_1)["SeniorCitizen1"],"\n")
+
+cat('multiplicative effect on odds, exp(coefficient):', exp(coef(model_1)["SeniorCitizen1"]),"\n")
+ocoef<-round(exp(coef(model_1)["SeniorCitizen"]),2)
+
+cat('percent change in odds: exp(coefficient)-1:', exp(coef(model_1)["SeniorCitizen1"])-1,"\n")
+ecoef<-round(exp(coef(model_1)["SeniorCitizen1"])-1,2)*100
+```
+
+So the odds of churning are multiplied by `r ocoef` when it's a senior citizen.  Another way of saying that is that senior citizens have `r ecoef`% higher odds of churning.
+
+Note there is the significance of an individual predictor (e.g., ContractOne year) and the joint significance of a group of coefficients (e.g., all contract terms).  We can test whether all coefficients of the variable equal zero using `linearHypothesis` from package `car`.  
+
+```{r}
+linearHypothesis(model_1, c("ContractOne year = 0", "ContractTwo year = 0"))
+```
+
+Here we test jointly that the two estimated contract coefficients are zero.  We reject the null hypothesis.
+
+#### Comprehension Check
+
+> *What is the effect of tenure (# months as customers) on churn? Repeat the analysis we did for Senior Citizen on tenure.  What is the % change in odds after 1 year (12 months)?*
+
+> [DISCUSS HERE]
+
+---
+
+### Predict
+
+Here we use model 1 to predict the probability of default for a certain customer with a specific profile: a male, senior citizen without a partner or dependents, etc. See below.
+
+```{r}
+
+newdata = data.frame(gender = "Male", SeniorCitizen=as.factor(1),Partner="No",Dependents="No", tenure=72,PhoneService="Yes",MultipleLines="No", InternetService="DSL", OnlineSecurity="No", OnlineBackup="No", DeviceProtection="No", TechSupport="Yes", StreamingTV="Yes", StreamingMovies="No", Contract="One year", PaperlessBilling="No", PaymentMethod="Mailed check", MonthlyCharges=30,TotalCharges=1)
+
+predict(model_1,newdata,type="response")
+
+```
+
+The probability of churn is low.
+
+### Holdout sample
+
+Now we look at how well model 1 performs on one holdout sample, **holdout_telco.csv**. 
+
+```{r}
+
+# set working directory where first file, telco, was found to get other one.
+
+holdout_telco<-read.csv("data/telco_holdout.csv")
+
+
+# ID column don't need to drop.
+# make senior citizen a factor variable, and divide totalcharges by 1000
+holdout_telco$SeniorCitizen<-as.factor(holdout_telco$SeniorCitizen)
+holdout_telco$TotalCharges<-holdout_telco$TotalCharges/1000
+
+# Change Churn from "no" "yes" to 0 1
+
+holdout_telco <- holdout_telco %>%
+      mutate(Churn = ifelse(Churn == "No",0,1))
+
+n_churners<-sum(holdout_telco$Churn)
+head(holdout_telco)
+rbar_ho<-mean(holdout_telco$Churn)
+```
+
+The churn rate we see in the holdout sample, `r round(rbar_ho,3)`, is close to that in the estimation sample we used earlier, `r rbar`.
+
+Now we use the model estimated on the other data to make predictions on this new data. Note that our predicted probabilities lie between 0 and 1, whereas our data are binary. We can get the predictions for each customer and graph them with the 0/1 churn decisions.
+
+```{r}
+# predicted x'beta part of 
+xb <- predict(model_1, type = "link", newdata=holdout_telco)
+# the predicted probability 
+prob <- predict(model_1, type = "response", newdata=holdout_telco)
+
+head(cbind(xb,prob))
+
+# order customers from least likely to churn (according to model) to most likely
+ind<-order(prob)
+head(prob[ind])
+
+par(mai=c(.9,.8,.2,.2))
+plot(xb[ind],holdout_telco$Churn[ind], pch=4,cex=0.3,col="blue", xlab="x'beta",ylab="P(Churn) on holdout data")
+lines(x=xb[ind], y=prob[ind], col="red", lwd=2)
+legend('left',legend=c("actual", "predicted (model 1)"),col=c("blue","red"), pch=c(1,NA),lty=c(NA,1), lwd=c(NA,2))
+```
+
+### Confusion matrix
+
+We can also *classify* predictions by turning them into 0's and 1's. If $\hat{p}_i > 0.5, \; \textrm{pred} = 1$ otherwise 0.  You can use other cutoffs if the cost of making one type of error (e.g., predicting 0 when the truth is 1) is different than the other, or if the overal average proportion of the dependent variable is close to 0 or 1.  
+
+After converting our probabilities to binary predictions, we can compare our predicted 0's and 1's with the actual 0's and 1's. From this we can get quantities such as the accuracy, the hit rate (sensitivity), and the false positive rate.
+
+```{r}
+confusion_matrix <- (table(holdout_telco$Churn, prob > 0.5))
+confusion_matrix <- as.data.frame.matrix(confusion_matrix)
+colnames(confusion_matrix) <- c("No", "Yes")
+confusion_matrix$Percentage_Correct <- confusion_matrix[1,]$No/(confusion_matrix[1,]$No+confusion_matrix[1,]$Yes)*100
+confusion_matrix[2,]$Percentage_Correct <- confusion_matrix[2,]$Yes/(confusion_matrix[2,]$No+confusion_matrix[2,]$Yes)*100
+print(confusion_matrix)
+cat('Overall Percentage:', (confusion_matrix[1,1]+confusion_matrix[2,2])/nrow(holdout_telco)*100)
+```
+
+### ROC curves
+
+```{r}
+par(mai=c(.9,.8,.2,.2))
+plot(roc(holdout_telco$Churn, prob), print.auc=TRUE, 
+     col="black", lwd=1, main="ROC curve", xlab="Specificity: true negative rate", ylab="Sensitivity: true positive rate", xlim=c(1,0))
+text(confusion_matrix$Percentage_Correct[[1]]/100, confusion_matrix$Percentage_Correct[[2]]/100, ".5 threshold")
+abline(h=confusion_matrix$Percentage_Correct[[2]]/100, col="red",lwd=.3)
+abline(v=confusion_matrix$Percentage_Correct[[1]]/100, col="red",lwd=.3)
+```
+
+### Lift curves
+
+Lift is a common measure in marketing of model performance. The lift asks how much more likely are customers in the top $k^{\textrm{th}}$ decile to churn compared to the average.
+
+The lift is usually defined by decile. You sort the customer base according to the predicted probability of churn, from largest to smallest, so the 1st decile is those who are most predicted to churn according to the model.  The lift of decile $k$ is defined as:
+
+$$
+\lambda_k = \frac{r_k}{\bar{r}}
+$$
+where $\lambda_k$ is the lift of decile $k$, $r_k$ is the churn rate for the $k$ decile, and $\bar{r}$ is the churn rate for the entire customer base.  $\lambda_k$ is how much more likely customers in decile $k$ are to churn compared to the churn rate for the entire sample.  
+
+```{r}
+ntiles <- function(x, bins) {
+  quantiles = seq(from=0, to = 1, length.out=bins+1)
+  cut(ecdf(x)(x),breaks=quantiles, labels=F)
+}
+# create deciles
+prob_decile = ntiles(prob, 10)
+
+# prob, decile and actual
+pred<-data.frame(cbind(prob,prob_decile, holdout_telco$Churn))
+colnames(pred)<-c("predicted","decile", "actual")
+
+# create lift table by decile
+# average churn rate by decile
+
+# lift is the actual churn rate in the decile divided by average overall churn rate
+  
+lift_table<-pred %>% group_by(decile) %>%  summarize(actual_churn = mean(actual), lift = actual_churn/rbar_ho, n_customers=n()) %>% arrange(desc(decile)) %>% mutate(cum_customers=cumsum(n_customers)) %>% mutate(cum_lift=cumsum(actual_churn)/sum(actual_churn)*100)
+
+lift_table
+```
+
+Customers in the top decile are the top 10% most likely to churn *according to our model*. The top decile lift is `r lift_table[[1,3]]`. Customers in the top decile are `r lift_table[[1,3]]` times more likely to *actually* churn than the average customer. 
+
+The rightmost column shows the cumulative lift. The cumulative lift for the $k$ decile is the percentage of all churners accounted for cumulatively by the first $k$ deciles.  The first decile contains `r round(lift_table[[1,4]],0)`% of all churners in the data set (in total there are `r n_churners` churners in the holdout dataset). 
+
+The cumulative lift of decile 2 is `r round(lift_table[[2,4]],0)`% of all churners are in the top 2 deciles. In the bottom most deciles there are barely any churners, so the cumulative lift increases little or not at all.
+
+We can graph this out below. The top three deciles account for `r round(lift_table[[3,4]],0)`% of all churners.  We can use this to compare models.  The higher the lift for a given decile, the better the model.  A straight line, where we randomly sorted customers instead of using a model, is the naive model.
+
+```{r}
+# order from highest to smallest in terms of prob
+# percentage of churners from beginning to end.
+
+pred<-pred %>% arrange(desc(predicted)) %>% mutate(prop_churn = cumsum(actual)/sum(actual)*100, prop_cust = seq(nrow(pred))/nrow(pred)*100)
+
+head(pred)
+# Plotting percentage of churners as a function of percentage of customers
+par(mai=c(.9,.8,.2,.2))
+plot(pred$prop_cust,pred$prop_churn,type="l",xlab="% of customers targeted using model",ylab="% of churners accounted for",xlim = c(0,100), ,ylim = c(0,100),col="blue")
+legend('topleft', legend=c("Naive", "Logistic"), col=c("red", "blue"), lty=1:1, cex=0.8)
+abline(a=0,b=1,col="red")
+points(x=30, y= lift_table$cum_lift[3], pch=4, col="red",  cex=2, lwd=2)
+text(x = 28,y= lift_table$cum_lift[3]+5, paste(round(lift_table$cum_lift[3],0), "%" ))
+```
+
+* This gives us equivalent information to the churn table.
+
+* targeting the top 10% using the model would give us `r pred$prop_churn[which.min(abs(pred$prop_cust-10))]`% of total churners in the data.
+
+### Selecting deciles to target
+
+Once we have used the model to put customers in the right decile, targeting is simple.
+We calculate the profit from each n-tile and target customers who are in the profitable tiles. 
+We will use the proactive churn framework from Blattberg, Kim and Neslin to calculate expected profits.  This approach takes into account the actual proportion of churners as identified by the model.
+
+
+The key parameter is $\beta_K$, the proportion of churners in the top $K$ deciles contacted.  
+$$
+\beta_K = \frac{\sum_{k=1}^{K} \; r_k \, n_k}{\sum_{k=1}^{K} \; n_k} \quad \textrm{where} \; K = 1, 2, .. \dots,  10
+$$
+where $n_k$ is the number of customers in decile $k$.  Let's say we want to target the top $K=2$ deciles; $r_1 = .1$ and $r_2 = .05$, and $n_1 = n_2 = 100$. Then $\beta_2 = \frac{.1*100 + .05*100}{200} = .075$.
+
+Note that if $K=10$, i.e., everyone is targeted, $\beta_K = \bar{r}$, the proportion of churners in the dataset.
+
+If he or she is churner, with some probability $\gamma$ he or she takes the offer, and is persuaded to stay rather than churn.  Thus the gain to the firm is that person's lifetime value ($LTV$), the discounted expected future profit to the firm when he or she stays, minus the cost of the offer $\delta$ and the cost of contacting the customer $c$.  If he or she is a non-churner, with some probability they take the incentive $\psi$ and their delight makes their lifevalue increase by some factor $\Delta$. Here we assume $\psi=1$, everyone takes the offer, and there is no added demand from customers delighted by being targeted $\Delta=0$. 
+
+The better the model is at sorting customers into deciles, the higher $\beta$ will be, and the more well targeted will be the incentives.  Profits are: 
+
+*  increasing the more effective the incentive, the higher $\gamma$
+*  increasing in the lifetime value ($LTV$) of a rescued customer
+*  decreasing in the cost of the incentive ($\delta$) and the cost of contacting the targeted customers ($c$).
+
+We calculate $\beta$, the probability that a targeted customer is a churner, by taking the cumulative proportion of churners in the top $k$ deciles.
+
+```{r}
+
+gamma = 0.1  # probability that customer is rescued if he or she is a churner
+LTV = 500   # lifetime value of rescued customer
+delta = 50  # cost of incentive
+c = 0.50  # cost of contact
+
+# re-order lift from highest to lowest
+# add columns to our lift table
+
+profit_table<-lift_table %>% mutate(
+  cum_prop_churners = cumsum(actual_churn*n_customers)/cum_customers, 
+  profit = cum_customers*((gamma*LTV+delta*(1-gamma))*cum_prop_churners-delta-c),
+  decile=11-decile)
+                                                                      
+profit_table
+
+par(mai=c(.9,.8,.2,.2))
+bp<-barplot(profit_table$profit ~ profit_table$decile, main="expected profits by # of deciles targeted", xlab="# deciles targeted", ylab="expected profits")
+```
+
+We see from the table below that given this model, the profit maximizing number of deciles to target is the top 2.  
+

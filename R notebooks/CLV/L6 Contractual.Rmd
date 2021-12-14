@@ -1,0 +1,492 @@
+---
+title: "CLV Analysis: contractual settings"
+author: "GEORGE KNOX"
+date: "Computer Lab 6"
+output: 
+  html_document:
+    highlight: haddock
+    theme: journal
+    number_sections: no
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+  bookdown::html_document2: default
+---
+    ```{css, echo=FALSE}
+    body .main-container {
+      max-width: 1800px !important;
+      width: 1800px !important;
+    }
+    body {
+      max-width: 1800px !important;
+    }
+    ```
+
+```{r}
+# install.packages(c("memisc", "foreign", "data.table", "dplyr","VGAM"))
+rm(list=ls())
+options("scipen"=100, "digits"=3, width = 150)
+library(knitr)
+```
+
+# Introduction
+
+Customer lifetime value is the present value of the future profits associated with a particular customer.  In this section, we'll focus on contractual settings, where customers have to notify the firm when they quit.  The primitives of CLV are the *margin* (revenues less costs), the *discount rate*, and *retention*, which often receives the most focus out of the three. 
+
+
+# Basic terms
+
+We consider discrete time periods $t = \{0, 1, 2...\}$. The **retention rate** at period $t$ is the proportion of customers active (still customers) at the end of period $t-1$ who are still active at the end of period $t$. The **churn rate** at period $t$ is the proportion of customers still active at the end of period $t-1$ who quit in period $t$.  
+
+The **survivor function** at period $S(t)$ is the proportion of customers who are still active at $t$. By convention, in period $0$, no customers have had a chance to churn, so $S(0)=1$. The survivor function at time 1 is just the proportion of customers who have been retained at time 1, $S(1)=r(1)$.  Survivor functions at later periods are the product of retention rates.
+$$
+S(t) = \prod_{j=1}^{t} \; r(j)
+$$
+
+The **retention rate**, or hazard rate of remaining a customer, is the probability that the customer remains in period $t$ conditional on having been a customer up until time period $t-1$.
+$$
+r(t) = \frac{S(t)}{S(t-1)}
+$$
+
+Below we use some data from a subscription company. They start out with 12489 customers who join in the same year, i.e., they are part of a cohort. A year later 7356 of them renewed. And so forth.
+
+```{r}
+active_cust=c(12489,
+7356,
+5258,
+4309,
+3747,
+3435,
+3123,
+2948,
+2786,
+2711,
+2624)
+data<-cbind(0:10,active_cust)
+colnames(data)<-c("Period", "Active Customers")
+data
+# Coding hint: diff takes the difference between adjacent terms in a vector
+
+lost<- -diff(active_cust)
+
+S<-active_cust[1:11]/active_cust[1]
+S
+
+ret_rate<-S[2:11]/S[1:10]
+ret
+
+churn<- 1-ret
+churn
+
+plot(0:10, S, type="b",ylab="Probability the customer survives P(T>t)", xlab="periods", main="Survivor function",ylim=par("yaxp")[1:2]) 
+
+plot(1:10, ret, type="b",ylab="Probability the customer is retained P(T>t)/P(T>t-1)", xlab="periods", main="Retention rate",ylim=par("yaxp")[1:2]) 
+
+plot(1:10, churn, type="b",ylab="Probability the customer is retained P(T>t)/P(T>t-1)", xlab="periods", main="Retention rate",ylim=par("yaxp")[1:2]) 
+
+
+```
+
+
+---
+
+### Comprehension Check
+
+> *Calculate the Survivor function, retention rate and churn rate using the data above and plot them over time periods. How would you describe the retention rate over time?*
+
+> [DISCUSS HERE]
+
+---
+
+
+
+# Geometric CLV
+
+The basic CLV model assumes a constant retention rate $r$, as well as $m$ and $d$. If $r(t)=p$, then $S(1)=p$, $S(2)=p^2$, and
+$$
+S(t)=p^t
+$$
+```{r out.width = '100%', fig.align = "center"}
+p<-0.8    # retention probability (rate) 
+
+t<-seq(0,10)  # time period starting at 0
+
+par(mfrow=c(1,2))
+par(mai=c(.8,.8,.2,.2))
+plot(1:10, rep(p,length(t)-1), type="b",ylab="Probability the customer is retained", xlab="periods", main="Retention rate",ylim=par("yaxp")[1:2]) 
+
+plot(t, p^t, type="b",ylab="Probability the customer has survived", xlab="periods", main="Survivor function")
+text(1.5, .78, " 0.8", cex=1, pos=3, col="black")
+text(2.5, .62, parse(text= '.8^2'), cex=1, pos=3, col="black")
+text(9.6, .16, parse(text='.8^10'), cex=1, pos=3, col="black")
+
+```
+
+This called a geometric survivor function, because it has a geometric probability distribution.  You flip a coin and keep flipping until it first lands on heads.  If the probability of landing on heads on each coin flip is $1-p$, how likely are you to flip at least $t$ times?  $S(t)=p^t$.   
+
+The probability that a customer leaves at a certain period $t$ is then the probability that he/she survived for $t-1$ periods and then churned once:
+$$
+P(T=t) = (1-p) \; p^{t-1}
+$$
+
+CLV is the present value of the expected profits--the margin (assumed constant) multiplied by the probability that the customer survives up until this point.
+$$
+E[CLV] = m + \frac{m \; S(1)}{(1+d)^1} + \frac{m \; S(2)}{(1+d)^2} + \frac{m \; S(3)}{(1+d)^3} + \cdots 
+$$
+
+In the geometric model, $S(t)=p^t$. We can use the results of a geometric series^[For a geometric series: 
+$$ 
+\sum_{j=0}^{\infty} m \; a^j = \frac{m}{1-a} \quad \textrm{if} \; |a|<1
+$$
+]:
+
+$$
+\begin{array}{ccl}
+E[CLV] & = & \displaystyle m + \frac{m \; p}{(1+d)^1} + \frac{m \; p^2}{(1+d)^2} + \frac{m \; p^3}{(1+d)^3} + \cdots \\
+& = & \displaystyle \frac{m \; (1+d)}{1+d-p}
+\end{array}
+$$
+
+We write a formula in r to calculate it.
+
+```{r}
+geoCLV<-function(p,m,d){
+  m*(1+d)/(1+d-p)
+}
+p<-0.8    # retention probability (rate) 
+m<-100    # margin (profit)
+d<-0.1    # discount rate
+
+geoCLV(p,m,d)
+```
+
+We can compare this formula calculated over a infinite horizon to the first 10 terms.
+
+```{r}
+t<-seq(0,10)  # time period starting at 0
+
+m*(p/(1+d))^t # the first 10 terms of CLV
+
+sum(m*(p/(1+d))^t)  # CLV using only the first 10 terms
+```
+
+So the 10 period CLV `r round(sum(m*(p/(1+d))^t))` is relatively close to the infinite t CLV `r round(geoCLV(p,m,d))`. Each additional term adds less because the probability of remaining a customer diminishes over time, and discounting diminishes it as well.  We will use this fact later on.
+
+---
+
+### Comprehension Check
+
+> *Calculate RLV from the perspective of right after and right before a person has renewed.  Optional: convince yourself that the formulas for RLV are correct using the geometric series.*
+
+> [DISCUSS HERE]
+
+---
+
+## Fit
+
+How well does the geometric model describe *actual* retention behavior?  We observe $N$ total customers, $n_1$ who have $t=1$, $n_2$ who quit at $t=2$, and so on.  Finally there are $(N-\sum{n})$ customers active after the last period $\tau$. The likelihood is then: 
+\begin{equation}
+\label{eq:L}
+L(p) = \prod_{t=1}^{\tau} P(T = t)^{n_t} \times S(\tau)^{N-\sum_{t=1}^{\tau} n_t}
+\end{equation}
+We take the log of that and maximize (or rather, minimize the negative log likelihood) to get the parameter estimate.
+
+```{r out.width = '100%', fig.align = "center"}
+lost<- -diff(active_cust)
+active<- active_cust[-1]
+
+loop.lik<-function(params) {
+p<-params[1]
+ll<-0
+for (i in 1:length(lost)) {
+    ll<-ll+lost[i]*(log(1-p)+(i-1)*log(p))
+}
+ll<-ll+active[i]*i*log(p)
+return(-ll)    #return the negative of the function to maximize likelihood
+} 
+
+#find parameters for p with optim
+geom<-optimize(loop.lik, c(0, 1), tol = 0.0001)
+
+p_hat<-geom$minimum
+```
+
+```{r}
+
+par(mfrow=c(1,1))
+par(mai=c(.8,.8,.2,.2))
+
+plot(t+1,rep(p_hat,11),ylab="Retention Rate",xlab="Period",main="",ylim=c(.55,1),type="b")
+text(8, .73, "predicted: geom. model", cex=1, pos=3, col="black")
+text(6, .95, "actual", cex=1, pos=3, col="black")
+
+```
+
+Equivalently for the survival function
+
+```{r out.width = '100%', fig.align = "center"}
+t=seq(0,11)
+S_geo=p_hat^(t)
+plot(t,S_geo,ylab="Survivor function",xlab="Period",main="",ylim=c(.1,1),type="b")
+text(3, .8, "predicted: geom. model", cex=1, pos=3, col="black")
+text(3, .32, "actual", cex=1, pos=3, col="black")
+```
+
+
+
+---
+
+### Comprehension Check
+
+> *Add the actual survival and retention rates to these plots and compare. Are they close?*
+
+> [DISCUSS HERE]
+
+---
+
+
+# Ruse of heterogeneity
+
+In a given cohort of customers, the retention rate usually increases over time.  A customer who has renewed (or not quit) $t+s$ periods is more likely to renew again than a customer who is only $t$ periods. This can arise due to **heterogeneity** in the population with respect to retention rates. As time marches on, the mix of types in the customer base changes.  This **sorting effect** leads to an increase in the retention rate. In the example, there are only 2 types of customers: those with 0.9 and 0.5 retention rates.  As the 0.5 customers, drop out, the average retention rate in the group increases.
+
+The ruse part is that managers tend to look at upward trending retention rates and ascribe them to customers becoming more loyal.  In actuality it is just sorting in a heterogeneous population.
+
+```{r out.width = '100%', fig.align = "center"}
+N<-10000
+prop<-1/3
+n<- data.frame(seg1=rep(NA,10), seg2=rep(NA,10))
+ret<-c(.9,.5)
+n$seg1[1]<-round(N*prop)
+n$seg2[1]<-round((1-prop)*N)
+
+for(k in 2:10){
+  n[k,]<-round(n[k-1,]*ret)
+}
+
+avgr<-(n$seg1*ret[1]+n$seg2*ret[2])/rowSums(n)
+t=seq(1,10)
+
+par(mfrow=c(1,2))
+plot(t,avgr,ylab="retention rate",xlab="period",main="",ylim=c(.4,1),type="b", xaxt="none", lwd=3)
+axis(1, seq(1,10,1))
+abline(h= ret[1], lty=2, lwd=3, col="blue")
+abline(h= ret[2], lty=2, lwd=3, col="red")
+text(2.5, .78, "avg. ret.")
+text(3, .52, "seg. 2", cex=1, pos=3, col="black")
+text(3, .92, "seg. 1", cex=1, pos=3, col="black")
+
+plot(t,n$seg2, xlab="period",main="",type="b", lwd=3, xaxt="none", col="red", ylab="Number of customers")
+axis(1, seq(1,10,1))
+lines(t,n$seg1, lwd=3, type="b", col="blue")
+text(4, 3000, "seg. 1", cex=1, pos=3, col="black")
+text(2.3, 5000, "seg. 2", cex=1, pos=3, col="black")
+```
+
+# Shifted Beta geometric
+
+To model increasing retention rates, we build a model where there is a distribution of retention rates across customers, rather than just one retention rate for everyone.
+
+Conditional on the retention rate, we assume that the probability a customer survives at least $t$ periods is geometric, as before.  We'll right it, however in terms of the churn rate, $\theta = 1-p$, rather than the retention rate:
+$$
+S(t \mid \theta) = p^t = (1-\theta)^t
+$$
+
+We then assume that there is a distribution of churn rates $\theta$ in the population.  This rate has to be between 0 and 1, so we assume it comes from a Beta distribution with parameters $a$ and $b$.  $B(a,b)$ is an integration constant and is not important. This is the beta distribution. 
+$$ f(\theta | a,b) = \frac{\theta^{a-1} (1-\theta)^{b-1}}{B(a,b)}, \qquad a>0, b>0$$
+The mean of the beta distrtion is $E[\theta|a,b]=\frac{a}{a+b}$ and the variance is $\textrm{Var}[\theta |a,b]=\frac{ab}{(a+b)^2(a+b+1)}$. Here are some of the [shapes](https://shiny.stat.ncsu.edu/bjreich/Beta_PDF/) the beta distribution can take on.
+
+We integrate over the distribution of $\theta$ in the population to get the overall population model:
+$$ 
+\begin{array}{ccl}
+S(t|a, b)&  = &  \displaystyle \int_0^1 S(t | \theta) \;  f(\theta|a,b) \; d\theta \\
+& = & \displaystyle \frac{B(a,b+t)}{B(a,b)} 
+\end{array}
+$$
+
+The retention rate implied by this, using the formula $r(t)=S(t)/S(t-1)$ is
+$$
+r(t|a,b)=\frac{B(a,b+t)}{B(a,b+t-1)}=\frac{b+t-1}{a+b+t-1}
+$$
+
+As you can see, this retention rate increases over time.  How fast it increases depends on the parameters $a$ and $b$.  If $a$ and $b$ are are small, the retention rate increases quickly, but also levels off quickly.  At medium levels, $a$ and $b$ rise at a decreasing rate. If $a$ and $b$ are large, there is hardly any increase.  It is essentially equivalent to the geometric model that assumed a constant retetion rate.
+
+```{r out.width = '100%', fig.align = "center"}
+
+t=seq(1,10)
+r_sBG=function(a,b,t){
+    (b+t-1)/(a+b+t-1)
+}
+par(mfrow=c(1,1))
+plot(t,r_sBG(.1,.3,t),ylab="retention rate",xlab="period",main="retention rate: shifted Beta geometric model for different parameter values",ylim=c(.65,1),type="b", xaxt="none")
+points(t,r_sBG(1,3,t),type="b",col="red")
+points(t,r_sBG(100,300,t),type="b",col="green")
+axis(1, seq(0,10,1))
+text(8, .7, "a=100,b=300", cex=1, pos=3, col="black")
+text(8, .85, "a=1,b=3", cex=1, pos=3, col="black")
+text(8, .94, "a=0.1,b=0.3", cex=1, pos=3, col="black")
+```
+
+But where does this increase over time come from?  In the shifted Beta geometric (sBG) model the underlying (unobserved) churn probability is constant: there are **no dynamics** at the customer level.
+^[The posterior distribution of $\theta$ is a Beta distribution with parameters $a$ and $b+t-1$.
+$$
+f(\theta \, |\, T>t)  =  \displaystyle \frac{\theta^{a-1} (1-\theta)^{b+t-1}}{B(a,b+t-1)}
+$$
+]
+What makes the aggregate retention rate increase over time is due to heterogeneity and sorting. Customers with high churn probabilities drop out early, leaving customers with lower and lower churn probabilities in the customer base.  We simulate a customer base of 1000 customers over 4 periods with this process.  Each period, the high $\theta$ customers drop out, shrinking the average $\theta$ across customers. The rate at which this happens depends on the heterogeneity. 
+
+```{r out.width = '100%', fig.align = "center"}
+set.seed(19103)
+N=1000  
+a<-2  
+b<-8
+par(mfrow=c(2,2))
+for (t in 1:4){
+  cust<-rbeta(N, a,b)  # draw N times from a beta distribution with parameters a and b
+  par(mai=c(.7,.8,.2,.2))
+  g<-hist(cust,breaks = 99,xlim = c(0,1),density = 10, main=paste("churn prob. in period", t), xlab =     expression(paste("churn probability (", theta, ")")), ylab = "number of customers",)
+    text(.8,.8*par("yaxp")[2], paste("N=",round(N)),cex=1,pos=3,col="black")
+    abline(v=mean(cust),col = "red", lwd = 2) # draw average churn
+  b<-b+1  # Bayes update churn distribution
+  N<-N*(b+t-1)/(a+b+t-1) # churners leave
+}
+```
+
+# Estimating the model
+
+You can estimate the model using maximum likelihood. The data is the number of active customers at each time.  We can difference it to see how many churn each period.  The likelihood function can be found in [Fader and Hardie (2007) Appendix B](https://faculty.wharton.upenn.edu/wp-content/uploads/2012/04/Fader_hardie_jim_07.pdf). Generically it's the same one as above, equation \ref{eq:L}: $P(T=t)$ for the users who quit at period $t$, and $S(\tau)$ for the users who are still alive at the end in period $\tau$. 
+
+We get parameters $a$ and $b$.  Then we can forecast $r(t)$ and compare the predicted retention to the actual retention rate.
+
+```{r out.width = '100%', fig.align = "center"}
+
+lost<- -diff(active_cust)
+active<- active_cust[-1]
+
+loop.lik<-function(params) {
+a<-params[1]
+b<-params[2]
+ll<-0
+for (i in 1:length(lost)) {
+    ll<-ll+lost[i]*log(beta(a+1,b+i-1)/beta(a,b))
+}
+ll<-ll+active[i]*log(beta(a,b+i)/beta(a,b))
+return(-ll)    #return the negative of the function to maximize likelihood
+} 
+
+#find parameters for a and b with optim
+sBG<-optim(par=c(1,1),loop.lik)
+
+a<-sBG$par[1]
+b<-sBG$par[2]
+
+#calculate retention using model parameters
+t<-1:length(active)
+r_pred<-r_sBG(a,b,t)
+
+# plot actual and predicted retention rate
+rep(p_hat,10)
+t
+par(mfrow=c(1,1))
+plot(t,r_pred,ylab="retention rate",xlab="period",main="actual vs. predicted retention rate",type="b", xaxt="none")
+lines(t,rep(p_hat,10),type="b",col="red")
+lines(t,ret_rate, type="b", col="blue")
+axis(1, seq(0,10,1))
+legend('right',legend=c("sBG", "geo", "actual"),col=c("black","red","blue"), pch=c(1,1))
+
+
+S_pred<-c(1,cumprod(r_pred)) # predicted survivor function
+S_geo<-p_hat^(c(0,t))
+
+t<-seq(0,10)
+par(mfrow=c(1,1))
+plot(t,S_pred,ylab="retention rate",xlab="period",main="actual vs. predicted Survivor function",type="b", xaxt="none")
+lines(t,S_geo,type="b",col="red")
+lines(t,S, type="b", col="blue")
+axis(1, seq(0,10,1))
+legend('right',legend=c("sBG", "geo", "actual"),col=c("black","red","blue"), pch=c(1,1))
+
+
+```
+
+---
+
+### Comprehension Check
+
+> *Add the actual retention rate and that based on the geometric model. How well do these models fit the data?  Add the survival function and make the same comparison.*
+
+> [DISCUSS HERE]
+
+---
+
+
+# Calculating CLV with the sBG
+
+In the geometric model, we could use the properties of a geometric series to derive CLV over an infinite time horizon. With the sBG, we have no such closed form expression. Instead, we can set the time horizon $T$ at some large number, like $200$, and sum up the first $T$ terms of the CLV expression. Because of discounting and the diminishing survival function, each additional term contributes less to CLV. So after a suitably large $T$, we can safely ignore the later terms.
+
+$$
+E[CLV] = m + \frac{m \; S(1)}{(1+d)^1} + \frac{m \; S(2)}{(1+d)^2} + \frac{m \; S(3)}{(1+d)^3} + \cdots + \frac{m \; S(T)}{(1+d)^T}
+$$
+
+Since we have parameters $a$ and $b$, we can project $r(t)$ and therefore $S(t)$.  The code below does this.  
+
+```{r}
+
+t<-seq(1,200) # time periods
+r_pred<-r_sBG(a,b,t) # predicted retention rate
+S_pred<-c(1,cumprod(r_pred)[1:199]) # predicted survivor function
+
+dis<-1/(1+d)^(t-1) # discount factor, first term is present so no discounting
+
+CLV_sBG<-sum(m*S_pred*dis) # the sum of margin x survivor x discount factor
+
+CLV_sBG
+
+geo<-geoCLV(p_hat,m,d) # use that estimate in the geometric CLV model
+geo
+```
+
+(You can check that the 200th term is adding much less than .01 to CLV, so it's fine to stop there.) The CLV we calculate using the sBG model is `r round(CLV_sBG)`, considerably higher than what we would predict with the geometric model, `r round(geo)`.^[Here we have taken the estimate of the aggregate retention rate $p$ as one minus the average churn probability from the Beta distribution, $\frac{b}{a+b}$] Assuming a constant retention rate when the actual rate increases will lead you to **underestimate** your CLV.
+
+# RLV with the sBG
+
+We know from above that the sBG model leads to customers with higher churn probabiities dropping out earlier, the sorting mechanism we described earlier. Hence a customer who has remained for so many periods will likely have a *lower* churn probability than a new customer.  In the geometric model, this makes no difference: everyone has the same $\theta$. But in the sBG model, it does make a difference due to heterogeneity.  
+
+Residual lifetime value (RLV) for already acquired customers, as opposed to new customers. The conditional probability of a customer who has survived $\tau$ periods surviving $s>\tau$ periods is:
+$$
+P(T>s | T > \tau) = \frac{S(s)}{S(\tau)} \quad \textrm{where} \; s > \tau
+$$
+
+For RLV, we calculate right before the renewal decision. What is the value of a customer who has survived $\tau$ periods, from right before the $\tau+1$ period?  If the customer stays, the firm receives the profit in present time without discounting.  This gives us the RLV formula for the sBG model:
+$$
+E[RLV] = \frac{m \; S(\tau+1)}{S(\tau)}  + \frac{m \; S(\tau+2)}{(1+d) \; S(\tau)}  + \frac{m \; S(\tau+3)}{(1+d)^2 \; S(\tau)} + \cdots + \frac{m \; S(\tau + T)}{(1+d)^{T-1} \; S(\tau)}
+$$
+
+```{r}
+
+tau<-4
+
+t<-seq(1,tau+200)
+r_pred<-r_sBG(a,b,t)
+S_pred<-cumprod(r_pred)
+
+S_shift<- S_pred[(tau+1):length(S_pred)]  # survival function from tau + 1 until T
+
+dis<-1/(1+d)^(t(1:200)-1) # discount rate
+
+RLV_sBG<-sum(m*S_shift/S_pred[tau]*dis)  # sum of margin x S(tau + t)/ S(tau) x discount
+
+RLV_sBG
+```
+
+We calculate the RLV as `r round(RLV_sBG)`, which is substantially higher CLV `r round(CLV_sBG)`, because **RLV is for already existing customers who are likely to have lower churn probabilities than new customers**.  The implication is that heterogeneity and sorting are important.  As time passes, the customer base shrinks and those who remain are increasingly likely to stay longer. 
+
+---
+
+### Comprehension Check
+
+> *As an exercise how would you calculate RLV from the perspective of right after a person has renewed?*
+
+> [DISCUSS HERE]
+
+---
+

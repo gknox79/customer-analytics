@@ -1,0 +1,640 @@
+---
+title: "Decision Trees"
+author: "GEORGE KNOX"
+date: "Computer Lab 4"
+output: 
+  html_document:
+    highlight: haddock
+    theme: journal
+    number_sections: no
+    toc: yes
+    toc_depth: 4
+    toc_float: yes
+  editor_options: 
+  chunk_output_type: console
+---
+    ```{css, echo=FALSE}
+    body .main-container {
+      max-width: 1280px !important;
+      width: 1280px !important;
+    }
+    body {
+      max-width: 1280px !important;
+    }
+    ```
+
+### Data
+
+We'll use ebeer and telco data sets from before.  We'll drop the ID column, and select customers that received a mailing only.
+
+```{r}
+rm(list=ls())
+#install.packages("janitor")
+#install.packages("tree")
+#install.packages("ranger")
+#install.packages("pROC")
+#install.packages("glmnet")
+#install.packages("tree")
+library(tree)
+library(dplyr)
+library(janitor)
+library(car)
+library(pROC)
+library(ranger)
+library(glmnet)
+
+
+options("scipen"=200, "digits"=3)
+
+# set working directory using however you want to folder where data is stored.  I'll use 
+setwd("/Users/gknox/Dropbox/Customer Analytics/R notebooks/RFM & logistic")
+
+# load ebeer, remove account number column
+ebeer<-read.csv('data/ebeer.csv')
+ebeer<-ebeer[-c(1)]
+
+# drop the ID column, select customers that received a mailing only
+ebeer_test<-subset(ebeer, mailing ==1)
+
+# create ebeer rollout data
+ebeer_rollout<-subset(ebeer, mailing ==0)
+
+# rename ebeer_test ebeer
+ebeer<-ebeer_test
+
+# load telco
+telco<-read.csv('data/telco.csv', stringsAsFactors = TRUE)
+
+# drop ID column, divide Total charges by 1000
+telco<-subset(telco, select=-ï..customerID)
+telco$TotalCharges<-telco$TotalCharges/1000
+
+# create 70% test and 30% holdout sample
+set.seed(19103)
+n<-nrow(telco)
+sample <- sample(c(TRUE, FALSE), n, replace=TRUE, prob=c(0.7, 0.3))
+telco.test <- telco[sample, ]
+telco.holdout <- telco[!sample, ]
+
+#call test telco, and full data set telco.all
+telco.all<-telco
+telco<-telco.test
+```
+
+### Forward selection
+
+The idea is to start with the simplest model, an intercept only model, and use forward selection to augment the model, variable by variable, choosing to enter variables that decrease the AIC (penalized deviance) the most.  Then we will compare the best model with 1 variable, 2 variables, 3 variables, .. using OOS deviance (R2).
+
+We use the `step` function in `R`, and we have to give it a scope, a range of models to look at.  We do this by defining the biggest model to consider.  
+
+The biggest model we consider is with all of the variables in churn plus all the two-way interactions with the variable `tenure`.  I want to include some complexity in the search space (scope) of models, but I want to keep the computation time short.  All two-way interactions with any variable takes more than 6 minutes.  So I look at a restricted set of two way interactions, only those with the variable tenure, in addition to the main effects.
+
+We again are making use of the R shorthand command that " Y ~ . + tenure:(.)" means regress Y on everything else and every interaction between `tenure` and every other variable.
+
+```{r}
+full<-glm(Churn ~ . + tenure:(.), data=telco, family = "binomial")
+
+summary(full)
+```
+
+We do forward selection starting from null (an intercept only model), adding one variable at a time, until we each either reach full or the increase in deviance is below some small threshold.  Normally `step` doesn't save the intermediate models, but we want them so that we can compare the models of varying size using OOS fit metrics like R2. We save these with the `keep = function(model, aic) list(model = model, aic = aic)`.  
+
+The algorithm uses AIC, but we could modify it by including `k=0` to consider deviance (with no penalty).
+
+You can see it going through all the models. The `<none>` in the output below shows the best model (lowest AIC) at the current step, and the other lines show the results if we add a variable to the model.  The last output before the algorithm stops shows that the `none` has the lowest AIC compared to adding any of the possible variables, so the algorithm terminates.   Remember it's a **greedy** algorithm.  The variables added first decrease the AIC the most. At each step it chooses to add a variable not yet considered that decreases the deviance the most.
+
+
+```{r}
+# intercept only
+null <- glm(Churn ~ 1, data=telco, family = "binomial")
+start_time <- Sys.time()
+fwd.model=step(null, direction = 'forward', scope=formula(full), keep = function(model, aic) list(model = model, aic = aic))
+end_time<-Sys.time()
+t=end_time-start_time
+```
+
+On my office computer this took `r t[[1]]` seconds.  Here is the table showing the variables added per step. 
+```{r}
+fwd.model$anova
+```
+
+Note not all coefficients were added.  
+
+```{r}
+length(fwd.model$coefficients)
+
+length(full$coefficients)
+```
+
+The forward selection model stopped before reaching the maximum number of coefficients. It has `r length(full$coefficients)-length(fwd.model$coefficients)` fewer coefficients in the forward selection than in the full model.  
+
+Now let's test the sequence of models with varying numbers of covariates using cross validation.  We focus on OOS R2, as in the previous lecture.  We use the formulas to calculate deviance and R2 on OOS data that we had in the last computer lab.  
+
+This is not something I would expect you to code up in an exam.  We create a matrix OOS that we use to store the OOS R2 and the rank, which is the number of parameters estimated, including the intercept (some variables have 2 or more dummy variables, so we may skip values).
+
+```{r}
+M <- dim(fwd.model$keep)[2]
+
+OOS=data.frame(R2=rep(NA,M), rank=rep(NA, M))
+
+
+## pred must be probabilities (0<pred<1) for binomial
+deviance <- function(y, pred, family=c("gaussian","binomial")){
+    family <- match.arg(family)
+    if(family=="gaussian"){
+      return( sum( (y-pred)^2 ) )
+    }else{
+      if(is.factor(y)) y <- as.numeric(y)>1
+      return( -2*sum( y*log(pred) + (1-y)*log(1-pred) ) )
+    }
+  }
+
+## get null devaince too, and return R2
+  R2 <- function(y, pred, family=c("gaussian","binomial")){
+  fam <- match.arg(family)
+  if(fam=="binomial"){
+    if(is.factor(y)){ y <- as.numeric(y)>1 }
+  }
+  dev <- deviance(y, pred, family=fam)
+  dev0 <- deviance(y, mean(y), family=fam)
+  return(1-dev/dev0)
+  }  
+
+for(k in 1:M){
+
+pred = predict(fwd.model$keep[["model",k]], newdata=telco.holdout, type = "response")
+
+OOS$R2[k]<-R2(y = telco.holdout$Churn,pred=pred, family="binomial")
+OOS$rank[k]<-fwd.model$keep[["model",k]]$rank
+  
+  
+}
+ax=c(1:max(OOS$rank))
+par(mai=c(.9,.8,.2,.2))
+plot(x=OOS$rank, y = OOS$R2, type="b", ylab=expression(paste("Out-of-Sample R"^"2")), xlab="# of model parameters estimated (rank)", xaxt="n")
+axis(1, at=ax, labels=ax)
+
+max.idx <- which.max(OOS$R2)
+
+OOS$rank[max.idx]
+abline(v=OOS$rank[max.idx], lty=3)
+
+model<-fwd.model$keep[["model",max.idx]]
+
+```
+
+From the forward selection model path, the model with `r OOS$rank[max.idx]` coefficients has the best OOS R2.  This is `r length(model$coefficients) - OOS$rank[max.idx]` less than forward selection without cross-validation and `r length(full$coefficients) - OOS$rank[max.idx]` less than the largest model considered.  
+
+We then "choose" this model, and re-estimate it using the entire dataset.  The resulting coefficients are:
+
+```{r}
+
+model_full_data<-glm(model$formula, data = telco.all, family = binomial(link = "logit"))
+
+summary(model_full_data)
+``` 
+
+---
+
+#### Comprehension Check
+
+> *Run forward selection where the largest model considered is model 1 from last lecture.  What is the best fitting model using forward selection with and without cross-validation?  How many coefficients does it have?  What do the results tell us?*
+
+> [DISCUSS HERE]
+
+---
+
+The problems with forward selection are:
+
+* Instability: small changes in the data lead to different outcomes; it's sequential so changes early on build over time.
+
+* Time: though `r t[[1]]` seconds seems short, with more data and variables, this doesn't scale well to big data.
+
+That brings us to ...
+
+
+### LASSO
+
+The penalty in LASSO is $\lambda \, \sum_{p} \, \lvert \beta_p \rvert$, where $\lvert -a \rvert = a$.  The absolute value of the coefficient is minimized when it is zero. 
+
+```{r}
+x<-seq(-20,20,1)
+abs<-abs(x)
+plot(x,abs,lwd=2, type="l", xlab = "beta", ylab = "abs(beta)")
+```
+
+$\lambda$ is the penalty weight and controls the size of the model.  If $\lambda$ is large, there is a big penalty for coefficients that are not zero.  Hence the model will be smaller, and most predictions which are functions of the coefficients will be shrunk to the mean.  If $\lambda$ is small, there is not much of a penalty; if $\lambda = 0$, there is no penalty and we get the same as the standard logistic regression.  
+
+### LASSO in R
+
+We use [glmnet](https://web.stanford.edu/~hastie/glmnet/glmnet_alpha.html) to fit LASSO in R.  We have to create our own matrix of dummy variables for factors.  So we do that using the model.matrix() command. You see the first few lines of that below.
+
+```{r}
+# all the factor variables
+xfactors<- model.matrix(Churn ~ SeniorCitizen + Partner + Dependents + PhoneService + MultipleLines + InternetService + OnlineSecurity + OnlineBackup + DeviceProtection + TechSupport + StreamingTV + StreamingMovies + Contract + PaperlessBilling + PaymentMethod, data = telco)
+
+# remove intercept
+xfactors<-xfactors[,-1]
+
+# all continuous variables
+x<-as.matrix(data.frame(telco$tenure, telco$MonthlyCharges, telco$TotalCharges, xfactors))                        
+head(x)
+```
+
+We then attach the continuous variables for that and run the model.  $alpha = 1$ means that we are running LASSO. $nlambda = 200$ means we are selecting 200 grid points for $\lambda$. Remember we start at the smallest $\lambda$ where all $\beta=0$. We then decrease $\lambda$ slowly until changes are small or reach 200.
+
+```{r}
+lasso_telco<-glmnet(x, y=as.factor(telco$Churn), alpha = 1, family = "binomial", nlambda = 100)       
+```
+
+LASSO gives us a **path** of possible models.  At the right of the graph, the penalty is at its highest, and everything is zero.  As we lower $\lambda$ we move leftward in the graph.  The lines coming out are the non-zero coefficients. As the penalty decreases, more variables have non-zero coefficients.
+
+```{r}
+par(mai=c(.9,.8,.8,.8))
+par(mfrow=c(1,1))
+plot(lasso_telco, xvar="lambda", label = TRUE, )
+```
+
+Here are the dimnames to interpret the graph.  We can see that 9 is Fiber optic cable, for example, which is one of the first variables with a non-zero coefficient.
+```{r}
+dimnames(x)[2]
+```
+
+Here's the printed sequence of non-zero coefficients, $R^2$ in terms of deviance, and $\lambda$
+
+```{r}
+print(lasso_telco)
+```
+
+You can also look at this in terms of $R^2$, or deviance explained.
+```{r}
+plot(lasso_telco, xvar = "dev", label = TRUE)
+```
+
+### Choosing $\lambda$
+
+We use K-fold cross-validation to "tune" $\lambda$, in other words, to choose the right penalty weight $\lambda$ that minimizes validation error.  You can ignore the rightmost dotted line in the graph. The leftmost dotted line is the one that minimizes OOS deviance.  (The deviance here is divided by the number of observations, so you can think of it as average deviance. It's a scaled down version of the deviance we mentioned in previous lectures.)
+
+```{r}
+lasso_cv<-cv.glmnet(x, y=telco$Churn, family = "binomial", type.measure = "deviance")
+plot(lasso_cv)
+```
+
+The coefficients associated with the $\lambda$ that minimizes error are:
+
+```{r}
+coef(lasso_cv, s = "lambda.min")
+```
+
+Here we can apply that model to a holdout data set.  We have to write our our own factors as before, but in principle it's the same idea as logistic regression.  I calculate the ROC curve and AUC for the predictions.  The fit looks pretty good.
+
+```{r}
+# use holdout telco data
+
+xfactors<- model.matrix(Churn ~ SeniorCitizen + Partner + Dependents + PhoneService + MultipleLines + InternetService + OnlineSecurity + OnlineBackup + DeviceProtection + TechSupport + StreamingTV + StreamingMovies + Contract + PaperlessBilling + PaymentMethod, data = telco.holdout)
+head(xfactors)
+# remove intercept
+xfactors<-xfactors[,-1]
+
+# all continuous variables
+
+x<-as.matrix(data.frame(telco.holdout$tenure, telco.holdout$MonthlyCharges, telco.holdout$TotalCharges, xfactors))  
+
+pred<-predict(lasso_cv, newx=x,  s = "lambda.min", type = "response")
+
+churn<-as.numeric(telco.holdout$Churn)-1
+
+head(cbind(churn, pred))
+
+par(mfrow=c(1,1))
+par(mai=c(.9,.8,.2,.2))
+plot(roc(churn, pred), print.auc=TRUE, ylim=c(0,1), levels=c("Churn", "Stay"),
+     col="black", lwd=1, main="ROC curve", xlab="Specificity: true negative rate",      ylab="Sensitivity: true positive rate", xlim=c(1,0), direction="<")
+
+```
+
+---
+
+#### Comprehension Check
+
+> *Try using LASSO on the eBeer data set.  How many coefficients are set to zero there?*
+
+> [DISCUSS HERE]
+
+---
+
+### Decision Trees
+
+We'll use ebeer for the trees. I first run a tree and graph it so we can talk about what it is.  Later on I'll explain the parameters
+
+```{r}
+# DV needs to be factor variable so it knows to use a classification tree
+tree<-tree(as.factor(respmail) ~ ., data=subset(ebeer, select = c(respmail, F, student)),mindev=.005)
+par(mfrow=c(1,1))
+plot(tree, col=8, lwd=2)
+# cex controls the size of the type, 1 is the default.  
+# label="yprob" gives the probability
+text(tree, label = "yprob", cex=.75, font=2, digits = 2, pretty=0)
+```
+
+Trees are hierarchical.  There is a parent-child structure.  Every node has a parent except the root node at the top. The children that are not parents of other nodes are called "leaf nodes".  For each leaf node there is a prediction: the average response in the node.  For a binary variable, it's just the proportion of responses (or customers churning) who are in the node. 
+
+You can see a print out of the tree by just typing in the model name $ frame
+```{r}
+tree$frame
+```
+
+
+Here's how to make predictions with trees, using the same data.  
+```{r}
+#lets make a prediction for our data. It will create two columns, one with probability for response and no response.
+pred_tree<-predict(tree,ebeer, type = "vector")
+
+head(pred_tree)
+```
+
+Let's look at the confusion matrix, just as in the logistic regresion lecture.  
+
+```{r}
+# take probability that responds
+prob_resp<-pred_tree[,2]
+
+# there is no predicted probability over 0.5
+sum(prob_resp>0.5)
+
+confusion_matrix <- (table(ebeer$respmail, prob_resp > 0.5))
+confusion_matrix <- as.data.frame.matrix(confusion_matrix)
+colnames(confusion_matrix) <- c("No")
+
+confusion_matrix
+
+```
+
+The misclassification rate is the proportion of responders, since all probabilities were under 0.5 so the model predicted no one responded. This is the same missclass.  (This is a good example where using the default threshold of 0.5 would be not so good.)
+
+```{r}
+confusion_matrix[1]/sum(confusion_matrix)
+```
+
+This is the same as what summary(tree) provides
+```{r}
+summary(tree)
+```
+
+Residual mean deviance is the total residual deviance divided by the number of observations - number of terminal nodes, $n-df$.  The deviance is 2500.
+
+### Trees in R
+
+We'll use the tree package in R.  The model structure is similar to glm.  You have a "DV ~ IV1 + IV2 + , data = " and other parameters that limit the growth of the tree:
+* mincut is the minimum size for a "child" branch.
+* mindev is the minimum (proportion) deviance improvement for proceeding with a new split. (default is 0.01) so less than 1% reduction in deviance and the algorithm stops.  Here is description of the help file for the tree package: [link](https://cran.r-project.org/web/packages/tree/tree.pdf)
+
+Here's how the tree fits the data:
+
+```{r}
+# mean two graphs side-by-side
+par(mfrow=c(1,2), oma=c(0,0,2,0))
+# same model as above
+
+tree<-tree(as.factor(respmail) ~ ., data=subset(ebeer, select = c(respmail, F, student)),mindev=.005)
+
+plot(tree, col=8, lwd=2)
+
+# cex controls the size of the type, 1 is the default.  
+# label="yprob" gives the probability
+text(tree, cex=.75, label="yprob", font=2, digits = 2, pretty = 0)
+
+
+
+par(mai=c(.8,.8,.2,.2))
+
+# create an aggregate table of response by frequency and student
+tbl<- ebeer %>% group_by(student, F) %>% summarise(mean=mean(respmail)) %>% data.frame()
+
+pred<-predict(tree,tbl, type = "vector")[,2]
+
+tbl<-tbl %>% mutate(pred = pred)
+
+# plot it
+par(mai=c(.8,.8,.2,.2))
+plot(tbl$F[1:12],tbl$mean[1:12], col = "red", xlab="Frequency", ylab="mean response",ylim=c(-.05,0.5), pch=20)
+points(tbl$F[13:24],tbl$mean[13:24], col = "blue", pch=20)
+legend(7.5, 0.5, legend=c("Student = no", "Student= yes"), col=c("red", "blue"), pch=20, cex=0.8)
+
+# create predictions from tree for every F x student combo
+newF <- seq(1,12,length=12)
+lines(tbl$F[1:12], tbl$pred[1:12], col=2, lwd=2)
+lines(tbl$F[1:12], tbl$pred[13:24], col=4, lwd=2)
+mtext("A simple tree",outer=TRUE,cex=1.5)
+
+```
+
+### Nonparametric
+
+ This method is **nonparametric** because it doesn't make an assumption about the relationships between the independent and dependent variables. For example, logistic regression is parametric, because it assumes a , e.g., a logistic function or linear function.  Furthermore, we assume that there is a linear relationship within the logistic function:
+$$
+\log \left( \frac{p}{1-p} \right) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots \beta_p x_p
+$$
+
+With decision trees it's a dummy variable for every leaf:
+$$
+p = \beta_1 1\{X \in \textrm{leaf} \, 1 \} + \beta_2 1\{X \in \textrm{leaf} \, 2 \} + \dots \beta_L 1\{X \in \textrm{leaf} \, L \}
+$$
+where $1\{ X \in \textrm{leaf l} \}$ is a dummy variable that equals 1 if the values of all indepdent variables $X$ are in leaf l; and zero otherwise.  We're always in one region, and they are non-overlapping so only one dummy variable is "turned on" when we are making predictions. In our first example, there are 5 leafs node 1 is "student = no", leaf 2 is "student = yes, F = 1", and so on. 
+
+By setting the mindev and mincut to zero, we can make the tree very complex and fit the data arbitrarily close.
+
+```{r}
+# mean two graphs side-by-side
+par(mfrow=c(1,2), oma = c(0, 0, 2, 0))
+# same model as above
+tree<-tree(as.factor(respmail) ~ ., data=subset(ebeer, select = c(respmail, F, student)),mindev=0, mincut=0)
+plot(tree, col=8, lwd=2)
+# cex controls the size of the type, 1 is the default.  
+# label="yprob" gives the probability
+text(tree, cex=.5, label="yprob", font=2, digits = 2, pretty = 0)
+
+par(mai=c(.8,.8,.2,.2))
+
+# create an aggregate table of response by frequency and student
+tbl<- ebeer %>% group_by(student, F) %>% summarise(mean=mean(respmail)) %>% data.frame()
+
+pred<-predict(tree,tbl, type = "vector")[,2]
+
+tbl<-tbl %>% mutate(pred = pred)
+
+# plot it
+par(mai=c(.8,.8,.2,.2))
+plot(tbl$F[1:12],tbl$mean[1:12], col = "red", xlab="Frequency", ylab="mean response",ylim=c(-.05,0.5), pch=20)
+points(tbl$F[13:24],tbl$mean[13:24], col = "blue", pch=20)
+legend(7.5, 0.5, legend=c("Student = no", "Student= yes"), col=c("red", "blue"), pch=20, cex=0.8)
+
+# create predictions from tree for every F x student combo
+newF <- seq(1,12,length=12)
+lines(tbl$F[1:12], tbl$pred[1:12], col=2, lwd=2)
+lines(tbl$F[1:12], tbl$pred[13:24], col=4, lwd=2)
+mtext("A simple tree",outer=TRUE,cex=1.5)
+
+```
+
+### Overfitting & K-fold cross validation
+
+Now we're going to use all the variables as potential predictors of response, not just student and F.
+
+We learned about the perils of overfitting: a too complicated model that doesn't generalize.  How do we find the right size tree?  Same as with LASSO, we use K-fold cross-validation.
+
+We fit a very big tree, and then "prune" it by cutting off branches and seeing how well that does in K-fold cross validation error.
+
+We begin by fitting a complicated tree by setting the mindev=0 and mincut to some low number or zero.
+
+```{r}
+tree_complex<-tree(as.factor(respmail) ~ . , data=ebeer, mindev=0, mincut=100)
+
+par(mfrow=c(1,1))
+par(mai=c(.8,.8,.2,.2))
+plot(tree_complex, col=10, lwd=2)
+text(tree_complex, cex=.5, label="yprob", font=2, digits = 2, pretty = 0)
+title(main="Classification Tree: complex")
+```
+
+This more complex tree has `r summary(tree_complex)$size` leaf nodes.  
+
+I specify K=10 cross fold validation.  The size is the resulting number of leaves.  The out-of-sample error measure is the deviance.  We want that as low as possible.
+
+```{r}
+cv.tree_complex<-cv.tree(tree_complex, K=10)
+cv.tree_complex$size
+round(cv.tree_complex$dev)
+par(mfrow=c(1,1))
+plot(cv.tree_complex$size, cv.tree_complex$dev, xlab="tree size (complexity)", ylab="Out-of-sample deviance (error)", pch=20)
+```
+
+Choose the tree with the minimum out-of-sample error.  Here the error remains the same after 4.  So I choose the simplest model with the lowest OOS error, a tree with 4 leaves.  
+
+```{r}
+par(mfrow=c(1,2), oma = c(0, 0, 2, 0))
+tree_cut<-prune.tree(tree_complex, best=4)
+plot(tree_cut, col=10, lwd=2)
+text(tree_cut, cex=1, label="yprob", font=2, digits = 2, pretty = 0)
+title(main="A pruned tree")
+summary(tree_cut)
+
+pred_tree_ebeer<-predict(tree_cut, data=ebeer)[,2]
+
+plot(roc(ebeer$respmail, pred_tree_ebeer), print.auc=TRUE,
+     col="black", lwd=1, main="ROC curve", xlab="Specificity: true negative rate", ylab="Sensitivity: true positive rate", xlim=c(1,0))
+
+
+```
+
+In other data sets, the "optimal" size may be different. Here it is with telco.
+
+```{r}
+# make a somewhat big tree
+par(mfrow=c(1,2),oma = c(0, 0, 2, 0))
+tree_telco<-tree(Churn ~ ., data=telco, mindev=0.005, mincut=0)
+plot(tree_telco, col=10, lwd=2)
+text(tree_telco, cex=.4, font=1, digits = 2, pretty = 0)
+
+cv.tree_telco<-cv.tree(tree_telco, K=10)
+cv.tree_telco
+
+plot(cv.tree_telco$size, cv.tree_telco$dev, xlab="tree size (complexity)", ylab="Out-of-sample deviance (error)", pch=20)
+mtext("Another example: telco",outer=TRUE,cex=1.5)
+```
+
+The deviance doesn't decrease any more once we get to 6 leaves.  So I'll set 6 as the best.
+
+```{r}
+
+par(mfrow=c(1,1))
+tree_cut<-prune.tree(tree_telco, best=6)
+plot(tree_cut, col=10, lwd=2)
+text(tree_cut, cex=1, font=1, digits = 2, pretty = 0, label="yprob")
+```
+
+With the telco data it looks like any number of leaves after 6 gives you the same OOS performance. So, going forward, the simplest model with the best OOS performance is 6.
+
+
+---
+
+#### Comprehension Check
+
+> *Just to try something new, fit a tree on the holdout sample of telco and compare the results with above.  Use mindev and mincut to control the size of the tree.*
+
+> [DISCUSS HERE]
+
+---
+
+### Random Forests
+
+The disadvantages of trees are that 
+
+* they are unstable: small changes to the data drastically change the tree.
+
+* They tend to overfit.
+
+Random forests address both these in an interesting way.  First, they use bagging (bootstrap aggregation). They bootstrap data from the sample, and fit a tree to each sample.  They then average predictions across the bootstrapped samples. This has the advantage that it stabilizes the model. In short: averaging reduces variance.
+
+Secondly they de-correlate trees by choosing a random subset of $m$ predictors where $m = \sqrt{p}$ and $p$ is the total number of predictors. Averaging uncorrelated variables reduces variance further.
+
+We use the ranger package [link](https://cran.r-project.org/web/packages/ranger/ranger.pdf) to fit random forests in R.  Rather than classify predictions into 1 or 0, we ask it to predict the probabilities. We specify the number of trees and the minimum number of observations in a leaf (25), as well as the importance 
+
+```{r}
+ebeer_rf<- ranger(respmail ~ ., data=ebeer, write.forest=TRUE, num.trees = 1000, min.node.size = 25, importance = "impurity", probability=TRUE, seed = 19103)
+```
+
+Variable importance:
+```{r}
+par(mfrow=c(1,1))
+par(mai=c(.9,.8,.2,.2))
+sort(ebeer_rf$variable.importance, decreasing = TRUE)
+barplot(sort(ebeer_rf$variable.importance, decreasing = TRUE), ylab = "variable importance")
+```
+
+Predictions on new data using out-of-the-bag (OOB) samples.  Remember, each tree is only fit to a bootstrapped sample of observations. It turns out that about one-third of the data is *not in the sample* at each step. These are the out of bag observations, and they can be used as a validation sample. 
+
+```{r}
+head(ebeer_rf$predictions)
+pred<-ebeer_rf$predictions[,2]
+```
+
+Confusion matrix
+```{r}
+confusion_matrix <- (table(ebeer$respmail, pred > 0.5))
+confusion_matrix <- as.data.frame.matrix(confusion_matrix)
+colnames(confusion_matrix) <- c("No", "Yes")
+confusion_matrix$Percentage_Correct <- confusion_matrix[1,]$No/(confusion_matrix[1,]$No+confusion_matrix[1,]$Yes)*100
+confusion_matrix[2,]$Percentage_Correct <- confusion_matrix[2,]$Yes/(confusion_matrix[2,]$No+confusion_matrix[2,]$Yes)*100
+print(confusion_matrix)
+cat('Overall Percentage:', (confusion_matrix[1,1]+confusion_matrix[2,2])/nrow(ebeer)*100)
+```
+
+ROC
+```{r}
+par(mfrow=c(1,1))
+par(mai=c(.9,.8,.2,.2))
+plot(roc(as.numeric(ebeer$respmail)-1, pred), print.auc=TRUE,
+     col="black", lwd=1, main="ROC curve", xlab="Specificity: true negative rate", ylab="Sensitivity: true positive rate", xlim=c(1,0))
+lines(roc(as.numeric(ebeer$respmail)-1, pred_tree_ebeer), print.auc=TRUE,  col="red", lwd=1)
+legend('bottomright',legend=c("random forest", "decision tree"),col=c("black","red"), lwd=1)
+ 
+
+```
+
+Predictions on rollout data.
+```{r}
+ebeer_rollout$p_rf <- predict(ebeer_rf, ebeer_rollout)$predictions[,2]
+head(ebeer_rollout)
+```
+
+
+---
+
+#### Comprehension Check
+
+> *Try a random forest on the telco dataset.  Compare the performance of the random forest with the simple decision tree using ROC curves on OOS data. Which model is better?*
+
+> [DISCUSS HERE]
+
+---
