@@ -1,6 +1,6 @@
 # Customer Analytics
 
-This repo hosts the course content of Customer Analytics, taught at Tilburg University by George Knox
+This repo hosts the course content of Customer Analytics, taught at Tilburg University by George Knox.  Corrections and comments are always welcome.  
 
 ## Course Description
 
@@ -10,27 +10,21 @@ In this course, students will learn the modeling-based approach to marketing wit
 
 We will cover three broad areas: (1) test and roll (1 session), (2) next-period response models (4 sessions), and (3) customer lifetime value (CLV) models (2 sessions). Testing is important to determine what marketing works best before rolling out to larger groups; we talk about the bootstrap to quantify uncertainty. Response models are good for predicting what happens next period, e.g., immediately following some action by the firm (e.g., recommending a new product). CLV is about forecasting behavior over a longer horizon, the customer lifecycle.
 
-We will examine a few types of models to analyze customer behavior, including:
+We will examine a few different contexts using models to analyze customer behavior, including:
 
-* Test and Roll 
-* Next-period response models
+* **Test and Roll:** When should a test be conducted, how large should the test be?  How uncertain are we about an estimate response?
+* **Next-period response models:** Which customers should be selected for e.g., acquisition, retention, cross-selling, up-selling?
   - RFM analysis
   - Logistic regression
   - LASSO
   - Decision trees
   - Random Forests
-* Collaborative filtering, next-product-to-buy models
-* Long term prediction models for Customer Lifetime value
+* **Collaborative filtering, next-product-to-buy models:** Which products should be recommended to which customers?
+* **Long term prediction models for Customer Lifetime value:** How different are customers? How does their behavior change over time? What's the value of the customer over his or her lifecycle to the firm?  How does that change as a function of recency and frequency?  
   - Contractual settings
   - Non-contractual settings
  
-We will use these approaches to answer several substantive questions such as:
 
-* **Test and Roll**: When should a test be conducted, how large should the test be?  How uncertain are we about an estimate response?
-* Which customers should be selected for e.g., acquisition, retention, cross-selling, up-selling?
-* How different are customers? How does their behavior change over time?
-* **Customer lifetime value (CLV)**: What's the value of the customer over his or her lifecycle to the firm?  How does that change as a function of recency and frequency? 
- 
 ## Course Purpose:
 
 Managers (as well as consultants, analysts, and investors) are increasingly tasked with providing valid answers to such questions. Yet many of them lack the tools to address these problems. This course is designed to give you the powerful, cutting-edge tools to address these issues.
