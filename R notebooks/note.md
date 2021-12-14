@@ -13,7 +13,7 @@ In this course, you will learn the modeling-based approach to marketing with the
 
  
 
-If you have not downloaded R yet, you can check this link on how to download R and Rstudio on your computer: [How do download R and Rstudio\(https://www.datacamp.com/community/tutorials/installing-R-windows-mac-ubuntu?utm_source=adwords_ppc&utm_campaignid=898687156&utm_adgroupid=48947256715&utm_device=c&utm_keyword=&utm_matchtype=b&utm_network=g&utm_adpostion=&utm_creative=229765585183&utm_targetid=dsa-429603003980&utm_loc_interest_ms=&utm_loc_physical_ms=1010526&gclid=CjwKCAjww5r8BRB6EiwArcckC6pSZemsdEyLRxUunFGSHZKPJ83EfWqiU2CMsGi0lGOwAWRyRQgmmhoCMV8QAvD_BwE). 
+If you have not downloaded R yet, you can check this link on how to download R and Rstudio on your computer: [How do download R and Rstudio](https://www.datacamp.com/community/tutorials/installing-R-windows-mac-ubuntu?utm_source=adwords_ppc&utm_campaignid=898687156&utm_adgroupid=48947256715&utm_device=c&utm_keyword=&utm_matchtype=b&utm_network=g&utm_adpostion=&utm_creative=229765585183&utm_targetid=dsa-429603003980&utm_loc_interest_ms=&utm_loc_physical_ms=1010526&gclid=CjwKCAjww5r8BRB6EiwArcckC6pSZemsdEyLRxUunFGSHZKPJ83EfWqiU2CMsGi0lGOwAWRyRQgmmhoCMV8QAvD_BwE). 
 
  
 
