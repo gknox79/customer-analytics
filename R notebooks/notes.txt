@@ -1,3 +1,0 @@
-RFM & logistic L1-L4
-Rec Sys L5
-CLV L6-L7
