@@ -36,3 +36,11 @@ We will use these approaches to answer several substantive questions such as:
 Managers (as well as consultants, analysts, and investors) are increasingly tasked with providing valid answers to such questions. Yet many of them lack the tools to address these problems. This course is designed to give you the powerful, cutting-edge tools to address these issues.
 
 The course is organized around several case studies that illustrate an important concept with data. All these examples will be “hands-on” and have an emphasis on real-time problem-solving. You will develop the necessary skills to estimate these models and evaluate their results in R. 
+
+## Learning Goals
+
+* For a given model, students should be able to interpret results and explain intuitively what it assumes about customer behavior.
+* Students should understand how to validate models and avoid overfitting.
+* Students should be able to fit these models to real-world data; they should also be able to evaluate predictions across models and derive the managerial implications.
+* Students should be able to calculate customer lifetime value (CLV).
+Understand the role of unobserved heterogeneity in measuring customer loyalty.
