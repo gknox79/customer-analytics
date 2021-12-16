@@ -39,3 +39,67 @@ The course is organized around several case studies that illustrate an important
 * Students should be able to fit these models to real-world data; they should also be able to evaluate predictions across models and derive the managerial implications.
 * Students should be able to calculate customer lifetime value (CLV).
 Understand the role of unobserved heterogeneity in measuring customer loyalty.
+
+## Syllabus
+
+### Week 1: Test & Roll, Uncertainty
+
+* Test & Roll
+* Option Value of Testing
+* Classical Uncertainty
+* Bayesian Uncertainty
+* Comparing Posteriors
+* Size of Test Group
+
+Database Marketing Blattberg Kim and Neslin (2008) henceforth BKN Sections 9.1-2
+Elea McDonnell Feit, Ron Berman (2019) Test & Roll: Profit-Maximizing A/B Tests. Marketing Science 38(6):1038-1058. https://
+doi.org/10.1287/mksc.2019.1194
+
+### Week 2: Next period models: RFM
+
+* RFM Analysis
+* Empirical Bayes
+* Clumpiness
+
+### Week 3: Logistic Regression, Overfitting and Optimal Targeting
+
+* Customer Churn
+* Logistic regression
+* Overfitting
+* Lifts and Optimal Targeting
+
+### Week 4: Other next period models
+
+* Subset Selection
+* LASSO
+* Decision Trees
+* Random Forests
+
+### Week 5: Customization
+
+* Next product to buy models
+* Recommender Systems
+
+### Week 6: Customer base analysis: Contractual Settings
+
+* CLV definition
+* Geometric model
+* RLV and CLV
+* Heterogeneity and retention rates
+* shifted Beta-geometric model
+
+
+
+### Week 7: Customer base analysis: Non-contractual Settings
+
+* Noncontractual vs. Contractual
+* Beta-geometric Beta-Binomial model
+* CLV & RLV
+* Extensions: Pareto/NBD, BG/NBD
+
+Fader Hardie Shang (2010)
+Fader Hardie Lee (2005)
+
+
+### Week 8: Wrap up
+
