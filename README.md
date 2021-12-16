@@ -53,8 +53,8 @@ Understand the role of unobserved heterogeneity in measuring customer loyalty.
 
 [Database Marketing Blattberg Kim and Neslin (2008) henceforth BKN Sections 9.1-2](http://link.springer.com/book/10.1007%2F978-0-387-72579-6)
 
-[Elea McDonnell Feit, Ron Berman (2019) Test & Roll: Profit-Maximizing A/B Tests. Marketing Science 38(6):1038-1058.](https://
-doi.org/10.1287/mksc.2019.1194)
+[Elea McDonnell Feit, Ron Berman (2019) Test & Roll: Profit-Maximizing A/B Tests. Marketing Science 38(6):1038-1058](https://doi.org/10.1287/mksc.2019.1194)
+
 
 ### Week 2: Next period models: RFM
 
