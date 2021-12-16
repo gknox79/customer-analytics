@@ -61,12 +61,17 @@ doi.org/10.1287/mksc.2019.1194
 * Empirical Bayes
 * Clumpiness
 
+[Quick Profits with RFM Analysis](http://www.dbmarketing.com/articles/Art149.htm)
+[BKN Chapter 12: RFM Analysis](http://link.springer.com/book/10.1007%2F978-0-387-72579-6)
+
 ### Week 3: Logistic Regression, Overfitting and Optimal Targeting
 
 * Customer Churn
 * Logistic regression
 * Overfitting
 * Lifts and Optimal Targeting
+
+
 
 ### Week 4: Other next period models
 
