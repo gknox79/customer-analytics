@@ -51,9 +51,9 @@ Understand the role of unobserved heterogeneity in measuring customer loyalty.
 * Comparing Posteriors
 * Size of Test Group
 
-Database Marketing Blattberg Kim and Neslin (2008) henceforth BKN Sections 9.1-2
-Elea McDonnell Feit, Ron Berman (2019) Test & Roll: Profit-Maximizing A/B Tests. Marketing Science 38(6):1038-1058. https://
-doi.org/10.1287/mksc.2019.1194
+[Database Marketing Blattberg Kim and Neslin (2008) henceforth BKN Sections 9.1-2](http://link.springer.com/book/10.1007%2F978-0-387-72579-6)
+[Elea McDonnell Feit, Ron Berman (2019) Test & Roll: Profit-Maximizing A/B Tests. Marketing Science 38(6):1038-1058.](https://
+doi.org/10.1287/mksc.2019.1194)
 
 ### Week 2: Next period models: RFM
 
@@ -71,7 +71,8 @@ doi.org/10.1287/mksc.2019.1194
 * Overfitting
 * Lifts and Optimal Targeting
 
-
+[BKN: Chapter 15 (377-85), Chapter 10, and 11.4.2](http://link.springer.com/book/10.1007%2F978-0-387-72579-6)
+Ascarza, Eva. "Retention futility: Targeting high-risk customers might be ineffective." Journal of Marketing Research 55.1 (2018): 80-98.
 
 ### Week 4: Other next period models
 
@@ -80,10 +81,20 @@ doi.org/10.1287/mksc.2019.1194
 * Decision Trees
 * Random Forests
 
+
+[BKN Chapter 17, 11.4](https://link.springer.com/book/10.1007%2F978-0-387-72579-6)
+[James, Gareth, et al. An introduction to statistical learning. Vol. 112. New York: springer, 2013. Sections: 6.1-2, 8.1-2](https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf)
+[Varian, Hal R. "Big data: New tricks for econometrics." Journal of Economic Perspectives 28.2 (2014): 3-28.](https://pubs.aeaweb.org/doi/pdf/10.1257/jep.28.2.3)
+
 ### Week 5: Customization
 
 * Next product to buy models
 * Recommender Systems
+
+[Recommendation Systems](http://infolab.stanford.edu/~ullman/mmds/ch9.pdf)
+[BKN Chapter 21: Cross-Selling and Up-Selling](https://link.springer.com/chapter/10.1007/978-0-387-72579-6_21)
+[Knott, Aaron, Andrew Hayes, and Scott A. Neslin. "Next‐product‐to‐buy models for cross‐selling applications." Journal of interactive Marketing 16.3 (2002): 59-75.](https://doi.org/10.1002/dir.10038)
+[Winning the Netflix Prize](https://youtu.be/ImpV70uLxyw)
 
 ### Week 6: Customer base analysis: Contractual Settings
 
@@ -93,6 +104,9 @@ doi.org/10.1287/mksc.2019.1194
 * Heterogeneity and retention rates
 * shifted Beta-geometric model
 
+[Fader, Peter S., and Bruce GS Hardie. "How to project customer retention." Journal of Interactive Marketing 21.1 (2007): 76-90.](https://faculty.wharton.upenn.edu/wp-content/uploads/2012/04/Fader_hardie_jim_07.pdf)
+[Fader, Peter S., and Bruce GS Hardie. "Customer-base valuation in a contractual setting: The perils of ignoring heterogeneity." Marketing Science 29.1 (2010): 85-93.](https://doi.org/10.1287/mksc.1080.0482)
+[A Spreadsheet-Literate Non-Statistician’s Guide to the Beta-Geometric Model](http://www.brucehardie.com/notes/032/)
 
 
 ### Week 7: Customer base analysis: Non-contractual Settings
@@ -102,8 +116,10 @@ doi.org/10.1287/mksc.2019.1194
 * CLV & RLV
 * Extensions: Pareto/NBD, BG/NBD
 
-Fader Hardie Shang (2010)
-Fader Hardie Lee (2005)
+
+[Fader, Peter S., Bruce GS Hardie, and Jen Shang. "Customer-base analysis in a discrete-time noncontractual setting." Marketing Science 29.6 (2010): 1086-1108.](https://doi.org/10.1287/mksc.1100.0580)
+[Fader, Peter S., Bruce GS Hardie, and Ka Lok Lee. "“Counting your customers” the easy way: An alternative to the Pareto/NBD model." Marketing science 24.2 (2005): 275-284.](http://brucehardie.com/papers/018/fader_et_al_mksc_05.pdf)
+
 
 
 ### Week 8: Wrap up
