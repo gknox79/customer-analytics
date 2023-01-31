@@ -10,6 +10,8 @@ output:
     toc: yes
     toc_depth: 2
     toc_float: yes
+editor_options: 
+  chunk_output_type: console
 ---
 
 # Introduction: Exploratory Data Analysis and prep
@@ -52,12 +54,13 @@ packages <- c("devtools"
   ,"foreign"
   ,"data.table"
   ,"VGAM"
-  ,"dplyr")
+  ,"dplyr"
+  ,"doParallel")
 
 
-not_installed <- !packages %in% installed.packages()
-if (any(not_installed)) install.packages(packages[not_installed])
-lapply(packages,require,character.only=TRUE)
+#not_installed <- !packages %in% installed.packages()
+#if (any(not_installed)) install.packages(packages[not_installed])
+#lapply(packages,require,character.only=TRUE)
 
 library(dplyr)
 ```
@@ -95,8 +98,8 @@ Let's take a look at the dataset: how many observations, how many variables?
 
 ```{r}
 dim(ebeer)
-install.packages("kableExtra")
-library(kableExtra)
+#install.packages("kableExtra")
+#library(kableExtra)
 ```
 
 What do the first observations look like?
@@ -622,3 +625,40 @@ plot(x=sigmas, y=test_sizes, type="l", col="orange",
      xlab="prior sd of treatment mean profit (sigma)", ylab="profit-maximizing sample size")
 ```
 
+
+
+#### appendix
+
+```{r}
+
+# nonparametric bootstrap
+n<-c(10, 100, 1000) # sample 
+B <- 500 # number of bootstrap samples
+mub <- matrix(0, nrow = B, ncol = length(n)) # where we are going to collect the mean
+set.seed(19312) # setting seed right before sampling
+
+
+
+for (nn in 1:length(n)){ 
+for (b in 1:B){
+  samp_b = sample.int(nrow(ebeer), size = n[nn], replace=FALSE) # sample with replacement
+  mub[b,nn] <- mean(ebeer$M[samp_b]) # store the mean of the sample 
+}
+}
+head(mub)  # the mean of the first few bootstrap samples
+
+mmean<-apply(mub, 2, mean)
+sd<-apply(mub, 2, sd)  # standard deviation (compare with standard error xbse calculated above)
+
+par(mfrow=c(3,1))
+par(mai=c(.8,.8,.2,.2))
+for (nn in 1:length(n)){ 
+
+hist(mub[,nn], main=paste("Histogram of the mean amount spent by customers sample size = ", n[nn], sep=" "), xlab="average amount spent", xlim=c(50,130), col=8, border="grey90", freq=TRUE)
+abline(v = mu)
+
+
+}
+
+
+```

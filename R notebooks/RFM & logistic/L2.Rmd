@@ -10,6 +10,7 @@ output:
     toc: yes
     toc_depth: 3
     toc_float: yes
+    fontsize: 12pt
 ---
 
 ### Introduction
@@ -302,7 +303,14 @@ The $\hat{\beta}_z$ will be the mean response rate of each segment.
 ```{r}
 RFM_model <- lm(respmail ~ RFMgroup, data = ebeer)
 
-print(summary(RFM_model)) 
+# print(summary(RFM_model)) 
+
+# for presentation
+summ <- summary(RFM_model)
+summ$coefficients <- round(summ$coefficients, 4)
+summ$residuals <- round(summ$residuals, 4)
+summ
+
 ```
 
 ---

@@ -183,7 +183,7 @@ model<-fwd.model$keep[["model",max.idx]]
 
 ```
 
-From the forward selection model path, the model with `r OOS$rank[max.idx]` coefficients has the best OOS R2.  This is `r length(model$coefficients) - OOS$rank[max.idx]` less than forward selection without cross-validation and `r length(full$coefficients) - OOS$rank[max.idx]` less than the largest model considered.  
+From the forward selection model path, the model with `r OOS$rank[max.idx]` coefficients has the best OOS R2.  This is `r length(fwd.model$coefficients) - OOS$rank[max.idx]` less than forward selection without cross-validation and `r length(full$coefficients) - OOS$rank[max.idx]` less than the largest model considered.  
 
 We then "choose" this model, and re-estimate it using the entire dataset.  The resulting coefficients are:
 
