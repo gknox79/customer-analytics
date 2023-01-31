@@ -8,49 +8,27 @@ output:
     theme: journal
     number_sections: no
     toc: yes
-    toc_depth: 2
+    toc_depth: 4
     toc_float: yes
 ---
-```{css, echo=FALSE}
-    body .main-container {
-      max-width: 1800px !important;
-      width: 1800px !important;
-    }
-    body {
-      max-width: 1800px !important;
-    }
-    ```
-# Introduction
-
-Customer lifetime value is the present value of the future profits associated with a particular customer.  In this section, we'll focus on non-contractual settings, in particular latent attrition or "Buy Til You Die" models.  All these models share a *common* feature: 
-
-\center
-**The customer's relationship with a firm has two phases: he is alive for some period of time, the becomes permanently inactive.** 
-\center
-
-The classic paper that launched this literature^[Schmittlein, D., Morrison, D., & Colombo, R. (1987). Counting Your Customers: Who Are They and What Will They Do Next? Management Science, 33(1), 1-24. Retrieved November 28, 2020, from http://www.jstor.org/stable/2631608] created the Pareto/NBD model.  A better place to start for us however is the Beta-geometric/Beta-binomial (BG/BB) model, because it is similar to the sBG model we covered in the contractual setting.
-
-There is an excellent package in R maintained for a suite of these models, "BTYD", however it was recently removed from CRAN.  As a result we have to download an archived version of this package and some other ones. This may give you a few error messages that you need to install Rtools, but they can be ignored.
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
-  eval = TRUE,
-  echo = TRUE,
   warning = FALSE,
-  message = FALSE
-)
-# dijfsadjfialsdfjsa;l
-# uncomment when running first time
-
-#install.packages("devtools")
-#install.packages('hypergeo')
-#install.packages('https://cran.r-project.org/src/contrib/Archive/BTYD/BTYD_2.4.tar.gz', repos = NULL, type = "source")
-
-rm(list=ls())
-options("scipen"=100, "digits"=3, width = 150)
-library("BTYD")
+  out.width = "100%",
+  fig.align = "center")
 
 ```
+
+# Introduction: Latent Attrition
+
+In this section, we'll focus on non-contractual settings, where the time at which a customer dies, or becomes permanently inactive, is not observed by the firm. We will focus on one class of models called latent attrition or "Buy Til You Die" models.  All these models share a common feature: 
+
+> The customer's relationship with a firm has **two** phases: a customer is active for some period of time, then becomes permanently inactive.
+
+These models are a subset of Hidden Markov models where the two states-alive and dead-are not directly observed, hence hidden. The classic paper that launched this literature created the Pareto/NBD model, which is in continuous time.^[Schmittlein, D., Morrison, D., & Colombo, R. (1987). Counting Your Customers: Who Are They and What Will They Do Next? Management Science, 33(1), 1-24.]  
+
+A better place to start for us however is the Beta-geometric/Beta-binomial (BG/BB) model, because it is in *discrete time* and has building blocks similar to the sBG model we covered in the last session.
 
 # The BG/BB model
 
@@ -69,8 +47,17 @@ This implies that a customer alive for $s$ periods makes a number of purchases a
 3. A “living” customer dies at the beginning of a transaction opportunity with probability \theta. (This
 implies that the (unobserved) lifetime of a customer is characterized by a geometric distribution.^[It's not shifted because 0 is a valid outcome.])
 $$
-P( \textrm{alive at} \; t \mid \theta)= P(T>t \mid \theta) = S(t \mid \theta ) = (1-\theta)^t \quad 0 \leq \theta \leq 1
+P( \textrm{alive at} \; t \mid \theta)= P(T>t \mid \theta) = S(t \mid \theta ) = (1-\theta)^t \qquad 0 \leq \theta \leq 1
 $$
+As an aside, our one-step Markov transition matrix from alive to dead looks like:
+$$
+T = \left(\begin{array}{cc} 
+1-\theta & \theta \\ 
+0 & 1
+\end{array}\right)
+$$
+Given that the customer was alive last period (top row), a customer stays alive each period with probability $1-\theta$, and dies with probability $\theta$.  If the customer was dead last period (bottom row), he or she remains dead with probability 1. 
+
 
 4. Heterogeneity in $p$ follows a beta distribution with parameters $\alpha$ and $\beta$.
 $$ f(p \; | \; \alpha,\beta) = \frac{p^{\alpha-1} (1-p)^{\beta-1}}{B(\alpha,\beta)}, \qquad \alpha>0, \beta>0$$
@@ -81,19 +68,68 @@ $$ f(\theta \; | \; \gamma,\delta) = \frac{\theta^{\gamma-1} (1-\theta)^{\delta-
 
 6. The purchase probability $p$ and the dropout probability $\theta$ vary **independently** across customers.
 
+## Likelihood BG/BB 
+
+The likelihood is a function of three summary statistics:
+
+1.    $n$ transaction opportunities 
+
+2.    $t_x$, recency, the period of the last donation relative to the first donation. (This is opposite to how we usually think of recency, more below.)
+
+3.    $x$, frequency, the total number of donations
+
+For each $\{n, t_x, x\}$, we sum over the possible hidden state realizations, alive and dead:
+
+$$
+L(\alpha, \beta, \gamma, \delta \mid n, t_x, x) = \underbrace{\frac{B(\alpha+x, \beta + n-x)}{B(\alpha, \beta)} \frac{B(\gamma, \delta + n)}{B(\gamma, \delta)}}_\text{alive all periods} +  \underbrace{ \sum_{i=0}^{n-t_x-1} \; \frac{B(\alpha+x, \beta + t_x -x + i )}{B(\alpha, \beta)} \frac{B(\gamma+1, \delta + t_x+i)}{B(\gamma, \delta)}}_\text{all paths with death before end}
+$$
+If $x=0, t_x=0$. This recency is measured as the time of last purchase from the beginning of the observation period; in the past we've measured recency as the time from last purchase until the end of the observation period ($n-t_x$).
+
+If there was a donation in the last period, $t_x=n$, then $n-t_x-1=-1$, meaning the upper limit of the sum in the second term is lower than the lower limit, and by convention, the term drops out. This means that he/she must be alive at the end of the last period, since only alive customers can make donations.  In that case, 
+
+$$
+L(\alpha, \beta, \gamma, \delta \mid n, t_x=n, x) = \frac{B(\alpha+x, \beta + n-x)}{B(\alpha, \beta)} \frac{B(\gamma, \delta + n)}{B(\gamma, \delta)}
+$$
 
 ## Loading the data
 
-Here is the donation data we mentioned in the lecture.  All donors in this cohort made their first donation in 1995. What we have is their **repeat** donation history 1996-2006.  We fit the model to only the **repeat** data, not the **first donation**.
+First we have to load the R package, `BTYD` and some auxiliary packages as well.  You can download the package from here:
 
-```{r out.width = '90%', fig.align = "center"}
+```{r eval = FALSE}
+install.packages('https://cran.r-project.org/src/contrib/Archive/BTYD/BTYD_2.4.tar.gz', repos = NULL, type = "source")
+install.packages("devtools")
+install.packages('hypergeo')
+```
 
+You can load the package: 
+
+```{r message=FALSE}
+library("BTYD")
+options("scipen"=100, "digits"=3, width = 300)
+
+```
+
+Load the donation data, and get the the calibration period recency-frequency matrix:
+
+```{r}
 data(donationsSummary)
 
-# add first purchase to beginning
+rf.matrix <- donationsSummary$rf.matrix
+rf.matrix
+```
 
-#donations<-c(11104,donationsSummary$annual.trans)
+If $f_j$ is the number of customers in each of the $J$ recency-frequency cells in the rf.matrix as above ($f_1 =$ `r rf.matrix[1,4]`, $f_2 =$ `r rf.matrix[2,4]`, ...) the sample log likelihood is then:
 
+$$
+LL(\alpha, \beta, \gamma, \delta) = \sum_{j=1}^J f_j \log[L(\alpha, \beta, \gamma, \delta \mid n, t_x, x)]
+$$
+
+We maximize this to find the parameters $\{\alpha, \beta, \gamma, \delta\}$.
+
+
+Here is the donation data we mentioned in the lecture.  All donors in this **cohort** made their first donation in 1995. What we have is their **repeat** donation history 1996-2006.  We fit the model to only the **repeat** data, not the **first donation**.
+
+```{r}
 par(mfrow=c(1,1))
 par(mai=c(.8,.8,.2,.2))
 plot(seq(1996,2006,1),donationsSummary$annual.trans, type="b", ylab="Total number of repeat transactions", xlab="Year", main="", xaxt='n')
@@ -105,24 +141,18 @@ text(x = 1999,y = 5000,"Calibration", cex=1, pos=3, col="black", font = 2)
 text(x = 2004,y = 5000,"Validation", cex=1, pos=3, col="black", font = 2)
 ```
 
-Our calibration data is 1996-2001, so it lasts 6 periods ($n=6$). 
-We validate the model using years 2002-2006. 
-All we need to esimtate the model are the sufficient statistics:
+Our calibration data is 1996-2001, so it lasts 6 periods ($n=6$). We validate the model using years 2002-2006. 
+All we need to estimate the model are the sufficient statistics:
 
 * **"reverse" recency ($t_x$)**: the last period a donation occurred. Since are data comprise 6 periods, the most recent donation is 6, or $t_x=6$.  If no repeat donations were observed, $t_x = 0$.  (Usually marketers think of recency as the number of periods **since** last purchase, $n-t_x$. Here recency is time after first purchase.)  Note further that if $x=0, \; t_x=0$.
 * **frequency ($x$)**: the number of repeat donations observed in the six subsequent periods. 
 * **number of purchase opportunities ($n$)**: this is usually the same for everyone.  In this case $n=6$.
 
-There are `r nrow(donationsSummary$rf.matrix)`  recency-frequency combinations. 
-The number of customers in each cell is below.
+There are `r nrow(donationsSummary$rf.matrix)`  recency-frequency combinations. The number of customers in each cell is below.
 
-```{r}
-## Get the calibration period recency-frequency matrix from the donation data:
-rf.matrix <- donationsSummary$rf.matrix
-rf.matrix
-```
 
 You can see, for example, that there are `r rf.matrix[1,4]` customers who are "6 for 6".  And there are `r rf.matrix[22,4]` customers who made no repeat donations, "0 for 6".  The model is going to have to account for these differences.
+
 
 
 ---
@@ -137,21 +167,6 @@ You can see, for example, that there are `r rf.matrix[1,4]` customers who are "6
 
 ## Estimate parameters for the BG/BB model from the recency-frequency matrix:
 
-The likelihood is a function of $n$ transaction opportunities; recency, the period of the last donation $t_x$, and $x$, frequency, the number of donations:
-$$
-L(\alpha, \beta, \gamma, \delta \mid n, t_x, x) = \underbrace{\frac{B(\alpha+x, \beta + n-x)}{B(\alpha, \beta)} \frac{B(\gamma, \delta + n)}{B(\gamma, \delta)}}_\text{alive all periods} +  \underbrace{ \sum_{i=0}^{n-t_x-1} \; \frac{B(\alpha+x, \beta + t_x -x + i )}{B(\alpha, \beta)} \frac{B(\gamma+1, \delta + t_x+i)}{B(\gamma, \delta)}}_\text{all paths with death before end}
-$$
-
-If $t_x=n$, the donor is "6 for 6". This means that he/she must be alive at the end of the last period, since only alive customers can make donations.  In that case, 
-$$
-L(\alpha, \beta, \gamma, \delta \mid n, t_x=n, x) = \frac{B(\alpha+x, \beta + n-x)}{B(\alpha, \beta)} \frac{B(\gamma, \delta + n)}{B(\gamma, \delta)}
-$$
-
-If $f_j$ is the number of customers in each of the $J$ recency-frequency cells in the rf.matrix as above ($f_1 =$ `r rf.matrix[1,4]`, $f_2 =$ `r rf.matrix[2,4]`, ...) the sample log likelihood is then:
-$$
-LL(\alpha, \beta, \gamma, \delta) = \sum_{j=1}^J f_j \log[L(\alpha, \beta, \gamma, \delta \mid n, t_x, x)]
-$$
-
 We give initial guesses to the four parameters in par.start.  bgbb.EstimateParameters estimates the parameters.
 
 ```{r}
@@ -159,31 +174,23 @@ We give initial guesses to the four parameters in par.start.  bgbb.EstimateParam
 par.start <- c(1, .5, 1, .5)
 
 params <- bgbb.EstimateParameters(rf.matrix, par.start)
-params
-
-## Check log-likelihood of the params:
-LL<-bgbb.rf.matrix.LL(params, rf.matrix)
 
 ## store parameters next to names
 names(params) <- c("alpha", "beta", "gamma", "delta");
 
 round(params,2)
+
+## Check log-likelihood of the params:
+LL<-bgbb.rf.matrix.LL(params, rf.matrix)
+
 ```
 
-The maximized log likelihood is `r round(LL)`.
+The maximized log likelihood is `r LL`.
+
+> It's always good to check the stability of the parameter estimates. Try different starting values and see whether you get the same parameter estimates.
 
 
----
-
-#### Comprehension Check
-
-> *It's always good to check the stability of the parameter estimates. Try different starting values and see whether you get the same parameter estimates.*
-
-> [DISCUSS HERE]
-
----
-
-## Parameter Estimates and Distributions
+### Parameter Estimates and Distributions
 
 We plot the beta distributions implied by the maximum likelihood estimates.
 
@@ -202,17 +209,20 @@ Remember, if $X \sim \textrm{Beta}(a,b), \; E[X] = \frac{a}{a+b}$.  So the mean 
 
 #### Comprehension Check
 
-> *What do the distributions say about the buying and dropout rates? It may be useful to consult slide 29 in Lecture 6*
+> *What do the distributions say about the buying and dropout rates?*
 
 > [DISCUSS HERE]
 
 ---
 
 
-## Model fit: aggregate
+## Model fit
 
-we can see how well the model does in predicting the aggregate number of donations over years.  This uses equation 8 in the FHS (2010).
-```{r out.width = '90%', fig.align = "center"}
+### Aggregate
+
+We can see how well the model does in predicting the aggregate number of donations over years.  This uses equation 8 in the FHS (2010).
+
+```{r}
 inc.annual.trans <- donationsSummary$annual.trans   # incremental annual transactions
 
 par(mfrow=c(1,1))
@@ -225,7 +235,7 @@ pred<-bgbb.PlotTrackingInc(params, rf.matrix, inc.annual.trans, xticklab=x.tickm
 text(x = 4,y = 5000,"Calibration", cex=1, pos=3, col="black", font = 2)
 text(x = 7,y = 5000,"Validation", cex=1, pos=3, col="black", font = 2)
 
-# checking from paper (not needed)
+# The incremental transactions using the formula, equation 8, in the paper.  donations should equal pred above.
 
 al<-params[1]
 be<-params[2]
@@ -239,23 +249,36 @@ Eq8<-(al/(al+be))*(de/(ga-1))*(1-(gamma(ga+de)*gamma(1+de+nn)/(gamma(ga+de+nn)*g
 cum_donations<-N*Eq8
 donations<-c(cum_donations[1],diff(cum_donations))
 
+
 ```
 
-## Model Fit: Conditional Expectations
+Here is for the cumulative number of donations.
+
+```{r}
+par(mai=c(.8,.8,.3,.2))
+
+pred<-bgbb.PlotTrackingCum(params, rf.matrix, actual.cum.repeat.transactions = cumsum(donationsSummary$annual.trans), xticklab=x.tickmarks.yrs.all)[2,]
+
+text(x = 4,y = 5000,"Calibration", cex=1, pos=3, col="black", font = 2)
+text(x = 7,y = 5000,"Validation", cex=1, pos=3, col="black", font = 2)
+```
+
+### Conditional Expectations
 
 A very important test of a model is how well it predicts **at the individual level, after conditioning on a particular individual history**.  Given a customer with history $(x, t_x, n)$, (a) how many purchases do we predict in the next $n^*$ periods and (b) how well does it track actual holdout purchases?
 
 We first do (a).  Using equation 13, we can calculate the expected number of purchases for each $(x, t_x, n)$ group in the next $n^* = 5$ periods.  
 
-```{r, out.width = '90%', fig.align = "center"}
+```{r}
 par(mai=c(.8,.8,.5,.2))
 
 comp<-bgbb.HeatmapHoldoutExpectedTrans(params, n.cal=6, n.star=5)
-comp1<-comp
+
 # rotate matrix so it's the same direction as the heatmap, this is just to make the numbers easier to read
 rotate <- function(x) t(apply(x, 2, rev))
 library(kableExtra)
-kable(rotate(rotate(rotate(t(round(comp,2))))), format = "pipe")
+test<-kable(rotate(rotate(rotate(t(round(comp,2))))), format = "pipe", booktabs=F, align = "c", caption = "**Predicted holdout purchases (BG/BB Model) based on frequency (rows) x recency (columns)**")
+test
 ```
 
 A donor who donated every year except the last $(x=5, t_x=5, n=6)$ is predicted to make `r round(comp[[6,6]],2)` in the next $n^*=5$ periods.  Yet a donor with better recency but lower frequency $(x=4,t_x=6, n=6)$ has a higher expected transaction rate, `r round(comp[[5,7]],2)`. As mentioned in Fader, Hardie and Shang (2010), this highlights the importance of recency.
@@ -286,7 +309,7 @@ actual_rf<-actual_rf[,c(-8)]
 #actual_rf
 
 # to make it look nice and rotated in same way as heatmap
-kable(rotate(rotate(rotate((round(actual_rf,2))))), format = "pipe")
+kable(rotate(rotate(rotate((round(actual_rf,2))))), format = "pipe", booktabs=F, align = "c", caption = "**Actual holdout average purchases based on frequency (rows) x recency (columns)**")
 ```
 
 ### Conditioning on frequency & recency separately
@@ -298,10 +321,10 @@ par(mai=c(.8,.8,.5,.2))
 
 ## Plot the comparison of actual and conditional expected holdout period frequencies,
 ## binned according to calibration period frequencies:
-comp<-bgbb.PlotFreqVsConditionalExpectedFrequency(params, n.star, rf.matrix, x.star)
+freq<-bgbb.PlotFreqVsConditionalExpectedFrequency(params, n.star, rf.matrix, x.star)
 
-rownames(comp) <- c("act", "exp", "bin")
-comp
+rownames(freq) <- c("act", "exp", "bin")
+freq
 ```
 
 Model predictions closely track actual donations.
@@ -311,25 +334,46 @@ Instead of grouping customers by frequency, we can also condition on their recen
 ```{r out.width = '90%', fig.align = "center"}
 par(mai=c(.8,.8,.5,.2))
 
-comp<-bgbb.PlotRecVsConditionalExpectedFrequency(params, n.star, rf.matrix, x.star)
-rownames(comp) <- c("act", "exp", "bin")
-comp
+rec<-bgbb.PlotRecVsConditionalExpectedFrequency(params, n.star, rf.matrix, x.star)
+rownames(rec) <- c("act", "exp", "bin")
+rec
 ```
 
 There were `r comp[[3,7]]` donors with maximum recency, i.e., making a donation in 2001. Those donors made on average `r round(comp[[1,7]],1)` donations in the subsequent 5 years, and the model predicts that they would make `r round(comp[[2,7]],1)`.  There is a steep falloff as recency diminishes, moving from right to left in the graph that is captured by the model.
 
-## P(Alive) & Increasing Frequency Paradox
+## P(Alive) 
 
 The probability that a customer with purchase history $x, t_x n$ will be alive at the beginning of period $n + 1$ is the term in the likelihood where the customer is alive until the end divided by all the paths:
 $$
 P(\textrm{Alive at} \; n+1 | \; n, x, t_x) = \frac{\frac{B(\alpha+x, \beta + n-x)}{B(\alpha, \beta)} \frac{B(\gamma, \delta + n+1)}{B(\gamma, \delta)}}{L(\alpha, \beta, \gamma, \delta \mid n, t_x, x)}
 $$
 
+We can calculate for all the possible cells in our recency-frequency matrix the probability that the customer is active.
+```{r out.width = '90%', fig.align = "center"}
+PAlive<-bgbb.PAlive(params, x = rf.matrix[,1], t.x = rf.matrix[,2], n.cal = 6)
+Alive_mat<-cbind(rf.matrix,PAlive)
+Alive_mat<-data.frame(Alive_mat)
+kable(Alive_mat, format="pipe")
+
+with(Alive_mat, hist(rep(x = Alive_mat$PAlive, times = Alive_mat$custs), xaxt='n', xlim = c(0,1), xlab = "P(Alive at n+1)", ylab="frequency", main="Histogram of P(Alive)"))
+axis(side=1, at=seq(0,1, .10), labels=seq(0,1,.1))
+
+```
+
+How many total active or alive customers are there at period 7?  We can sum up all the P(Alive) cells and number of customers in each cell to get the answer:
+```{r}
+sum(Alive_mat$PAlive*Alive_mat$custs)
+
+```
+There are `r sum(Alive_mat$PAlive*Alive_mat$custs)` out of `r sum(Alive_mat$custs)` customers still active.
+
+## Increasing Frequency Paradox
+
 Let's imagine a customer who has made his or her last donation on period $t_x = 4$, but let's vary how many purchases she makes.  At most she can make 4, and at least 1.  We can ask what the model predicts is the number of purchases expected in the subsequent $n^*=5$ periods, a calculation we already did above:
 
-```{r, out.width = '90%', fig.align = "center"}
+```{r, fig.align = "center"}
 par(mfrow=c(1,1),mai=c(.8,.8,.5,.2))
-plot(comp1[2:5,5], ylab ="Expected transactions in next 5 periods", xlab="Frequency holding last donation at 4", type="b", xaxt="n")
+plot(comp[2:5,5], ylab ="Expected transactions in next 5 periods", xlab="Frequency holding last donation at 4", type="b", xaxt="n")
 xtick<-seq(1, 4, by=1)
 axis(side=1, at=xtick, labels = TRUE)
 
@@ -338,7 +382,7 @@ axis(side=1, at=xtick, labels = TRUE)
 
 What's interesting about this curve is that customer with the largest frequency is **not** the one with the highest future predicted purchases.  This is something known as the **increasing frequency paradox**.  Why?  The likelihood that he or she is still alive decreases in $x$.  
 
-```{r, out.width = '90%', fig.align = "center"}
+```{r, fig.align = "center"}
 par(mfrow=c(1,1))
 par(mai=c(.8,.8,.5,.2))
 
@@ -349,7 +393,7 @@ axis(side=1, at=xtick, labels = TRUE)
 
 On the one hand, higher $x$ means a higher $p$ which means more expected transactions in the future.  On the other hand, if the last two periods were no purchases, a higher $x$ means that $P(alive)$ is lower.  This second effect is stronger than the first effect, resulting in a lower expectations when $x=4$ compared to when $x=2,3$.
 
-## CLV
+# CLV
 
 Given model assumptions 2 and 3, we know that the probability of making a purchase is equal to the probability that a customer is **alive** times the probability of making a purchase conditional on being alive:
 $$
@@ -372,7 +416,7 @@ E[CLV] & =  & m \; \left( 1 + \sum_{t=1}^{\infty} P(\, Y(t) = 1 \mid \alpha, \be
 \end{array}
 $$
 
-For implementing this in R, we have to choose some upper bound to the sum like $T=200$. 
+**DET** means Discounted Expected Transactions. For implementing this in `R`, we have to choose some upper bound to the sum, i.e. $T=200$. 
 
 ```{r}
 BGBBCLV<-function(params,m,d,T) {
@@ -381,11 +425,11 @@ al<-params[1]
 be<-params[2]
 ga<-params[3]
 de<-params[4]
-CLV<-1   # at time zero there has to be a purchase
+DET<-1   # at time zero there has to be a purchase
 for (i in 1:T) {
-    CLV<-CLV+(al/(al+be))*(beta(ga,de+i)/beta(ga,de))*1/(1+d)^{i}
+    DET<-DET+(al/(al+be))*(beta(ga,de+i)/beta(ga,de))*1/(1+d)^{i}
 }
-CLV=m*CLV  # convert discount expected purchases into expected value
+CLV=m*DET  # convert discount expected purchases into expected value
 return(CLV)    #return the CLV
 } 
   
@@ -403,125 +447,266 @@ E[RLV] & = & \displaystyle m \; \left ( P(\textrm{alive at} \, n) \; \sum_{t=n+1
 & = & \displaystyle m \times \textrm{DERT}
 \end{array}
 $$
-DERT means Discounted expected residual transactions. The expression is complicated and can be found in Fader Hardie and Shang (2010, equation 14).
 
-```{r fig.align = "center", out.width='90%'}
+**DERT** means Discounted expected residual transactions.  Here is what it looks like for our sample:
+
+```{r out.width = '90%', fig.align = "center"}
 m<-50
 DERT<-bgbb.rf.matrix.DERT(params, donationsSummary$rf.matrix, d=0.1)
 RLV<-m*DERT
-RLVmatrix<-cbind(donationsSummary$rf.matrix,round(RLV,2)) 
-RLVmatrix
+RLV_mat<-cbind(Alive_mat,DERT, RLV)
+RLV_mat<-data.frame(RLV_mat)
+kable(RLV_mat, format="pipe")
+
+maxround=round(max(RLV),-2)
+
+with(RLV_mat, hist(rep(x = RLV_mat$RLV, times = RLV_mat$custs), xaxt='n', xlim = c(0,maxround), xlab = "RLV ($)", ylab="frequency", main="Histogram of Residual Lifetime Value (RLV)"))
+axis(side=1, at=seq(0,maxround, 50), labels=seq(0,maxround, 50))
 ```
 
-If we assume $m=50$ is the value of a donation and we use a yearly discount rate of $d=0.1$, the RLV of a customer who makes "6 for 6" repeat donations is  €`r round(RLVmatrix[1,5],2)`.  
+If we assume $m=50$ is the value of a donation and we use a yearly discount rate of $d=0.1$, the RLV of a customer who makes "6 for 6" repeat donations is  €`r round(RLV_mat$RLV[1],2)`.  
+
 
 # Pareto/NBD
 
-This is the model that started it all off.  The basic principles are the same.  As with the BG/BB there is a transaction process, a dropout process, and heterogeneity for both processes.  For the set of assumptions, likelihood and other equations related to the model, see the original paper mentioned below in the footnotes.  However, instead of discrete opportunities to make transactions and discrete opportunities to drop out, in the Pareto/NBD both processes are in continuous time.  As a result they are rates, rather than probabilities. 
+This is the model that started it all off^[Schmittlein, D., Morrison, D., & Colombo, R. (1987). Counting Your Customers: Who Are They and What Will They Do Next? Management Science, 33(1), 1-24.].  The basic principles are the same.  As with the BG/BB there is a transaction process, a dropout process, and heterogeneity for both processes.  For the set of assumptions, likelihood and other equations related to the model, see the original paper mentioned below in the footnotes.  However, instead of discrete opportunities to make transactions and discrete opportunities to drop out, in the Pareto/NBD both processes are in continuous time.  As a result they are rates, rather than probabilities. The assumptions are:
+
+1. A customer's relationship with the firm has two phases: he is alive for some period of time, then becomes permanently inactive ("dies").
+
+2. While alive, the number of transactions made by a customer follows a Poisson process
+with transaction rate $\lambda$.
+$$
+P(X = x \mid \lambda, \textrm{alive at} \; t) = e^{-\lambda t} \, \frac{(\lambda \, t)^x}{x!}, \quad x = 0, 1, 2, \dots
+$$
+
+3. Each customer remains alive for a lifetime of length $\tau$.  The point at which the customer becomes inactive has an exponentially distributed duration with dropout rate $\mu$.
+
+$$
+P( \textrm{alive at} \; t \mid \mu)= P(\tau > t \mid \mu) = S(t \mid \mu ) = e^{-\mu t} 
+$$
+
+4. Heterogeneity in the transaction rate $\lambda$ follows a gamma distribution with parameters $r$ and $\alpha$.
+$$ f(\lambda \; | \; r, \alpha) = \frac{\alpha^r \lambda^{r-1} e^{-\lambda \alpha }}{\Gamma(r)}, \qquad \lambda>0$$
+
+
+4. Heterogeneity in the dropout rate $\mu$ follows a gamma distribution with parameters $s$ and $\beta$.
+$$ f(\mu \; | \; s, \beta) = \frac{\beta^s \mu^{s-1} e^{-\mu \beta }}{\Gamma(s)}, \qquad \mu>0$$
+
+6. The transaction rate $\lambda$ and the dropout rate $\mu$ vary **independently** across customers.
+
+## CLV in continuous time
+
+The general formula for CLV in continuous time is
+
+$$
+CLV = \int_0^\infty v(t) \; S(t) \; d(t) \; dt, 
+$$
+where, for $t \geq 0$ and $t=0$ represents "now," $v(t)$ is the customer's value at time $t$, $S(t)$ is the survival function, and $d(t)$ is the discount factor reflects the present value of money received at $t$.
+
+We factor out the value of each transaction, so that $v(t)$ becomes the underlying transaction rate $\lambda$
+$$
+\begin{array}{ccl}
+CLV &=& \displaystyle m \times \overbrace{\int_0^\infty \lambda e^{-\mu t} e^{-\delta t} dt}^{{\textrm{DET}}} \\
+& = & \displaystyle m \times \frac{\lambda}{\mu + \delta}
+\end{array}
+$$
+
+where $\delta = ln(1+d)$ and $(100 \times d)\%$ is the annual discount rate.  Then this expression has to be integrated out over the distributions of $\lambda$ and $\mu$.  For the formulas see the appendix of Fader Hardie and Lee (2005).  
+
+The point for us is that similar to the BG/BB, we can write the CLV as a function of the margin and DET or DERT multiplier.   
 
 ## Data loading and sufficient statistics
 
+We're going to use a different software package, `CLVTools`[https://www.clvtools.com/index.html], which allows for a lot of advanced modeling in continuous time (but as of yet does not have the BG/BB model). This section copies some material from their vignette^[Bachmann P, Kuebler N, Meierer M, Naef J, Oblander E, Schilter P (2022). CLVTools: Tools for Customer Lifetime Value Estimation. R package version 0.9.0, https://github.com/bachmannpatrick/CLVTools.].  
+
+Install the stable version from CRAN:
+     
+```{r install-package-CRAN, eval = FALSE}
+install.packages("CLVTools")
+```
+
+Load the package
+```{r load-library}
+library("CLVTools")
+```
+
+We use simulated data comparable to data from a retailer in the apparel industry. The dataset contains transactional detail records for every customer consisting of customer id, date of purchase and the total monetary value of the transaction.The apparel dataset is available in the `CLVTools` package. Use the `data(apparelTrans)` to load it:
+
+
+```{r load-data}
+data("apparelTrans")
+apparelTrans
+```
+
 As with the BG/BB, we only need sufficient statistics for each customer. Only three pieces of information for every person: how many transactions they made in the calibration period (frequency), the time of their last transaction (recency), and the total time for which they were observed.  
 
-We'll use the CDNow dataset^[Provided with the BTYD package and available at brucehardie.com. For more details, see
-the documentation of the cdnowSummary data included in the package by typing ?cdnowSummary.] Data representing the purchasing behavior of 2357 CDNOW customers between January 1997 and June 1998, summarized as a customer-by-time matrix and a vector of cumulative weekly transactions.
+Before we estimate a model, we are required to initialize a data object using the `clvdata()` command. The data object contains the prepared transactional data and is later used as input for model fitting. Make sure to store the generated object in a variable, e.g. in our example `clv.apparel`.
 
-```{r}
-data(cdnowSummary)
+Be aware that probabilistic models such as the ones implemented in CLVTools are usually applied to specific customer cohorts. That means, you analyze customer that have joined your company at the same time (usually same day, week, month, or quarter). For more information on cohort analysis, see also [here](https://en.wikipedia.org/wiki/Cohort_analysis). Consequently, the data apparelTrans in this example is not the full transaction records of a fashion retailer, but rather only the customer cohort of 250 customers purchasing for the first time at this business on the day of 2005-01-03. This has to be done before initializing a data object using the `clvdata()` command.
 
-## Get the calibration period customer-by-sufficient-statistic matrix from the cdnow data:
-cbs <- cdnowSummary$cbs
+Through the argument `data.transactions` a `data.frame` or `data.table` which contains the transaction records, is specified. In our example this is `data.transactions=apparelTrans`. The argument `date.format` is used to indicate the format of the date variable in the data used. The date format in the apparel dataset is given as "year-month-day" (i.e., "2005-01-03"), therefore we set `date.format="ymd"`. Other combinations such as `date.format="dmy"` are possible. See the documentation of `lubridate` [@lubridate] for all details. `time.unit` is the scale used to measure time between two dates. For this dataset and in most other cases The argument `time.unit="week"` is the preferred choice. Abbreviations may be used (i.e. "w"). `estimation.split` indicates the length of the estimation period. Either the length of the estimation period (in previous specified time units) or the date at which the estimation period ends can be specified. If no value is provided, the whole dataset is used as estimation period (i.e. no holdout period). In this example, we use an estimation period of 40 weeks. Finally, the three name arguments indicate the column names for customer ID, date and price in the supplied dataset. Note that the price column is optional.
 
-head(cbs[,1:3])
+
+```{r load-CreateObj}
+clv.apparel <- clvdata(apparelTrans,  
+                       date.format="ymd", 
+                       time.unit = "week",
+                       estimation.split = 40,
+                       name.id = "Id",
+                       name.date = "Date",
+                       name.price = "Price")
 ```
 
-## Estimation
 
-There are four parameters: two for the transaction process and two for the dropout process. We estimate them using maximum likelihood:
+## Check the `clvdata` Object
 
-```{r}
-## Estimate parameters for the Pareto/NBD model from the CBS:
-par.start <- c(0.5, 1, 0.5, 1)
-params <- pnbd.EstimateParameters(cbs, par.start)
-params
 
-## Check log-likelihood of the params:
-pnbd.cbs.LL(params, cbs)
+To get details on the `clvdata` object, print it to the console.
+
+```{r print-CLVObject}
+clv.apparel
 ```
 
-## Distribution
+Alternatively the `summary()` command provides full detailed summary statistics for the provided transactional detail. `summary()` is available at any step in the process of estimating a probabilistic customer attrition model with `CLVTools`. The result output is updated accordingly and additional information is added to the summary statistics.`nobs()` extracts the number of observations.  For the this particular dataset we observe a total of 250 customers who made in total 2257 repeat purchases. Approximately 26% of the customers are zero repeaters, which means that the only a minority of the customers do not return to the store after their first purchase.
 
-The distribution implies that there are more customers with both lower rates of purchase and dropout.  The average rates imply that a purchase and dropout are about once every 1/.05 = 20 weeks.
 
-```{r fig.align = "center", out.width='100%'}
-par(mfrow=c(1,2))
-par(mai=c(.8,.8,.5,.2))
-temp<-pnbd.PlotTransactionRateHeterogeneity(params)
-par(mai=c(.8,.8,.5,.2))
-temp<-pnbd.PlotDropoutRateHeterogeneity(params)
+```{r summary-CLVObject}
+summary(clv.apparel)
 ```
 
-## Model fit
+## Estimate Model Parameters{#estimate}
 
-```{r fig.align = "center", out.width='90%'}
-## Plot the comparison of actual and expected calibration period frequencies:
-par(mfrow=c(1,1))
-par(mai=c(.8,.8,.5,.2))
-pnbd.PlotFrequencyInCalibration(params, cbs, censor=7, plotZero=TRUE)
+After initializing the object, we are able to estimate the first probabilistic latent attrition model. We start with the standard Pareto/NBD model [@Schmittlein1987] and therefore use the command `pnbd()` to fit the model and estimate model parameters. `clv.data` specifies the initialized object prepared in the last step. Optionally, starting values for the model parameters and control settings for the optimization algorithm may be provided: The argument `start.params.model` allows to assign a vector (e.g. `c(alpha=1, beta=2, s=1, beta=2)` in the case of the Pareto/NBD model) of starting values for the optimization. This is useful if prior knowledge on the parameters of the distributions are available. By default starting values are set to 1 for all parameters. The argument `optimx.args` provides an option to control settings for the optimization routine. It passes a list of arguments to the optimizer. All options known from the package `optimx` [@optimx1; @optimx2] may be used. This option enables users to specify specific optimization algorithms, set upper and/or lower limits or enable tracing information on the progress of the optimization. In the case of the standard Pareto/NBD model, `CLVTools` uses by default the optimization method `L-BFGS-G` [@byrd1995limited]. If the result of the optimization is in-feasible, the optimization automatically switches to the more robust but often slower `Nelder-Mead` method [@nelder1965simplex]. `verbose` shows additional output. 
 
-T.star <- 39                # Length of holdout period
-x.star <- cbs[,"x.star"]    # Transactions made by each customer in the holdout period
 
-## Plot the comparison of actual and conditional expected holdout period frequencies,
-## binned according to calibration period frequencies:
-par(mai=c(.8,.8,.5,.2))
-pnbd.PlotFreqVsConditionalExpectedFrequency(params, T.star, cbs, x.star, censor=7)
-
-## Plot the comparison of actual and conditional expected holdout period frequencies,
-## binned according to calibration period recencies:
-par(mai=c(.8,.8,.5,.2))
-pnbd.PlotRecVsConditionalExpectedFrequency(params, cbs, T.star, x.star)
+```{r estimate-model}
+est.pnbd <- pnbd(clv.data = clv.apparel)
+est.pnbd
 ```
 
-# BG/NBD
-
-The Pareto/NBD can be difficult to estimate. The BG/NBD model^[Fader, P. S., Hardie, B. G., & Lee, K. L. (2005). “Counting your customers” the easy way: An alternative to the Pareto/NBD model. Marketing science, 24(2), 275-284. http://brucehardie.com/papers/018/fader_et_al_mksc_05.pdf] represents a small change in the story but is easier to implement.  The BG/NBD model, like the Pareto/NBD model, is used for non-contractual situations in which customers can make purchases at any time. It describes the rate at which customers make purchases and the rate at which they drop out with four parameters—allowing for heterogeneity in both. The key difference is that in the BG/NBD the dropout process is discrete, taking place after any transaction, rather than in continuous time.  (See the paper for details.)
-
-```{r fig.align = "center", out.width='100%'}
-data(cdnowSummary)
-
-## Get the calibration period customer-by-sufficient-statistic matrix from the cdnow data:
-cbs <- cdnowSummary$cbs
-
-## Estimate parameters for the BG/NBD model from the CBS:
-par.start <- c(1,3,1,3)
-params <- bgnbd.EstimateParameters(cbs, par.start)
-params
-
-par(mfrow=c(1,2))
-par(mai=c(.8,.8,.5,.2))
-temp<-bgnbd.PlotTransactionRateHeterogeneity(params)
-par(mai=c(.8,.8,.5,.2))
-temp<-bgnbd.PlotDropoutRateHeterogeneity(params) 
-
-## Check log-likelihood of the params:
-bgnbd.cbs.LL(params, cbs)
-
-
-## Plot the comparison of actual and expected calibration period frequencies:
-par(mfrow=c(1,1))
-bgnbd.PlotFrequencyInCalibration(params, cbs, censor=7, plotZero=TRUE)
-
-T.star <- 39                # Length of holdout period
-x.star <- cbs[,"x.star"]    # Transactions made by each customer in the holdout period
-
-## Plot the comparison of actual and conditional expected holdout period frequencies,
-## binned according to calibration period frequencies:
-bgnbd.PlotFreqVsConditionalExpectedFrequency(params, T.star, cbs, x.star, censor=7)
-
-## Plot the comparison of actual and conditional expected holdout period frequencies,
-## binned according to calibration period recencies:
-bgnbd.PlotRecVsConditionalExpectedFrequency(params, cbs, T.star, x.star)
+If we assign starting parameters and additional arguments for the optimizer we use: 
+```{r estimate-model2, eval=FALSE}
+est.pnbd <- pnbd(clv.data = clv.apparel, 
+                     start.params.model = c(r=1, alpha = 2, s = 1, beta = 2), 
+                     optimx.args = list(control=list(trace=5),
+                                       method="Nelder-Mead" 
+                                       ))
 ```
 
-For more extensions, I recommend looking at `CLVTools`[https://github.com/bachmannpatrick/CLVTools]
+Parameter estimates may be reported by either printing the estimated object (i.e. `est.pnbd`) directly in the console or by calling `summary(est.pnbd)` to get a more detailed report including the likelihood value as well as AIC and BIC. Alternatively parameters may be directly extracted using `coef(est.pnbd)`. Also `loglik()`, `confint()` and `vcov()` are available to directly access the Loglikelihood value, confidence intervals for the parameters and to calculate the Variance-Covariance Matrix for the fitted model. For the standard Pareto/NBD model, we get 4 parameters $r, \alpha, s$ and $\beta$.  where $r,\alpha$ represent the shape and scale parameter of the gamma distribution that determines the purchase rate and $s,\beta$ of the attrition rate across individual customers. $r/\alpha$ can be interpreted as the mean purchase and $s/\beta$ as the mean attrition rate. A significance level is provided for each parameter estimates. In the case of the apparelTrans dataset we observe a an average purchase rate of $r/\alpha=0.147$ transactions and an average attrition rate of $s/\beta=0.031$ per customer per week. KKT 1 and 2 indicate the Karush-Kuhn-Tucker optimality conditions of the first and second order [@KKT]. If those criteria are not met, the optimizer has probably not arrived at an optimal solution. If this is the case it is usually a good idea to rerun the estimation using alternative starting values.
+
+
+
+
+```{r param-summary}
+#Full detailed summary of the parameter estimates
+summary(est.pnbd)
+
+#Extract the coefficients only
+coef(est.pnbd)
+#Alternative: oefficients(est.pnbd.obj)
+
+```
+To extract only the coefficients, we can use `coef()`. To access the confidence intervals for all parameters `confint()` is available.
+```{r coef-model}
+#Extract the coefficients only
+coef(est.pnbd)
+#Alternative: oefficients(est.pnbd.obj)
+
+#Extract the confidence intervals
+confint(est.pnbd)
+
+```
+
+In order to get the Likelihood value and the corresponding Variance-Covariance Matrix we use the following commands:
+```{r ll-model}
+# LogLikelihood at maximum
+logLik(est.pnbd)
+
+# Variance-Covariance Matrix at maximum
+vcov(est.pnbd)
+
+```
+
+## Predict Customer Behavior{#predict}
+
+Once the model parameters are estimated, we are able to predict future customer behavior on an individual level. To do so, we use `predict()` on the object with the estimated parameters (i.e. `est.pnbd`). The prediction period may be varied by specifying `prediction.end`. It is possible to provide either an end-date or a duration using the same time unit as specified when initializing the object (i.e  `prediction.end = "2006-05-08"` or `prediction.end = 30`). By default, the prediction is made until the end of the dataset specified in the `clvdata()` command. The argument `continuous.discount.factor` allows to adjust the discount rate used to estimated the discounted expected transactions (DERT). The default value is `0.1` (=10%). Probabilistic customer attrition model predict in general three expected characteristics for every customer:
+
+* "conditional expected transactions" (CET), which is the number of transactions to expect form a customer during the prediction period,
+* "probability of a customer being alive" (PAlive) at the end of the estimation period and
+* "discounted expected residual transactions" (DERT) for every customer, which is the total number of transactions for the residual lifetime of a customer discounted to the end of the estimation period. 
+
+If spending information was provided when initializing the `clvdata`-object, `CLVTools` provides prediction for 
+ 
+* predicted mean spending estimated by a Gamma/Gamma model [@Colombo1999; @Fader2005c] and 
+* the customer lifetime value (CLV). CLV is calculated as the product of DERT and predicted spending.
+
+If a holdout period is available additionally the true numbers of transactions ("actual.x") and true spending ("actual.total.spending") during the holdout period are reported.
+
+To use the parameter estimates on new data (e.g., an other customer cohort), the argument `newdata` optionally allows to provide a new `clvdata` object.
+
+```{r predict-model}
+results <- predict(est.pnbd)
+
+kable(head(results), format = "pipe", booktabs=F, align = "c", caption = "Output for first 6 customers")
+```
+
+To change the duration of the prediction time, we use the `predicton.end` argument. We can either provide a time period (30 weeks in this example):
+
+```{r predict-model2, eval = FALSE}
+predict(est.pnbd, prediction.end = 30)
+```
+
+or provide a date indication the end of the prediction period:
+
+```{r plot-model3, eval = FALSE}
+predict(est.pnbd, prediction.end = "2006-05-08")
+```
+
+
+## Plotting
+`CLVTools`, offers a variety of different plots. All `clvdata` objects may be plotted using the `plot()` command. Similar to `summary()`, the output of `plot()` and the corresponding options are dependent on the current modeling step. When applied to a data object created the `clvdata()` command, the following plots can be selected using the `which` option of plotting:
+
+* Tracking plot (`which="tracking"`): plots the the aggregated repeat transactions per period over a given time period. The period can be specified using the `prediction.end` option. It is also possible to generate cumulative tracking plots (`cumulative = FALSE`). The tracking plot is the default option.
+* Frequency plot (`which="frequency"`): plots the distribution of transactions or repeat transactions per customer, after aggregating transactions of the same customer on a single time point. The bins may be adjusted using the option `trans.bins`. (Note that if `trans.bins` is changed, the option for labeling (`label.remaining`) usually needs to be adapted as well.)
+* Spending plot (`which="spending"`): plots the empirical density of either customer's average spending per transaction. Note that this includes all transactions and not only repeat-transactions. You can switch to plotting the value of every transaction for a customer (instead of the a customers mean spending) using `mean.spending=FALSE`.
+* Interpurchase time plot (`which="interpurchasetime"`): plots the empirical density of customer's mean time (in number of periods) between transactions, after aggregating transactions of the same customer on a single time point. Note that customers without repeat-transactions are note part of this plot.
+
+In the following, we have a basic tracking-plot for the aggregated repeat transactions
+```{r plot-actual, fig.height=4.40, fig.width=9}
+plot(clv.apparel)
+
+```
+To plot customers mean interpurchase time, we use:
+```{r plot-interpurchase, fig.height=4.40, fig.width=9}
+plot(clv.apparel, which="interpurchasetime")
+
+```
+When the `plot()` command is applied to an object with the an estimated model (i.e. `est.pnbd`), the following plots can be selected using the `which` option of:
+
+* Tracking plot (`which="tracking"`): plots the actual repeat transactions and overlays it with the repeat transaction as predicted by the fitted model. Currently, following previous literature, the in-sample unconditional expectation is plotted in the holdout period. The period can be specified using the `prediction.end` option. It is also possible to generate cumulative tracking plots (`cumulative = FALSE`). The tracking plot is th the default option. The argument `transactions` disable for plotting actual transactions (`transactions=FALSE`). For further plotting options see the documentation. Note that only whole periods can be plotted and that the prediction end might not exactly match prediction.end. See the `?plot.clv.data` for more details.
+* Probability mass function (pmf) plot (`which="pmf"`): plots the actual and expected number of customers which made a given number of repeat transaction in the estimation period. The expected number is based on the PMF of the fitted model, the probability to make exactly a given number of repeat transactions in the estimation period. For each bin, the expected number is the sum of all customers' individual PMF value. The bins for the transactions can be adjusted using the option `trans.bins`. (Note that if `trans.bins` is changed, `label.remaining` usually needs to be adapted as well.
+
+For a standard tracking plot including the model, we use:
+```{r plot-model, fig.height=4.40, fig.width=9}
+plot(est.pnbd)
+
+```
+
+To plot the *cumulative* expected transactions 30 time units (30 weeks in this example) ahead of the end of the estimation plot, we use:
+```{r plot-model2, eval = FALSE}
+plot(est.pnbd, prediction.end = 30, cumulative = TRUE)
+```
+
+Alternatively, it is possible to specify a date for the `prediction.end`argument. Note that dates are rounded to the next full time unit (i.e. week):
+
+```{r predict-model3, eval = FALSE}
+plot(est.pnbd, prediction.end = "2006-05-08", cumulative = TRUE)
+```
+
+For a plot of the probability mass function (pmf), with 7 bins, we use:
+```{r predict-model4, eval = FALSE}
+plot(est.pnbd, which="pmf", trans.bins=0:5, label.remaining="6+")
+```
+
+
