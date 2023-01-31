@@ -1,0 +1,1765 @@
+﻿customerID,gender,SeniorCitizen,Partner,Dependents,tenure,PhoneService,MultipleLines,InternetService,OnlineSecurity,OnlineBackup,DeviceProtection,TechSupport,StreamingTV,StreamingMovies,Contract,PaperlessBilling,PaymentMethod,MonthlyCharges,TotalCharges,Churn
+0004-TLHLJ,Male,0,No,No,4,Yes,No,Fiber op,No,No,Yes,No,No,No,Month-to,Yes,Electron,73.9,280.85,Yes
+0013-SMEOE,Female,1,Yes,No,71,Yes,No,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,109.7,7904.25,No
+0015-UOCOJ,Female,1,No,No,7,Yes,No,DSL,Yes,No,No,No,No,No,Month-to,Yes,Electron,48.2,340.35,No
+0020-INWCK,Female,0,Yes,Yes,71,Yes,Yes,Fiber op,No,Yes,Yes,No,No,Yes,Two year,Yes,Credit c,95.75,6849.4,No
+0022-TCJCI,Male,1,No,No,45,Yes,No,DSL,Yes,No,Yes,No,No,Yes,One year,No,Credit c,62.7,2791.5,Yes
+0023-UYUPN,Female,1,Yes,No,50,Yes,Yes,No,No,No,No,No,No,No,One year,No,Electron,25.2,1306.3,No
+0023-XUOPT,Female,0,Yes,No,13,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,No,Month-to,No,Electron,94.1,1215.6,Yes
+0032-PGELS,Female,0,Yes,Yes,1,No,No,DSL,Yes,No,No,No,No,No,Month-to,No,Bank tra,30.5,30.5,Yes
+0042-JVWOJ,Male,0,No,No,26,Yes,No,No,No,No,No,No,No,No,One year,Yes,Bank tra,19.6,471.85,No
+0052-DCKON,Male,0,Yes,No,66,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,One year,No,Bank tra,115.8,7942.15,No
+0057-QBUQH,Female,0,No,Yes,43,Yes,Yes,No,No,No,No,No,No,No,Two year,Yes,Electron,25.1,1070.15,No
+0071-NDAFP,Male,0,Yes,Yes,25,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Credit c,25.5,630.6,No
+0074-HDKDG,Male,0,Yes,Yes,25,Yes,No,DSL,Yes,Yes,Yes,No,No,No,One year,Yes,Bank tra,61.6,1611,No
+0076-LVEPS,Male,0,No,Yes,29,No,No,DSL,Yes,Yes,Yes,Yes,No,No,Month-to,Yes,Mailed c,45,1242.45,No
+0082-OQIQY,Male,0,No,No,29,Yes,No,Fiber op,No,No,No,Yes,Yes,Yes,Month-to,Yes,Electron,94.2,2607.6,No
+0089-IIQKO,Female,0,Yes,Yes,39,Yes,Yes,Fiber op,No,No,No,Yes,Yes,Yes,Month-to,Yes,Credit c,99.95,3767.4,No
+0098-BOWSO,Male,0,No,No,27,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Electron,19.4,529.8,No
+0106-GHRQR,Male,0,No,No,16,Yes,Yes,DSL,No,Yes,Yes,No,No,Yes,Month-to,Yes,Bank tra,71.4,1212.1,No
+0123-CRBRT,Female,0,Yes,Yes,61,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,No,Mailed c,88.1,5526.75,No
+0135-NMXAP,Female,0,No,No,12,Yes,Yes,Fiber op,No,Yes,No,No,Yes,No,Month-to,Yes,Bank tra,89.75,1052.4,Yes
+0137-UDEUO,Female,0,No,No,3,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,19.85,63.75,Yes
+0147-ESWWR,Female,1,Yes,No,39,Yes,Yes,Fiber op,No,No,No,Yes,Yes,Yes,Month-to,Yes,Electron,101.25,3949.15,No
+0178-SZBHO,Male,0,Yes,Yes,47,Yes,Yes,Fiber op,No,Yes,No,No,Yes,No,Month-to,No,Electron,87.2,4017.45,No
+0181-RITDD,Male,0,Yes,Yes,62,Yes,No,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,No,Mailed c,108.15,6825.65,No
+0188-GWFLE,Male,0,No,No,2,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.05,33.7,No
+0191-EQUUH,Female,0,No,Yes,25,No,No,DSL,Yes,No,No,Yes,No,No,Two year,No,Bank tra,35.05,844.45,No
+0195-IESCP,Male,0,Yes,No,10,Yes,Yes,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Electron,85.25,855.3,Yes
+0196-JTUQI,Female,0,No,No,9,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Credit c,75.2,633.85,No
+0201-OAMXR,Female,0,No,No,70,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,One year,No,Credit c,115.55,8127.6,Yes
+0212-ISBBF,Female,0,No,No,22,No,No,DSL,No,Yes,No,No,Yes,Yes,Month-to,Yes,Electron,50.35,1098.85,No
+0215-BQKGS,Male,0,No,No,30,Yes,No,Fiber op,Yes,Yes,Yes,No,No,No,Month-to,Yes,Credit c,84.3,2438.6,No
+0222-CNVPT,Male,1,No,No,52,No,No,DSL,Yes,No,No,No,Yes,Yes,Month-to,Yes,Credit c,48.8,2555.05,No
+0229-LFJAF,Male,0,No,No,72,Yes,Yes,DSL,Yes,Yes,Yes,Yes,No,No,Two year,No,Bank tra,69.65,4908.25,No
+0233-FTHAV,Female,0,No,No,60,Yes,Yes,Fiber op,No,No,Yes,No,No,No,One year,Yes,Bank tra,79.2,4765,No
+0237-YFUTL,Female,0,Yes,No,50,Yes,Yes,Fiber op,Yes,Yes,No,Yes,Yes,Yes,Month-to,Yes,Bank tra,109.65,5405.8,No
+0248-IPDFW,Female,0,No,No,1,Yes,Yes,DSL,No,No,No,No,No,No,Month-to,Yes,Electron,50.1,50.1,No
+0253-ZTEOB,Female,0,Yes,Yes,48,Yes,Yes,DSL,No,Yes,No,Yes,Yes,Yes,Two year,No,Electron,79.65,3870.3,No
+0254-WWRKD,Female,0,Yes,Yes,67,Yes,No,DSL,No,Yes,No,No,No,No,One year,No,Credit c,50.55,3431.75,No
+0263-FJTQO,Male,0,Yes,Yes,50,Yes,Yes,DSL,Yes,No,No,Yes,Yes,No,Two year,Yes,Credit c,70.5,3486.65,No
+0266-GMEAO,Male,0,Yes,Yes,72,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,114.3,8058.55,No
+0268-QKIWO,Female,0,No,No,3,Yes,No,No,No,No,No,No,No,No,Month-to,No,Electron,19.75,58.85,Yes
+0277-BKSQP,Male,0,Yes,Yes,8,Yes,No,DSL,No,No,No,No,Yes,No,Month-to,Yes,Electron,54.4,475.1,No
+0282-NVSJS,Female,1,Yes,Yes,12,No,No,DSL,No,No,No,Yes,No,No,Month-to,Yes,Mailed c,29.3,355.9,No
+0285-INHLN,Male,0,Yes,Yes,27,Yes,No,DSL,Yes,Yes,No,No,No,No,Month-to,Yes,Credit c,54.75,1510.3,No
+0302-JOIVN,Female,0,Yes,No,8,Yes,No,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,No,Electron,101.15,842.9,Yes
+0307-BCOPK,Female,0,No,No,16,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,19.05,326.65,No
+0311-UNPFF,Female,0,No,No,26,Yes,No,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Bank tra,88.8,2274.35,Yes
+0315-LVCRK,Male,0,No,No,11,Yes,No,Fiber op,No,No,Yes,No,No,Yes,Month-to,No,Electron,84.8,888.75,No
+0319-QZTCO,Female,0,Yes,Yes,3,Yes,No,DSL,No,Yes,No,No,Yes,No,Month-to,Yes,Credit c,58.7,168.6,No
+0322-CHQRU,Male,0,No,No,2,Yes,No,DSL,No,No,No,No,No,No,Month-to,No,Electron,45.35,89.5,Yes
+0324-BRPCJ,Female,1,Yes,No,68,Yes,Yes,Fiber op,No,Yes,No,No,Yes,Yes,Month-to,Yes,Electron,100.2,6851.65,Yes
+0325-XBFAC,Male,0,No,No,8,Yes,No,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Electron,94.7,740.3,Yes
+0345-XMMUG,Female,0,Yes,No,46,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,108.9,4854.3,No
+0356-OBMAC,Female,1,No,No,56,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,No,Two year,Yes,Bank tra,99.9,5706.3,No
+0362-RAOQO,Female,0,No,No,40,Yes,No,No,No,No,No,No,No,No,Two year,No,Credit c,19.65,830.25,No
+0362-ZBZWJ,Male,0,No,No,36,Yes,Yes,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Electron,84.9,3067.2,Yes
+0369-ZGOVK,Female,0,Yes,Yes,28,Yes,No,Fiber op,No,No,No,No,No,No,One year,Yes,Bank tra,70.4,1992.2,No
+0373-AIVNJ,Male,0,No,No,9,No,No,DSL,Yes,Yes,Yes,No,No,No,One year,No,Mailed c,39.55,373,No
+0377-JBKKT,Male,0,Yes,Yes,22,Yes,No,DSL,Yes,Yes,No,Yes,No,No,Month-to,Yes,Mailed c,57.95,1271.8,No
+0378-CJKPV,Female,0,Yes,No,72,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,No,Credit c,112.1,7965.95,No
+0378-NHQXU,Female,0,Yes,Yes,17,Yes,Yes,Fiber op,No,No,Yes,No,Yes,No,Month-to,No,Electron,88.25,1460.65,Yes
+0378-XSZPU,Male,0,Yes,No,58,Yes,No,DSL,Yes,Yes,Yes,No,No,No,One year,No,Credit c,60.3,3563.8,Yes
+0380-ZCSBI,Male,0,No,No,10,Yes,No,No,No,No,No,No,No,No,Month-to,No,Credit c,20,198.7,No
+0396-HUJBP,Female,0,No,No,2,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,19.3,44.4,No
+0397-ZXWQF,Male,0,No,No,67,Yes,No,No,No,No,No,No,No,No,Two year,No,Bank tra,20.5,1430.95,No
+0402-CQAJN,Female,0,No,No,37,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,Yes,Bank tra,101.9,3545.35,Yes
+0419-YAAPX,Male,0,Yes,No,49,Yes,No,Fiber op,No,Yes,No,No,Yes,No,Month-to,Yes,Credit c,85.3,4297.95,No
+0420-TXVSG,Male,0,Yes,No,66,Yes,Yes,DSL,Yes,Yes,Yes,No,No,No,Two year,Yes,Credit c,66.1,4428.45,No
+0422-UXFAP,Female,0,Yes,No,51,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,One year,Yes,Electron,98.85,4947.55,No
+0428-IKYCP,Male,0,Yes,No,22,Yes,No,Fiber op,No,No,Yes,No,Yes,No,Month-to,Yes,Bank tra,87,1850.65,No
+0431-APWVY,Female,0,Yes,Yes,28,Yes,No,Fiber op,No,No,No,No,Yes,Yes,One year,Yes,Bank tra,90.1,2598.95,Yes
+0440-QEXBZ,Female,0,No,No,44,Yes,Yes,DSL,No,No,No,No,No,No,Month-to,Yes,Mailed c,50.15,2139.1,No
+0442-TDYUO,Male,0,Yes,No,48,Yes,No,No,No,No,No,No,No,No,Two year,Yes,Mailed c,20.05,1036,No
+0455-XFASS,Female,0,Yes,Yes,3,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,69.55,200.2,No
+0461-CVKMU,Female,0,Yes,Yes,23,Yes,No,Fiber op,No,Yes,Yes,Yes,No,No,Month-to,No,Electron,83.8,1900.25,Yes
+0475-RIJEP,Male,0,No,No,43,Yes,Yes,Fiber op,No,Yes,No,No,No,No,Month-to,Yes,Electron,77.85,3365.85,Yes
+0480-KYJVA,Female,0,Yes,Yes,72,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Credit c,24.25,1784.5,No
+0486-HECZI,Male,0,Yes,No,55,Yes,Yes,Fiber op,Yes,Yes,No,No,Yes,No,Month-to,Yes,Electron,96.75,5238.9,Yes
+0486-LGCCH,Male,0,Yes,Yes,11,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,19.65,225.75,No
+0487-CRLZF,Female,0,No,No,49,Yes,No,DSL,No,No,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,74.45,3721.9,No
+0487-RPVUM,Male,0,Yes,No,61,Yes,Yes,Fiber op,Yes,No,Yes,Yes,Yes,No,Month-to,No,Bank tra,99.4,5943.65,No
+0506-LVNGN,Female,1,No,No,5,Yes,No,Fiber op,No,No,Yes,No,No,No,Month-to,Yes,Credit c,75.55,349.65,Yes
+0508-OOLTO,Female,0,Yes,Yes,2,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,71.65,135.75,No
+0516-QREYC,Female,1,No,No,24,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,20.3,459.95,No
+0516-VRYBW,Female,0,No,Yes,18,Yes,No,No,No,No,No,No,No,No,One year,No,Bank tra,20.15,390.85,Yes
+0519-XUZJU,Female,0,No,No,1,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,No,Mailed c,70.75,70.75,Yes
+0531-XBKMM,Male,0,No,Yes,66,Yes,Yes,DSL,Yes,Yes,No,Yes,No,No,Two year,No,Bank tra,65.7,4378.9,No
+0537-QYZZN,Male,1,Yes,Yes,24,Yes,Yes,Fiber op,Yes,No,No,No,No,No,Month-to,Yes,Electron,79.85,1857.75,No
+0547-HURJB,Male,0,No,Yes,12,Yes,No,No,No,No,No,No,No,No,Month-to,No,Credit c,21.05,235.8,No
+0557-ASKVU,Female,0,Yes,Yes,18,Yes,No,DSL,No,No,Yes,Yes,No,No,One year,Yes,Credit c,54.4,957.1,No
+0562-FGDCR,Female,0,Yes,Yes,72,Yes,Yes,DSL,Yes,Yes,No,Yes,Yes,No,Two year,No,Mailed c,74.55,5430.65,No
+0564-MUUQK,Female,0,Yes,Yes,20,Yes,Yes,Fiber op,No,No,Yes,Yes,No,Yes,Month-to,Yes,Bank tra,95.5,1916.2,No
+0567-GGCAC,Female,0,No,No,7,Yes,No,DSL,Yes,Yes,Yes,No,No,No,Month-to,No,Electron,61.4,438.9,No
+0568-ONFPC,Male,0,Yes,Yes,5,Yes,Yes,No,No,No,No,No,No,No,Month-to,Yes,Bank tra,25.9,135,Yes
+0572-ZJKLT,Female,0,Yes,Yes,46,Yes,Yes,Fiber op,Yes,No,Yes,Yes,No,Yes,Two year,No,Mailed c,99.65,4630.2,No
+0578-SKVMF,Female,0,Yes,Yes,22,Yes,No,Fiber op,No,Yes,No,No,No,Yes,Month-to,No,Electron,83.3,1845.9,Yes
+0581-BXBUB,Female,1,No,No,4,Yes,No,Fiber op,No,Yes,No,No,No,No,Month-to,No,Electron,72.75,317.75,No
+0581-MDMPW,Female,0,No,No,24,Yes,Yes,Fiber op,No,No,Yes,No,Yes,No,Month-to,Yes,Credit c,88.95,2072.75,No
+0601-WZHJF,Male,0,Yes,No,14,No,No,DSL,No,No,No,No,Yes,Yes,Month-to,No,Electron,46.35,667.7,Yes
+0607-MVMGC,Male,0,Yes,Yes,45,Yes,Yes,DSL,No,Yes,Yes,No,Yes,Yes,One year,No,Credit c,78.75,3600.65,No
+0612-RTZZA,Female,1,No,No,1,No,No,DSL,No,No,No,No,No,No,Month-to,No,Electron,25.25,25.25,Yes
+0613-WUXUM,Female,0,Yes,Yes,70,Yes,No,No,No,No,No,No,No,No,Two year,Yes,Mailed c,19.2,1401.4,No
+0625-AFOHS,Female,0,Yes,Yes,29,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,20.2,558.8,No
+0635-WKOLD,Male,0,Yes,No,40,Yes,Yes,DSL,No,Yes,No,Yes,Yes,No,One year,No,Credit c,70.75,2921.75,No
+0637-UBJRP,Male,0,Yes,Yes,13,Yes,No,Fiber op,Yes,No,No,No,No,Yes,Month-to,No,Electron,84.05,1095.3,Yes
+0637-YLETY,Female,0,No,No,16,Yes,Yes,Fiber op,No,Yes,Yes,No,No,Yes,Month-to,Yes,Credit c,95.6,1555.65,Yes
+0641-EVBOJ,Male,0,No,No,3,Yes,No,Fiber op,Yes,No,No,Yes,No,No,Month-to,Yes,Mailed c,82.3,214.4,No
+0650-BWOZN,Female,1,No,No,18,Yes,No,Fiber op,No,Yes,No,No,No,No,Month-to,Yes,Electron,73.55,1359.45,No
+0654-HMSHN,Male,0,Yes,Yes,21,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,No,Electron,104.4,2157.95,Yes
+0655-YDGFJ,Male,0,No,No,29,Yes,No,DSL,No,No,Yes,No,No,No,Month-to,No,Bank tra,48.95,1323.7,No
+0661-KBKPA,Male,0,Yes,Yes,53,Yes,Yes,DSL,No,No,Yes,Yes,Yes,Yes,One year,Yes,Mailed c,78.75,3942.45,No
+0666-UXTJO,Male,1,Yes,No,34,Yes,No,Fiber op,No,No,Yes,No,Yes,No,Month-to,Yes,Credit c,85.2,2874.45,No
+0667-NSRGI,Female,0,Yes,No,48,Yes,Yes,DSL,No,No,Yes,Yes,No,Yes,One year,Yes,Mailed c,69.55,3435.6,No
+0674-GCDXG,Male,0,No,No,63,Yes,Yes,DSL,Yes,No,Yes,Yes,No,Yes,Two year,Yes,Bank tra,71.9,4479.2,No
+0679-IDSTG,Female,1,Yes,Yes,1,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,69.25,69.25,Yes
+0684-AOSIH,Male,0,Yes,No,1,Yes,No,Fiber op,Yes,No,No,No,Yes,Yes,Month-to,Yes,Electron,95,95,Yes
+0689-DSXGL,Female,0,Yes,Yes,52,Yes,No,Fiber op,No,Yes,Yes,Yes,No,No,Month-to,No,Bank tra,85.8,4433.3,No
+0691-IFBQW,Female,1,No,No,46,Yes,Yes,Fiber op,Yes,Yes,Yes,No,Yes,Yes,One year,Yes,Electron,110,4874.8,Yes
+0701-RFGFI,Female,0,Yes,Yes,49,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Bank tra,95.4,4613.95,No
+0708-LGSMF,Male,0,Yes,No,13,Yes,Yes,DSL,Yes,No,No,No,No,Yes,Month-to,Yes,Electron,65.85,902.25,No
+0722-TROQR,Female,1,No,No,4,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,74.9,321.75,Yes
+0725-CXOTM,Female,0,No,No,36,Yes,Yes,DSL,Yes,No,Yes,Yes,Yes,Yes,One year,Yes,Credit c,89.65,3348.1,No
+0733-VUNUW,Male,0,No,No,24,Yes,Yes,DSL,Yes,No,No,No,No,No,Month-to,Yes,Bank tra,55.65,1400.55,Yes
+0734-OXWBT,Male,0,No,Yes,3,Yes,No,DSL,No,No,No,Yes,Yes,Yes,Month-to,No,Mailed c,70.7,225.65,No
+0739-UUAJR,Female,0,Yes,Yes,72,No,No,DSL,Yes,No,Yes,No,Yes,Yes,Two year,Yes,Credit c,53.8,3952.45,No
+0742-LAFQK,Male,0,Yes,No,72,Yes,Yes,Fiber op,Yes,Yes,Yes,No,No,Yes,Two year,Yes,Electron,99.15,7422.1,No
+0742-MOABM,Male,0,Yes,No,4,Yes,No,DSL,No,No,No,Yes,No,No,Month-to,No,Mailed c,50.05,179.35,Yes
+0746-JTRFU,Male,0,No,No,2,No,No,DSL,No,No,No,No,No,No,Month-to,Yes,Electron,25.05,56.35,Yes
+0754-UKWQP,Male,0,No,No,2,Yes,No,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Electron,95.85,197.7,Yes
+0771-CHWSK,Male,0,No,No,66,Yes,Yes,DSL,Yes,Yes,Yes,No,No,Yes,Two year,Yes,Credit c,74.6,4798.4,No
+0778-NELLA,Male,0,No,No,9,No,No,DSL,No,No,No,No,Yes,No,Month-to,Yes,Credit c,34.7,296.1,Yes
+0781-LKXBR,Male,1,No,No,9,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Electron,100.5,918.6,Yes
+0786-IVLAW,Female,1,No,No,66,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,One year,No,Bank tra,108.1,7238.6,No
+0787-LHDYT,Male,0,No,No,16,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Credit c,20.6,330.25,No
+0788-DXBFY,Male,0,Yes,Yes,58,Yes,No,No,No,No,No,No,No,No,One year,Yes,Electron,19.55,1108.8,No
+0794-YVSGE,Male,0,Yes,Yes,72,Yes,No,No,No,No,No,No,No,No,Two year,No,Bank tra,20.3,1401.15,No
+0799-DDIHE,Female,0,Yes,Yes,15,Yes,No,DSL,No,No,No,No,No,No,Month-to,No,Electron,46.3,639.45,No
+0810-BDHAW,Female,0,Yes,Yes,24,Yes,Yes,DSL,Yes,Yes,No,No,Yes,Yes,One year,No,Electron,78.4,1832.4,No
+0810-DHDBD,Female,0,No,No,52,Yes,Yes,DSL,Yes,No,Yes,Yes,Yes,No,One year,No,Credit c,74,3877.65,No
+0815-MFZGM,Female,0,Yes,No,42,Yes,No,Fiber op,No,No,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,99,4135,No
+0816-TSPHQ,Male,0,No,No,2,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.75,44.2,No
+0817-HSUSE,Male,0,No,No,1,Yes,No,DSL,No,No,Yes,Yes,Yes,Yes,Month-to,Yes,Electron,75.5,75.5,No
+0818-OCPZO,Male,1,No,No,27,Yes,Yes,Fiber op,No,Yes,No,No,No,No,Month-to,Yes,Electron,81.45,2122.05,Yes
+0829-DDVLK,Female,0,No,No,15,Yes,No,No,No,No,No,No,No,No,One year,No,Credit c,20.1,302.45,No
+0835-JKADZ,Female,0,No,No,71,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Electron,111.25,7984.15,No
+0839-JTCUD,Female,0,Yes,Yes,66,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,No,Credit c,89.9,5958.85,No
+0840-DCNZE,Male,0,No,No,47,Yes,No,DSL,Yes,Yes,Yes,Yes,Yes,Yes,One year,Yes,Bank tra,86.95,4138.9,No
+0848-SOMKO,Male,0,No,No,70,No,No,DSL,Yes,No,Yes,Yes,No,Yes,Two year,No,Bank tra,48.4,3442.8,No
+0851-DFJKB,Female,0,No,No,15,Yes,No,DSL,Yes,No,Yes,Yes,No,No,Month-to,No,Electron,58.95,955.15,No
+0856-NAOES,Male,0,No,No,6,Yes,No,DSL,No,No,Yes,No,Yes,No,Month-to,No,Mailed c,60.9,414.1,No
+0864-FVJNJ,Female,0,Yes,Yes,64,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,One year,No,Electron,113.35,7222.75,No
+0870-VEMYL,Female,0,No,No,5,Yes,No,DSL,Yes,No,No,Yes,No,No,Month-to,No,Credit c,53.85,259.8,Yes
+0876-WDUUZ,Female,0,No,No,5,Yes,No,Fiber op,No,No,No,Yes,No,Yes,Month-to,Yes,Credit c,85.4,425.9,Yes
+0880-TKATG,Male,0,Yes,Yes,4,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,No,Electron,101.15,385.9,Yes
+0883-EIBTI,Female,0,No,No,2,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,19.5,31.55,Yes
+0885-HMGPY,Male,0,No,No,62,Yes,Yes,DSL,Yes,Yes,Yes,Yes,No,No,Two year,No,Bank tra,69.4,4237.5,No
+0898-XCGTF,Male,0,Yes,No,61,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,One year,Yes,Bank tra,96.5,5673.7,No
+0902-XKXPN,Male,0,Yes,Yes,69,Yes,No,No,No,No,No,No,No,No,Two year,No,Bank tra,20.2,1376.5,No
+0916-QOFDP,Female,1,Yes,Yes,14,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,95.8,1346.3,No
+0924-BJCRC,Female,1,Yes,No,60,Yes,Yes,Fiber op,No,Yes,No,No,No,Yes,Month-to,No,Electron,89.45,5294.6,No
+0928-JMXNP,Male,1,Yes,No,4,No,No,DSL,No,No,Yes,No,No,No,Month-to,Yes,Electron,29.9,118.25,No
+0928-XUTSN,Female,0,No,No,13,Yes,No,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Electron,80.5,1011.8,No
+0929-HYQEW,Male,0,No,No,3,Yes,No,DSL,Yes,No,No,No,No,No,Month-to,Yes,Mailed c,50.15,160.85,No
+0940-OUQEC,Male,0,No,No,10,Yes,Yes,Fiber op,No,Yes,No,No,No,No,Month-to,Yes,Bank tra,80.7,788.8,Yes
+0946-CLJTI,Male,1,Yes,No,58,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Electron,98.7,5812.6,Yes
+0953-LGOVU,Male,0,Yes,Yes,12,No,No,DSL,No,Yes,No,Yes,No,No,Month-to,No,Mailed c,35.5,432.25,No
+0959-WHOKV,Male,0,No,No,42,Yes,Yes,Fiber op,Yes,Yes,Yes,No,No,Yes,One year,Yes,Electron,99,4298.45,No
+0962-CQPWQ,Female,0,Yes,Yes,62,Yes,No,No,No,No,No,No,No,No,Two year,No,Bank tra,20.3,1296.15,No
+0967-BMLBD,Female,0,Yes,Yes,11,Yes,No,No,No,No,No,No,No,No,One year,Yes,Mailed c,20,196.35,No
+0970-ETWGE,Male,0,No,No,1,Yes,No,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,89.55,89.55,Yes
+1000-AJSLD,Male,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,20.1,20.1,Yes
+1015-JPFYW,Male,0,No,Yes,7,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,19.45,136.75,No
+1015-OWJKI,Male,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,19.05,19.05,No
+1016-DJTSV,Male,1,No,No,8,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,69.7,572.85,No
+1020-JPQOW,Female,0,Yes,No,56,Yes,Yes,Fiber op,No,Yes,Yes,Yes,No,No,Month-to,No,Electron,90.55,5116.6,No
+1022-RKXDR,Female,0,No,No,41,Yes,Yes,No,No,No,No,No,No,No,One year,Yes,Mailed c,24.85,962.25,No
+1027-LKKQQ,Female,0,Yes,Yes,72,Yes,No,DSL,Yes,No,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,80.45,5886.85,No
+1031-IIDEO,Female,0,No,No,1,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,70.85,70.85,Yes
+1036-GUDCL,Male,0,Yes,Yes,60,Yes,No,DSL,Yes,Yes,No,Yes,Yes,Yes,Month-to,Yes,Credit c,79.05,4663.4,No
+1043-UXOVO,Female,0,No,No,71,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,113.15,7993.3,No
+1047-RNXZV,Male,0,No,No,43,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,19.55,876.15,No
+1051-GEJLJ,Female,0,No,No,2,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,19.5,27.55,No
+1053-MXTTK,Female,0,Yes,Yes,72,Yes,No,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,108.65,7726.35,No
+1061-PNTHC,Female,0,Yes,Yes,56,Yes,Yes,Fiber op,Yes,No,Yes,Yes,Yes,Yes,Month-to,Yes,Mailed c,109.6,5953,No
+1062-LHZOD,Male,0,Yes,Yes,1,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Mailed c,69.9,69.9,Yes
+1063-DHQJF,Male,0,Yes,Yes,69,Yes,No,Fiber op,No,Yes,No,Yes,Yes,No,Two year,Yes,Mailed c,92.15,6480.9,No
+1069-XAIEM,Female,1,No,No,1,Yes,Yes,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Electron,85.05,85.05,Yes
+1077-HUUJM,Female,0,No,Yes,7,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,71.05,472.65,No
+1080-BWSYE,Male,1,Yes,No,64,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Credit c,25.65,1740.8,No
+1085-LDWAM,Female,0,Yes,Yes,69,Yes,No,No,No,No,No,No,No,No,One year,Yes,Credit c,20.35,1442.65,No
+1086-LXKFY,Female,0,Yes,Yes,1,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Mailed c,69.1,69.1,Yes
+1088-AUUZZ,Male,0,Yes,Yes,56,Yes,Yes,DSL,Yes,Yes,No,Yes,No,Yes,Two year,Yes,Credit c,75.85,4261.2,No
+1089-HDMKP,Male,1,No,Yes,11,Yes,No,DSL,No,Yes,No,Yes,No,No,Month-to,Yes,Electron,54.55,601.25,No
+1089-XZWHH,Female,0,Yes,Yes,24,Yes,No,No,No,No,No,No,No,No,Two year,Yes,Mailed c,19.7,494.05,No
+1090-PYKCI,Female,0,Yes,Yes,69,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,No,One year,Yes,Credit c,105.1,7234.8,No
+1095-JUDTC,Female,1,No,No,47,Yes,Yes,Fiber op,No,Yes,No,Yes,Yes,No,Month-to,Yes,Electron,95.05,4504.55,Yes
+1096-ADRUX,Female,0,Yes,Yes,66,Yes,Yes,Fiber op,No,No,No,No,No,No,One year,Yes,Bank tra,74.25,4859.25,No
+1098-KFQEC,Female,0,Yes,Yes,55,Yes,No,No,No,No,No,No,No,No,Two year,No,Credit c,19.4,1083,No
+1099-BTKWT,Female,0,Yes,No,68,No,No,DSL,Yes,No,Yes,No,Yes,Yes,One year,Yes,Electron,54.4,3723.65,No
+1104-FEJAM,Male,0,Yes,Yes,28,Yes,Yes,DSL,No,Yes,No,No,No,Yes,Month-to,No,Electron,64.4,1802.15,No
+1114-CENIM,Male,0,No,Yes,54,Yes,Yes,DSL,No,Yes,No,No,No,No,Month-to,Yes,Credit c,55,3092.65,Yes
+1122-JWTJW,Male,0,Yes,Yes,1,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Mailed c,70.65,70.65,Yes
+1131-ALZWV,Female,0,No,No,24,Yes,Yes,No,No,No,No,No,No,No,One year,No,Bank tra,24.6,605.25,No
+1131-SUEKT,Male,0,Yes,Yes,61,Yes,No,Fiber op,No,Yes,No,Yes,Yes,Yes,One year,Yes,Bank tra,98.45,6145.2,No
+1142-IHLOO,Female,0,No,No,51,Yes,No,Fiber op,No,No,No,No,Yes,Yes,One year,No,Credit c,87.55,4475.9,No
+1143-NMNQJ,Female,0,No,No,2,Yes,Yes,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Electron,85.7,169.8,Yes
+1150-FTQGN,Female,0,Yes,Yes,60,Yes,Yes,Fiber op,Yes,Yes,No,No,Yes,No,One year,No,Bank tra,94.15,5811.8,No
+1156-ZFYDO,Female,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,No,Electron,19.75,19.75,No
+1162-ECVII,Male,1,Yes,No,72,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,109.75,7932.5,No
+1163-ONYEY,Male,0,Yes,Yes,41,Yes,Yes,DSL,Yes,Yes,Yes,No,Yes,No,Month-to,Yes,Credit c,74.55,3023.55,No
+1167-OYZJF,Female,1,Yes,No,67,Yes,No,No,No,No,No,No,No,No,Two year,Yes,Bank tra,20.05,1263.05,No
+1169-WCVAK,Male,0,Yes,No,19,Yes,Yes,Fiber op,Yes,Yes,No,Yes,No,No,Month-to,Yes,Credit c,88.8,1672.35,No
+1171-TYKUR,Male,0,Yes,No,47,Yes,Yes,No,No,No,No,No,No,No,Month-to,No,Electron,25.4,1139.2,No
+1179-INLAT,Male,0,No,No,3,Yes,No,No,No,No,No,No,No,No,One year,Yes,Mailed c,19.45,69.25,No
+1187-WILMM,Male,0,Yes,Yes,63,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,89.4,5597.65,No
+1195-OIYEJ,Male,0,No,No,13,Yes,No,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,91.1,1135.7,Yes
+1208-DNHLN,Male,0,Yes,Yes,23,Yes,Yes,DSL,No,No,No,No,No,No,One year,Yes,Credit c,48.35,1067.15,Yes
+1215-VFYVK,Female,0,No,No,4,No,No,DSL,Yes,No,Yes,Yes,No,Yes,Month-to,No,Mailed c,48.25,202.25,No
+1221-GHZEP,Female,0,No,No,62,Yes,No,DSL,Yes,No,No,Yes,No,Yes,Two year,Yes,Mailed c,65.1,3846.75,No
+1226-JZNKR,Female,0,Yes,Yes,8,Yes,No,No,No,No,No,No,No,No,One year,No,Electron,19.8,160.05,No
+1228-FZFRV,Male,0,Yes,Yes,50,Yes,Yes,Fiber op,Yes,No,Yes,No,Yes,Yes,Month-to,No,Credit c,105.95,5341.8,Yes
+1240-KNSEZ,Male,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,20.1,20.1,Yes
+1241-FPMOF,Male,0,No,No,52,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,19.65,1025.05,No
+1247-QBVSH,Female,0,Yes,Yes,43,Yes,No,DSL,No,Yes,No,No,No,No,Month-to,No,Mailed c,50.2,2169.4,No
+1251-STYSZ,Female,1,No,No,4,Yes,Yes,Fiber op,Yes,No,No,No,No,No,Month-to,Yes,Electron,80.25,303.7,No
+1261-FWTTE,Male,1,No,No,23,No,No,DSL,No,No,No,No,No,Yes,Month-to,Yes,Bank tra,34.65,768.45,No
+1264-BYWMS,Male,0,No,No,55,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,96.8,5283.95,Yes
+1265-HVPZB,Male,0,Yes,No,59,Yes,No,DSL,Yes,Yes,Yes,No,Yes,No,One year,No,Credit c,66.4,3958.2,No
+1273-MTETI,Female,1,No,No,4,Yes,Yes,Fiber op,No,No,Yes,No,No,Yes,Month-to,Yes,Electron,88.85,372.45,Yes
+1285-OKIPP,Male,0,No,No,1,Yes,No,Fiber op,No,No,No,No,No,Yes,Month-to,No,Electron,79.9,79.9,Yes
+1293-HHSHJ,Female,0,No,No,35,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,21.1,741,No
+1301-LOPVR,Male,0,Yes,Yes,29,No,No,DSL,Yes,Yes,Yes,Yes,No,Yes,One year,Yes,Credit c,55.35,1636.95,No
+1302-TPUBN,Male,0,No,No,66,Yes,No,No,No,No,No,No,No,No,Two year,No,Bank tra,19.35,1240.8,No
+1302-UHBDD,Male,1,No,No,20,Yes,No,Fiber op,No,No,No,No,Yes,Yes,Month-to,No,Electron,89.95,1648.45,No
+1303-SRDOK,Female,0,Yes,Yes,55,Yes,No,Fiber op,No,No,No,No,No,No,Two year,Yes,Credit c,69.05,3842.6,No
+1304-BCCFO,Male,0,Yes,No,9,Yes,No,DSL,No,No,Yes,No,Yes,Yes,Month-to,Yes,Mailed c,70.05,564.4,No
+1304-NECVQ,Female,1,No,No,2,Yes,Yes,Fiber op,No,No,Yes,No,No,No,Month-to,Yes,Electron,78.55,149.55,Yes
+1304-SEGFY,Female,0,Yes,No,72,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Two year,Yes,Electron,97.85,6841.3,No
+1309-XGFSN,Male,1,Yes,Yes,52,Yes,Yes,DSL,No,Yes,Yes,No,Yes,Yes,One year,Yes,Electron,80.85,4079.55,No
+1335-MXCSE,Male,0,Yes,Yes,55,Yes,No,DSL,No,No,Yes,Yes,No,No,Two year,Yes,Credit c,55.25,3119.9,No
+1336-EZFZY,Female,0,No,No,4,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.05,83.3,No
+1342-JPNKI,Male,0,No,No,10,Yes,Yes,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Bank tra,86.05,834.1,Yes
+1345-GKDZZ,Male,0,No,Yes,6,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,19.55,128.6,No
+1360-JYXKQ,Female,1,Yes,No,54,Yes,No,Fiber op,No,No,Yes,Yes,Yes,Yes,One year,Yes,Electron,99.1,5437.1,No
+1360-RCYRT,Male,0,Yes,Yes,23,No,No,DSL,No,No,No,Yes,No,No,Month-to,Yes,Bank tra,30.35,678.75,No
+1379-FRVEB,Male,0,No,Yes,15,Yes,Yes,Fiber op,No,Yes,No,No,Yes,No,Month-to,Yes,Electron,91,1430.05,No
+1383-EZRWL,Female,0,No,No,7,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.05,164.85,Yes
+1391-UBDAR,Male,0,No,No,11,Yes,No,Fiber op,No,No,Yes,No,No,No,Month-to,No,Electron,72.9,818.45,No
+1393-IMKZG,Female,0,No,No,1,Yes,No,Fiber op,No,No,No,Yes,Yes,Yes,Month-to,Yes,Electron,95.85,95.85,No
+1401-FTHFQ,Male,0,Yes,Yes,23,Yes,No,No,No,No,No,No,No,No,One year,Yes,Credit c,20,445.3,No
+1403-LKLIK,Female,0,Yes,Yes,33,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,20.1,579.4,No
+1414-YADCW,Male,0,Yes,No,70,Yes,No,Fiber op,Yes,Yes,No,Yes,No,No,Two year,No,Bank tra,84.6,5706.2,No
+1428-GTBJJ,Male,0,No,No,11,Yes,No,Fiber op,No,Yes,No,No,No,No,Month-to,Yes,Electron,74.55,824.75,Yes
+1442-OKRJE,Male,0,Yes,Yes,66,Yes,No,Fiber op,Yes,Yes,Yes,No,Yes,Yes,One year,Yes,Bank tra,103.15,7031.3,No
+1447-PJGGA,Female,0,No,No,57,Yes,No,Fiber op,No,No,Yes,No,Yes,Yes,Two year,Yes,Electron,95.25,5464.65,Yes
+1449-XQEMT,Male,0,No,No,3,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,19.8,58.15,Yes
+1450-GALXR,Female,0,No,No,10,Yes,Yes,Fiber op,No,No,No,Yes,Yes,Yes,Month-to,Yes,Electron,98.5,1058.25,Yes
+1452-UZOSF,Male,0,Yes,Yes,72,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,No,Two year,Yes,Credit c,106.1,7548.6,No
+1455-UGQVH,Male,0,Yes,No,10,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Electron,98.5,1037.75,Yes
+1465-LNTLJ,Male,1,Yes,No,8,Yes,No,DSL,No,No,Yes,Yes,No,Yes,Month-to,Yes,Credit c,64.4,581.7,No
+1465-WCZVT,Female,0,Yes,Yes,3,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,19.65,60.65,No
+1469-LBJQJ,Female,0,Yes,No,66,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,Yes,Electron,105.2,6936.85,No
+1470-PSXNM,Male,0,Yes,Yes,49,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,No,One year,Yes,Electron,93.65,4520.15,No
+1475-VWVDO,Male,0,No,No,7,Yes,No,Fiber op,No,No,Yes,No,No,No,Month-to,Yes,Electron,74.9,490.55,No
+1478-VPOAD,Female,0,No,No,1,Yes,No,DSL,No,No,No,No,No,No,Month-to,No,Electron,43.8,43.8,No
+1485-YDHMM,Male,0,Yes,Yes,52,Yes,Yes,Fiber op,No,Yes,No,Yes,No,Yes,Month-to,Yes,Bank tra,93.25,4631.7,No
+1494-EJZDW,Female,0,Yes,Yes,10,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,20.15,220.8,No
+1502-XFCVR,Female,0,No,No,58,Yes,No,Fiber op,Yes,Yes,Yes,No,Yes,Yes,One year,Yes,Electron,106.45,6145.85,Yes
+1527-SXDPN,Male,0,Yes,Yes,52,Yes,Yes,Fiber op,No,No,Yes,Yes,No,Yes,Two year,Yes,Bank tra,96.25,4990.25,Yes
+1535-VTJOQ,Female,0,No,No,24,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Credit c,25.15,553,No
+1539-LNKHM,Female,0,No,No,12,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.4,266.6,No
+1543-LLLFT,Male,1,Yes,No,61,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,No,One year,Yes,Mailed c,98.3,6066.55,No
+1557-EMYVT,Female,0,No,No,43,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,No,Credit c,115.05,4895.1,No
+1567-DSCIC,Male,0,No,No,8,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,No,Month-to,Yes,Electron,94,773.65,Yes
+1568-BEKZM,Male,1,Yes,No,70,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,No,Credit c,90.05,6333.4,No
+1575-KRZZE,Female,0,No,No,4,Yes,No,DSL,Yes,Yes,No,No,No,No,Month-to,No,Electron,55.2,220.65,No
+1591-MQJTP,Male,1,Yes,No,51,Yes,Yes,Fiber op,Yes,No,Yes,No,No,Yes,One year,Yes,Bank tra,93.65,4839.15,No
+1596-OQSPS,Female,0,No,No,11,Yes,No,DSL,No,Yes,No,No,No,No,Month-to,No,Electron,51.1,531.15,No
+1599-MMYRQ,Male,0,Yes,Yes,62,Yes,No,Fiber op,Yes,Yes,No,No,No,No,One year,Yes,Credit c,81.45,4983.05,No
+1608-GMEWB,Male,1,No,No,45,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Bank tra,93.9,4200.25,No
+1612-EOHDH,Female,0,No,No,1,Yes,No,DSL,No,No,No,No,No,No,Month-to,No,Electron,45.15,45.15,Yes
+1622-HSHSF,Female,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,19.55,19.55,No
+1629-DQQVB,Female,0,No,No,14,Yes,No,DSL,Yes,No,No,No,No,No,Month-to,No,Bank tra,50.1,709.5,No
+1635-FJFCC,Female,0,No,No,5,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Credit c,44.05,202.15,No
+1658-TJVOA,Female,1,No,No,6,Yes,No,Fiber op,Yes,No,No,No,No,No,Month-to,Yes,Electron,74.1,450.9,No
+1663-MHLHE,Male,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,19.2,19.2,No
+1670-SVOWZ,Female,0,Yes,Yes,14,Yes,No,Fiber op,No,Yes,No,Yes,No,Yes,Month-to,Yes,Credit c,89.65,1208.35,Yes
+1685-VAYJF,Male,0,No,No,11,Yes,No,DSL,No,No,No,No,No,No,Month-to,No,Credit c,45.2,492,No
+1686-STUHN,Male,0,No,No,42,Yes,No,No,No,No,No,No,No,No,One year,No,Bank tra,19.8,849.9,No
+1699-HPSBG,Male,0,No,No,12,Yes,No,DSL,No,No,No,Yes,Yes,No,One year,Yes,Electron,59.8,727.8,Yes
+1703-MGIAB,Female,0,No,No,17,Yes,Yes,DSL,No,No,Yes,Yes,Yes,No,Month-to,Yes,Mailed c,69,1108,No
+1704-NRWYE,Female,1,No,No,9,Yes,No,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Electron,80.85,751.65,Yes
+1705-GUHPV,Female,0,No,No,63,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Mailed c,24.2,1618.2,No
+1710-RCXUS,Male,0,Yes,No,51,Yes,Yes,Fiber op,No,Yes,No,No,No,Yes,One year,Yes,Credit c,90.35,4614.55,No
+1725-MIMXW,Male,0,No,Yes,1,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,19.45,19.45,Yes
+1731-TVIUK,Female,0,No,No,4,Yes,Yes,Fiber op,No,Yes,No,Yes,No,Yes,Month-to,Yes,Electron,93.5,362.2,Yes
+1732-VHUBQ,Female,1,Yes,Yes,47,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,No,Bank tra,70.55,3309.25,Yes
+1734-ZMNTZ,Female,0,Yes,Yes,11,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Mailed c,25,300.7,No
+1735-XMJVH,Male,0,Yes,Yes,8,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,19.35,152.6,No
+1744-JHKYS,Female,0,Yes,No,34,Yes,Yes,No,No,No,No,No,No,No,Month-to,No,Electron,24.7,780.2,No
+1751-NCDLI,Male,1,Yes,No,46,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Electron,98.85,4564.9,No
+1752-OZXFY,Male,0,Yes,No,60,Yes,No,DSL,Yes,No,No,No,Yes,No,One year,Yes,Mailed c,59.8,3561.15,No
+1754-GKYPY,Male,1,Yes,No,22,Yes,No,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Bank tra,89.75,1938.9,No
+1761-AEZZR,Male,0,No,No,1,Yes,No,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Electron,79.55,79.55,Yes
+1763-KUAAW,Female,1,No,No,18,Yes,No,No,No,No,No,No,No,No,One year,No,Bank tra,20.35,369.6,No
+1763-WQFUK,Male,0,No,No,3,Yes,No,DSL,No,No,No,Yes,No,No,Month-to,Yes,Mailed c,50.5,147.75,No
+1769-GRUIK,Female,0,No,No,18,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,71.1,1247.75,No
+1771-OADNZ,Male,1,Yes,No,29,Yes,Yes,Fiber op,No,Yes,Yes,No,No,Yes,Month-to,Yes,Electron,95.9,2745.2,Yes
+1784-BXEFA,Female,0,No,No,10,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,20.55,187.35,No
+1792-UXAFY,Female,1,No,No,17,Yes,No,Fiber op,No,Yes,Yes,No,Yes,No,Month-to,Yes,Electron,89.15,1496.9,Yes
+1794-HBQTJ,Female,0,No,No,1,Yes,No,DSL,Yes,No,No,No,No,No,Month-to,Yes,Credit c,48.6,48.6,Yes
+1809-DMJHQ,Female,0,No,Yes,5,Yes,No,DSL,No,No,No,No,No,No,Month-to,No,Mailed c,46,221.7,Yes
+1813-JYWTO,Female,0,Yes,No,72,Yes,Yes,Fiber op,Yes,No,No,No,No,No,Two year,No,Bank tra,80.45,5737.6,No
+1814-WFGVS,Male,0,Yes,Yes,72,No,No,DSL,Yes,No,Yes,Yes,Yes,No,Two year,No,Mailed c,48.9,3527,No
+1833-VGRUM,Female,1,No,No,1,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,74.2,74.2,Yes
+1834-ABKHQ,Female,0,Yes,Yes,52,Yes,No,DSL,No,No,Yes,No,No,No,One year,Yes,Bank tra,50.95,2610.65,No
+1841-YSJGV,Male,0,Yes,No,72,Yes,Yes,Fiber op,Yes,Yes,No,Yes,Yes,Yes,Two year,Yes,Credit c,109.95,7852.4,No
+1846-XWOQN,Female,1,No,No,1,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,70.15,70.15,Yes
+1855-AGAWH,Male,0,Yes,No,31,Yes,No,Fiber op,No,No,Yes,No,Yes,Yes,One year,Yes,Electron,93.8,2939.8,No
+1855-CFULU,Female,1,No,No,4,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.05,91.45,No
+1866-DIOQZ,Female,0,Yes,No,71,No,No,DSL,Yes,Yes,Yes,Yes,Yes,Yes,One year,No,Bank tra,66.8,4689.15,No
+1866-NXPSP,Female,0,No,No,36,Yes,No,DSL,Yes,Yes,Yes,Yes,No,Yes,One year,Yes,Mailed c,75.55,2680.15,No
+1866-OBPNR,Male,0,Yes,Yes,1,Yes,No,Fiber op,No,Yes,No,No,No,No,Month-to,No,Credit c,74.6,74.6,No
+1867-BDVFH,Male,0,Yes,Yes,11,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,74.35,834.2,Yes
+1871-MOWRM,Male,0,Yes,No,12,Yes,No,Fiber op,Yes,No,No,Yes,No,No,Month-to,No,Bank tra,80.85,866.45,Yes
+1891-FZYSA,Male,1,Yes,No,69,Yes,Yes,Fiber op,No,Yes,No,No,Yes,No,Month-to,Yes,Electron,89.95,6143.15,Yes
+1898-JSNDC,Female,0,No,No,39,Yes,No,DSL,No,Yes,No,No,Yes,No,One year,Yes,Credit c,58.6,2224.5,No
+1902-XBTFB,Male,0,No,Yes,22,Yes,No,Fiber op,No,Yes,Yes,No,Yes,No,Month-to,Yes,Electron,89.4,2001.5,Yes
+1904-WAJAA,Female,0,Yes,Yes,24,Yes,Yes,DSL,Yes,Yes,Yes,No,No,No,Two year,No,Electron,64.35,1558.65,No
+1905-OEILC,Female,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,19.5,19.5,No
+1907-UBQFC,Male,1,No,No,10,Yes,No,Fiber op,No,Yes,No,No,No,No,Month-to,Yes,Electron,72.85,688.65,Yes
+1925-LFCZZ,Male,1,No,No,55,No,No,DSL,No,No,Yes,No,Yes,Yes,One year,Yes,Bank tra,50.05,2743.45,No
+1928-BXYIV,Male,0,No,No,1,Yes,Yes,DSL,Yes,Yes,No,No,No,No,Month-to,No,Electron,61.15,61.15,No
+1930-QPBVZ,Male,0,Yes,Yes,68,Yes,No,Fiber op,Yes,Yes,No,Yes,No,Yes,Two year,No,Bank tra,95.1,6683.4,No
+1936-CZAKF,Male,0,Yes,No,49,No,No,DSL,No,Yes,No,No,Yes,Yes,Two year,No,Credit c,49.65,2409.9,No
+1945-XISKS,Female,0,Yes,No,67,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,19.65,1335.2,No
+1950-KSVVJ,Female,0,Yes,No,45,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,One year,No,Mailed c,113.3,5032.25,No
+1965-AKTSX,Female,1,No,No,14,Yes,Yes,Fiber op,No,Yes,No,No,No,No,Month-to,Yes,Electron,78.95,1101.85,Yes
+1972-XMUWV,Female,0,Yes,No,65,Yes,No,DSL,No,No,No,Yes,Yes,No,Two year,Yes,Credit c,59.8,3808.2,No
+1982-FEBTD,Female,0,Yes,Yes,23,Yes,Yes,No,No,No,No,No,No,No,Two year,Yes,Credit c,25.6,514.75,No
+1984-GPTEH,Female,0,No,No,29,Yes,Yes,No,No,No,No,No,No,No,Month-to,No,Electron,25.15,702,No
+1998-VHJHK,Female,0,No,No,27,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,19.15,501.35,No
+2000-MPKCA,Female,0,No,No,58,Yes,Yes,Fiber op,Yes,Yes,Yes,No,Yes,Yes,One year,Yes,Electron,107.75,6332.75,No
+2004-OCQXK,Female,0,No,No,1,Yes,No,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Electron,81.95,81.95,Yes
+2018-QKYGT,Male,0,Yes,Yes,1,Yes,No,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Electron,81.05,81.05,No
+2037-SGXHH,Male,0,Yes,Yes,38,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,No,Month-to,Yes,Electron,94.65,3624.3,Yes
+2038-LLMLM,Female,0,No,No,48,Yes,Yes,Fiber op,No,No,Yes,Yes,Yes,Yes,Month-to,Yes,Electron,103.85,4946.05,No
+2040-OBMLJ,Male,0,No,No,31,Yes,Yes,Fiber op,No,No,No,Yes,No,No,One year,No,Credit c,81.7,2548.65,No
+2040-XBAVJ,Male,0,Yes,Yes,72,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,No,Bank tra,114.45,8100.55,No
+2049-BAFNW,Female,0,No,No,1,No,No,DSL,No,No,Yes,Yes,No,No,Month-to,No,Mailed c,35.9,35.9,No
+2055-PDADH,Female,1,No,No,3,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,70.4,204.7,Yes
+2055-SIFSS,Female,1,Yes,No,55,Yes,Yes,DSL,No,No,No,No,No,No,Month-to,No,Bank tra,51.65,2838.55,No
+2057-ZBLPD,Female,0,Yes,No,21,Yes,Yes,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Electron,86.5,1808.7,Yes
+2070-XYMFH,Female,1,No,No,23,Yes,Yes,Fiber op,No,No,Yes,No,No,No,Month-to,Yes,Mailed c,79.35,1835.3,No
+2081-KJSQF,Male,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,20.25,20.25,No
+2082-CEFLT,Male,0,No,No,1,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Electron,45.6,45.6,Yes
+2082-OJVTK,Male,0,Yes,Yes,29,Yes,Yes,Fiber op,No,No,Yes,No,No,Yes,Month-to,Yes,Electron,89.2,2698.35,Yes
+2085-JVGAD,Male,0,Yes,No,37,Yes,No,No,No,No,No,No,No,No,Month-to,No,Bank tra,20.35,697.65,No
+2096-XOTMO,Female,0,Yes,Yes,16,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,19.35,275.9,No
+2114-MGINA,Female,0,No,No,14,Yes,No,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Mailed c,89.8,1129.1,Yes
+2122-SZZZD,Male,0,No,No,44,Yes,No,No,No,No,No,No,No,No,One year,No,Credit c,19.5,835.5,No
+2135-DQWAQ,Female,0,No,No,5,Yes,No,Fiber op,No,Yes,No,No,Yes,No,Month-to,Yes,Mailed c,85.3,420.45,No
+2135-RXIHG,Male,0,No,No,1,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Electron,45.65,45.65,Yes
+2137-DQMEV,Male,0,Yes,Yes,68,No,No,DSL,Yes,Yes,No,No,Yes,No,One year,No,Mailed c,44.8,2983.65,No
+2138-VFAPZ,Female,0,Yes,Yes,14,Yes,No,No,No,No,No,No,No,No,Two year,Yes,Mailed c,19.7,263.65,No
+2139-FQHLM,Male,0,No,No,19,Yes,No,Fiber op,No,No,Yes,Yes,Yes,No,Month-to,No,Mailed c,89.95,1682.4,No
+2144-BFDSO,Female,1,Yes,No,50,Yes,Yes,Fiber op,Yes,Yes,Yes,No,Yes,Yes,Month-to,No,Bank tra,108.75,5431.9,No
+2144-ESWKO,Male,0,No,No,43,No,No,DSL,Yes,No,Yes,No,No,No,One year,Yes,Credit c,35.2,1463.7,No
+2146-EGVDT,Male,0,Yes,Yes,59,Yes,No,No,No,No,No,No,No,No,Two year,No,Credit c,19.3,1192.7,No
+2150-OEGBV,Male,0,No,No,27,Yes,No,No,No,No,No,No,No,No,One year,No,Bank tra,20.1,562.6,No
+2157-MXBJS,Male,0,Yes,No,13,Yes,Yes,DSL,No,No,Yes,No,Yes,Yes,One year,Yes,Mailed c,75.3,989.45,Yes
+2159-TURXX,Male,0,No,No,5,Yes,No,No,No,No,No,No,No,No,Month-to,No,Credit c,20.05,95.55,No
+2164-SOQXL,Female,0,Yes,Yes,20,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.05,406.05,No
+2176-LVPNX,Female,1,No,No,71,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,No,Mailed c,89.85,6293.45,No
+2181-TIDSV,Male,0,Yes,Yes,68,Yes,No,No,No,No,No,No,No,No,Two year,Yes,Bank tra,19.95,1303.25,No
+2181-UAESM,Male,0,No,No,2,Yes,No,DSL,Yes,No,Yes,No,No,No,Month-to,No,Electron,53.45,119.5,No
+2189-WWOEW,Female,0,No,Yes,15,Yes,No,Fiber op,No,Yes,No,No,No,Yes,Month-to,Yes,Bank tra,85.9,1269.55,Yes
+2190-PHBHR,Female,0,Yes,No,72,Yes,Yes,Fiber op,Yes,Yes,No,No,No,Yes,Two year,Yes,Credit c,94.45,6921.7,No
+2195-VVRJF,Male,1,Yes,No,18,Yes,No,DSL,Yes,No,No,No,No,Yes,Month-to,Yes,Credit c,59.1,1011.05,No
+2195-ZRVAX,Female,0,Yes,No,47,Yes,No,Fiber op,No,No,Yes,No,No,Yes,Month-to,Yes,Electron,85.3,4045.65,Yes
+2200-DSAAL,Female,0,No,No,68,Yes,Yes,DSL,No,Yes,Yes,No,Yes,Yes,Two year,Yes,Electron,80.65,5330.2,No
+2215-ZAFGX,Male,0,No,No,9,Yes,Yes,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Electron,85.5,791.7,No
+2219-MVUSO,Male,0,No,No,8,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Mailed c,45.15,438.4,Yes
+2220-IAHLS,Female,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,No,Credit c,19.4,19.4,No
+2225-ZRGSG,Female,0,Yes,Yes,70,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,No,No,Two year,No,Bank tra,93.9,6579.05,Yes
+2227-JRSJX,Female,0,No,No,21,Yes,No,Fiber op,No,Yes,No,Yes,Yes,Yes,Month-to,Yes,Bank tra,99.15,1956.4,No
+2229-DPMBI,Female,0,Yes,Yes,8,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,19.5,162.15,No
+2232-DMLXU,Female,0,Yes,No,1,Yes,No,DSL,No,No,No,No,Yes,No,Month-to,No,Mailed c,55.2,55.2,Yes
+2233-FAGXV,Female,0,Yes,Yes,5,Yes,Yes,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,24.3,132.25,No
+2235-DWLJU,Female,1,No,No,6,No,No,DSL,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,44.4,263.05,No
+2235-EZAIK,Female,0,Yes,No,72,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,No,Two year,No,Credit c,79.2,5401.9,No
+2236-HILPA,Male,0,Yes,Yes,62,Yes,No,No,No,No,No,No,No,No,Two year,No,Credit c,20.65,1218.45,No
+2239-CGBUZ,Female,0,Yes,No,51,Yes,No,DSL,Yes,Yes,No,Yes,No,No,One year,Yes,Bank tra,60.5,3145.15,No
+2239-JALAW,Male,0,No,No,58,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,One year,Yes,Bank tra,103.25,6017.65,Yes
+2240-HSJQD,Male,0,No,Yes,38,Yes,Yes,Fiber op,No,Yes,No,No,No,No,Month-to,Yes,Mailed c,81.85,3141.7,No
+2243-FNMMI,Male,0,No,No,20,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,19.4,415.4,No
+2253-KPMNB,Female,0,Yes,Yes,69,No,No,DSL,Yes,Yes,Yes,Yes,No,No,Two year,No,Bank tra,46.25,3121.4,No
+2267-WTPYD,Female,1,Yes,No,57,Yes,Yes,Fiber op,No,Yes,Yes,No,No,Yes,Month-to,No,Credit c,94,5438.95,No
+2270-CHBFN,Female,0,Yes,No,44,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,No,No,Month-to,Yes,Credit c,95.1,4060.55,No
+2272-UOINI,Female,0,No,No,7,Yes,No,DSL,Yes,Yes,No,Yes,Yes,Yes,Month-to,Yes,Electron,78.5,571.05,No
+2277-VWCNI,Female,1,No,No,4,Yes,Yes,DSL,No,No,No,No,No,No,Month-to,No,Mailed c,48.75,179.85,No
+2279-AXJJK,Male,0,Yes,No,52,Yes,Yes,Fiber op,No,Yes,No,Yes,No,Yes,Month-to,Yes,Credit c,95.65,5088.4,No
+2282-YGNOR,Female,0,No,No,29,Yes,No,DSL,Yes,No,Yes,Yes,No,No,One year,No,Credit c,58,1734.5,No
+2284-VFLKH,Male,0,Yes,No,49,Yes,No,Fiber op,No,No,Yes,Yes,Yes,Yes,One year,Yes,Credit c,99.25,4920.8,No
+2293-IJWPS,Female,0,Yes,No,57,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,One year,Yes,Credit c,100.75,5985,No
+2294-SALNE,Male,0,Yes,Yes,23,Yes,No,Fiber op,No,Yes,Yes,Yes,No,No,One year,No,Mailed c,86.8,1940.8,No
+2300-RQGOI,Female,0,No,No,38,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,20.05,741.5,No
+2307-FYNNL,Male,1,No,No,65,Yes,Yes,Fiber op,Yes,No,Yes,Yes,Yes,Yes,Two year,Yes,Electron,109.05,7108.2,No
+2314-TNDJQ,Female,0,Yes,Yes,72,No,No,DSL,Yes,Yes,Yes,Yes,No,Yes,Two year,No,Credit c,55.65,3880.05,No
+2320-YKQBO,Female,0,No,No,7,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,19.3,144.95,No
+2325-WINES,Female,0,No,No,32,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,One year,Yes,Credit c,104.05,3416.85,No
+2332-TODQS,Female,0,No,No,48,Yes,Yes,No,No,No,No,No,No,No,One year,No,Credit c,25.05,1171.5,No
+2348-KCJLT,Female,0,Yes,No,44,Yes,No,DSL,Yes,Yes,Yes,No,No,No,One year,Yes,Mailed c,61.5,2722.2,No
+2351-BKRZW,Female,0,Yes,Yes,43,Yes,No,DSL,Yes,No,Yes,No,Yes,Yes,Two year,No,Bank tra,75.2,3254.35,No
+2359-KLTEK,Female,0,Yes,Yes,41,Yes,No,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Bank tra,94.9,3848,No
+2359-KMGLI,Male,0,No,No,24,Yes,Yes,Fiber op,No,Yes,No,No,No,No,Month-to,Yes,Electron,80.25,1861.5,Yes
+2369-UAPKZ,Male,0,No,No,5,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,No,Mailed c,104.1,541.9,Yes
+2371-JQHZZ,Male,0,Yes,No,24,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,93,2248.05,No
+2371-JUNGC,Male,0,No,No,11,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.25,208,No
+2371-KFUOG,Male,0,No,No,58,Yes,No,Fiber op,Yes,Yes,No,No,Yes,Yes,One year,No,Bank tra,99.15,5720.95,No
+2380-DAMQP,Female,0,Yes,No,72,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,No,Electron,115.15,8349.7,No
+2388-LAESQ,Female,1,Yes,No,72,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,114.85,8317.95,No
+2393-DIVAI,Female,0,No,No,3,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,20,61.7,No
+2397-BRLOM,Male,1,Yes,Yes,8,Yes,No,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Credit c,80.45,583.45,Yes
+2410-CIYFZ,Male,0,No,Yes,2,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.4,42.9,No
+2428-HYUNX,Male,1,Yes,No,44,Yes,No,No,No,No,No,No,No,No,Two year,Yes,Credit c,19.35,847.25,No
+2429-AYKKO,Male,0,No,No,72,Yes,No,No,No,No,No,No,No,No,Two year,No,Bank tra,19.85,1434.1,No
+2432-TFSMK,Male,0,No,No,18,Yes,Yes,Fiber op,No,No,Yes,No,Yes,No,One year,Yes,Credit c,89.6,1633,No
+2433-KMEAS,Male,0,No,No,22,Yes,Yes,DSL,Yes,No,No,No,No,No,Month-to,Yes,Electron,54.45,1127.35,Yes
+2439-LYPMQ,Male,1,Yes,No,38,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,Yes,Electron,102.6,4009.2,No
+2452-KDRRH,Male,1,No,No,67,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Credit c,101.4,6841.05,No
+2452-MRMZF,Female,1,Yes,No,72,Yes,Yes,No,No,No,No,No,No,No,Two year,Yes,Credit c,25.7,1937.4,No
+2452-SNHFZ,Female,0,No,No,47,Yes,No,Fiber op,Yes,No,No,No,No,No,Month-to,No,Credit c,75.45,3545.1,No
+2458-EOMRE,Female,0,No,No,11,Yes,No,DSL,Yes,No,Yes,No,No,Yes,Month-to,No,Bank tra,64.05,733.95,No
+2465-BLLEU,Male,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,19.75,19.75,No
+2466-NEJOJ,Male,0,Yes,Yes,8,Yes,No,No,No,No,No,No,No,No,Month-to,No,Credit c,19.65,169.75,No
+2472-OVKUP,Male,0,Yes,No,6,Yes,No,Fiber op,No,Yes,Yes,No,No,Yes,Month-to,Yes,Electron,91,531,Yes
+2475-MROZF,Male,0,No,No,30,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,No,No,Month-to,Yes,Credit c,95,2852.4,No
+2486-WYVVE,Male,0,Yes,No,31,Yes,Yes,DSL,No,No,Yes,Yes,Yes,Yes,One year,Yes,Mailed c,79.3,2484,No
+2499-AJYUA,Female,1,Yes,No,72,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,110.8,7882.25,No
+2504-DSHIH,Male,1,Yes,No,23,Yes,Yes,Fiber op,No,No,No,No,No,Yes,Month-to,No,Electron,86.8,1975.85,No
+2519-LBNQL,Male,1,Yes,No,60,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,One year,Yes,Electron,104.35,6339.45,No
+2530-ENDWQ,Female,0,Yes,No,71,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Two year,Yes,Bank tra,93.7,6585.35,Yes
+2535-PBCGC,Female,0,Yes,No,70,No,No,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,No,Bank tra,64.55,4504.9,No
+2538-OIMXF,Female,0,No,Yes,1,No,No,DSL,No,No,No,No,No,No,Month-to,No,Mailed c,24.7,24.7,No
+2550-QHZGP,Male,0,No,No,7,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,19.5,128.6,No
+2560-QTSBS,Female,0,Yes,Yes,72,Yes,Yes,No,No,No,No,No,No,No,One year,Yes,Bank tra,23.3,1623.15,No
+2568-OIADY,Female,0,Yes,No,37,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Electron,99.5,3762,Yes
+2575-GFSOE,Female,0,Yes,Yes,7,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,69,506.9,Yes
+2576-HXMPA,Female,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,No,Credit c,19.55,19.55,No
+2577-GVSIL,Male,0,Yes,Yes,35,Yes,Yes,DSL,No,No,No,Yes,Yes,Yes,One year,Yes,Bank tra,73.45,2661.1,No
+2581-VKIRT,Female,0,Yes,Yes,59,Yes,Yes,DSL,Yes,Yes,No,Yes,No,No,One year,No,Mailed c,65.5,3801.3,No
+2599-CIPQE,Male,0,Yes,Yes,71,Yes,No,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,No,Credit c,109.3,7782.85,No
+2604-XVDAM,Female,0,No,No,12,Yes,No,DSL,No,No,No,No,No,No,Month-to,No,Bank tra,43.8,540.95,No
+2606-RMDHZ,Male,0,No,No,6,No,No,DSL,No,Yes,No,No,No,No,Month-to,Yes,Credit c,30.5,208.7,Yes
+2608-BHKFN,Female,0,No,No,4,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Credit c,70.05,266.9,Yes
+2612-PHGOX,Male,0,Yes,No,64,Yes,Yes,DSL,No,Yes,Yes,Yes,Yes,No,Two year,Yes,Bank tra,76.1,4818.8,No
+2612-RANWT,Female,0,No,No,12,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Bank tra,100.15,1164.3,Yes
+2615-YVMYX,Male,1,Yes,No,71,Yes,Yes,Fiber op,Yes,Yes,Yes,No,Yes,Yes,Month-to,Yes,Electron,107.5,7713.55,No
+2616-FLVQC,Male,0,No,No,64,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,19.55,1240.15,No
+2636-ALXXZ,Female,1,No,No,1,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,69.6,69.6,Yes
+2639-UGMAZ,Male,1,No,No,71,No,No,DSL,Yes,Yes,No,No,Yes,Yes,One year,Yes,Electron,56.45,3985.35,No
+2645-QTLMB,Male,0,No,No,7,Yes,No,Fiber op,No,Yes,No,No,Yes,Yes,Month-to,Yes,Electron,94.25,669,Yes
+2654-VBVPB,Female,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,No,Bank tra,19.9,19.9,No
+2659-VXMWZ,Male,0,Yes,Yes,67,Yes,Yes,Fiber op,Yes,Yes,Yes,No,Yes,Yes,One year,Yes,Electron,111.3,7482.1,Yes
+2661-GKBTK,Male,0,Yes,Yes,60,Yes,No,DSL,No,Yes,No,Yes,Yes,Yes,Two year,No,Bank tra,76.95,4543.95,No
+2662-NNTDK,Male,0,No,No,65,Yes,Yes,No,No,No,No,No,No,No,One year,No,Credit c,24.8,1600.95,No
+2665-NPTGL,Female,1,Yes,No,26,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Bank tra,98.1,2510.7,No
+2669-OIDSD,Female,0,Yes,No,48,Yes,No,Fiber op,No,No,Yes,Yes,Yes,Yes,Month-to,Yes,Credit c,100.05,4834,No
+2669-QVCRG,Female,0,No,No,41,Yes,Yes,Fiber op,Yes,No,No,No,No,No,Month-to,Yes,Credit c,81.3,3190.65,No
+2673-CXQEU,Female,1,No,No,56,Yes,Yes,Fiber op,Yes,Yes,Yes,No,Yes,Yes,One year,No,Electron,110.5,6139.5,No
+2673-ZALNP,Female,0,No,No,7,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,19.9,173.15,No
+2675-OTVVJ,Male,1,Yes,No,31,Yes,Yes,Fiber op,Yes,No,No,No,Yes,No,Month-to,No,Electron,89.45,2807.65,No
+2676-SSLTO,Male,0,No,No,49,Yes,Yes,DSL,No,No,No,Yes,Yes,No,Two year,Yes,Bank tra,66.15,3199,No
+2690-DVRVK,Male,0,Yes,Yes,5,Yes,No,No,No,No,No,No,No,No,One year,No,Electron,20.55,99.45,No
+2692-PFYTJ,Female,0,No,No,1,Yes,Yes,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,25.75,25.75,No
+2696-ECXKC,Female,0,Yes,Yes,55,Yes,Yes,Fiber op,Yes,No,No,No,Yes,Yes,One year,No,Mailed c,100.9,5448.6,No
+2696-NARTR,Male,0,No,No,11,Yes,No,Fiber op,No,No,No,Yes,No,No,Month-to,Yes,Electron,73.85,926.25,Yes
+2696-RZVZW,Male,0,Yes,No,68,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Credit c,25.05,1629.2,No
+2709-UQGNP,Male,0,No,No,10,Yes,No,DSL,Yes,No,No,No,No,No,Month-to,Yes,Mailed c,51.65,524.5,No
+2710-WYVXG,Female,0,No,No,3,Yes,No,DSL,Yes,Yes,No,Yes,No,Yes,Two year,No,Mailed c,71.1,213.35,No
+2718-GAXQD,Female,1,Yes,Yes,4,Yes,No,DSL,No,No,No,No,No,No,Month-to,No,Electron,46,181.6,Yes
+2720-FVBQP,Female,0,Yes,Yes,6,Yes,Yes,DSL,No,No,No,No,No,No,Month-to,Yes,Credit c,48.95,273.25,No
+2725-IWWBA,Male,0,Yes,Yes,46,Yes,No,DSL,Yes,No,Yes,Yes,No,No,One year,No,Mailed c,56.9,2560.1,No
+2739-CCZMB,Male,0,No,Yes,5,Yes,No,No,No,No,No,No,No,No,Month-to,No,Credit c,20.35,122,No
+2746-DIJLO,Female,0,No,No,41,Yes,Yes,DSL,No,Yes,No,No,No,No,One year,Yes,Credit c,56.3,2364,No
+2749-CTKAJ,Male,0,Yes,Yes,22,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,20.15,419.9,No
+2754-VDLTR,Male,0,No,Yes,10,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,No,Electron,95.2,930.4,Yes
+2758-RNWXS,Male,0,No,No,35,Yes,No,Fiber op,Yes,No,No,Yes,No,Yes,One year,Yes,Electron,89.2,3251.3,No
+2773-MADBQ,Female,0,No,No,36,No,No,DSL,Yes,Yes,Yes,Yes,No,Yes,Two year,Yes,Mailed c,53.1,1901.25,No
+2782-LFZVW,Female,0,No,No,11,Yes,Yes,DSL,No,No,No,No,No,Yes,Month-to,Yes,Mailed c,58.95,601.6,No
+2789-CZANW,Female,0,Yes,Yes,64,Yes,Yes,Fiber op,Yes,Yes,No,Yes,Yes,Yes,Two year,No,Bank tra,110.3,6997.3,No
+2792-LSHWX,Female,0,No,No,1,Yes,No,Fiber op,Yes,Yes,No,Yes,No,No,Month-to,Yes,Mailed c,83.4,83.4,No
+2799-ARNLO,Female,1,Yes,No,5,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,69.35,341.6,No
+2800-VEQXM,Female,0,No,No,3,Yes,No,Fiber op,No,No,Yes,No,No,No,Month-to,Yes,Mailed c,74.75,238.1,No
+2809-ZMYOQ,Female,0,No,No,32,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Electron,101.35,3334.9,No
+2812-REYAT,Female,0,Yes,No,49,Yes,No,No,No,No,No,No,No,No,One year,Yes,Bank tra,20.05,923.1,No
+2812-SFXMJ,Male,0,No,Yes,1,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.05,20.05,No
+2817-LVCPP,Female,0,No,No,50,Yes,No,No,No,No,No,No,No,No,Two year,No,Credit c,19.4,1023.95,No
+2821-WARNZ,Female,0,No,Yes,49,Yes,No,No,No,No,No,No,No,No,One year,No,Credit c,19.45,921.3,No
+2831-EBWRN,Male,0,No,No,4,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Electron,45.9,199.75,No
+2842-BCQGE,Male,0,No,No,43,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Credit c,75.35,3161.4,No
+2843-CQMEG,Male,0,No,No,24,Yes,No,DSL,No,Yes,No,No,No,No,Month-to,Yes,Mailed c,49.7,1218.25,No
+2848-YXSMW,Male,0,Yes,Yes,72,Yes,No,No,No,No,No,No,No,No,Two year,No,Credit c,19.4,1363.25,No
+2851-MMUTZ,Female,0,No,No,27,Yes,No,DSL,No,Yes,No,Yes,No,No,Month-to,Yes,Mailed c,56.15,1439.35,No
+2853-CWQFQ,Male,0,No,Yes,1,Yes,No,DSL,No,No,No,Yes,No,Yes,Month-to,Yes,Mailed c,59.55,59.55,No
+2868-LLSKM,Female,0,Yes,Yes,68,Yes,Yes,Fiber op,No,Yes,No,Yes,No,No,One year,Yes,Bank tra,83.65,5733.4,No
+2874-YXVVA,Female,0,No,No,34,Yes,No,Fiber op,No,Yes,Yes,Yes,Yes,Yes,Month-to,Yes,Electron,105.1,3634.8,No
+2878-RMWXY,Male,1,Yes,No,72,Yes,Yes,Fiber op,Yes,Yes,Yes,No,No,Yes,Two year,Yes,Credit c,102.65,7550.3,No
+2892-GESUL,Female,0,Yes,Yes,18,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,19.35,309.25,No
+2898-LSJGD,Female,0,Yes,Yes,21,No,No,DSL,Yes,No,Yes,No,Yes,Yes,One year,Yes,Electron,55.95,1157.05,Yes
+2900-PHPLN,Female,1,Yes,No,70,Yes,No,No,No,No,No,No,No,No,Two year,Yes,Credit c,19.55,1462.05,No
+2908-ZTPNF,Female,0,No,No,36,No,No,DSL,No,Yes,No,Yes,No,No,Month-to,Yes,Bank tra,34.85,1267.2,No
+2911-UREFD,Female,0,Yes,No,39,No,No,DSL,Yes,No,Yes,No,Yes,Yes,Month-to,No,Electron,55.9,2184.35,Yes
+2931-SVLTV,Male,0,Yes,Yes,40,Yes,Yes,Fiber op,Yes,Yes,No,Yes,Yes,Yes,Month-to,Yes,Credit c,110.1,4469.1,No
+2931-XIQBR,Female,0,Yes,Yes,50,Yes,No,Fiber op,No,No,Yes,Yes,Yes,Yes,One year,No,Mailed c,103.05,5153.5,No
+2937-FTHUR,Female,0,No,Yes,18,Yes,Yes,DSL,Yes,No,No,No,No,Yes,Month-to,No,Electron,64.8,1166.7,No
+2957-JIRMN,Female,1,No,No,62,Yes,Yes,Fiber op,No,No,No,No,Yes,No,One year,No,Electron,84.45,4959.15,No
+2962-XPMCQ,Male,0,No,No,2,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Electron,45.15,98.5,Yes
+2968-SSGAA,Female,0,No,No,10,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Electron,100.6,1060.2,Yes
+2969-QWUBZ,Female,0,No,No,2,No,No,DSL,No,Yes,No,No,Yes,Yes,Month-to,No,Electron,51.4,96.8,No
+2971-SGAFL,Female,0,No,No,13,Yes,Yes,DSL,Yes,No,Yes,No,Yes,Yes,Month-to,Yes,Electron,78.75,995.35,No
+2978-XXSOG,Female,0,No,No,22,Yes,Yes,DSL,Yes,No,No,Yes,No,No,Month-to,Yes,Mailed c,59.05,1253.5,No
+2988-QRAJY,Male,0,No,No,69,Yes,Yes,Fiber op,Yes,Yes,Yes,No,Yes,Yes,Two year,Yes,Credit c,110.05,7430.75,No
+2990-HWIML,Female,0,No,No,6,Yes,No,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,89.5,573.3,Yes
+2990-OGYTD,Female,0,Yes,No,67,Yes,Yes,DSL,No,Yes,Yes,Yes,Yes,Yes,Two year,No,Bank tra,86.15,5883.85,No
+2999-AANRQ,Female,0,No,No,21,Yes,No,DSL,Yes,Yes,No,Yes,Yes,No,Two year,No,Credit c,71.05,1524.85,No
+3001-CBHLQ,Male,1,Yes,No,32,Yes,Yes,Fiber op,No,No,Yes,Yes,Yes,Yes,Month-to,Yes,Electron,104.9,3351.55,Yes
+3002-WQZWT,Female,0,No,No,29,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,74.2,1993.25,No
+3027-YNWZU,Female,0,Yes,No,64,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Credit c,25,1584.8,No
+3030-YZADT,Male,0,No,No,9,Yes,No,DSL,No,No,No,No,No,No,Month-to,No,Mailed c,44.95,431,Yes
+3034-ZBEQN,Female,0,Yes,No,48,No,No,DSL,No,Yes,Yes,No,No,No,One year,No,Mailed c,34.7,1604.5,Yes
+3043-SUDUA,Female,0,No,No,32,Yes,No,No,No,No,No,No,No,No,Month-to,No,Bank tra,19.9,601.55,No
+3055-MJDSB,Male,0,No,No,9,No,No,DSL,No,No,No,No,No,No,Month-to,Yes,Mailed c,24.6,190.1,No
+3055-VTCGS,Female,0,No,No,63,Yes,No,DSL,No,No,Yes,No,No,Yes,One year,No,Credit c,58.55,3503.5,No
+3058-HJCUY,Male,0,Yes,Yes,41,Yes,Yes,Fiber op,No,No,Yes,Yes,Yes,Yes,One year,Yes,Electron,102.6,4213.35,Yes
+3071-MVJCD,Male,0,Yes,Yes,72,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,No,Two year,No,Bank tra,82.3,5815.15,No
+3086-RUCRN,Female,0,No,No,66,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,No,Yes,Month-to,Yes,Bank tra,103.1,6595,No
+3091-FYHKI,Male,0,No,No,1,No,No,DSL,No,No,No,No,No,Yes,Month-to,Yes,Electron,35.45,35.45,Yes
+3096-JRDSO,Female,1,Yes,No,27,Yes,Yes,Fiber op,Yes,No,No,Yes,Yes,Yes,Month-to,Yes,Bank tra,104.3,2867.75,Yes
+3096-WPXBT,Female,0,Yes,Yes,61,Yes,Yes,Fiber op,Yes,Yes,Yes,No,No,Yes,One year,Yes,Credit c,100.7,6018.65,No
+3096-YXENJ,Female,0,Yes,No,65,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,107.65,7082.85,No
+3097-NQYSN,Male,1,Yes,No,2,Yes,Yes,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Mailed c,86.85,156.35,Yes
+3099-OONVS,Male,0,Yes,Yes,25,Yes,No,DSL,Yes,No,No,Yes,No,No,Month-to,No,Electron,54.3,1296.8,No
+3108-PCCGG,Male,1,Yes,No,72,Yes,Yes,DSL,Yes,Yes,Yes,No,Yes,Yes,Two year,No,Credit c,84.45,5899.85,No
+3113-IWHLC,Male,0,No,No,5,Yes,No,DSL,Yes,No,Yes,No,No,No,Month-to,Yes,Mailed c,55.8,274.35,No
+3115-JPJDD,Female,0,Yes,No,59,Yes,No,Fiber op,Yes,No,Yes,No,No,No,One year,Yes,Credit c,81.25,4639.45,No
+3125-RAHBV,Male,0,No,No,22,Yes,No,No,No,No,No,No,No,No,One year,No,Credit c,20.3,467.15,No
+3128-YOVTD,Female,0,Yes,Yes,51,Yes,No,Fiber op,Yes,Yes,No,No,No,No,Month-to,Yes,Bank tra,79.15,4018.55,No
+3129-AAQOU,Female,0,Yes,Yes,19,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Mailed c,25.6,485.9,No
+3133-PZNSR,Male,0,Yes,Yes,72,Yes,Yes,Fiber op,Yes,Yes,No,Yes,No,Yes,Two year,Yes,Credit c,97.75,6991.6,No
+3138-BKYAV,Male,0,No,No,6,Yes,No,Fiber op,No,Yes,No,No,Yes,No,Month-to,Yes,Electron,85.35,489.45,Yes
+3143-ILDAL,Male,0,No,No,56,Yes,Yes,Fiber op,No,Yes,No,Yes,No,Yes,Month-to,Yes,Electron,94.45,5124.6,Yes
+3154-HMWUU,Male,0,Yes,No,60,Yes,No,No,No,No,No,No,No,No,Two year,Yes,Bank tra,20.5,1198.8,No
+3156-QLHBO,Male,0,No,Yes,2,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,19.25,48.35,No
+3158-MOERK,Female,0,No,No,2,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,96,174.8,Yes
+3161-GETRM,Male,0,Yes,Yes,34,Yes,Yes,Fiber op,No,No,Yes,No,No,Yes,Month-to,Yes,Credit c,90.05,3097,No
+3166-PNEOF,Female,0,No,No,61,Yes,Yes,DSL,Yes,No,Yes,Yes,Yes,Yes,Two year,No,Credit c,86.45,5175.3,No
+3173-NVMPX,Female,0,Yes,Yes,9,Yes,Yes,DSL,No,Yes,No,No,No,No,Month-to,Yes,Mailed c,55.3,501.2,No
+3174-AKMAS,Female,0,Yes,No,46,Yes,No,DSL,No,Yes,No,Yes,Yes,No,Two year,Yes,Credit c,64.2,3009.5,No
+3178-FESZO,Female,0,No,No,1,Yes,Yes,Fiber op,No,Yes,No,No,Yes,Yes,Month-to,Yes,Credit c,100.25,100.25,Yes
+3181-MIZBN,Male,0,Yes,Yes,16,Yes,No,No,No,No,No,No,No,No,Month-to,No,Electron,19.75,313.4,No
+3181-VTHOE,Male,0,Yes,No,70,No,No,DSL,No,Yes,Yes,Yes,No,Yes,One year,Yes,Bank tra,51.05,3635.15,No
+3186-AJIEK,Male,0,No,No,66,Yes,No,Fiber op,Yes,No,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,105.65,6844.5,No
+3190-ITQXP,Female,0,Yes,Yes,46,Yes,No,No,No,No,No,No,No,No,Two year,No,Bank tra,20.25,890.35,No
+3194-ORPIK,Female,0,Yes,Yes,50,Yes,Yes,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Bank tra,84.4,4116.15,Yes
+3197-NNYNB,Male,0,No,No,65,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,Two year,No,Credit c,105.1,6631.85,No
+3198-VELRD,Female,0,Yes,Yes,3,Yes,Yes,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Bank tra,84.75,264.85,Yes
+3199-XGZCY,Female,0,No,No,8,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,75.25,576.7,No
+3200-MNQTF,Male,0,Yes,No,67,Yes,Yes,DSL,Yes,Yes,Yes,Yes,No,No,Two year,No,Credit c,70.9,4677.1,No
+3208-YPIOE,Male,0,No,No,39,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,No,Electron,75.25,3017.65,Yes
+3211-ILJTT,Male,0,Yes,No,17,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Bank tra,70.4,1214.05,Yes
+3217-FZDMN,Female,1,No,No,8,Yes,No,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Credit c,94.45,742.95,Yes
+3234-VKACU,Male,0,No,No,2,Yes,No,DSL,No,No,No,Yes,Yes,Yes,Month-to,No,Electron,70.3,132.4,No
+3247-MHJKM,Male,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.2,20.2,No
+3249-VHRIP,Female,0,No,No,62,No,No,DSL,No,Yes,Yes,No,No,Yes,Two year,Yes,Credit c,43.6,2748.7,No
+3275-RHRNE,Male,0,Yes,Yes,28,No,No,DSL,No,Yes,Yes,Yes,Yes,Yes,One year,Yes,Credit c,60,1682.05,No
+3279-DYZQM,Male,0,Yes,Yes,71,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,19.45,1378.45,No
+3292-PBZEJ,Male,1,No,No,11,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,Month-to,Yes,Electron,111.4,1183.05,No
+3308-DGHKL,Male,0,No,No,69,Yes,No,No,No,No,No,No,No,No,Two year,Yes,Bank tra,19.3,1447.9,No
+3308-JSGML,Male,1,Yes,No,59,No,No,DSL,Yes,No,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,64.05,3886.85,No
+3312-ZWLGF,Male,1,Yes,No,29,Yes,Yes,Fiber op,No,No,No,Yes,No,No,Month-to,Yes,Electron,79.3,2414.55,No
+3313-QKNKB,Male,0,Yes,No,59,Yes,Yes,Fiber op,No,No,No,No,No,Yes,One year,No,Electron,85.55,5084.65,Yes
+3315-TOTBP,Male,0,No,No,15,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Mailed c,76,1130.85,Yes
+3320-VEOYC,Male,1,No,No,14,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,95.6,1273.3,No
+3325-FUYCG,Male,0,Yes,Yes,28,Yes,Yes,Fiber op,Yes,Yes,No,No,Yes,Yes,One year,No,Electron,106.1,2847.4,Yes
+3331-HQDTW,Female,0,No,No,34,Yes,Yes,Fiber op,Yes,Yes,Yes,No,Yes,Yes,Month-to,Yes,Mailed c,109.8,3587.25,Yes
+3352-RICWQ,Female,0,Yes,Yes,9,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,19.75,210.65,No
+3363-EWLGO,Female,0,No,No,5,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,19.95,109.6,No
+3370-GQEAL,Male,0,Yes,Yes,30,Yes,Yes,Fiber op,No,No,No,No,Yes,No,Month-to,No,Electron,85.45,2509.95,No
+3372-CDXFJ,Male,0,Yes,Yes,13,Yes,Yes,No,No,No,No,No,No,No,One year,No,Bank tra,24.5,343.6,No
+3374-LXDEV,Female,0,No,No,13,Yes,Yes,Fiber op,No,Yes,Yes,Yes,No,No,Month-to,No,Electron,89.4,1132.35,Yes
+3374-TTZTK,Male,0,Yes,No,52,Yes,No,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Electron,106.3,5487,No
+3378-AJRAO,Male,0,Yes,Yes,44,Yes,Yes,No,No,No,No,No,No,No,One year,No,Electron,24.85,1013.6,No
+3384-CTMSF,Male,0,Yes,No,47,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,Yes,Electron,104.1,5135.15,No
+3387-PLKUI,Female,0,Yes,Yes,13,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,18.8,251.25,No
+3387-VATUS,Male,0,No,No,5,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Bank tra,94.85,462.8,Yes
+3391-JSQEW,Male,0,Yes,No,40,Yes,No,DSL,No,Yes,No,No,No,No,Month-to,Yes,Mailed c,50.15,2058.5,No
+3397-AVTKU,Male,0,No,No,43,Yes,No,DSL,No,Yes,No,No,No,Yes,Two year,Yes,Electron,60,2548.55,No
+3398-ZOUAA,Male,1,Yes,No,21,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,69.1,1474.75,Yes
+3402-XRIUO,Female,1,Yes,No,22,Yes,Yes,DSL,Yes,Yes,No,Yes,No,No,Month-to,Yes,Mailed c,63.55,1381.8,No
+3407-JMJQQ,Female,0,Yes,Yes,71,Yes,Yes,Fiber op,Yes,Yes,Yes,No,Yes,Yes,Two year,Yes,Bank tra,109,7661.8,No
+3413-CSSTH,Male,0,No,No,41,Yes,Yes,DSL,No,No,Yes,No,No,No,Month-to,Yes,Bank tra,55.7,2237.55,No
+3413-DHLPB,Male,0,Yes,Yes,60,Yes,Yes,Fiber op,No,Yes,No,Yes,Yes,Yes,Month-to,Yes,Bank tra,103.75,5969.95,No
+3417-TSCIC,Male,0,No,No,29,No,No,DSL,No,No,No,No,No,No,One year,Yes,Mailed c,24.85,788.05,No
+3419-SNJJD,Female,1,Yes,No,65,Yes,Yes,Fiber op,Yes,No,Yes,No,Yes,Yes,Month-to,No,Bank tra,105.25,6786.4,Yes
+3420-YJLQT,Female,0,No,No,2,Yes,Yes,Fiber op,No,Yes,No,No,No,No,Month-to,No,Electron,79.55,151.75,No
+3420-ZDBMA,Male,1,No,No,5,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Mailed c,71.45,371.6,No
+3451-VAWLI,Female,0,Yes,Yes,35,Yes,No,No,No,No,No,No,No,No,Two year,No,Credit c,19.7,730.4,No
+3452-FLHYD,Male,0,Yes,No,25,Yes,No,No,No,No,No,No,No,No,One year,Yes,Bank tra,20.95,495.15,No
+3457-PQBYH,Female,0,Yes,Yes,58,Yes,No,No,No,No,No,No,No,No,Two year,No,Credit c,20.3,1160.75,No
+3460-TJBWI,Male,0,Yes,Yes,24,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Mailed c,24.2,609.05,No
+3462-BJQQA,Female,0,No,No,6,Yes,Yes,Fiber op,No,Yes,No,No,Yes,No,Month-to,Yes,Electron,89.75,552.65,No
+3470-BTGQO,Male,0,No,Yes,21,Yes,No,DSL,No,No,No,No,No,No,Month-to,No,Mailed c,45.65,985.05,No
+3473-XIIIT,Female,0,Yes,No,16,Yes,Yes,Fiber op,No,Yes,No,No,Yes,Yes,Month-to,Yes,Electron,100,1534.75,Yes
+3481-JHUZH,Male,0,Yes,No,41,Yes,Yes,Fiber op,No,Yes,No,No,No,No,Month-to,Yes,Electron,80.25,3439,No
+3482-ABPKK,Female,0,No,No,28,Yes,No,DSL,Yes,No,No,Yes,No,No,One year,No,Mailed c,54.3,1546.3,No
+3486-HOOGQ,Female,0,Yes,Yes,70,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,No,Two year,No,Bank tra,79.7,5743.3,No
+3486-KHMLI,Male,0,No,Yes,21,Yes,Yes,No,No,No,No,No,No,No,Month-to,No,Mailed c,24.7,467.15,No
+3486-NPGST,Female,0,No,No,36,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,19.55,620.75,No
+3488-PGMQJ,Male,1,No,No,8,Yes,No,Fiber op,No,Yes,No,No,No,No,Month-to,Yes,Electron,74.5,606.55,Yes
+3489-VSFRD,Female,0,No,No,56,Yes,No,DSL,Yes,No,Yes,Yes,No,No,One year,Yes,Credit c,60.25,3282.75,No
+3494-JCHRQ,Male,0,No,No,1,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,70.05,70.05,Yes
+3498-LZGQZ,Male,0,Yes,Yes,63,Yes,No,No,No,No,No,No,No,No,Two year,Yes,Mailed c,19.15,1177.05,No
+3500-RMZLT,Female,1,No,No,15,Yes,No,Fiber op,Yes,No,Yes,Yes,No,Yes,Month-to,Yes,Mailed c,96.3,1426.75,Yes
+3503-TYDAY,Female,0,Yes,No,43,Yes,Yes,Fiber op,No,Yes,No,No,No,No,Month-to,No,Electron,80.45,3398.9,No
+3507-GASNP,Male,0,No,Yes,60,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,19.95,1189.9,No
+3508-CFVZL,Female,0,No,No,71,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,No,Mailed c,111.3,7985.9,No
+3511-BFTJW,Male,0,Yes,Yes,72,No,No,DSL,Yes,Yes,Yes,No,No,No,Two year,No,Credit c,38.5,2763,No
+3519-ZKXGG,Female,0,Yes,No,3,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,75.85,256.6,Yes
+3523-QRQLL,Female,0,Yes,Yes,22,Yes,No,DSL,No,Yes,No,No,Yes,Yes,One year,Yes,Bank tra,69.5,1498.2,Yes
+3533-UVMOM,Male,0,Yes,No,68,Yes,No,DSL,Yes,Yes,Yes,No,No,Yes,Two year,No,Bank tra,70.95,4741.45,No
+3537-HPKQT,Female,0,Yes,No,55,Yes,Yes,Fiber op,No,Yes,No,No,No,No,Month-to,Yes,Credit c,77.75,4266.4,No
+3541-ZNUHK,Female,0,Yes,Yes,55,Yes,Yes,Fiber op,Yes,Yes,No,No,No,No,Month-to,Yes,Electron,85.1,4600.95,No
+3544-FBCAS,Female,0,Yes,Yes,72,Yes,Yes,DSL,Yes,Yes,Yes,No,Yes,Yes,Two year,Yes,Credit c,83.6,5959.3,No
+3545-CNWRG,Female,0,Yes,Yes,49,Yes,Yes,Fiber op,No,Yes,No,No,Yes,Yes,Month-to,Yes,Electron,98.35,4889.2,No
+3549-ZTMNH,Male,0,Yes,Yes,12,Yes,Yes,No,No,No,No,No,No,No,Two year,Yes,Bank tra,24,269.65,No
+3550-SAHFP,Female,0,No,No,33,Yes,Yes,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Electron,83.35,2757.85,Yes
+3556-BVQGL,Female,0,Yes,No,20,Yes,No,No,No,No,No,No,No,No,One year,Yes,Mailed c,20,416.45,No
+3557-HTYWR,Female,0,No,No,47,Yes,Yes,DSL,Yes,Yes,No,Yes,No,Yes,Two year,No,Mailed c,74.05,3496.3,No
+3563-SVYLG,Male,0,Yes,Yes,68,Yes,No,DSL,Yes,Yes,Yes,Yes,No,No,Two year,No,Credit c,62.65,4375.8,No
+3566-HJGPK,Male,0,No,No,1,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Mailed c,45.55,45.55,No
+3570-YUEKJ,Female,0,No,No,42,Yes,No,DSL,No,Yes,No,No,No,No,Month-to,Yes,Electron,49.55,2077.95,No
+3571-RFHAR,Male,0,No,No,65,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,Month-to,Yes,Electron,109.15,6941.2,Yes
+3577-AMVUX,Male,0,No,No,1,Yes,No,DSL,No,No,Yes,Yes,No,No,Month-to,No,Mailed c,55.05,55.05,No
+3580-GICBM,Female,0,Yes,Yes,61,Yes,Yes,No,No,No,No,No,No,No,Two year,Yes,Mailed c,24.2,1445.2,No
+3583-KRKMD,Male,0,No,No,18,Yes,No,Fiber op,No,No,No,Yes,No,No,Month-to,Yes,Bank tra,75.9,1373.05,No
+3585-ISXZP,Female,0,No,No,8,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,No,Bank tra,95.65,778.1,Yes
+3597-YASZG,Female,1,Yes,No,70,Yes,Yes,Fiber op,No,Yes,No,Yes,Yes,Yes,Two year,Yes,Bank tra,104.45,7349.35,No
+3620-MWJNE,Male,0,No,No,2,Yes,No,DSL,Yes,No,No,Yes,No,No,Month-to,Yes,Mailed c,54.45,87.3,No
+3627-FCRDW,Female,0,No,No,9,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,No,Electron,71,672.55,Yes
+3635-QQRQD,Male,0,No,No,62,Yes,No,No,No,No,No,No,No,No,Two year,Yes,Credit c,20.05,1201.65,No
+3643-AHCFP,Male,1,Yes,No,7,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Bank tra,95.6,644.35,Yes
+3646-ITDGM,Female,0,No,No,56,Yes,No,No,No,No,No,No,No,No,Two year,No,Bank tra,19.7,1051.9,No
+3647-GMGDH,Male,0,Yes,No,22,Yes,No,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Credit c,94.7,1914.9,Yes
+3648-GZPHF,Male,0,Yes,Yes,32,No,No,DSL,No,No,Yes,Yes,No,No,One year,Yes,Mailed c,36.25,1151.05,No
+3649-JPUGY,Male,0,No,No,72,Yes,Yes,DSL,No,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,88.6,6201.95,No
+3653-NCRDJ,Male,0,Yes,Yes,43,Yes,No,No,No,No,No,No,No,No,One year,Yes,Mailed c,19.2,776.25,No
+3655-SNQYZ,Female,0,Yes,Yes,69,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,No,Credit c,113.25,7895.15,No
+3675-EQOZA,Male,0,No,No,5,Yes,No,No,No,No,No,No,No,No,Month-to,No,Bank tra,20.65,93.55,No
+3677-IYRBF,Female,1,No,No,2,No,No,DSL,No,No,Yes,No,No,No,Month-to,Yes,Electron,30.4,78.65,Yes
+3689-MOZGR,Female,0,No,No,29,No,No,DSL,No,No,No,Yes,No,No,Month-to,Yes,Electron,31.2,926.2,No
+3696-XRIEN,Female,0,No,No,50,Yes,Yes,DSL,Yes,No,Yes,Yes,Yes,Yes,One year,Yes,Credit c,82.5,4179.1,No
+3703-TTEPD,Male,0,No,No,21,Yes,No,DSL,Yes,No,Yes,No,Yes,No,Month-to,No,Bank tra,65.35,1424.4,No
+3705-RHRFR,Female,0,Yes,No,69,Yes,Yes,Fiber op,Yes,No,No,No,Yes,Yes,Two year,No,Bank tra,99.15,6875.35,No
+3707-GNWHM,Male,0,No,No,1,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Mailed c,74.25,74.25,Yes
+3714-JTVOV,Female,1,Yes,No,42,Yes,No,Fiber op,Yes,No,No,No,No,No,Month-to,Yes,Credit c,74.15,3229.4,Yes
+3714-NTNFO,Female,0,No,No,49,Yes,Yes,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Electron,84.5,3906.7,No
+3714-XPXBW,Female,0,No,No,37,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,No,Month-to,Yes,Credit c,78.9,2976.95,No
+3716-BDVDB,Male,0,No,No,1,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,69.1,69.1,Yes
+3719-TDVQB,Female,1,Yes,No,54,Yes,No,No,No,No,No,No,No,No,Two year,Yes,Mailed c,18.95,1031.1,No
+3720-DBRWL,Male,0,Yes,No,51,Yes,No,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,83.85,4307.1,No
+3721-CNZHX,Male,0,No,No,15,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,19.8,304.6,No
+3721-WKIIL,Female,0,No,No,27,Yes,No,No,No,No,No,No,No,No,Two year,Yes,Mailed c,19.6,561.15,No
+3726-TBHQT,Male,0,Yes,Yes,71,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,114,8175.9,No
+3727-RJMEO,Male,0,Yes,No,6,Yes,Yes,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Electron,82.85,460.25,Yes
+3733-LSYCE,Female,0,Yes,No,15,Yes,No,Fiber op,No,Yes,No,No,No,No,Month-to,No,Bank tra,75.35,1114.55,No
+3736-BLEPA,Male,0,No,No,28,Yes,No,Fiber op,No,Yes,No,Yes,Yes,No,One year,Yes,Bank tra,91.25,2483.65,No
+3744-ZBHON,Female,0,No,No,3,Yes,No,No,No,No,No,No,No,No,Month-to,No,Electron,20.2,65.95,No
+3744-ZRRDZ,Male,0,No,No,21,Yes,Yes,Fiber op,No,Yes,No,No,No,No,Month-to,Yes,Electron,82.35,1852.85,Yes
+3750-YHRYO,Male,0,Yes,Yes,7,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,20.65,150,No
+3769-MHZNV,Female,0,Yes,Yes,33,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,20.1,670.35,No
+3778-FOAQW,Female,0,Yes,No,24,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,20.15,456.85,No
+3779-OSWCF,Female,0,Yes,No,71,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,No,Credit c,93.2,6506.15,No
+3780-DDGSE,Male,1,Yes,Yes,35,Yes,No,DSL,No,Yes,No,Yes,Yes,Yes,Month-to,Yes,Electron,76.05,2747.2,No
+3785-KTYSH,Male,0,No,No,53,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Mailed c,24.6,1279,No
+3795-CAWEX,Male,0,Yes,Yes,70,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,116.55,8152.3,No
+3795-GWTRD,Female,0,Yes,Yes,63,Yes,No,DSL,Yes,Yes,Yes,Yes,Yes,No,Two year,No,Credit c,75.55,4707.85,No
+3796-ENZGF,Male,0,Yes,No,63,Yes,Yes,DSL,No,Yes,No,Yes,No,Yes,Two year,No,Mailed c,67.25,4234.15,No
+3797-FKOGQ,Male,0,No,Yes,11,Yes,Yes,Fiber op,No,No,No,No,No,Yes,Month-to,No,Electron,86.2,893.2,No
+3798-EPWRR,Female,1,No,No,2,Yes,No,DSL,No,No,No,No,No,No,Month-to,No,Electron,43.95,85.1,No
+3803-KMQFW,Female,0,Yes,Yes,1,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.55,20.55,Yes
+3807-BPOMJ,Female,0,Yes,No,55,Yes,No,Fiber op,Yes,No,No,No,Yes,Yes,One year,Yes,Electron,94.75,5276.1,No
+3815-SLMEF,Female,0,No,No,3,No,No,DSL,Yes,No,No,Yes,No,No,Month-to,No,Mailed c,34.25,139.35,Yes
+3823-KYNQY,Male,0,No,No,12,Yes,Yes,No,No,No,No,No,No,No,One year,No,Credit c,24.95,280.4,No
+3831-YCPUO,Female,0,Yes,Yes,72,Yes,No,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,109.5,7854.9,No
+3834-XUIFC,Male,0,No,No,7,Yes,Yes,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Mailed c,85.2,602.55,Yes
+3841-CONLJ,Female,0,Yes,No,1,No,No,DSL,No,No,No,No,No,Yes,Month-to,No,Electron,35,35,No
+3863-IUBJR,Male,0,Yes,Yes,12,Yes,No,DSL,No,No,No,No,No,Yes,One year,No,Credit c,53.65,696.35,Yes
+3863-QSTYI,Male,0,No,No,59,Yes,No,DSL,No,No,Yes,Yes,Yes,No,Month-to,Yes,Electron,64.65,3735.45,No
+3866-MDTUB,Female,0,No,No,2,Yes,No,DSL,Yes,No,No,No,Yes,Yes,Month-to,Yes,Electron,70.75,146.9,Yes
+3873-WOSBC,Male,0,Yes,No,67,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Credit c,25.6,1784.9,No
+3882-IYOIJ,Female,0,Yes,Yes,60,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,No,Credit c,115.25,6758.45,No
+3886-CERTZ,Female,0,Yes,No,72,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,One year,Yes,Electron,109.25,8109.8,Yes
+3892-NXAZG,Male,0,Yes,Yes,72,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,114.05,8289.2,No
+3913-FCUUW,Female,0,Yes,Yes,72,Yes,Yes,DSL,Yes,Yes,Yes,Yes,No,No,Two year,Yes,Bank tra,70.45,5165.7,No
+3915-ODIYG,Male,1,No,No,60,Yes,Yes,DSL,Yes,Yes,No,No,No,Yes,One year,Yes,Electron,71.75,4374.55,No
+3941-XTSKM,Male,0,Yes,Yes,42,No,No,DSL,No,Yes,Yes,No,No,Yes,One year,Yes,Credit c,45.1,2049.05,No
+3945-GFWQL,Female,0,No,Yes,12,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Electron,44.55,480.6,Yes
+3978-YNKDD,Male,0,No,Yes,19,Yes,No,No,No,No,No,No,No,No,Two year,No,Credit c,20.85,467.5,No
+3982-DQLUS,Male,1,Yes,Yes,65,Yes,Yes,Fiber op,Yes,Yes,No,No,No,No,Month-to,Yes,Electron,85.75,5688.45,No
+3982-XWFZQ,Female,0,Yes,No,42,Yes,Yes,DSL,No,No,No,No,No,No,Month-to,Yes,Electron,50.25,2203.65,Yes
+3985-HOYPM,Male,0,No,No,26,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,19.4,525.55,No
+3988-RQIXO,Female,1,No,No,1,Yes,No,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,91.3,91.3,Yes
+3992-YWPKO,Female,0,No,No,6,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,Month-to,Yes,Credit c,109.9,669.45,Yes
+4001-TSBTV,Female,0,Yes,Yes,58,Yes,No,Fiber op,No,Yes,Yes,No,Yes,No,Month-to,Yes,Electron,91.55,5511.65,No
+4009-ALQFH,Female,0,No,No,25,Yes,No,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,Yes,Electron,99.5,2369.05,Yes
+4013-GUXND,Male,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.8,20.8,No
+4013-UBXWQ,Female,0,No,No,7,Yes,Yes,DSL,No,No,No,Yes,Yes,Yes,Month-to,Yes,Electron,74.65,521.1,Yes
+4016-BJKTZ,Female,0,No,No,25,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,Two year,No,Electron,108.9,2809.05,No
+4021-RQSNY,Male,1,Yes,No,29,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Electron,98.5,3004.15,Yes
+4024-CSNBY,Female,0,Yes,No,72,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,No,No,Two year,Yes,Bank tra,94.25,6849.75,No
+4032-RMHCI,Female,0,Yes,Yes,41,No,No,DSL,Yes,No,Yes,No,No,No,One year,No,Credit c,35.4,1412.4,No
+4062-HBMOS,Male,0,No,No,52,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,Yes,Electron,103.05,5364.8,No
+4063-EIKNQ,Male,0,Yes,Yes,11,Yes,No,No,No,No,No,No,No,No,Month-to,No,Bank tra,20.95,267.35,No
+4067-HLYQI,Female,0,No,No,33,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Bank tra,70.4,2406.1,No
+4077-CROMM,Female,0,Yes,Yes,31,Yes,Yes,Fiber op,No,No,Yes,Yes,Yes,Yes,Month-to,Yes,Electron,104.2,3243.45,Yes
+4079-VTGLK,Male,1,Yes,No,30,Yes,Yes,DSL,No,No,Yes,No,Yes,Yes,Two year,No,Electron,74.85,2181.75,No
+4080-OGPJL,Female,0,No,No,8,Yes,Yes,DSL,Yes,No,No,Yes,No,Yes,Month-to,No,Electron,71.15,563.65,Yes
+4086-ATNFV,Female,0,Yes,Yes,34,Yes,No,DSL,Yes,Yes,Yes,No,No,No,One year,Yes,Mailed c,60.8,2042.05,No
+4086-YQSNZ,Female,1,Yes,No,3,Yes,No,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Electron,80.4,224.05,Yes
+4092-OFQZS,Male,0,Yes,No,20,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,20.65,417.5,No
+4102-HLENU,Female,0,Yes,No,67,Yes,Yes,DSL,Yes,Yes,Yes,No,No,No,Two year,No,Mailed c,65.65,4322.85,No
+4102-OQUPX,Male,1,Yes,No,1,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,74.4,74.4,Yes
+4104-PVRPS,Male,0,Yes,No,24,Yes,No,DSL,Yes,No,No,Yes,No,No,Month-to,No,Mailed c,53.6,1315.35,No
+4109-CYRBD,Male,1,Yes,No,29,Yes,Yes,DSL,No,No,No,No,No,No,Month-to,Yes,Electron,51.6,1442,No
+4116-IQRFR,Male,0,Yes,Yes,4,Yes,Yes,No,No,No,No,No,No,No,One year,No,Credit c,24.1,73.1,No
+4130-MZLCC,Female,0,No,No,5,Yes,No,DSL,No,Yes,No,No,No,No,Month-to,No,Bank tra,50.55,244.75,No
+4134-BSXLX,Male,0,Yes,No,28,Yes,No,DSL,Yes,Yes,No,Yes,No,No,Month-to,No,Mailed c,60.9,1785.65,No
+4139-DETXS,Female,0,Yes,Yes,72,No,No,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,No,Bank tra,64.45,4528,No
+4139-SUGLD,Male,0,Yes,Yes,31,No,No,DSL,Yes,No,No,Yes,No,No,Month-to,No,Bank tra,35.4,1077.5,Yes
+4140-WJAWW,Female,0,No,No,5,Yes,No,No,No,No,No,No,No,No,Month-to,No,Credit c,19.85,108.05,Yes
+4143-HHPMK,Male,0,No,No,52,Yes,No,Fiber op,No,Yes,No,No,No,Yes,Month-to,Yes,Electron,85.35,4338.6,Yes
+4160-AMJTL,Female,1,No,No,8,Yes,No,No,No,No,No,No,No,No,Month-to,No,Electron,19.65,164.3,Yes
+4188-PCPIG,Female,0,Yes,No,57,Yes,No,DSL,Yes,Yes,No,Yes,Yes,No,Two year,Yes,Credit c,70.35,4124.65,No
+4193-ORFCL,Female,1,No,No,1,Yes,No,DSL,No,No,No,No,No,No,Month-to,No,Mailed c,45.1,45.1,Yes
+4195-PNGZS,Male,0,Yes,Yes,69,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Bank tra,24.45,1718.2,No
+4210-QFJMF,Female,0,No,No,4,Yes,No,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Electron,79.15,317.25,Yes
+4229-CZMLL,Male,0,No,No,6,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,74.9,469.8,Yes
+4238-JSSWH,Female,1,Yes,No,35,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,No,Bank tra,102.05,3452.55,No
+4248-HCETZ,Male,1,Yes,No,30,Yes,No,Fiber op,No,Yes,Yes,No,No,No,Month-to,Yes,Mailed c,79.65,2365.15,Yes
+4277-BWBML,Male,0,Yes,Yes,72,Yes,No,No,No,No,No,No,No,No,Two year,No,Bank tra,19.95,1322.85,No
+4285-GYRQC,Female,0,Yes,No,7,Yes,No,Fiber op,No,No,Yes,No,Yes,No,Month-to,Yes,Electron,86.25,587.1,Yes
+4289-DTDKW,Male,0,Yes,No,40,Yes,Yes,Fiber op,No,Yes,No,No,Yes,Yes,Month-to,Yes,Electron,101.3,4113.1,Yes
+4291-YZODP,Female,0,No,Yes,7,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,20.05,96.8,No
+4304-TSPVK,Female,0,Yes,No,68,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,No,Bank tra,114.9,7843.55,No
+4304-XUMGI,Male,1,Yes,Yes,50,Yes,Yes,DSL,Yes,Yes,Yes,No,No,Yes,Two year,Yes,Bank tra,75.15,3822.45,No
+4312-GVYNH,Female,0,Yes,No,70,No,No,DSL,Yes,No,Yes,Yes,No,Yes,Two year,Yes,Bank tra,49.85,3370.2,No
+4315-MURBD,Female,0,No,No,12,Yes,No,Fiber op,Yes,No,No,Yes,Yes,Yes,Month-to,Yes,Bank tra,98.9,1120.95,Yes
+4317-VTEOA,Male,0,No,No,1,Yes,No,DSL,No,Yes,No,No,No,No,Month-to,Yes,Electron,50.75,50.75,Yes
+4320-QMLLA,Male,0,No,No,7,Yes,No,DSL,No,No,No,No,Yes,No,Month-to,No,Mailed c,54.85,370.4,No
+4323-ELYYB,Male,0,Yes,Yes,13,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,20,218.55,No
+4324-BZCKL,Female,0,Yes,Yes,10,Yes,No,DSL,No,Yes,Yes,No,No,No,Month-to,Yes,Mailed c,55.55,551.3,No
+4342-HENTK,Female,1,No,No,2,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,70.65,142.35,Yes
+4342-HFXWS,Female,0,Yes,Yes,48,Yes,No,DSL,Yes,No,Yes,Yes,Yes,No,One year,No,Bank tra,69.7,3023.65,No
+4350-ZTLPI,Female,0,Yes,No,53,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,One year,Yes,Bank tra,108.95,5718.2,No
+4355-HBJHH,Male,0,Yes,Yes,67,Yes,Yes,DSL,Yes,No,Yes,No,Yes,Yes,Two year,Yes,Electron,79.7,5293.4,Yes
+4361-JEIVL,Male,0,No,Yes,1,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Electron,44.4,44.4,Yes
+4373-MAVJG,Female,0,Yes,Yes,14,Yes,Yes,Fiber op,No,Yes,No,No,No,Yes,Month-to,Yes,Bank tra,90.9,1259,Yes
+4376-KFVRS,Male,0,Yes,Yes,72,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,114.05,8468.2,No
+4391-LNRXK,Male,0,No,No,22,Yes,No,Fiber op,No,Yes,Yes,Yes,No,Yes,Month-to,Yes,Bank tra,94.95,2142.8,No
+4393-OBCRR,Female,0,No,No,3,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,20.25,71.2,No
+4412-YLTKF,Female,1,No,No,27,Yes,Yes,Fiber op,No,No,Yes,No,No,No,Month-to,Yes,Electron,78.05,2135.5,Yes
+4419-UJMUS,Male,0,Yes,Yes,69,Yes,Yes,Fiber op,No,No,No,Yes,Yes,Yes,Two year,Yes,Electron,99.35,6856.45,No
+4423-JWZJN,Male,0,Yes,Yes,64,Yes,Yes,Fiber op,No,No,Yes,No,No,Yes,One year,No,Credit c,90.25,5629.15,No
+4424-TKOPW,Male,1,No,No,2,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,93.85,196.75,Yes
+4432-ADRLB,Male,0,No,No,2,Yes,No,DSL,No,No,No,No,No,No,Month-to,No,Mailed c,44.65,74.9,Yes
+4441-NIHPT,Female,1,No,No,13,Yes,No,Fiber op,No,No,Yes,No,No,No,Month-to,Yes,Electron,74.3,940.35,Yes
+4443-EMBNA,Female,0,Yes,No,71,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Bank tra,24.75,1836.9,No
+4446-BZKHU,Male,0,Yes,No,61,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,Yes,Electron,105.55,6281.45,Yes
+4450-MDZFX,Male,0,Yes,Yes,60,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,No,Bank tra,74.35,4453.3,No
+4456-RHSNB,Female,0,Yes,Yes,19,Yes,No,DSL,No,No,Yes,No,No,No,Month-to,Yes,Bank tra,49.6,962.9,No
+4459-BBGHE,Male,0,No,Yes,30,No,No,DSL,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,44.5,1307.8,No
+4468-YDOVK,Male,0,No,Yes,5,Yes,No,DSL,No,No,No,Yes,No,No,Month-to,Yes,Bank tra,48.65,235.2,No
+4482-EWFMI,Female,0,No,No,2,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,69.7,135.2,No
+4488-PSYCG,Male,0,No,No,16,Yes,No,No,No,No,No,No,No,No,Month-to,No,Bank tra,20.25,327.45,Yes
+4495-LHSSK,Female,0,No,Yes,18,Yes,Yes,DSL,Yes,No,No,No,No,No,Month-to,No,Mailed c,57.65,992.7,No
+4501-EQDRN,Female,0,No,No,1,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,No,Bank tra,69.7,69.7,Yes
+4514-GFCFI,Female,1,No,No,16,Yes,Yes,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Electron,84.75,1350.15,Yes
+4524-QCSSM,Male,0,No,No,26,No,No,DSL,Yes,Yes,No,No,No,Yes,Month-to,Yes,Bank tra,44.65,1156.55,No
+4529-CKBCL,Female,0,No,No,2,Yes,No,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Electron,80.2,146.05,Yes
+4530-NDRKU,Female,0,Yes,Yes,42,Yes,No,No,No,No,No,No,No,No,One year,Yes,Electron,19.05,761.85,No
+4537-DKTAL,Female,0,No,No,2,Yes,No,DSL,No,No,No,No,No,No,Month-to,No,Electron,45.55,84.4,No
+4538-WNTMJ,Female,0,Yes,Yes,46,Yes,Yes,No,No,No,No,No,No,No,One year,No,Mailed c,24.95,1165.9,No
+4546-FOKWR,Female,0,No,No,16,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Credit c,74.75,1129.35,No
+4550-VBOFE,Male,1,Yes,No,70,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,Yes,Electron,102.95,7101.5,Yes
+4559-UWIHT,Male,0,Yes,No,14,Yes,Yes,Fiber op,No,Yes,Yes,No,No,No,Month-to,Yes,Electron,82.65,1185,No
+4565-NLZBV,Female,0,Yes,No,71,Yes,Yes,No,No,No,No,No,No,No,Two year,Yes,Bank tra,24.65,1710.15,No
+4566-NECEV,Male,0,No,No,5,Yes,Yes,Fiber op,No,Yes,Yes,No,No,Yes,Month-to,No,Electron,96.55,500.1,No
+4570-QHXHL,Female,0,No,No,9,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Electron,43.75,405.7,No
+4572-DVCGN,Female,0,No,No,10,Yes,No,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Bank tra,80.25,846,Yes
+4573-JKNAE,Male,0,No,Yes,12,Yes,No,No,No,No,No,No,No,No,Two year,No,Bank tra,19.35,212.3,No
+4576-CSAJH,Male,0,No,No,22,Yes,No,DSL,No,Yes,No,Yes,No,No,One year,Yes,Credit c,55.15,1193.05,Yes
+4578-PHJYZ,Male,0,Yes,Yes,52,Yes,No,DSL,No,Yes,Yes,Yes,Yes,No,One year,Yes,Electron,68.75,3482.85,No
+4580-TMHJU,Female,0,Yes,Yes,43,Yes,No,DSL,No,No,No,No,Yes,No,Month-to,No,Electron,56.15,2499.3,Yes
+4587-VVTOX,Female,0,Yes,No,6,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,Yes,Electron,105.3,545.2,Yes
+4592-IWTJI,Female,0,Yes,Yes,3,No,No,DSL,Yes,No,No,No,No,No,Month-to,No,Credit c,29.7,91.7,Yes
+4598-XLKNJ,Female,1,Yes,No,25,Yes,No,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,Yes,Electron,98.5,2514.5,Yes
+4608-LCIMN,Male,0,Yes,Yes,8,Yes,No,DSL,No,No,No,No,No,No,Month-to,No,Bank tra,44.65,369.15,No
+4612-SSVHJ,Female,1,No,No,20,Yes,No,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Electron,81.45,1671.6,No
+4612-THJBS,Female,1,No,No,56,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,One year,Yes,Bank tra,104.75,5510.65,Yes
+4619-EVPHY,Female,1,Yes,No,20,Yes,No,Fiber op,No,No,No,No,Yes,Yes,One year,Yes,Bank tra,91,1859.5,No
+4625-LAMOB,Male,0,No,No,44,Yes,No,No,No,No,No,No,No,No,Two year,No,Credit c,20.4,905.55,No
+4633-MKHYU,Female,0,No,No,9,Yes,No,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Mailed c,88.4,788.6,No
+4636-TVXVG,Male,0,Yes,Yes,62,Yes,No,No,No,No,No,No,No,No,One year,No,Bank tra,19.95,1244.8,No
+4658-HCOHW,Female,0,Yes,Yes,21,Yes,No,Fiber op,No,Yes,Yes,Yes,Yes,Yes,Month-to,Yes,Electron,102.8,2110.15,Yes
+4659-NZRUF,Female,0,No,No,19,Yes,Yes,Fiber op,Yes,Yes,No,No,No,Yes,Month-to,Yes,Electron,95.15,1789.25,Yes
+4667-OHGKG,Male,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,19.3,19.3,Yes
+4676-MQUEA,Male,1,Yes,No,50,Yes,Yes,Fiber op,Yes,Yes,Yes,No,Yes,No,One year,Yes,Bank tra,101.9,5265.5,No
+4676-WLUHT,Male,0,No,No,54,No,No,DSL,Yes,Yes,No,No,No,Yes,Two year,No,Bank tra,46.2,2431.95,No
+4682-BLBUC,Male,0,Yes,No,44,Yes,No,DSL,No,Yes,Yes,Yes,Yes,No,One year,Yes,Electron,70.95,3250.45,No
+4695-VADHF,Male,0,Yes,Yes,18,Yes,No,DSL,No,No,Yes,No,No,Yes,Month-to,No,Electron,57.45,990.85,Yes
+4701-MLJPN,Male,0,No,No,31,Yes,No,DSL,No,No,Yes,Yes,No,No,Month-to,Yes,Electron,55.25,1715.65,Yes
+4706-DGAHW,Male,1,No,No,1,Yes,No,DSL,No,No,No,No,No,No,Month-to,No,Electron,45.2,45.2,No
+4707-MAXGU,Male,0,Yes,No,72,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Credit c,25.85,1872.2,No
+4707-YNOQA,Female,0,Yes,Yes,34,Yes,Yes,No,No,No,No,No,No,No,One year,Yes,Credit c,25.6,917.15,No
+4709-LKHYG,Female,0,Yes,Yes,29,Yes,No,No,No,No,No,No,No,No,One year,No,Electron,20,540.05,No
+4713-LZDRV,Female,1,No,No,2,Yes,No,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Electron,79.6,195.05,Yes
+4716-MRVEN,Female,0,No,No,29,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,20,599.3,No
+4719-UMSIY,Male,0,No,Yes,6,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,19.65,100.9,No
+4735-BJKOU,Female,0,No,No,40,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,20.15,804.85,No
+4737-AQCPU,Male,0,Yes,Yes,72,Yes,Yes,DSL,Yes,Yes,Yes,Yes,No,No,Two year,No,Credit c,72.1,5016.65,No
+4737-HOBAX,Male,0,Yes,No,63,Yes,Yes,DSL,No,No,Yes,Yes,Yes,Yes,Two year,No,Credit c,79.8,5034.05,No
+4745-LSPLO,Male,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.5,20.5,Yes
+4749-OJKQU,Female,0,No,No,4,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,75.65,302.35,No
+4763-PGDPO,Female,0,No,No,4,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,No,Electron,70.4,281,Yes
+4767-HZZHQ,Male,0,Yes,Yes,30,Yes,No,Fiber op,No,Yes,Yes,No,No,No,Month-to,No,Bank tra,82.05,2570.2,No
+4786-UKSNZ,Male,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.2,20.2,Yes
+4800-CZMPC,Female,0,Yes,Yes,48,Yes,Yes,Fiber op,Yes,Yes,No,No,Yes,Yes,One year,Yes,Credit c,103.25,5037.55,Yes
+4800-VHZKI,Female,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,19.9,19.9,Yes
+4801-KFYKL,Male,0,No,Yes,8,Yes,No,No,No,No,No,No,No,No,Month-to,No,Bank tra,19.45,159.2,No
+4806-DXQCE,Female,1,Yes,No,70,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Electron,113.65,7714.65,No
+4806-HIPDW,Female,0,Yes,No,1,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,68.95,68.95,Yes
+4808-YNLEU,Female,0,Yes,No,35,Yes,No,DSL,Yes,No,No,No,Yes,No,One year,Yes,Bank tra,62.15,2215.45,No
+4815-YOSUK,Male,0,Yes,Yes,72,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,No,Yes,One year,Yes,Credit c,104.9,7537.5,No
+4817-VYYWS,Female,0,No,No,30,Yes,Yes,Fiber op,No,Yes,No,No,Yes,Yes,Month-to,Yes,Electron,100.2,2983.8,Yes
+4819-HJPIW,Male,0,No,No,18,No,No,DSL,No,No,No,No,No,No,Month-to,No,Mailed c,25.15,476.8,No
+4822-RVYBB,Male,1,No,No,8,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Electron,100.6,819.4,Yes
+4825-FUREZ,Male,0,Yes,No,42,Yes,No,No,No,No,No,No,No,No,Two year,No,Electron,20.25,835.5,No
+4826-DXMUP,Male,0,No,Yes,35,Yes,No,DSL,No,No,No,Yes,Yes,Yes,One year,Yes,Mailed c,72.1,2495.15,No
+4829-AUOAX,Female,0,No,No,46,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,No,Bank tra,96.05,4399.5,Yes
+4830-FAXFM,Male,0,No,Yes,19,Yes,Yes,No,No,No,No,No,No,No,Month-to,Yes,Credit c,24.1,439.2,No
+4833-QTJNO,Male,1,Yes,No,67,Yes,Yes,Fiber op,Yes,Yes,No,No,No,No,Month-to,No,Bank tra,83.85,5588.8,No
+4840-ORQXB,Female,1,No,No,56,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,No,Electron,104.75,5841.35,No
+4844-JJWUY,Female,1,No,No,1,Yes,No,Fiber op,No,Yes,No,No,No,Yes,Month-to,Yes,Electron,86,86,Yes
+4847-TAJYI,Female,1,No,No,6,Yes,No,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,89.35,567.8,No
+4849-PYRLQ,Female,1,No,No,56,Yes,Yes,DSL,Yes,No,Yes,Yes,No,Yes,Two year,No,Bank tra,73.25,4054.2,No
+4854-CIDCF,Female,1,No,No,3,Yes,No,Fiber op,No,No,Yes,No,No,No,Month-to,No,Electron,73.85,196.4,No
+4854-SSLTN,Male,0,Yes,Yes,2,Yes,No,DSL,Yes,Yes,No,Yes,No,No,Two year,No,Mailed c,59.5,130.5,No
+4869-EPIUS,Male,0,Yes,No,56,Yes,No,Fiber op,No,No,No,No,No,Yes,One year,Yes,Electron,80.9,4557.5,No
+4872-VXRIL,Male,0,No,No,56,Yes,Yes,DSL,Yes,Yes,No,Yes,No,No,One year,Yes,Bank tra,64.65,3665.55,No
+4883-QICIH,Male,0,Yes,Yes,32,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Bank tra,69.75,2347.9,Yes
+4896-CPRPF,Male,0,Yes,Yes,35,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Bank tra,25.45,809.25,No
+4897-QSUYC,Female,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,20.15,20.15,Yes
+4903-UYAVB,Male,0,Yes,No,5,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,19.35,126.05,Yes
+4908-XAXAY,Female,1,No,No,49,Yes,No,Fiber op,No,Yes,Yes,No,No,Yes,One year,Yes,Bank tra,89.85,4287.2,No
+4910-AQFFX,Male,0,Yes,Yes,9,Yes,Yes,Fiber op,No,No,Yes,No,No,No,Month-to,Yes,Bank tra,79.35,661.25,Yes
+4910-GMJOT,Female,0,No,No,1,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,94.6,94.6,Yes
+4918-QLLIW,Male,0,No,No,3,Yes,No,DSL,No,No,No,No,Yes,No,Month-to,No,Credit c,53.4,188.7,Yes
+4922-CVPDX,Female,0,Yes,No,26,Yes,No,DSL,No,Yes,Yes,No,Yes,Yes,Two year,Yes,Credit c,73.5,1905.7,No
+4933-BSAIP,Female,0,Yes,No,40,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,19.1,780.1,No
+4942-VZZOM,Male,0,Yes,No,64,Yes,Yes,DSL,Yes,No,No,No,Yes,No,One year,Yes,Credit c,66.15,4392.5,No
+4957-TREIR,Male,0,No,No,3,Yes,No,DSL,Yes,No,No,Yes,Yes,No,Month-to,Yes,Credit c,64.4,195.65,No
+4958-GZWIY,Male,0,Yes,Yes,7,Yes,No,DSL,No,No,Yes,No,No,No,Month-to,No,Electron,48.7,340.25,Yes
+4971-PUYQO,Female,0,No,No,27,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Mailed c,94.55,2724.6,Yes
+4973-RLZVI,Female,0,No,No,30,Yes,No,DSL,Yes,Yes,Yes,Yes,Yes,No,One year,No,Credit c,74.65,2308.6,No
+4979-HPRFL,Male,0,Yes,Yes,56,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Bank tra,24.15,1402.25,No
+4980-URKXC,Male,0,Yes,No,36,Yes,No,No,No,No,No,No,No,No,One year,No,Bank tra,20.85,720.05,No
+4986-MXSFP,Female,0,No,No,2,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,20,40.9,No
+4989-LIXVT,Male,1,No,No,68,Yes,Yes,Fiber op,No,Yes,Yes,No,No,Yes,Month-to,Yes,Electron,95.9,6503.2,No
+4994-OBRSZ,Male,0,No,Yes,14,Yes,No,DSL,Yes,Yes,Yes,Yes,No,Yes,Two year,No,Bank tra,76.1,1054.8,No
+4998-IKFSE,Female,0,No,No,30,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,No,Electron,100.45,3096.9,No
+5012-YSPJJ,Male,0,Yes,Yes,31,Yes,No,DSL,No,No,Yes,Yes,No,No,Month-to,No,Mailed c,54.35,1647,No
+5016-ETTFF,Male,0,No,No,10,No,No,DSL,No,No,Yes,No,No,No,Month-to,No,Mailed c,29.5,255.25,Yes
+5020-ZSTTY,Female,1,No,No,54,Yes,Yes,DSL,Yes,Yes,No,Yes,Yes,Yes,One year,No,Bank tra,82.45,4350.1,Yes
+5022-JNQEQ,Female,0,Yes,Yes,9,Yes,No,Fiber op,No,No,No,Yes,No,No,Month-to,Yes,Electron,75.85,647.5,No
+5022-KVDQT,Male,0,No,No,27,Yes,Yes,Fiber op,No,No,Yes,No,No,No,Month-to,Yes,Electron,81.3,2272.8,No
+5027-XWQHA,Male,0,No,No,6,Yes,No,DSL,No,No,No,No,No,No,Month-to,No,Electron,44.75,270.95,Yes
+5035-PGZXH,Female,0,No,No,56,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,One year,Yes,Electron,106.8,5914.4,No
+5038-ETMLM,Female,0,Yes,No,72,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,113.65,8182.75,No
+5054-IEXZT,Male,0,No,Yes,1,Yes,No,Fiber op,No,Yes,No,No,No,No,Month-to,Yes,Electron,75.35,75.35,Yes
+5057-RKGLH,Female,0,Yes,Yes,9,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,20.35,191.1,No
+5062-CJJKH,Male,0,Yes,Yes,25,Yes,No,DSL,No,Yes,Yes,No,No,No,One year,No,Mailed c,53.65,1355.45,No
+5066-GFJMM,Female,0,Yes,No,3,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,19.9,45.75,No
+5067-XJQFU,Male,1,Yes,Yes,66,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,One year,Yes,Electron,108.45,7076.35,No
+5077-DXTCG,Female,0,No,No,1,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Electron,45.3,45.3,Yes
+5126-RCXYW,Male,0,Yes,Yes,54,No,No,DSL,No,No,Yes,Yes,No,Yes,Two year,No,Credit c,46,2424.05,No
+5141-ZUVBH,Female,0,No,Yes,9,Yes,No,Fiber op,Yes,No,Yes,Yes,No,Yes,Month-to,No,Bank tra,93,870.25,No
+5143-WMWOG,Male,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,No,Electron,19.95,19.95,Yes
+5148-HKFIR,Female,0,No,No,20,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,19.7,406.95,No
+5150-LJNSR,Male,0,Yes,Yes,31,Yes,Yes,Fiber op,Yes,No,Yes,No,Yes,No,One year,No,Bank tra,98.05,3082.1,No
+5151-HQRDG,Male,0,Yes,No,37,Yes,Yes,DSL,Yes,No,No,No,No,No,Month-to,Yes,Mailed c,55.05,2030.75,No
+5160-UXJED,Male,0,No,Yes,17,Yes,No,DSL,No,No,No,No,No,No,One year,No,Mailed c,44.6,681.4,No
+5161-XEUVX,Male,0,Yes,No,37,Yes,Yes,Fiber op,No,No,Yes,Yes,Yes,No,Two year,No,Mailed c,94.3,3460.95,No
+5167-GBFRE,Male,1,No,No,4,No,No,DSL,No,No,No,No,No,No,Month-to,Yes,Bank tra,25.2,102.5,Yes
+5167-ZFFMM,Male,0,No,No,1,Yes,Yes,Fiber op,No,Yes,No,No,No,Yes,Month-to,Yes,Credit c,90.85,90.85,Yes
+5172-MIGPM,Male,0,No,No,4,Yes,Yes,DSL,No,No,No,Yes,No,Yes,Month-to,No,Mailed c,65.55,237.2,No
+5174-RNGBH,Female,0,No,No,9,Yes,No,DSL,No,Yes,No,Yes,Yes,No,Month-to,No,Mailed c,66.25,620.55,Yes
+5175-AOBHI,Female,0,No,No,4,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Mailed c,46,193.6,Yes
+5175-WLYXL,Male,0,No,No,22,Yes,Yes,Fiber op,No,Yes,No,No,No,No,Month-to,Yes,Mailed c,78.85,1600.25,No
+5183-KLYEM,Female,0,No,No,72,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,112.75,8192.6,No
+5192-EBGOV,Female,1,No,No,1,Yes,Yes,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Electron,85.7,85.7,Yes
+5201-CBWYG,Male,0,Yes,Yes,62,Yes,Yes,No,No,No,No,No,No,No,One year,No,Bank tra,24.8,1476.25,No
+5201-USSQZ,Female,0,Yes,No,26,Yes,No,Fiber op,No,No,No,Yes,No,Yes,Month-to,No,Credit c,85.9,2196.45,No
+5206-HPJKM,Male,0,No,No,17,Yes,No,DSL,Yes,Yes,No,No,No,No,Month-to,Yes,Credit c,55.5,934.15,No
+5214-NLTIT,Male,0,Yes,Yes,72,Yes,Yes,Fiber op,No,No,Yes,No,No,Yes,Two year,Yes,Credit c,90.8,6511.8,No
+5223-UZAVK,Male,0,No,No,64,Yes,No,Fiber op,Yes,Yes,No,No,Yes,Yes,One year,Yes,Credit c,100.3,6603.8,No
+5228-EXCET,Male,0,No,No,13,Yes,No,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Electron,80.85,1008.7,Yes
+5240-CAOYT,Female,0,No,No,57,Yes,Yes,Fiber op,Yes,Yes,No,Yes,No,No,Month-to,Yes,Bank tra,87.55,4884.85,No
+5240-IJOQT,Male,1,No,No,1,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,74.7,74.7,Yes
+5243-SAOTC,Male,0,No,No,54,Yes,Yes,Fiber op,No,Yes,No,No,No,No,Month-to,Yes,Bank tra,79.85,4308.25,No
+5245-VDBUR,Female,0,Yes,No,52,No,No,DSL,Yes,No,Yes,No,No,No,One year,No,Mailed c,35.45,1958.95,No
+5269-NRGDP,Male,0,Yes,Yes,42,Yes,No,DSL,No,No,Yes,Yes,Yes,Yes,One year,No,Electron,73.15,3088.25,No
+5271-DBYSJ,Male,1,No,No,11,Yes,No,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Credit c,79.15,827.7,No
+5271-YNWVR,Male,0,Yes,Yes,68,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Electron,113.15,7856,Yes
+5275-SQEIZ,Male,0,No,No,1,Yes,No,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Mailed c,80.85,80.85,Yes
+5285-MVEHD,Female,0,Yes,No,56,Yes,No,Fiber op,Yes,Yes,Yes,No,Yes,Yes,One year,Yes,Credit c,105.6,6068.65,No
+5294-IMHHT,Male,0,Yes,No,53,Yes,Yes,Fiber op,No,Yes,No,Yes,No,Yes,One year,No,Bank tra,97.75,5043.2,No
+5296-PSYVW,Female,0,Yes,No,72,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Electron,24.55,1750.7,No
+5297-MDOIR,Female,0,Yes,No,63,Yes,No,Fiber op,Yes,No,Yes,No,No,No,One year,Yes,Credit c,81.15,5224.5,No
+5298-GSTLM,Female,1,No,No,60,Yes,Yes,Fiber op,Yes,No,No,No,Yes,Yes,One year,Yes,Bank tra,101.4,6176.6,No
+5299-SJCZT,Male,0,No,No,3,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Bank tra,101.55,298.35,Yes
+5301-GAUUY,Male,0,No,No,32,Yes,Yes,Fiber op,No,Yes,No,No,No,No,Month-to,Yes,Bank tra,80.35,2596.15,Yes
+5304-EFJLP,Male,1,Yes,No,72,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,111.65,8022.85,No
+5306-BVTKJ,Male,0,Yes,Yes,48,Yes,No,DSL,No,Yes,Yes,No,No,No,One year,Yes,Credit c,55.8,2651.2,No
+5311-IHLEI,Male,0,No,No,12,No,No,DSL,Yes,Yes,No,Yes,Yes,No,Month-to,Yes,Bank tra,50.95,605.75,No
+5312-TSZVC,Female,0,No,Yes,15,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,19.65,270.6,No
+5329-KRDTM,Male,1,Yes,No,72,Yes,Yes,DSL,No,Yes,Yes,Yes,Yes,No,Two year,No,Credit c,77.35,5396.25,No
+5331-RGMTT,Male,1,Yes,No,54,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Credit c,99.05,5295.7,No
+5336-UFNZP,Female,1,Yes,Yes,65,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,One year,Yes,Electron,107.45,7047.5,No
+5348-CAGXB,Male,0,No,No,12,Yes,Yes,Fiber op,No,No,Yes,No,Yes,No,Month-to,Yes,Electron,89.55,1021.75,No
+5356-RHIPP,Male,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,20.2,20.2,Yes
+5357-TZHPP,Male,1,No,No,9,Yes,Yes,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Credit c,84.4,732.5,Yes
+5365-LLFYV,Female,0,No,No,2,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Mailed c,45.85,105.6,No
+5380-AFSSK,Female,0,No,No,5,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Mailed c,93.9,486.85,Yes
+5380-XPJNZ,Female,0,No,No,38,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,20.05,678.2,No
+5382-SOYZL,Male,0,No,No,22,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,95.1,2162.6,No
+5386-THSLQ,Female,1,Yes,No,66,No,No,DSL,No,Yes,Yes,No,Yes,No,One year,No,Bank tra,45.55,3027.25,No
+5392-AKEMH,Female,0,No,No,12,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Electron,45.05,523.1,No
+5394-MEITZ,Female,0,Yes,Yes,60,Yes,No,DSL,No,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,80.6,4946.7,No
+5397-TUPSH,Male,1,Yes,No,65,Yes,No,Fiber op,No,No,No,No,No,No,One year,Yes,Bank tra,70.95,4555.2,No
+5419-JKZNQ,Male,1,Yes,No,30,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,No,Mailed c,77.9,2351.45,No
+5419-KLXBN,Female,0,Yes,Yes,25,Yes,No,Fiber op,No,Yes,Yes,No,Yes,No,Month-to,Yes,Bank tra,89.15,2257.75,Yes
+5424-RLQLC,Male,0,No,No,10,Yes,No,DSL,No,Yes,No,No,Yes,No,Month-to,Yes,Mailed c,59.65,638.95,No
+5442-PPTJY,Male,0,Yes,Yes,12,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,19.7,258.35,No
+5451-MHQOF,Male,0,Yes,Yes,56,Yes,Yes,No,No,No,No,No,No,No,One year,Yes,Mailed c,24.45,1431.65,No
+5472-CVMDX,Female,0,No,No,68,No,No,DSL,Yes,No,Yes,Yes,No,No,Two year,No,Mailed c,38.9,2719.2,No
+5480-XTFFL,Female,0,Yes,Yes,31,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,21,697.7,No
+5481-NTDOH,Female,1,Yes,No,67,Yes,Yes,Fiber op,Yes,No,Yes,No,Yes,Yes,One year,Yes,Credit c,107.05,7142.5,No
+5493-SDRDQ,Male,0,No,No,2,Yes,No,DSL,Yes,No,Yes,No,No,No,Month-to,Yes,Mailed c,55.1,113.35,Yes
+5501-TVMGM,Male,0,No,No,1,Yes,No,DSL,No,No,No,No,No,Yes,Month-to,Yes,Electron,55.25,55.25,No
+5502-RLUYV,Female,0,Yes,Yes,69,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,Yes,Electron,103.95,7446.9,Yes
+5505-OVWQW,Female,0,No,No,17,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,20.15,353.65,No
+5519-NPHVG,Female,0,No,No,12,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,94.2,1046.1,Yes
+5519-YLDGW,Female,0,Yes,No,21,Yes,Yes,Fiber op,Yes,No,Yes,No,Yes,Yes,Month-to,Yes,Electron,103.9,2254.2,Yes
+5522-JBWMO,Male,0,No,Yes,1,Yes,No,DSL,No,No,No,No,No,No,Month-to,No,Electron,44,44,No
+5524-KHNJP,Male,0,Yes,Yes,33,Yes,No,DSL,Yes,No,Yes,No,Yes,Yes,One year,No,Credit c,74.75,2453.3,No
+5533-NHFRF,Male,1,No,No,7,No,No,DSL,No,Yes,No,Yes,No,Yes,Month-to,Yes,Electron,44.4,265.8,No
+5567-GZKQY,Male,0,No,No,58,Yes,No,No,No,No,No,No,No,No,Two year,No,Credit c,20.3,1131.5,No
+5569-OUICF,Female,1,Yes,No,28,Yes,Yes,Fiber op,No,No,No,Yes,Yes,Yes,Month-to,Yes,Credit c,101.3,2812.2,Yes
+5574-NXZIU,Male,0,No,No,63,Yes,No,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,No,Credit c,109.2,7049.75,No
+5575-TPIZQ,Male,0,No,No,46,Yes,Yes,Fiber op,Yes,No,No,No,Yes,No,Month-to,Yes,Credit c,89.15,4245.55,No
+5577-OTWWW,Female,0,No,No,15,Yes,No,No,No,No,No,No,No,No,Month-to,No,Bank tra,19.75,297.3,Yes
+5578-NKCXI,Female,0,Yes,Yes,58,Yes,No,Fiber op,Yes,Yes,No,No,Yes,Yes,One year,No,Credit c,99.25,5846.65,No
+5590-BYNII,Male,0,No,No,22,Yes,Yes,Fiber op,Yes,No,No,No,Yes,Yes,Month-to,Yes,Electron,100.75,2095,Yes
+5609-CEBID,Female,1,No,No,20,Yes,Yes,Fiber op,No,Yes,Yes,No,No,Yes,Month-to,Yes,Electron,94.1,1782.4,Yes
+5616-PRTNT,Male,0,No,Yes,20,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Electron,19.4,374.5,Yes
+5619-PTMIK,Female,0,Yes,No,46,Yes,Yes,DSL,Yes,No,No,No,No,No,Month-to,No,Electron,53.1,2459.8,No
+5622-UEJFI,Female,0,Yes,Yes,35,Yes,Yes,No,No,No,No,No,No,No,Two year,Yes,Credit c,25.4,949.8,No
+5624-RYAMH,Female,0,No,No,9,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Electron,19.5,178.85,No
+5628-RKIFK,Female,1,No,No,49,Yes,Yes,Fiber op,Yes,No,No,No,Yes,Yes,Month-to,No,Credit c,101.55,5070.4,No
+5639-NTUPK,Male,0,No,Yes,13,Yes,No,DSL,Yes,No,No,No,No,No,Month-to,Yes,Credit c,52.1,670.65,No
+5640-CAXOA,Female,0,No,No,30,No,No,DSL,No,No,No,Yes,No,Yes,One year,Yes,Credit c,40.35,1187.05,No
+5651-WYIPH,Female,1,No,No,18,Yes,No,DSL,No,Yes,No,No,No,No,Month-to,Yes,Credit c,49.85,865.75,No
+5651-YLPRD,Female,0,Yes,Yes,32,Yes,No,Fiber op,No,Yes,No,No,Yes,No,Month-to,Yes,Electron,86.1,2723.75,No
+5652-MSDEY,Female,0,No,No,10,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Mailed c,75.75,777.3,No
+5656-JAMLX,Male,0,No,No,62,Yes,No,No,No,No,No,No,No,No,Two year,No,Bank tra,19.85,1253.65,No
+5668-MEISB,Female,0,Yes,Yes,72,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,No,Two year,No,Credit c,106.1,7657.4,No
+5671-UUNXD,Female,1,Yes,No,50,Yes,Yes,Fiber op,No,No,No,Yes,Yes,Yes,One year,Yes,Electron,100.65,5189.75,No
+5676-CFLYY,Male,0,Yes,Yes,71,Yes,No,DSL,No,Yes,No,Yes,Yes,Yes,Two year,Yes,Credit c,73.35,5154.5,No
+5687-DKDTV,Female,0,No,No,4,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.35,77.5,Yes
+5688-KZTSN,Male,0,Yes,Yes,15,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Electron,20,288.05,Yes
+5693-PIPCS,Male,0,No,No,41,Yes,No,Fiber op,No,Yes,No,Yes,Yes,Yes,Two year,Yes,Credit c,99.65,4220.35,No
+5696-CEIQJ,Male,0,Yes,Yes,67,Yes,No,Fiber op,No,Yes,Yes,Yes,Yes,Yes,Two year,No,Bank tra,103.15,6895.5,No
+5696-EXCYS,Male,0,No,No,17,Yes,No,No,No,No,No,No,No,No,Two year,No,Credit c,19.45,369.05,No
+5696-QURRL,Male,0,No,No,1,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Mailed c,45.05,45.05,Yes
+5699-BNCAS,Male,1,No,No,71,Yes,Yes,No,No,No,No,No,No,No,Two year,Yes,Mailed c,24.65,1766.75,No
+5707-ORNDZ,Male,1,No,No,9,Yes,Yes,DSL,Yes,No,No,No,No,No,Month-to,No,Electron,54.55,494.05,Yes
+5708-EVONK,Female,0,Yes,Yes,58,Yes,Yes,Fiber op,Yes,Yes,No,No,No,Yes,Month-to,Yes,Bank tra,93.4,5435.6,Yes
+5712-AHQNN,Female,0,No,No,43,Yes,No,Fiber op,No,Yes,Yes,No,Yes,No,Month-to,Yes,Electron,91.65,3954.1,No
+5724-BIDBU,Male,0,Yes,No,49,Yes,Yes,DSL,Yes,No,No,No,No,No,One year,Yes,Electron,55.35,2633.95,No
+5726-CVNYA,Female,0,Yes,Yes,8,Yes,No,No,No,No,No,No,No,No,Two year,Yes,Mailed c,19.85,146.6,No
+5729-KLZAR,Female,0,Yes,Yes,4,Yes,No,Fiber op,No,No,No,No,No,Yes,Month-to,No,Electron,80.85,302.75,Yes
+5760-FXFVO,Male,0,No,No,6,Yes,No,Fiber op,Yes,Yes,No,No,No,No,Month-to,Yes,Electron,78.95,494.95,No
+5777-ZPQNC,Female,0,No,No,12,Yes,No,No,No,No,No,No,No,No,One year,No,Electron,20.15,260.7,No
+5787-KXGIY,Male,0,Yes,No,72,Yes,No,No,No,No,No,No,No,No,Two year,No,Credit c,19.3,1304.8,No
+5789-LDFXO,Male,0,No,No,24,Yes,Yes,No,No,No,No,No,No,No,One year,No,Electron,24.6,592.65,No
+5792-JALQC,Female,1,No,No,52,Yes,Yes,DSL,Yes,No,Yes,No,No,No,Two year,No,Bank tra,59.85,3103.25,No
+5802-ADBRC,Female,0,Yes,No,50,Yes,Yes,Fiber op,Yes,No,Yes,No,Yes,Yes,One year,Yes,Mailed c,104.4,5232.9,No
+5804-HYIEZ,Male,0,Yes,Yes,70,Yes,Yes,Fiber op,Yes,Yes,No,No,Yes,Yes,Month-to,Yes,Electron,106.05,7554.05,No
+5804-LEPIM,Female,1,No,No,2,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,70.35,139.05,Yes
+5816-JMLGY,Female,0,Yes,Yes,70,Yes,No,DSL,No,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,80.4,5717.85,No
+5834-ASPWA,Male,0,No,No,1,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,75.45,75.45,Yes
+5835-BEQEU,Male,0,No,No,3,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,76.95,228.4,Yes
+5842-POCOP,Female,0,Yes,No,5,Yes,No,Fiber op,Yes,No,Yes,No,No,Yes,Month-to,Yes,Mailed c,88.9,454.15,Yes
+5848-FHRFC,Female,0,No,No,68,Yes,No,No,No,No,No,No,No,No,Two year,No,Bank tra,20.05,1386.9,No
+5868-CZJDR,Male,0,No,Yes,1,No,No,DSL,No,Yes,No,No,No,No,Month-to,Yes,Mailed c,31.35,31.35,Yes
+5868-YWPDW,Male,1,Yes,No,6,Yes,No,Fiber op,No,Yes,No,No,No,Yes,Month-to,Yes,Electron,84.2,519.15,Yes
+5875-YPQFJ,Male,0,No,No,1,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,69.9,69.9,Yes
+5879-HMFFH,Female,0,Yes,No,72,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,No,Bank tra,88.05,6520.8,No
+5887-IKKYO,Male,0,Yes,Yes,58,Yes,Yes,Fiber op,No,No,Yes,Yes,No,Yes,Two year,No,Bank tra,94.35,5563.65,No
+5889-JTMUL,Female,1,Yes,No,50,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,No,Month-to,Yes,Electron,95.05,4888.7,Yes
+5893-PYOLZ,Male,0,No,No,56,Yes,No,DSL,No,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,81.8,4534.45,No
+5914-XRFQB,Male,0,Yes,No,72,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,115.8,8424.9,No
+5915-DGNVC,Female,0,Yes,No,49,Yes,Yes,DSL,Yes,Yes,Yes,No,No,Yes,One year,No,Electron,71.8,3472.05,No
+5922-ABDVO,Female,0,Yes,No,19,Yes,Yes,Fiber op,No,No,Yes,No,No,Yes,Month-to,No,Mailed c,89.65,1761.05,Yes
+5923-GXUOC,Male,0,No,No,10,Yes,No,Fiber op,Yes,Yes,Yes,No,Yes,Yes,Month-to,Yes,Electron,104.4,1081.45,Yes
+5930-GBIWP,Male,0,No,No,69,Yes,Yes,DSL,Yes,Yes,Yes,Yes,No,Yes,Two year,Yes,Credit c,81.5,5553.25,No
+5935-FCCNB,Female,1,No,No,17,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,94.2,1608.15,No
+5939-XAIXZ,Female,0,No,No,19,Yes,Yes,DSL,No,No,Yes,No,No,No,Month-to,Yes,Mailed c,56.1,1033.9,No
+5949-EBSQK,Male,0,Yes,Yes,4,Yes,No,DSL,No,No,No,Yes,No,Yes,Month-to,No,Credit c,61.45,229.55,Yes
+5956-VKDTT,Female,1,Yes,No,5,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,74.35,334.8,Yes
+5959-BELXA,Male,1,No,No,32,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Credit c,96.15,3019.25,Yes
+5960-MVTUK,Male,0,No,No,3,No,No,DSL,No,No,No,Yes,No,No,Month-to,Yes,Electron,29.75,96.85,No
+5960-WPXQM,Male,0,No,No,1,Yes,No,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Electron,79.05,79.05,Yes
+5961-VUSRV,Female,0,No,No,12,Yes,No,No,No,No,No,No,No,No,One year,Yes,Bank tra,19.35,219.35,No
+5965-GGPRW,Male,0,Yes,Yes,72,Yes,Yes,Fiber op,Yes,No,Yes,No,Yes,Yes,Two year,No,Bank tra,105.25,7609.75,No
+5968-XQIVE,Male,0,Yes,Yes,72,Yes,Yes,Fiber op,No,Yes,No,No,Yes,No,One year,Yes,Electron,89.7,6588.95,No
+5970-GHJAW,Male,0,Yes,Yes,46,Yes,No,No,No,No,No,No,No,No,Two year,No,Credit c,19.95,862.4,No
+5976-JCJRH,Male,0,Yes,No,10,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,70.3,738.2,Yes
+5980-BDHPY,Male,0,Yes,No,72,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,87.1,6230.1,No
+5982-XMDEX,Female,0,No,No,65,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Bank tra,26.5,1698.55,No
+5986-WWXDV,Male,0,No,Yes,39,Yes,No,No,No,No,No,No,No,No,One year,No,Bank tra,19.35,779.2,No
+6005-OBZPH,Female,1,No,No,26,Yes,Yes,Fiber op,No,Yes,No,No,Yes,No,Month-to,Yes,Electron,89.15,2277.65,Yes
+6023-GSSXW,Female,0,Yes,No,69,Yes,No,DSL,No,Yes,No,No,No,Yes,Two year,Yes,Credit c,61.45,4131.2,No
+6024-RUGGH,Male,0,Yes,Yes,72,Yes,Yes,No,No,No,No,No,No,No,Two year,Yes,Bank tra,25.2,1798.9,No
+6029-WTIPC,Male,1,No,No,37,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Electron,101.1,3744.05,Yes
+6030-REHUX,Female,1,Yes,No,28,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,Month-to,Yes,Electron,110.85,3204.4,No
+6032-KRXXO,Male,0,No,No,30,Yes,No,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,90.25,2755.35,Yes
+6047-SUHPR,Male,0,Yes,Yes,39,Yes,No,DSL,Yes,Yes,Yes,No,No,No,One year,No,Electron,59.8,2343.85,No
+6047-YHPVI,Male,0,No,No,5,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,69.7,316.9,Yes
+6048-UWKAL,Female,1,Yes,No,69,Yes,Yes,Fiber op,No,Yes,No,Yes,Yes,Yes,Two year,No,Credit c,105.4,6998.95,No
+6050-IJRHS,Female,0,Yes,Yes,70,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,One year,Yes,Electron,106.5,7397,No
+6061-PQHMK,Female,0,No,No,25,Yes,No,No,No,No,No,No,No,No,One year,No,Credit c,19.9,527.5,No
+6064-PUPMC,Male,0,Yes,Yes,23,Yes,No,DSL,Yes,No,No,Yes,No,No,One year,No,Credit c,57.2,1423.35,No
+6078-VESFR,Male,1,Yes,No,13,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,No,Bank tra,70.45,849.1,No
+6080-TCMYC,Male,0,Yes,Yes,40,Yes,Yes,Fiber op,No,No,Yes,No,No,No,Month-to,Yes,Electron,81.2,3292.3,No
+6087-YPWHO,Male,0,Yes,No,72,Yes,Yes,DSL,Yes,Yes,Yes,Yes,No,No,Two year,No,Mailed c,68.15,4808.7,No
+6097-EQISJ,Female,0,Yes,Yes,66,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,One year,Yes,Credit c,102.45,6615.15,Yes
+6103-LIANB,Male,0,Yes,Yes,59,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Two year,Yes,Credit c,99.5,5861.75,No
+6110-OHIHY,Male,0,No,No,3,Yes,No,Fiber op,No,No,No,No,Yes,No,Month-to,No,Electron,79.25,267.6,Yes
+6112-KTHFQ,Female,0,No,No,13,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,19.3,279.3,No
+6114-TCFID,Female,0,No,No,29,No,No,DSL,Yes,Yes,No,Yes,No,No,One year,No,Credit c,39.5,1082.75,No
+6121-VZNQB,Female,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,19.1,19.1,Yes
+6122-EFVKN,Male,0,No,Yes,24,No,No,DSL,Yes,No,No,Yes,No,No,Two year,No,Mailed c,35.75,830.8,No
+6122-LJADA,Male,0,Yes,Yes,70,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,90.15,6237.05,No
+6124-ACRHJ,Female,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,19.75,19.75,No
+6127-IYJOZ,Male,1,No,No,1,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Mailed c,45.85,45.85,No
+6128-AQBMT,Male,1,Yes,No,41,No,No,DSL,No,Yes,Yes,No,Yes,Yes,Month-to,Yes,Electron,53.95,2215.4,No
+6131-FOYAS,Male,0,No,No,35,Yes,Yes,DSL,Yes,No,Yes,No,No,No,Month-to,Yes,Electron,59.6,2094.9,No
+6131-JLWZM,Female,0,No,No,13,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,20.3,275.4,No
+6133-OZILE,Female,0,No,No,18,No,No,DSL,No,No,Yes,Yes,No,No,Month-to,Yes,Electron,35.2,607.3,No
+6137-MFAJN,Female,0,No,No,48,No,No,DSL,Yes,Yes,No,No,Yes,No,Month-to,Yes,Electron,44.8,2104.55,No
+6139-ZZRBQ,Male,1,No,No,64,Yes,No,No,No,No,No,No,No,No,Two year,Yes,Bank tra,20.05,1198.05,No
+6143-JQKEA,Male,0,No,No,10,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Credit c,45.8,436.2,No
+6158-HDPXZ,Male,0,No,No,1,No,No,DSL,No,No,No,No,No,No,Month-to,No,Mailed c,25.35,25.35,No
+6161-ERDGD,Male,0,Yes,Yes,71,Yes,Yes,DSL,Yes,No,Yes,Yes,Yes,Yes,One year,No,Electron,85.45,6300.85,No
+6164-HXUGH,Female,0,Yes,Yes,6,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,19.85,119.3,No
+6169-PPETC,Male,0,Yes,Yes,35,Yes,No,No,No,No,No,No,No,No,Two year,No,Bank tra,20.5,759.35,No
+6173-ITPWD,Male,0,Yes,No,47,Yes,Yes,Fiber op,No,Yes,Yes,No,No,No,Month-to,Yes,Bank tra,83.35,4065,Yes
+6175-IRFIT,Male,0,No,No,5,Yes,No,Fiber op,No,No,No,No,No,Yes,Month-to,No,Mailed c,78.75,426.35,No
+6177-PEVRA,Female,0,No,No,48,Yes,No,DSL,Yes,Yes,No,No,No,No,Two year,No,Credit c,55.5,2627.35,No
+6178-KFNHS,Female,0,No,Yes,12,Yes,Yes,Fiber op,Yes,No,No,No,No,No,Month-to,Yes,Electron,78.3,909.25,Yes
+6181-AXXYF,Male,0,Yes,Yes,72,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Credit c,24.75,1859.1,No
+6188-UXBBR,Female,0,Yes,No,38,Yes,No,No,No,No,No,No,No,No,One year,Yes,Credit c,20.25,814.75,No
+6195-MELTI,Male,0,No,No,57,Yes,No,DSL,No,Yes,No,Yes,No,No,One year,Yes,Mailed c,54.65,3134.7,No
+6199-IPCAO,Female,0,Yes,Yes,29,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Mailed c,26.1,692.55,No
+6221-AVQYL,Male,0,No,No,2,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Credit c,73.25,131.05,Yes
+6229-LSCKB,Male,1,No,No,6,Yes,No,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Electron,79.7,497.6,No
+6235-VDHOM,Female,1,No,No,5,No,No,DSL,No,Yes,No,No,No,No,Month-to,No,Electron,28.45,131.05,Yes
+6240-EURKS,Female,0,No,Yes,18,No,No,DSL,No,No,No,No,No,Yes,Month-to,Yes,Electron,35,553,Yes
+6244-BESBM,Male,0,Yes,Yes,69,Yes,No,Fiber op,No,No,No,Yes,Yes,Yes,Two year,Yes,Credit c,95.2,6671.7,No
+6248-BSHKG,Male,0,Yes,Yes,61,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,20.4,1226.45,No
+6259-WJQLC,Male,1,No,No,32,Yes,Yes,Fiber op,No,No,Yes,No,No,No,Month-to,Yes,Credit c,81.1,2619.25,No
+6267-DCFFZ,Female,1,Yes,No,30,Yes,Yes,Fiber op,No,Yes,No,No,Yes,No,Month-to,Yes,Electron,90.05,2627.2,No
+6281-FKEWS,Female,0,No,No,44,No,No,DSL,No,No,Yes,No,Yes,Yes,One year,Yes,Electron,49.05,2265,No
+6308-CQRBU,Female,0,Yes,No,71,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,Two year,No,Electron,109.25,7707.7,No
+6330-JKLPC,Male,0,Yes,No,11,Yes,Yes,Fiber op,No,Yes,No,No,No,No,Month-to,Yes,Bank tra,80.5,896.9,Yes
+6333-YDVLT,Male,0,No,No,65,Yes,Yes,Fiber op,Yes,No,Yes,Yes,Yes,Yes,One year,Yes,Credit c,110,7138.65,No
+6339-YPSAH,Male,0,No,No,9,Yes,No,Fiber op,No,No,Yes,No,No,No,Month-to,Yes,Electron,73.8,704.3,No
+6341-AEVKX,Female,0,Yes,No,62,Yes,No,Fiber op,Yes,No,Yes,Yes,Yes,Yes,One year,Yes,Electron,104.3,6613.65,No
+6344-SFJVH,Female,0,No,No,20,No,No,DSL,No,No,No,No,No,No,Month-to,No,Credit c,24.9,505.95,No
+6352-TWCAU,Female,0,No,No,35,Yes,Yes,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Electron,86.45,3029.1,Yes
+6353-BRMMA,Female,0,Yes,Yes,54,Yes,Yes,Fiber op,Yes,Yes,No,No,Yes,Yes,Month-to,Yes,Bank tra,104.1,5645.8,No
+6366-ZGQGL,Male,0,No,No,1,No,No,DSL,No,No,No,No,No,No,Month-to,No,Bank tra,24.8,24.8,Yes
+6368-TZZDT,Male,0,Yes,Yes,4,Yes,No,No,No,No,No,No,No,No,Two year,No,Credit c,19.5,96.85,No
+6370-ZVHDV,Female,0,Yes,No,61,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Bank tra,25.3,1554.9,No
+6372-RFVNS,Female,0,Yes,No,1,Yes,No,Fiber op,No,No,No,No,Yes,No,Month-to,No,Electron,78.8,78.8,Yes
+6379-RXJRQ,Male,0,Yes,No,10,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,70.1,659.65,Yes
+6384-VMJHP,Female,0,No,No,72,Yes,No,DSL,Yes,Yes,Yes,Yes,No,Yes,Two year,Yes,Credit c,73,5265.2,No
+6394-MFYNG,Female,0,No,No,48,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,Yes,Bank tra,107.4,5121.3,Yes
+6397-JNZZG,Female,1,Yes,No,43,No,No,DSL,No,Yes,Yes,No,Yes,Yes,Month-to,No,Credit c,55.55,2342.2,Yes
+6402-SSEJG,Female,0,No,No,25,No,No,DSL,Yes,Yes,Yes,No,Yes,Yes,One year,No,Electron,61.05,1540.2,No
+6402-ZFPPI,Female,1,No,No,25,Yes,Yes,Fiber op,Yes,Yes,No,No,Yes,Yes,Month-to,Yes,Mailed c,102.8,2660.2,Yes
+6407-UTSLV,Female,1,No,No,2,Yes,No,Fiber op,No,Yes,No,No,Yes,No,Month-to,Yes,Bank tra,83.8,163.7,No
+6408-OTUBZ,Female,0,No,No,66,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,No,One year,Yes,Bank tra,104.55,6779.05,No
+6413-XKKPU,Male,0,Yes,Yes,17,Yes,No,Fiber op,Yes,No,Yes,No,Yes,No,Month-to,Yes,Electron,89.4,1539.45,Yes
+6416-JNVRK,Female,0,No,No,46,Yes,No,DSL,No,No,No,No,No,Yes,One year,No,Credit c,55.65,2688.85,No
+6416-TVAIH,Male,0,Yes,Yes,1,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,68.5,68.5,Yes
+6418-HNFED,Male,0,Yes,No,51,Yes,No,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,83.25,4089.45,No
+6418-PIQSP,Female,0,Yes,No,62,Yes,No,DSL,Yes,No,Yes,Yes,Yes,Yes,Two year,No,Mailed c,81,4985.9,No
+6437-UKHMV,Female,0,No,No,7,Yes,No,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Electron,79.7,586.05,Yes
+6439-PKTRR,Female,0,Yes,Yes,70,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,No,Two year,No,Electron,80.7,5617.95,No
+6445-TNRXS,Male,0,Yes,Yes,68,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,114.7,7849.85,No
+6447-EGDIV,Female,0,No,No,31,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,20.95,683.25,No
+6447-GORXK,Male,0,No,Yes,31,No,No,DSL,No,No,No,No,No,No,Month-to,No,Credit c,25,789.2,No
+6457-GIRWB,Male,0,No,No,1,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,69.35,69.35,Yes
+6457-USBER,Male,0,No,No,1,Yes,No,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Electron,80.8,80.8,Yes
+6474-FVJLC,Male,0,No,No,2,Yes,Yes,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Electron,86,165.45,Yes
+6479-OAUSD,Male,0,No,No,25,Yes,No,No,No,No,No,No,No,No,One year,No,Credit c,19.9,510.8,No
+6479-SZPLM,Male,0,Yes,Yes,36,Yes,No,No,No,No,No,No,No,No,Two year,No,Credit c,19.45,754.5,No
+6480-YAGIY,Male,0,No,No,45,Yes,No,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,One year,No,Credit c,112.2,5031.85,No
+6485-QXWWE,Female,0,No,Yes,62,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Bank tra,26,1638.7,No
+6507-DTJZV,Male,0,No,Yes,13,Yes,No,DSL,No,No,No,No,Yes,Yes,Month-to,No,Credit c,66.4,831.75,No
+6508-NJYRO,Male,0,Yes,No,15,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,18.8,294.95,No
+6509-TSGWN,Female,0,Yes,Yes,37,Yes,Yes,No,No,No,No,No,No,No,Month-to,No,Mailed c,26.45,911.6,No
+6518-LGAOV,Female,0,Yes,No,38,Yes,Yes,Fiber op,No,No,Yes,Yes,Yes,Yes,Month-to,Yes,Electron,105,4026.4,Yes
+6519-CFDBX,Female,0,No,No,2,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Electron,45.4,80.95,No
+6522-OIQSX,Female,0,Yes,Yes,69,No,No,DSL,No,Yes,Yes,No,Yes,Yes,Two year,Yes,Credit c,54.95,3772.5,No
+6537-QLGEX,Female,0,No,No,16,No,No,DSL,Yes,No,No,No,Yes,No,Month-to,Yes,Electron,38.9,664.4,No
+6542-LWGXJ,Male,0,Yes,No,3,No,No,DSL,No,No,No,No,No,No,Month-to,No,Mailed c,25,78.25,No
+6543-CPZMK,Male,0,Yes,Yes,9,No,No,DSL,No,Yes,No,No,No,No,Month-to,Yes,Electron,29.95,248.95,Yes
+6546-OPBBH,Male,0,Yes,Yes,51,Yes,Yes,No,No,No,No,No,No,No,One year,Yes,Mailed c,23.95,1216.35,No
+6559-PDZLR,Male,0,No,No,26,Yes,No,Fiber op,No,No,Yes,Yes,Yes,Yes,Month-to,Yes,Electron,98.65,2537,No
+6559-RAKOZ,Male,0,Yes,Yes,49,Yes,Yes,Fiber op,No,No,No,Yes,Yes,Yes,One year,Yes,Electron,97.95,4917.9,No
+6563-VNPMN,Female,1,No,No,45,Yes,No,Fiber op,Yes,Yes,No,Yes,No,No,Month-to,Yes,Bank tra,85.7,3778.1,No
+6574-MCOEH,Female,0,Yes,Yes,33,Yes,Yes,DSL,No,No,Yes,Yes,Yes,Yes,One year,Yes,Electron,79.15,2531.4,No
+6576-FBXOJ,Male,0,Yes,No,17,No,No,DSL,No,No,Yes,Yes,Yes,Yes,One year,No,Electron,54.6,934.8,No
+6579-JPICP,Male,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.4,20.4,No
+6583-KQJLK,Female,1,Yes,No,15,Yes,No,Fiber op,No,Yes,No,No,Yes,Yes,Month-to,Yes,Electron,94.65,1285.05,No
+6583-SZVGP,Male,0,No,No,48,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,Two year,Yes,Bank tra,108.1,5067.45,No
+6584-VQMYT,Male,0,No,Yes,27,Yes,No,DSL,Yes,Yes,No,No,No,No,One year,No,Mailed c,56.2,1567.55,No
+6586-MYGKD,Male,0,Yes,No,70,Yes,Yes,DSL,Yes,No,No,Yes,Yes,Yes,Two year,Yes,Credit c,76.95,5289.8,No
+6586-PSJOX,Male,0,No,Yes,15,Yes,No,DSL,No,No,Yes,Yes,No,No,One year,No,Credit c,55.2,864.55,No
+6595-COKXZ,Female,0,No,No,1,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Mailed c,44.45,44.45,Yes
+6599-CEBNN,Female,0,No,No,34,Yes,No,Fiber op,No,Yes,No,No,No,No,Month-to,Yes,Credit c,73.95,2524.45,Yes
+6608-QQLVK,Male,0,No,No,1,Yes,No,DSL,No,No,Yes,No,No,No,Month-to,Yes,Electron,50.5,50.5,Yes
+6614-FHDBO,Male,0,No,No,72,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,Two year,No,Bank tra,109.2,7878.3,No
+6614-VBEGU,Female,0,Yes,No,24,Yes,No,DSL,No,Yes,No,No,Yes,Yes,Month-to,Yes,Bank tra,69.45,1614.05,No
+6615-NGGZJ,Male,0,No,No,14,Yes,Yes,Fiber op,No,Yes,No,No,Yes,Yes,Month-to,Yes,Electron,100.55,1415.55,Yes
+6621-YOBKI,Male,0,No,No,5,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.35,92.75,No
+6629-CZTTH,Male,0,No,No,1,Yes,No,DSL,No,No,No,No,No,Yes,Month-to,Yes,Mailed c,55.7,55.7,Yes
+6629-LADHQ,Female,0,No,No,2,Yes,No,DSL,Yes,No,No,No,No,No,Month-to,No,Mailed c,50.95,123.05,No
+6631-HMANX,Male,0,Yes,No,72,Yes,Yes,DSL,No,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,85.45,6227.5,No
+6633-SYEUS,Female,0,No,No,23,Yes,No,Fiber op,No,Yes,Yes,Yes,No,No,Month-to,No,Bank tra,83.2,2032.3,No
+6635-MYYYZ,Female,0,No,No,30,Yes,No,DSL,Yes,Yes,Yes,Yes,Yes,Yes,One year,No,Bank tra,85.35,2530.4,Yes
+6641-XRPSU,Female,0,No,No,34,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Credit c,70,2416.1,Yes
+6651-AZVTJ,Male,0,Yes,Yes,49,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Electron,99.8,4872.45,Yes
+6653-CBBOM,Female,0,No,No,1,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,70.3,70.3,Yes
+6656-GULJQ,Male,0,Yes,Yes,72,Yes,Yes,DSL,Yes,No,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,83.55,6093.3,No
+6661-EIPZC,Female,0,Yes,Yes,48,No,No,DSL,No,No,No,Yes,No,No,Month-to,Yes,Credit c,29.5,1423.05,No
+6661-HBGWL,Female,1,No,No,42,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,Yes,Bank tra,104.75,4323.45,Yes
+6668-CNMFP,Female,0,Yes,Yes,19,Yes,Yes,Fiber op,No,No,No,Yes,No,Yes,One year,Yes,Bank tra,89.35,1686.85,No
+6670-MFRPK,Male,0,Yes,Yes,69,Yes,Yes,Fiber op,No,No,Yes,No,No,No,Two year,Yes,Credit c,79.2,5420.65,No
+6682-QJDGB,Male,0,No,Yes,40,Yes,No,DSL,Yes,Yes,No,No,No,No,Month-to,Yes,Mailed c,55.25,2139.2,Yes
+6686-YPGHK,Male,1,No,No,47,Yes,No,Fiber op,Yes,No,No,No,No,Yes,Month-to,No,Mailed c,85.5,4042.3,Yes
+6689-TCZHQ,Female,1,No,No,5,Yes,No,Fiber op,No,No,No,No,No,Yes,Month-to,No,Electron,78.95,378.4,Yes
+6692-YQHXC,Male,0,No,No,16,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Credit c,69.95,1205.5,No
+6695-FRVEC,Male,0,Yes,Yes,67,Yes,No,DSL,Yes,No,Yes,Yes,No,No,Two year,Yes,Bank tra,60.4,3953.7,No
+6702-OHFWR,Male,1,No,No,1,No,No,DSL,No,Yes,Yes,No,No,Yes,Month-to,Yes,Electron,43.3,43.3,Yes
+6705-LNMDD,Male,0,No,No,20,Yes,No,DSL,No,No,No,Yes,No,No,Month-to,No,Mailed c,50,1003.05,No
+6710-HSJRD,Male,0,Yes,No,61,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,Month-to,Yes,Electron,114.1,7132.15,No
+6712-OAWRH,Female,1,No,No,26,Yes,No,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,91.25,2351.8,Yes
+6723-WSNTY,Female,1,Yes,No,66,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,One year,Yes,Credit c,108.1,7181.95,No
+6728-WYQBC,Male,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,No,Bank tra,20.95,20.95,No
+6732-VAILE,Male,0,Yes,Yes,70,Yes,Yes,DSL,No,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,85.95,5931.75,No
+6733-LRIZX,Male,0,No,No,35,Yes,Yes,Fiber op,Yes,No,Yes,Yes,Yes,Yes,Two year,Yes,Electron,108.95,4025.5,No
+6734-FQAJX,Male,1,No,No,67,Yes,No,Fiber op,Yes,Yes,No,Yes,Yes,Yes,Two year,Yes,Electron,105.05,7171.7,No
+6734-GMPVK,Male,0,No,No,5,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,No,Electron,105.3,550.6,No
+6745-JEFZB,Male,0,Yes,No,35,Yes,Yes,Fiber op,No,No,No,Yes,Yes,No,Month-to,Yes,Credit c,91.5,3236.35,No
+6746-WAUWT,Male,0,No,No,19,Yes,No,No,No,No,No,No,No,No,One year,Yes,Credit c,19.7,386.5,No
+6754-WKSHP,Male,0,No,Yes,30,Yes,Yes,No,No,No,No,No,No,No,One year,No,Bank tra,25.35,723.3,No
+6765-MBQNU,Female,0,Yes,No,26,Yes,Yes,No,No,No,No,No,No,No,One year,No,Mailed c,26,684.05,No
+6769-DYBQN,Male,1,No,No,46,Yes,No,Fiber op,Yes,No,No,No,No,Yes,Month-to,No,Electron,85,3969.4,Yes
+6777-TGHTM,Female,0,No,No,53,Yes,Yes,Fiber op,Yes,No,Yes,No,Yes,Yes,One year,Yes,Credit c,106.95,5785.5,Yes
+6784-XYJAE,Female,0,No,No,36,Yes,Yes,DSL,No,No,Yes,No,No,No,One year,No,Electron,55.8,1941.5,No
+6791-YBNAK,Male,0,Yes,Yes,18,No,No,DSL,No,No,No,No,No,No,Month-to,No,Credit c,25.55,467.85,No
+6797-LNAQX,Male,0,Yes,Yes,70,Yes,Yes,Fiber op,No,Yes,No,No,Yes,Yes,Two year,No,Bank tra,98.3,6859.5,Yes
+6804-GDMOI,Female,0,No,No,61,Yes,Yes,Fiber op,No,No,Yes,Yes,Yes,Yes,Two year,Yes,Electron,106.6,6428.4,Yes
+6810-VCAEX,Female,0,No,No,47,No,No,DSL,Yes,Yes,No,Yes,No,No,One year,No,Credit c,39.65,1798.65,No
+6815-ABQFQ,Male,0,Yes,No,56,Yes,Yes,Fiber op,No,Yes,No,Yes,Yes,Yes,One year,Yes,Electron,107.25,6033.3,No
+6821-BUXUX,Female,0,No,No,13,Yes,Yes,Fiber op,Yes,Yes,No,No,Yes,No,Month-to,Yes,Electron,96.65,1244.5,Yes
+6837-BJYDQ,Male,0,No,No,3,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,19.6,61.35,No
+6844-DZKRF,Male,0,No,No,2,Yes,No,DSL,No,No,No,Yes,No,No,Month-to,Yes,Credit c,50.2,109.25,No
+6848-HJTXY,Female,0,Yes,No,64,Yes,No,No,No,No,No,No,No,No,Two year,No,Credit c,19.45,1208.6,No
+6849-OYAMU,Male,0,Yes,Yes,19,Yes,No,Fiber op,No,Yes,No,Yes,Yes,Yes,One year,No,Bank tra,100,1888.65,Yes
+6856-RAURS,Female,0,No,No,2,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Mailed c,74.9,136.05,No
+6861-XWTWQ,Male,1,Yes,No,7,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Electron,99.25,665.45,Yes
+6862-CQUMB,Male,0,No,No,37,Yes,No,Fiber op,No,Yes,No,No,Yes,Yes,Month-to,Yes,Credit c,96.1,3646.8,No
+6865-JZNKO,Female,0,No,No,30,Yes,No,DSL,Yes,Yes,No,No,No,No,Month-to,Yes,Bank tra,55.3,1530.6,No
+6870-ZWMNX,Male,0,Yes,No,70,Yes,Yes,DSL,No,Yes,Yes,Yes,Yes,No,Two year,No,Credit c,76.1,5264.25,No
+6878-GGDWG,Female,0,Yes,No,32,Yes,No,No,No,No,No,No,No,No,Month-to,No,Bank tra,19.4,641.15,No
+6892-BOGQE,Female,0,Yes,No,71,Yes,No,No,No,No,No,No,No,No,Two year,Yes,Bank tra,20.9,1493.2,No
+6893-ODYYE,Male,0,No,No,50,Yes,No,Fiber op,Yes,Yes,Yes,Yes,No,No,One year,Yes,Credit c,90.1,4549.45,No
+6897-RWMUB,Male,0,Yes,Yes,61,Yes,No,DSL,Yes,Yes,Yes,Yes,No,No,Two year,Yes,Bank tra,68.05,4158.25,No
+6898-RBTLU,Female,0,Yes,Yes,49,Yes,Yes,DSL,No,Yes,No,Yes,Yes,Yes,Two year,No,Bank tra,79.3,3902.45,No
+6900-RBKER,Male,0,No,No,52,Yes,Yes,Fiber op,No,No,Yes,No,No,Yes,Two year,Yes,Credit c,89.45,4577.75,No
+6904-JLBGY,Female,1,No,No,72,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,117.35,8436.25,No
+6905-NIQIN,Male,0,No,No,1,Yes,No,DSL,No,Yes,No,No,No,No,Month-to,No,Mailed c,50.65,50.65,Yes
+6906-ANDWJ,Male,0,Yes,Yes,15,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Bank tra,74.9,1107.25,Yes
+6907-CQGPN,Male,0,No,No,29,No,No,DSL,No,Yes,No,Yes,No,No,Month-to,No,Electron,34.3,1004.75,No
+6908-VVYHM,Male,0,Yes,No,65,Yes,Yes,Fiber op,No,Yes,No,No,No,Yes,Month-to,Yes,Electron,90.65,5931,No
+6923-JHPMP,Female,0,No,No,2,Yes,No,Fiber op,Yes,No,Yes,No,No,No,Month-to,Yes,Electron,80.45,137.1,No
+6937-GCDGQ,Male,0,Yes,Yes,19,Yes,No,DSL,Yes,No,No,No,No,No,One year,Yes,Bank tra,48.95,955.6,No
+6954-OOYZZ,Male,0,Yes,No,18,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Bank tra,44.35,768.05,No
+6961-VCPMC,Male,1,Yes,No,46,Yes,No,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Electron,80.4,3605.2,Yes
+6963-EZQEE,Male,1,Yes,No,70,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,88.55,6306.5,No
+6967-QIQRV,Male,0,Yes,Yes,15,Yes,No,Fiber op,Yes,No,No,Yes,Yes,Yes,One year,No,Electron,101.9,1667.25,No
+6968-MHOMU,Male,0,Yes,No,58,No,No,DSL,No,No,No,No,Yes,Yes,One year,Yes,Credit c,45,2689.35,No
+6972-SNKKW,Female,0,No,No,6,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20,109.2,No
+6979-ZNSFF,Female,0,No,No,8,Yes,Yes,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Electron,87.05,762.1,Yes
+6982-UQZLY,Female,1,Yes,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,20.85,20.85,Yes
+6985-HAYWX,Female,0,Yes,No,26,Yes,Yes,Fiber op,No,Yes,No,No,No,No,Month-to,No,Bank tra,79.3,2015.8,No
+6990-YNRIO,Male,0,Yes,Yes,65,Yes,Yes,Fiber op,Yes,No,Yes,Yes,Yes,Yes,Two year,No,Bank tra,108.65,6937.95,Yes
+6993-OHLXR,Female,0,No,No,2,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,No,Electron,68.95,119.75,Yes
+6994-FGRHH,Male,0,Yes,Yes,70,Yes,No,Fiber op,No,Yes,Yes,Yes,Yes,Yes,One year,Yes,Electron,106.15,7475.1,No
+6994-ORCWG,Female,0,No,No,14,Yes,Yes,DSL,No,Yes,No,No,No,No,One year,Yes,Mailed c,54.25,773.2,No
+7005-CCBKV,Male,0,No,No,6,Yes,No,Fiber op,No,Yes,No,No,No,Yes,Month-to,Yes,Electron,84.4,556.35,Yes
+7011-CVEUC,Male,0,Yes,No,25,Yes,No,Fiber op,No,No,No,Yes,Yes,Yes,Month-to,Yes,Credit c,95.7,2338.35,No
+7013-PSXHK,Female,0,No,No,40,Yes,Yes,DSL,No,No,Yes,Yes,Yes,Yes,One year,Yes,Mailed c,80.75,3208.65,No
+7014-ZZXAW,Female,0,Yes,No,71,Yes,Yes,No,No,No,No,No,No,No,Two year,Yes,Credit c,24.25,1732.95,No
+7018-FPXHH,Male,0,Yes,Yes,56,Yes,No,DSL,Yes,Yes,Yes,No,No,No,Two year,Yes,Bank tra,59.8,3457.45,No
+7018-WBJNK,Male,0,No,Yes,13,Yes,No,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Credit c,78.3,1033.95,No
+7021-XSNYE,Male,0,Yes,Yes,7,No,No,DSL,Yes,No,Yes,Yes,No,Yes,Two year,No,Credit c,49.65,305.55,No
+7030-FZTFM,Male,0,Yes,Yes,72,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,Two year,No,Credit c,110.9,7922.75,No
+7030-NJVDP,Male,0,Yes,No,24,Yes,No,Fiber op,Yes,No,No,Yes,No,Yes,Month-to,Yes,Electron,89.25,2210.2,No
+7037-MTYVW,Male,0,Yes,Yes,38,Yes,Yes,DSL,Yes,No,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,85.4,3297,No
+7049-GKVZY,Female,0,No,No,17,Yes,No,DSL,Yes,Yes,No,Yes,Yes,Yes,One year,No,Credit c,79.85,1387.35,No
+7054-DMVAS,Male,0,No,No,54,Yes,No,DSL,Yes,Yes,No,No,Yes,No,Two year,Yes,Bank tra,65.3,3512.9,No
+7055-HNEOJ,Male,0,Yes,No,3,Yes,No,DSL,No,No,Yes,Yes,No,No,Month-to,Yes,Mailed c,55.8,154.55,No
+7075-BNDVQ,Female,0,No,No,4,No,No,DSL,Yes,No,Yes,No,No,No,Month-to,No,Mailed c,35,135.75,No
+7079-QRCBC,Female,0,No,No,24,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Electron,98.75,2407.3,Yes
+7080-TNUWP,Male,0,Yes,No,70,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,No,One year,Yes,Bank tra,95,6602.9,No
+7083-MIOPC,Female,0,No,No,72,Yes,No,No,No,No,No,No,No,No,Two year,No,Credit c,20.25,1566.9,No
+7083-YNSKY,Female,0,No,No,15,Yes,Yes,No,No,No,No,No,No,No,Month-to,Yes,Credit c,25.4,399.6,Yes
+7089-RKVSZ,Male,0,Yes,Yes,8,Yes,Yes,No,No,No,No,No,No,No,One year,No,Mailed c,24.4,203.95,No
+7100-FQPRV,Male,0,Yes,Yes,43,Yes,Yes,DSL,Yes,No,No,Yes,No,Yes,One year,Yes,Credit c,71.9,3173.35,No
+7101-HRBLJ,Female,0,Yes,Yes,72,Yes,No,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,83.7,6096.9,No
+7102-JJVTX,Female,0,Yes,Yes,9,Yes,No,DSL,Yes,No,No,No,No,No,One year,No,Mailed c,48.6,422.3,No
+7105-MXJLL,Female,1,Yes,No,26,Yes,No,DSL,No,No,Yes,No,No,Yes,One year,No,Mailed c,60.7,1597.4,No
+7108-DGVUU,Female,1,Yes,No,21,Yes,Yes,DSL,No,Yes,Yes,No,No,Yes,One year,No,Bank tra,71.7,1497.05,No
+7109-CQYUZ,Male,0,No,No,52,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Mailed c,89.25,4652.4,No
+7110-BDTWG,Female,0,Yes,No,71,No,No,DSL,No,No,Yes,Yes,No,Yes,Two year,Yes,Electron,47.05,3263.6,No
+7120-RFMVS,Male,0,No,No,1,Yes,Yes,Fiber op,No,No,No,No,Yes,No,Month-to,No,Electron,84.5,84.5,Yes
+7124-UGSUR,Female,1,Yes,No,61,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,One year,Yes,Credit c,104.4,6405,Yes
+7129-AZJDE,Male,0,Yes,Yes,34,Yes,No,Fiber op,No,No,No,No,No,Yes,One year,Yes,Bank tra,78.95,2647.2,No
+7130-CTCUS,Male,1,Yes,No,16,Yes,No,DSL,Yes,Yes,No,No,No,No,Month-to,Yes,Bank tra,54.55,825.1,No
+7134-MJPDY,Female,1,No,No,66,Yes,Yes,Fiber op,No,No,Yes,Yes,Yes,Yes,One year,Yes,Credit c,102.85,6976.75,No
+7153-CHRBV,Female,0,Yes,Yes,57,Yes,No,DSL,Yes,No,Yes,Yes,No,No,One year,Yes,Mailed c,59.3,3274.35,No
+7156-MXBJE,Female,0,No,No,43,Yes,Yes,DSL,No,Yes,Yes,Yes,Yes,Yes,One year,No,Credit c,85.1,3662.25,No
+7157-SMCFK,Male,0,No,Yes,61,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,19.75,1124.2,No
+7159-FVYPK,Female,0,Yes,Yes,3,Yes,Yes,DSL,No,Yes,Yes,No,Yes,No,Month-to,Yes,Bank tra,69.15,235,No
+7159-NOKYQ,Male,0,Yes,No,67,Yes,Yes,Fiber op,No,Yes,Yes,No,No,Yes,Two year,Yes,Electron,93.15,6368.2,No
+7161-DFHUF,Female,0,Yes,No,71,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Mailed c,23.85,1672.1,No
+7164-BPTUT,Male,0,No,Yes,57,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,No,Mailed c,89.55,5012.35,No
+7167-PCEYD,Male,0,No,No,67,Yes,No,No,No,No,No,No,No,No,Two year,Yes,Mailed c,19.8,1311.3,No
+7168-HDQHG,Female,0,Yes,Yes,36,Yes,No,No,No,No,No,No,No,No,Month-to,No,Bank tra,19.2,702.9,No
+7169-YWAMK,Male,0,Yes,Yes,72,Yes,No,DSL,Yes,Yes,No,Yes,Yes,No,Two year,No,Bank tra,68.4,4855.35,No
+7173-TETGO,Female,1,Yes,No,72,Yes,Yes,Fiber op,Yes,No,No,No,No,No,Two year,No,Bank tra,78.5,5602.25,No
+7175-NTIXE,Female,0,No,No,25,Yes,No,DSL,Yes,No,No,Yes,Yes,Yes,Month-to,Yes,Credit c,76.15,1992.95,No
+7176-WIONM,Female,0,Yes,No,12,No,No,DSL,No,No,Yes,No,Yes,Yes,Month-to,Yes,Bank tra,49.85,617.15,No
+7176-WRTNX,Male,0,No,No,70,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,114.95,7711.25,No
+7182-OVLBJ,Female,0,Yes,Yes,62,Yes,Yes,Fiber op,Yes,No,No,No,Yes,Yes,Two year,Yes,Bank tra,101.15,6638.35,No
+7203-OYKCT,Male,0,No,No,72,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,One year,Yes,Electron,104.95,7544.3,No
+7216-EWTRS,Female,1,Yes,No,1,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Electron,100.8,100.8,Yes
+7225-CBZPL,Male,1,Yes,No,17,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,94.8,1563.9,No
+7225-IILWY,Male,0,Yes,Yes,68,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Mailed c,25.75,1686.15,No
+7233-DRTRF,Male,0,Yes,No,63,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,Yes,Electron,102.4,6444.05,No
+7240-FQLHE,Female,1,Yes,No,18,Yes,Yes,Fiber op,No,No,No,Yes,Yes,Yes,Month-to,No,Bank tra,99.75,1836.25,Yes
+7243-LCGGZ,Female,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.9,20.9,No
+7249-WBIYX,Male,0,Yes,No,10,Yes,Yes,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Electron,85.6,813.85,Yes
+7253-UVNDW,Female,0,No,No,46,Yes,No,DSL,No,No,Yes,Yes,No,No,Two year,No,Credit c,54.35,2460.15,Yes
+7268-IGMFD,Male,1,No,No,18,Yes,Yes,Fiber op,No,No,Yes,Yes,Yes,No,Month-to,No,Bank tra,93.9,1743.9,No
+7277-KAMWT,Male,0,No,No,13,Yes,No,No,No,No,No,No,No,No,Two year,No,Credit c,20,268.45,No
+7279-BUYWN,Female,1,No,No,41,Yes,Yes,Fiber op,Yes,Yes,Yes,No,Yes,Yes,Month-to,Yes,Electron,113.2,4689.5,Yes
+7295-JOMMD,Female,0,No,Yes,4,Yes,No,Fiber op,No,No,Yes,Yes,Yes,Yes,Month-to,Yes,Bank tra,98.1,396.3,Yes
+7296-PIXQY,Female,0,Yes,Yes,14,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,No,Electron,70.2,1046.5,No
+7297-DVYGA,Female,0,No,No,51,Yes,No,No,No,No,No,No,No,No,One year,Yes,Bank tra,19.85,996.95,No
+7299-GNVPL,Female,0,Yes,Yes,23,Yes,No,Fiber op,Yes,Yes,No,Yes,No,No,Month-to,No,Mailed c,84.4,1936.85,No
+7314-OXENN,Male,0,No,No,2,Yes,Yes,Fiber op,No,Yes,No,No,No,No,Month-to,Yes,Electron,82,184.65,Yes
+7319-VENRZ,Male,0,No,No,7,Yes,No,DSL,No,No,Yes,Yes,Yes,No,Month-to,No,Bank tra,64.3,445.95,No
+7321-VGNKU,Female,0,Yes,No,2,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,70.35,120.25,No
+7321-ZNSLA,Male,0,Yes,Yes,13,No,No,DSL,Yes,Yes,No,Yes,No,No,Two year,No,Mailed c,40.55,590.35,No
+7322-OCWHC,Male,1,Yes,No,72,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,No,No,Two year,Yes,Bank tra,93.05,6735.05,No
+7339-POGZN,Female,0,No,No,4,Yes,Yes,DSL,No,No,No,No,No,No,Month-to,No,Electron,50.7,214.55,No
+7353-YOWFP,Female,0,No,No,7,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,20.25,129.15,No
+7361-YPXFS,Female,1,No,No,28,Yes,Yes,DSL,No,Yes,Yes,Yes,No,No,Month-to,No,Bank tra,64.45,1867.6,No
+7389-KBFIT,Female,0,Yes,Yes,2,No,No,DSL,No,Yes,No,No,No,No,Month-to,Yes,Mailed c,30.25,63.75,No
+7396-VJUZB,Male,0,Yes,Yes,4,Yes,No,DSL,No,No,No,No,No,No,Month-to,No,Mailed c,45.25,155.35,No
+7398-SKNQZ,Female,0,Yes,No,3,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,No,Electron,94.9,273.2,No
+7402-EYFXX,Male,1,No,No,26,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,93.6,2404.1,No
+7402-PWYJJ,Female,0,Yes,No,53,Yes,Yes,Fiber op,No,No,No,Yes,No,Yes,One year,Yes,Electron,91.15,4862.5,No
+7408-OFWXJ,Female,0,Yes,Yes,72,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,No,Credit c,89.8,6510.45,No
+7410-YTJIK,Female,0,No,No,7,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,No,Mailed c,75.45,480.75,Yes
+7421-ZLUPA,Female,0,No,No,8,No,No,DSL,No,Yes,No,No,No,No,Month-to,Yes,Mailed c,29.25,226.95,No
+7434-SHXLS,Female,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.9,20.9,Yes
+7450-NWRTR,Male,1,No,No,12,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Electron,99.45,1200.15,Yes
+7452-FOLON,Male,0,No,Yes,39,Yes,Yes,No,No,No,No,No,No,No,One year,No,Bank tra,25.45,958.45,No
+7459-RRWQZ,Female,0,No,No,15,Yes,Yes,DSL,Yes,No,No,No,No,Yes,Month-to,Yes,Bank tra,64.65,994.55,Yes
+7465-ZZRVX,Male,0,No,No,1,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,70.35,70.35,No
+7471-MQPOS,Male,1,Yes,Yes,71,Yes,Yes,DSL,No,Yes,Yes,Yes,No,Yes,One year,Yes,Bank tra,72.9,5139.65,No
+7472-EQOAV,Male,1,Yes,Yes,71,Yes,No,Fiber op,Yes,Yes,Yes,No,No,No,One year,Yes,Bank tra,86.7,6179.35,No
+7486-KSRVI,Male,0,No,No,43,Yes,Yes,Fiber op,No,No,No,Yes,Yes,Yes,One year,Yes,Electron,100,4211.55,Yes
+7492-TAFJD,Male,0,Yes,Yes,7,No,No,DSL,Yes,Yes,Yes,No,No,No,Two year,No,Mailed c,38.55,280,No
+7502-BNYGS,Female,0,Yes,No,46,Yes,No,DSL,No,Yes,No,No,Yes,Yes,Month-to,Yes,Credit c,69.1,3168,No
+7503-EPSZW,Female,0,Yes,Yes,64,Yes,Yes,No,No,No,No,No,No,No,Two year,Yes,Mailed c,24.05,1559.15,No
+7503-MIOGA,Female,1,Yes,No,72,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,89.85,6697.35,No
+7504-UWHNB,Male,0,No,No,25,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,No,Electron,69.75,1729.35,No
+7508-SMHXL,Female,1,No,No,15,Yes,Yes,Fiber op,No,Yes,No,No,Yes,No,Month-to,No,Credit c,89,1288.3,No
+7511-YMXVQ,Male,0,No,No,9,No,No,DSL,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,45.4,418.8,Yes
+7515-LODFU,Male,1,No,No,69,Yes,No,No,No,No,No,No,No,No,Two year,No,Credit c,20.3,1356.3,No
+7516-GMHUV,Male,1,Yes,No,50,Yes,Yes,Fiber op,Yes,No,Yes,No,Yes,Yes,Two year,Yes,Credit c,105.05,5163.3,No
+7517-LDMPS,Female,0,No,No,12,Yes,No,Fiber op,No,Yes,No,No,No,Yes,Month-to,Yes,Electron,84.6,1017.35,No
+7524-VRLPL,Male,1,No,No,69,Yes,Yes,DSL,Yes,No,Yes,Yes,No,Yes,Two year,No,Credit c,74.1,5031,No
+7529-ZDFXI,Male,1,Yes,No,57,Yes,Yes,Fiber op,No,Yes,No,No,No,Yes,Month-to,Yes,Electron,89.85,4925.35,No
+7534-BFESC,Male,1,No,No,24,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,76.1,1712.7,Yes
+7560-QRBXH,Female,0,No,Yes,48,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,19.95,936.7,No
+7563-BIUPC,Male,0,No,No,5,Yes,No,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Electron,80.6,415.55,Yes
+7566-DSRLQ,Female,0,Yes,No,72,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Electron,110.15,7998.8,No
+7581-EBBOU,Female,0,No,No,60,Yes,No,DSL,No,Yes,Yes,Yes,Yes,No,One year,Yes,Credit c,70.15,4224.7,No
+7593-JNWRU,Male,0,Yes,Yes,6,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Bank tra,44.6,260.8,Yes
+7595-EHCDL,Male,0,Yes,Yes,32,No,No,DSL,No,No,Yes,No,Yes,Yes,Month-to,No,Credit c,50.6,1653.45,No
+7599-FKVXZ,Male,0,Yes,No,42,Yes,Yes,Fiber op,No,No,Yes,Yes,Yes,Yes,Month-to,Yes,Bank tra,106.15,4512.7,Yes
+7599-NTMDP,Female,0,Yes,Yes,62,No,No,DSL,Yes,Yes,No,Yes,Yes,No,Two year,No,Bank tra,48.7,3008.55,No
+7601-DHFWZ,Female,0,No,No,48,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Credit c,24,1183.05,No
+7605-SNLQG,Female,0,Yes,No,45,Yes,No,DSL,No,No,Yes,No,No,No,Month-to,Yes,Credit c,50.25,2221.55,No
+7606-BPHHN,Male,0,No,No,72,Yes,No,No,No,No,No,No,No,No,Two year,Yes,Credit c,19.8,1468.75,No
+7607-QKKTJ,Male,0,Yes,Yes,45,Yes,Yes,Fiber op,No,Yes,Yes,No,No,Yes,One year,Yes,Credit c,95,4368.85,No
+7615-ESMYF,Female,0,Yes,No,2,No,No,DSL,No,No,No,No,Yes,Yes,Month-to,No,Electron,44.6,97.1,Yes
+7622-NXQZR,Male,0,No,No,28,No,No,DSL,No,No,No,Yes,No,No,Month-to,Yes,Credit c,30.1,810.85,No
+7623-HKYRK,Male,0,No,Yes,6,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,19.7,111.65,No
+7623-TRNQN,Male,0,No,Yes,1,Yes,No,DSL,No,No,No,Yes,No,No,Month-to,Yes,Mailed c,49.9,49.9,Yes
+7625-XCQRH,Female,0,No,No,11,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,76.5,837.95,Yes
+7629-WIXZF,Female,0,No,No,7,Yes,No,DSL,Yes,No,No,No,No,Yes,One year,Yes,Electron,59.1,369.25,No
+7636-OWBPG,Male,1,No,No,12,No,No,DSL,No,Yes,No,No,No,No,Month-to,Yes,Credit c,29.35,381.2,No
+7636-PEPNS,Female,0,Yes,Yes,58,Yes,No,DSL,No,No,No,No,No,No,One year,Yes,Mailed c,44.1,2413.05,No
+7639-LIAYI,Male,0,No,No,52,Yes,Yes,DSL,Yes,No,No,Yes,Yes,Yes,Two year,Yes,Credit c,79.75,4217.8,No
+7639-OPLNG,Male,0,Yes,Yes,70,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,No,Two year,Yes,Bank tra,79.25,5731.85,No
+7657-DYEPJ,Male,1,No,No,38,Yes,No,DSL,No,Yes,Yes,Yes,Yes,No,One year,Yes,Credit c,70.15,2497.35,Yes
+7658-UYUQS,Male,1,Yes,No,21,Yes,No,Fiber op,No,No,Yes,No,Yes,No,Month-to,No,Bank tra,86.55,1857.25,No
+7660-HDPJV,Female,0,No,No,1,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,69.2,69.2,Yes
+7706-YLMQA,Female,0,No,No,70,Yes,No,No,No,No,No,No,No,No,One year,No,Bank tra,19.7,1341.5,No
+7710-JSYOA,Female,0,Yes,Yes,69,Yes,Yes,Fiber op,No,Yes,No,Yes,No,Yes,Two year,Yes,Bank tra,93.3,6398.05,No
+7711-YIJWC,Male,0,Yes,Yes,61,Yes,No,DSL,Yes,Yes,Yes,Yes,Yes,Yes,One year,No,Bank tra,84.9,5264.5,No
+7722-CVFXN,Male,0,Yes,Yes,54,Yes,Yes,Fiber op,No,Yes,No,Yes,Yes,Yes,One year,Yes,Electron,105.2,5637.85,No
+7739-LAXOG,Female,0,Yes,Yes,32,Yes,Yes,Fiber op,No,No,Yes,No,No,Yes,Month-to,Yes,Bank tra,91.05,2954.5,Yes
+7740-KKCXF,Male,0,Yes,No,51,No,No,DSL,No,Yes,No,No,No,No,Month-to,Yes,Credit c,30.05,1529.45,No
+7746-QYVCO,Male,0,Yes,Yes,16,Yes,No,DSL,Yes,Yes,No,No,No,No,One year,Yes,Mailed c,55.85,857.8,No
+7750-EYXWZ,Female,0,No,No,12,No,No,DSL,No,Yes,Yes,Yes,Yes,Yes,One year,No,Electron,60.65,743.3,No
+7758-UJWYS,Male,0,Yes,Yes,34,No,No,DSL,No,No,No,Yes,Yes,No,Two year,Yes,Electron,40.55,1325.85,No
+7771-ZONAT,Male,0,No,No,22,No,No,DSL,No,No,Yes,Yes,Yes,Yes,Two year,No,Bank tra,56.75,1304.85,No
+7776-QGYJC,Female,0,Yes,Yes,39,Yes,No,Fiber op,No,No,Yes,Yes,No,No,Month-to,Yes,Bank tra,81.5,3107.3,No
+7780-OTDSO,Male,0,Yes,No,18,Yes,Yes,Fiber op,Yes,No,No,No,Yes,Yes,Month-to,Yes,Electron,99.4,1742.95,Yes
+7794-JASDG,Male,0,No,No,1,Yes,No,DSL,Yes,No,No,No,No,No,Month-to,Yes,Mailed c,50.75,50.75,No
+7803-XOCCZ,Female,0,Yes,Yes,52,Yes,No,Fiber op,Yes,No,Yes,Yes,No,No,Month-to,Yes,Bank tra,84.05,4326.8,No
+7811-JIVPF,Female,0,No,No,23,Yes,No,DSL,No,No,Yes,No,No,No,Month-to,No,Credit c,49.7,1081.25,No
+7820-ZYGNY,Male,0,No,No,63,Yes,Yes,Fiber op,No,Yes,No,No,No,Yes,One year,No,Credit c,90.45,5825.5,No
+7823-JSOAG,Male,0,No,No,3,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,No,Electron,74.5,217.45,No
+7833-PKIHD,Male,0,Yes,Yes,51,Yes,No,DSL,Yes,No,No,Yes,Yes,Yes,One year,Yes,Bank tra,76.4,3966.3,No
+7841-FCRQD,Female,0,Yes,No,33,Yes,No,DSL,No,Yes,No,Yes,No,No,One year,Yes,Credit c,53.75,1857.3,No
+7841-TZDMQ,Male,0,No,No,2,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Credit c,46,84.5,Yes
+7850-THJMU,Female,0,Yes,Yes,26,Yes,No,No,No,No,No,No,No,No,Two year,No,Credit c,19.65,494.9,No
+7853-OETYL,Female,0,Yes,No,4,No,No,DSL,Yes,No,No,No,No,No,Month-to,Yes,Electron,29.05,129.6,No
+7854-EKTJL,Female,0,No,Yes,2,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Electron,19.6,35.85,Yes
+7860-UXCRM,Male,0,Yes,Yes,63,Yes,No,DSL,Yes,Yes,Yes,Yes,Yes,No,Two year,No,Credit c,74.5,4674.55,No
+7878-RTCZG,Female,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,19.9,19.9,No
+7881-EVUAD,Female,0,No,No,2,No,No,DSL,Yes,Yes,No,No,No,Yes,Month-to,Yes,Electron,42.6,72.4,Yes
+7892-QVYKW,Female,0,Yes,Yes,23,Yes,Yes,Fiber op,No,No,No,No,No,Yes,Month-to,No,Electron,85.6,1868.4,No
+7908-QCBCA,Female,0,Yes,No,1,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Mailed c,69.4,69.4,Yes
+7921-BEPCI,Female,0,No,No,72,Yes,Yes,DSL,Yes,Yes,No,No,No,No,Two year,No,Bank tra,59.75,4265,No
+7926-IJOOU,Male,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,No,Credit c,19.3,19.3,No
+7928-VJYAB,Male,0,Yes,Yes,11,Yes,No,Fiber op,No,No,No,No,Yes,Yes,Month-to,No,Electron,90.6,1020.2,No
+7938-OUHIO,Male,0,No,No,3,Yes,No,Fiber op,No,No,Yes,Yes,Yes,Yes,Month-to,Yes,Electron,98.7,293.65,Yes
+7940-UQQUG,Female,0,Yes,Yes,64,Yes,Yes,Fiber op,Yes,No,No,Yes,Yes,Yes,One year,Yes,Bank tra,104.4,6721.6,No
+7945-HLKEA,Female,0,No,No,60,Yes,Yes,DSL,Yes,No,Yes,Yes,No,No,One year,No,Electron,64.75,4039.5,No
+7945-PRBVF,Male,0,No,No,35,Yes,No,No,No,No,No,No,No,No,Two year,No,Bank tra,21.45,705.45,No
+7950-XWOVN,Male,0,No,No,11,No,No,DSL,No,Yes,Yes,No,No,No,Month-to,No,Mailed c,34.7,383.55,No
+7954-MLBUN,Male,0,No,No,31,Yes,No,Fiber op,No,No,Yes,Yes,Yes,Yes,Two year,No,Bank tra,99.45,3109.9,No
+7956-XQWGU,Male,0,No,No,27,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Credit c,19.4,460.25,No
+7963-SHNDT,Female,0,No,No,52,No,No,DSL,Yes,Yes,No,Yes,No,No,Two year,No,Mailed c,39.1,1982.1,No
+7964-VEXDG,Male,0,No,Yes,21,Yes,Yes,Fiber op,Yes,No,No,No,No,No,Month-to,No,Electron,80.35,1747.2,No
+7966-YOTQW,Male,0,No,No,10,Yes,Yes,DSL,Yes,No,No,No,No,No,Month-to,Yes,Credit c,54.5,568.2,No
+7967-HYCDE,Male,0,No,No,8,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,No,Bank tra,70.7,553.4,No
+7968-QUXNS,Male,0,No,No,6,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,18.95,110.15,No
+7969-FFOWG,Male,0,Yes,Yes,65,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,19.9,1292.6,No
+7979-CORPM,Male,0,No,No,24,Yes,Yes,Fiber op,No,Yes,No,No,Yes,No,Month-to,Yes,Credit c,90.55,2282.55,Yes
+7980-MHFLQ,Female,0,Yes,Yes,72,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Mailed c,24.9,1859.2,No
+7982-VCELR,Female,0,No,No,36,Yes,No,Fiber op,No,Yes,No,No,Yes,Yes,Month-to,Yes,Credit c,94.8,3565.65,No
+7993-NQLJE,Male,0,Yes,Yes,15,Yes,No,Fiber op,Yes,No,No,No,No,No,Month-to,No,Mailed c,75.1,1151.55,No
+7995-ZHHNZ,Male,0,Yes,No,42,Yes,Yes,DSL,Yes,No,No,No,No,No,One year,No,Credit c,56.1,2386.85,No
+7998-WNZEM,Male,0,No,No,71,Yes,Yes,DSL,Yes,Yes,Yes,Yes,No,Yes,Two year,No,Bank tra,80.6,5708.2,No
+8006-PYCSW,Female,0,No,No,2,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.1,39.8,No
+8007-YYPWD,Female,0,No,No,15,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Bank tra,25.05,369.1,No
+8008-HAWED,Male,0,No,No,14,No,No,DSL,No,No,Yes,No,Yes,Yes,Month-to,Yes,Electron,50.75,712.75,Yes
+8008-OTEZX,Female,0,Yes,Yes,35,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,19.65,708.8,No
+8016-NCFVO,Male,1,No,No,55,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Month-to,Yes,Electron,116.5,6382.55,No
+8017-UVSZU,Female,0,Yes,No,40,Yes,Yes,DSL,No,Yes,No,No,No,No,Month-to,No,Credit c,56.6,2379.1,No
+8033-ATFAS,Female,0,Yes,Yes,39,Yes,No,DSL,No,No,Yes,No,Yes,No,Month-to,Yes,Mailed c,59.85,2341.5,No
+8039-EQPIM,Male,0,Yes,No,69,No,No,DSL,Yes,No,Yes,Yes,Yes,Yes,Two year,No,Bank tra,60.25,4055.5,No
+8048-DSDFQ,Male,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.2,20.2,No
+8058-DMYRU,Male,1,No,No,54,Yes,Yes,Fiber op,No,Yes,No,No,No,Yes,Month-to,Yes,Electron,90.05,4931.8,No
+8069-YQQAJ,Male,0,No,No,14,No,No,DSL,No,Yes,No,No,No,No,Month-to,Yes,Mailed c,31.1,419.7,No
+8075-GXIUB,Male,1,Yes,No,9,Yes,No,No,No,No,No,No,No,No,One year,No,Credit c,19.85,183.15,No
+8079-XRJRS,Male,0,Yes,No,65,Yes,Yes,Fiber op,Yes,Yes,Yes,No,No,No,One year,No,Electron,89.75,5769.6,Yes
+8080-DDEMJ,Male,1,No,No,1,Yes,No,DSL,No,No,No,No,No,No,Month-to,No,Electron,45.1,45.1,Yes
+8080-POTJR,Female,0,No,No,30,Yes,Yes,DSL,Yes,No,Yes,No,Yes,Yes,One year,Yes,Credit c,79.3,2427.1,No
+8087-LGYHQ,Male,0,No,No,9,Yes,No,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Electron,94.05,811.65,No
+8089-UZWLX,Female,1,No,No,71,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Two year,No,Bank tra,104.05,7413.55,No
+8095-WANWK,Female,0,No,No,10,Yes,No,DSL,No,No,No,No,No,No,Month-to,No,Mailed c,45.25,428.7,No
+8098-LLAZX,Female,1,No,No,4,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,95.45,396.1,Yes
+8098-TDCBU,Female,0,Yes,No,42,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Electron,25.25,1108.2,No
+8109-YUOHE,Male,0,No,No,17,Yes,No,DSL,Yes,Yes,No,No,No,No,One year,No,Mailed c,56.1,946.95,No
+8111-RKSPX,Male,0,No,No,4,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Bank tra,72.2,305.55,Yes
+8111-SLLHI,Male,1,Yes,No,39,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,Yes,Electron,105.65,4284.8,Yes
+8118-LSUEL,Male,1,No,No,23,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,Yes,Electron,106.4,2483.5,Yes
+8124-NZVGJ,Female,0,No,No,6,No,No,DSL,No,No,No,Yes,Yes,Yes,One year,Yes,Mailed c,49.25,255.6,No
+8125-QPFJD,Female,0,Yes,No,72,Yes,Yes,DSL,Yes,No,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,84.9,6065.3,No
+8129-GMVGI,Female,0,Yes,Yes,56,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,20.05,1090.1,No
+8132-YPVBX,Female,0,No,No,6,Yes,No,Fiber op,No,Yes,No,No,No,Yes,Month-to,Yes,Mailed c,85.95,514.6,No
+8143-ETQTI,Female,0,Yes,Yes,23,Yes,No,No,No,No,No,No,No,No,Two year,Yes,Mailed c,19.65,451.55,No
+8144-DGHXP,Female,0,No,No,54,Yes,No,DSL,Yes,No,Yes,Yes,Yes,Yes,Two year,No,Electron,80.6,4299.95,No
+8150-QUDFX,Male,0,No,No,2,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,19.85,51.6,No
+8152-VETUR,Female,0,Yes,No,72,Yes,Yes,Fiber op,No,Yes,No,No,Yes,Yes,Two year,Yes,Credit c,97.7,6869.7,No
+8158-WPEZG,Male,0,No,No,11,No,No,DSL,No,Yes,No,Yes,No,No,Month-to,Yes,Electron,35.65,425.1,No
+8164-OCKUJ,Female,0,Yes,Yes,59,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,20.6,1286,No
+8165-CBKXO,Male,0,Yes,Yes,66,No,No,DSL,No,Yes,Yes,No,Yes,Yes,Two year,Yes,Credit c,56.75,3708.4,No
+8178-EYZUO,Male,0,No,No,46,Yes,Yes,Fiber op,Yes,Yes,No,No,No,Yes,Month-to,Yes,Electron,93.7,4154.8,Yes
+8181-YHCMF,Female,0,Yes,Yes,68,No,No,DSL,No,Yes,Yes,Yes,Yes,Yes,Two year,No,Credit c,60.3,4109,No
+8182-BJDSI,Female,0,No,No,28,Yes,Yes,Fiber op,No,Yes,No,No,No,Yes,Month-to,Yes,Electron,89.95,2625.55,Yes
+8194-PEEBY,Female,0,Yes,Yes,24,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,19.9,533.5,No
+8197-BFWVU,Female,0,Yes,Yes,72,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,93.25,6688.95,No
+8198-RKSZG,Female,0,Yes,Yes,14,Yes,Yes,DSL,No,Yes,No,Yes,Yes,Yes,Month-to,No,Credit c,80.45,1137.05,No
+8208-EUMTE,Male,0,No,No,16,No,No,DSL,Yes,Yes,Yes,Yes,Yes,No,Two year,No,Mailed c,54.85,916.15,No
+8216-AZUUZ,Female,0,Yes,Yes,42,Yes,No,Fiber op,No,No,Yes,Yes,Yes,Yes,Two year,Yes,Electron,100.4,4303.65,No
+8218-FFJDS,Female,0,Yes,No,72,Yes,Yes,DSL,Yes,Yes,No,Yes,Yes,Yes,Two year,Yes,Bank tra,86.4,6058.95,No
+8225-BTJAU,Male,1,No,No,10,Yes,No,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Electron,79.25,793.55,Yes
+8226-BXGES,Male,0,Yes,No,64,Yes,Yes,Fiber op,Yes,Yes,Yes,No,No,No,One year,No,Bank tra,89.45,5692.65,No
+8229-MYEJZ,Female,0,No,No,10,Yes,No,DSL,No,Yes,No,No,No,No,Month-to,No,Electron,51.2,498.25,No
+8229-TNIQA,Female,0,No,No,4,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Mailed c,45.3,196.95,Yes
+8231-BSWXX,Male,0,No,No,71,Yes,Yes,Fiber op,No,Yes,No,No,No,No,One year,Yes,Credit c,79.05,5552.5,No
+8234-GSZYK,Male,0,No,No,43,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Bank tra,26.45,1110.05,No
+8241-JUIQO,Female,0,No,No,61,Yes,No,No,No,No,No,No,No,No,One year,No,Bank tra,19.45,1336.35,No
+8242-PDSGJ,Male,0,Yes,No,70,No,No,DSL,Yes,No,Yes,Yes,No,No,Two year,Yes,Credit c,39.15,2692.75,No
+8249-THVEC,Male,0,Yes,Yes,51,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,19.4,997.75,No
+8267-KFGYD,Male,0,No,Yes,1,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,21.05,21.05,No
+8276-MQBYC,Male,1,No,No,51,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Electron,97.8,4913.3,Yes
+8277-RVRSV,Female,0,Yes,Yes,33,Yes,Yes,No,No,No,No,No,No,No,One year,No,Credit c,24.15,800.3,No
+8286-AFUYI,Male,0,No,No,1,Yes,No,DSL,Yes,No,No,No,No,No,Month-to,No,Electron,47.95,47.95,No
+8305-VHZBZ,Male,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,20.2,20.2,Yes
+8313-NDOIA,Female,0,No,No,24,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,Yes,Electron,104.15,2494.65,No
+8316-BBQAY,Female,0,No,No,65,No,No,DSL,Yes,No,Yes,Yes,Yes,Yes,Two year,No,Credit c,59.95,3921.1,No
+8317-BVKSO,Male,0,No,No,14,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Electron,20.05,299.3,No
+8327-LZKAS,Female,1,Yes,No,43,Yes,Yes,Fiber op,No,No,Yes,Yes,Yes,Yes,One year,Yes,Electron,107.55,4533.9,Yes
+8336-TAVKX,Female,1,Yes,No,72,Yes,Yes,DSL,Yes,Yes,Yes,Yes,No,Yes,Two year,No,Bank tra,78.45,5682.25,No
+8337-MSSXB,Female,0,No,No,14,Yes,No,Fiber op,No,Yes,No,No,No,Yes,Month-to,Yes,Electron,86.3,1180.95,Yes
+8357-EQXFO,Female,0,No,No,7,Yes,No,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Electron,95.35,660.9,Yes
+8372-JUXUI,Male,0,No,Yes,1,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,74.35,74.35,Yes
+8374-XGEJJ,Male,1,Yes,No,43,Yes,Yes,Fiber op,No,Yes,No,No,Yes,Yes,Month-to,Yes,Electron,101,4388.4,Yes
+8375-DKEBR,Female,1,No,No,1,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,69.6,69.6,Yes
+8378-LKJAF,Male,0,Yes,Yes,38,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Credit c,101.15,3956.7,No
+8380-PEFPE,Male,0,No,Yes,1,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,71.65,71.65,Yes
+8388-FYNPZ,Male,0,No,No,4,Yes,No,DSL,Yes,No,Yes,No,No,No,Month-to,No,Electron,56.75,245.15,No
+8393-DLHGA,Male,0,No,Yes,25,Yes,No,Fiber op,No,Yes,No,No,Yes,Yes,Month-to,Yes,Electron,95.9,2448.75,Yes
+8395-ETZKQ,Male,1,Yes,Yes,68,Yes,No,No,No,No,No,No,No,No,One year,No,Bank tra,19.5,1193.55,No
+8399-YNDCH,Male,1,No,No,21,Yes,No,DSL,No,No,Yes,No,Yes,No,Month-to,Yes,Bank tra,60.05,1236.15,Yes
+8404-GFGCZ,Male,0,Yes,No,4,Yes,Yes,DSL,No,No,Yes,No,Yes,No,Month-to,No,Electron,65.6,250.1,No
+8406-LNMHF,Male,1,Yes,No,59,Yes,No,Fiber op,Yes,Yes,Yes,No,No,No,One year,Yes,Credit c,82.95,4903.15,No
+8410-BGQXN,Male,0,No,No,4,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,19.4,93.4,No
+8413-YNHNV,Male,0,No,No,69,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,No,Mailed c,90.65,6322.1,No
+8414-OOEEL,Male,0,No,Yes,66,Yes,No,DSL,No,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,79.5,5196.1,No
+8421-WZOOW,Female,1,Yes,Yes,57,Yes,No,Fiber op,No,Yes,Yes,Yes,Yes,No,Month-to,Yes,Credit c,95.3,5567.45,No
+8429-XIBUM,Male,0,No,No,22,Yes,Yes,Fiber op,Yes,No,No,No,Yes,Yes,Month-to,Yes,Bank tra,101.35,2317.1,Yes
+8433-WPJTV,Female,1,Yes,Yes,65,Yes,Yes,Fiber op,No,No,Yes,Yes,Yes,Yes,One year,Yes,Bank tra,103.9,6767.1,No
+8444-WRIDW,Female,1,No,No,66,Yes,Yes,Fiber op,No,Yes,No,No,No,No,Month-to,Yes,Credit c,80.45,5224.35,Yes
+8457-XIGKN,Male,0,No,No,20,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Credit c,19.6,356.15,No
+8464-EETCQ,Male,0,No,No,57,Yes,No,No,No,No,No,No,No,No,Two year,No,Credit c,18.8,1094.35,No
+8467-WYNSR,Male,0,No,No,22,Yes,No,DSL,Yes,No,No,Yes,No,No,Month-to,No,Mailed c,55.1,1253.15,No
+8481-YYXWG,Female,0,No,No,5,Yes,No,Fiber op,No,Yes,No,Yes,No,Yes,Month-to,Yes,Electron,89.35,461.7,Yes
+8490-BXHEO,Male,1,No,No,18,Yes,Yes,Fiber op,No,Yes,No,No,No,No,Month-to,Yes,Credit c,80.55,1411.65,No
+8495-PRWFH,Female,1,No,No,42,Yes,Yes,DSL,No,No,Yes,No,No,No,Month-to,No,Electron,55.65,2421.75,No
+8514-VZHEB,Male,0,Yes,Yes,59,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,19.5,1147.85,No
+8540-ZQGEA,Female,0,Yes,No,54,Yes,No,No,No,No,No,No,No,No,Two year,No,Credit c,20.05,1102.4,No
+8547-NSBBO,Male,0,No,No,35,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,No,No,Month-to,Yes,Mailed c,96.75,3403.4,No
+8559-WNQZS,Male,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,20.45,20.45,No
+8563-IIOXK,Male,0,Yes,Yes,7,Yes,No,DSL,Yes,No,No,No,No,No,One year,Yes,Electron,49.75,331.3,Yes
+8564-LDKFL,Male,0,Yes,No,40,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,One year,Yes,Bank tra,106,4178.65,No
+8565-CLBZW,Male,0,No,No,24,Yes,Yes,Fiber op,No,No,Yes,No,Yes,No,Month-to,Yes,Mailed c,89.85,2165.05,Yes
+8565-HBFNN,Male,0,Yes,No,69,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,No,Yes,One year,Yes,Credit c,107.2,7317.1,No
+8571-ZCMCX,Female,0,Yes,Yes,47,No,No,DSL,Yes,Yes,Yes,No,Yes,Yes,Two year,Yes,Credit c,60,2768.65,No
+8580-AECUZ,Male,1,No,No,1,Yes,No,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Electron,79.1,79.1,Yes
+8591-NXRCV,Female,0,No,No,41,Yes,Yes,DSL,Yes,No,Yes,Yes,No,Yes,Month-to,Yes,Bank tra,74.65,3090.65,No
+8591-TKMZH,Male,0,Yes,Yes,59,Yes,Yes,Fiber op,Yes,Yes,No,Yes,Yes,Yes,Two year,Yes,Mailed c,111.1,6555.2,No
+8593-WHYHV,Male,0,No,No,3,Yes,Yes,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Electron,85.3,264.8,Yes
+8597-CWYHH,Male,0,No,No,43,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,One year,No,Mailed c,94.35,3921.3,No
+8601-QACRS,Female,0,No,No,5,Yes,Yes,DSL,No,No,No,No,No,No,Month-to,Yes,Mailed c,50.6,249.95,Yes
+8606-OEGQZ,Female,0,No,Yes,18,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Credit c,25.3,454.65,No
+8610-WFCJF,Female,0,Yes,Yes,49,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,95.6,4783.5,Yes
+8617-ENBDS,Male,0,No,No,3,Yes,No,Fiber op,No,No,Yes,No,No,No,Month-to,Yes,Credit c,73.6,232.5,No
+8621-MNIHH,Female,1,Yes,No,34,Yes,Yes,Fiber op,No,Yes,Yes,No,No,Yes,Month-to,Yes,Electron,94.25,3217.55,Yes
+8622-ZLFKO,Female,0,Yes,No,6,Yes,Yes,Fiber op,No,Yes,No,No,No,Yes,Month-to,Yes,Electron,90.75,512.25,No
+8623-TMRBY,Male,1,Yes,Yes,51,Yes,Yes,Fiber op,No,Yes,Yes,No,No,No,Month-to,Yes,Electron,84.2,4146.05,Yes
+8624-GIOUT,Female,0,No,No,49,Yes,Yes,DSL,Yes,Yes,No,No,No,No,Month-to,Yes,Credit c,59.75,2934.3,Yes
+8626-PTQGE,Male,0,No,No,69,No,No,DSL,Yes,Yes,No,Yes,Yes,Yes,Two year,Yes,Bank tra,60.05,4176.7,No
+8631-XVRZL,Male,0,No,No,9,Yes,No,No,No,No,No,No,No,No,One year,Yes,Mailed c,20.15,163.7,No
+8637-XJIVR,Female,0,No,No,12,Yes,Yes,Fiber op,Yes,No,No,No,No,No,Month-to,Yes,Electron,78.95,927.35,Yes
+8640-SDGKB,Male,0,No,No,4,Yes,No,DSL,No,No,Yes,Yes,Yes,Yes,Month-to,Yes,Electron,74.4,299.7,Yes
+8642-GVWRF,Female,0,Yes,No,2,Yes,No,Fiber op,No,Yes,Yes,No,No,No,Month-to,No,Bank tra,79.7,165,Yes
+8644-XYTSV,Male,0,Yes,No,42,No,No,DSL,Yes,No,No,No,Yes,No,Month-to,Yes,Bank tra,40.15,1626.05,No
+8645-KOMJQ,Male,0,Yes,Yes,69,Yes,Yes,DSL,No,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,81.95,5601.4,No
+8646-JCOMS,Female,0,Yes,No,66,Yes,Yes,Fiber op,No,Yes,Yes,Yes,No,No,One year,Yes,Bank tra,90.55,6130.95,No
+8648-PFRMP,Female,1,No,No,14,No,No,DSL,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,46.35,672.7,No
+8659-HDIYE,Female,1,No,No,64,Yes,Yes,DSL,No,Yes,Yes,Yes,No,Yes,Month-to,No,Credit c,74.65,4869.35,No
+8659-IOOPU,Female,0,Yes,Yes,71,Yes,Yes,Fiber op,Yes,No,Yes,Yes,No,Yes,Two year,No,Electron,100.45,7159.7,No
+8668-KNZTI,Male,0,No,No,52,Yes,No,DSL,Yes,No,Yes,No,No,No,One year,No,Electron,53.75,2790.65,No
+8671-KKKOS,Female,0,Yes,No,46,No,No,DSL,Yes,Yes,No,No,Yes,No,Month-to,No,Electron,45.55,2062.15,No
+8676-OOQEJ,Male,0,No,No,4,No,No,DSL,No,No,No,Yes,No,No,Month-to,No,Electron,30.5,118.4,No
+8677-HDZEE,Female,0,No,No,56,Yes,Yes,Fiber op,No,Yes,No,Yes,Yes,Yes,Month-to,Yes,Bank tra,105.45,5916.95,No
+8685-WHQPW,Female,1,No,No,22,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Bank tra,74.4,1692.6,Yes
+8687-BAFGU,Male,0,No,No,1,Yes,No,Fiber op,No,No,No,Yes,No,No,Month-to,No,Electron,74,74,No
+8707-HOEDG,Female,0,Yes,Yes,70,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Electron,110.2,7689.8,No
+8708-XPXHZ,Female,0,Yes,Yes,42,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,94.2,4186.3,Yes
+8713-IGZSO,Male,0,No,No,2,Yes,Yes,No,No,No,No,No,No,No,Month-to,No,Mailed c,24.85,62,No
+8714-EUHJO,Female,0,Yes,Yes,31,Yes,Yes,Fiber op,No,Yes,No,No,No,Yes,Month-to,Yes,Electron,91.15,2995.45,Yes
+8735-DCXNF,Male,0,Yes,No,10,Yes,No,DSL,Yes,No,No,Yes,No,No,Month-to,Yes,Credit c,54.95,568.85,No
+8738-JOKAR,Female,0,No,No,42,Yes,No,DSL,Yes,Yes,No,Yes,No,Yes,One year,Yes,Mailed c,67.7,2882.25,No
+8740-CRYFY,Male,0,No,No,1,Yes,No,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Electron,78.95,78.95,Yes
+8746-BFOAJ,Male,1,No,No,21,Yes,No,No,No,No,No,No,No,No,One year,No,Bank tra,20.5,429.55,No
+8747-UDCOI,Female,0,Yes,No,65,Yes,No,No,No,No,No,No,No,No,Two year,No,Bank tra,19.35,1319.95,No
+8748-HFWBO,Male,0,Yes,Yes,19,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,19.9,357.7,No
+8750-QWZAJ,Female,0,Yes,Yes,70,Yes,No,No,No,No,No,No,No,No,Two year,No,Bank tra,19.8,1378.75,No
+8755-IWJHN,Male,1,Yes,No,69,Yes,Yes,Fiber op,No,Yes,Yes,No,No,Yes,Month-to,Yes,Bank tra,95.35,6382,No
+8756-RDDLT,Female,0,No,No,68,No,No,DSL,No,Yes,No,Yes,No,Yes,Month-to,No,Electron,44.95,3085.35,No
+8775-CEBBJ,Female,0,No,No,9,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Bank tra,44.2,403.35,Yes
+8777-MBMTS,Female,1,Yes,No,65,Yes,No,Fiber op,No,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,105.85,6725.5,No
+8779-YIQQA,Male,0,Yes,Yes,21,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,19.8,350.1,No
+8780-IHCRN,Male,0,Yes,Yes,63,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Credit c,24.65,1574.5,No
+8780-IXSTS,Female,0,No,No,6,Yes,Yes,Fiber op,No,Yes,No,No,Yes,No,Month-to,Yes,Electron,90.1,521.3,Yes
+8791-GFXLZ,Male,0,No,No,12,Yes,No,DSL,No,Yes,No,No,No,No,Month-to,Yes,Bank tra,49.05,593.05,No
+8792-AOROI,Female,0,Yes,No,8,Yes,No,DSL,Yes,No,No,Yes,No,Yes,Two year,No,Mailed c,65.5,564.35,No
+8800-JOOCF,Female,0,No,Yes,12,Yes,Yes,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Electron,84.05,966.55,No
+8808-ELEHO,Male,1,No,No,8,Yes,Yes,Fiber op,No,No,Yes,No,No,No,Month-to,Yes,Electron,81.25,585.95,Yes
+8812-ZRHFP,Female,0,Yes,Yes,30,Yes,No,Fiber op,No,No,Yes,No,No,Yes,One year,No,Electron,86.45,2538.05,No
+8818-DOPVL,Female,1,No,No,46,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,Yes,Electron,104.45,4863.85,No
+8819-IMISP,Male,0,No,No,31,Yes,Yes,Fiber op,No,Yes,No,No,No,No,Month-to,Yes,Electron,80.45,2429.1,No
+8821-XNHVZ,Female,0,Yes,Yes,1,Yes,No,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Mailed c,80.05,80.05,Yes
+8823-RLPWL,Female,0,Yes,No,72,Yes,Yes,Fiber op,Yes,Yes,Yes,No,Yes,Yes,Two year,Yes,Credit c,110.65,8065.65,No
+8824-RWFXJ,Male,0,Yes,Yes,3,Yes,No,DSL,No,Yes,Yes,No,No,No,Month-to,Yes,Mailed c,56.15,168.15,Yes
+8838-GPHZP,Female,0,No,No,63,Yes,No,No,No,No,No,No,No,No,Two year,Yes,Mailed c,20.6,1298.7,No
+8844-TONUD,Male,0,Yes,Yes,13,Yes,No,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Mailed c,96.65,1162.85,Yes
+8849-PRIQJ,Female,0,Yes,Yes,67,Yes,Yes,Fiber op,Yes,No,Yes,Yes,Yes,Yes,One year,Yes,Electron,109.4,7281.6,No
+8861-HGGKB,Female,0,No,No,10,Yes,Yes,Fiber op,No,No,No,No,No,Yes,Month-to,No,Electron,86.45,830.85,Yes
+8871-JLMHM,Female,0,Yes,No,68,Yes,Yes,Fiber op,No,Yes,Yes,Yes,No,No,Two year,No,Credit c,90.2,6297.65,No
+8875-AKBYH,Male,1,No,No,20,Yes,Yes,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Electron,84.35,1745.2,No
+8879-ZKJOF,Female,0,No,No,41,Yes,No,DSL,Yes,No,Yes,Yes,Yes,Yes,One year,Yes,Bank tra,79.85,3320.75,No
+8883-GRDWQ,Male,1,No,No,20,Yes,No,DSL,Yes,No,No,Yes,No,No,One year,No,Mailed c,54,1055.9,No
+8884-FEEWR,Male,0,No,No,35,Yes,No,No,No,No,No,No,No,No,One year,No,Bank tra,20.6,754,No
+8903-XEBGX,Male,0,No,Yes,2,Yes,No,DSL,No,No,No,No,No,Yes,Month-to,Yes,Electron,55.3,108.65,No
+8905-IAZPF,Female,0,Yes,No,69,Yes,No,Fiber op,No,Yes,No,No,Yes,Yes,One year,Yes,Credit c,95.65,6744.2,No
+8909-BOLNL,Male,0,No,No,3,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,21.2,52.05,No
+8910-LEDAG,Male,1,Yes,No,34,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,No,Credit c,71.55,2427.35,No
+8917-SZTTJ,Male,0,Yes,Yes,60,Yes,No,No,No,No,No,No,No,No,Two year,No,Credit c,19.65,1161.75,No
+8922-LIEGH,Female,1,No,No,25,Yes,Yes,Fiber op,No,Yes,No,No,No,Yes,Month-to,Yes,Electron,89.7,2187.55,Yes
+8922-NPKBJ,Male,0,Yes,Yes,42,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,19.35,867.3,No
+8938-UMKPI,Female,0,No,No,47,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,Yes,Electron,106.4,5127.95,Yes
+8950-MTZNV,Male,0,No,No,1,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Mailed c,44.95,44.95,No
+8958-JPTRR,Female,0,Yes,No,56,Yes,Yes,No,No,No,No,No,No,No,One year,No,Electron,24.3,1261.7,No
+8966-KZXXA,Male,0,Yes,Yes,36,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Credit c,25.1,930.95,No
+8969-PRHFK,Male,0,No,No,18,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,19.65,411.25,No
+8974-OVACP,Female,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.15,20.15,No
+8981-FJGLA,Male,0,No,Yes,11,Yes,Yes,Fiber op,No,No,Yes,No,No,No,Month-to,Yes,Mailed c,78,851.8,No
+8984-HPEMB,Female,0,No,No,71,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Electron,118.65,8477.6,No
+8985-OOPOS,Female,0,No,No,1,Yes,No,DSL,No,No,Yes,Yes,Yes,Yes,One year,No,Credit c,74.1,74.1,No
+8988-ECPJR,Female,1,Yes,Yes,34,Yes,Yes,Fiber op,No,Yes,No,No,No,No,Month-to,Yes,Mailed c,79.6,2718.3,Yes
+8999-XXGNS,Female,1,Yes,No,72,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,One year,Yes,Credit c,105.75,7629.85,No
+9019-QVLZD,Female,0,No,No,1,Yes,No,Fiber op,No,No,No,No,Yes,No,Month-to,No,Electron,79.55,79.55,Yes
+9025-ZRPVR,Male,0,No,No,9,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,18.95,185.6,Yes
+9027-TMATR,Female,0,Yes,No,43,Yes,No,DSL,Yes,No,Yes,Yes,Yes,Yes,Two year,Yes,Electron,78.8,3460.3,No
+9053-EJUNL,Male,0,No,No,41,Yes,Yes,Fiber op,No,Yes,No,No,Yes,No,Month-to,Yes,Electron,89.2,3645.75,No
+9057-SIHCH,Female,0,No,No,3,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,96.6,291.9,Yes
+9066-QRSDU,Female,0,Yes,No,69,Yes,Yes,No,No,No,No,No,No,No,One year,Yes,Electron,26.3,1763.55,No
+9070-BCKQP,Female,0,Yes,No,72,Yes,Yes,Fiber op,Yes,No,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,110.15,7881.2,No
+9079-YEXQJ,Female,0,No,No,54,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,Month-to,No,Electron,111.1,6014.85,Yes
+9084-OAYKL,Male,0,No,No,58,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,20.8,1212.25,No
+9097-ZUBYC,Male,0,Yes,No,14,Yes,No,DSL,No,No,No,Yes,No,No,Month-to,No,Bank tra,48.8,664.4,No
+9099-FTUHS,Female,0,No,No,23,Yes,Yes,DSL,Yes,No,No,No,No,No,Month-to,No,Electron,54.4,1249.25,No
+9127-QRZMH,Male,0,Yes,No,44,Yes,No,DSL,Yes,Yes,No,Yes,No,No,One year,Yes,Bank tra,59.85,2603.95,No
+9137-NOQKA,Male,1,No,No,2,Yes,No,No,No,No,No,No,No,No,Month-to,No,Electron,19.2,37.2,No
+9139-TWBAS,Female,0,Yes,No,26,No,No,DSL,Yes,Yes,Yes,No,Yes,No,One year,No,Bank tra,47.85,1190.5,No
+9140-CZQZZ,Female,0,Yes,No,68,Yes,No,DSL,Yes,Yes,No,Yes,Yes,Yes,Two year,Yes,Bank tra,79.6,5515.8,No
+9146-JRIOX,Female,0,Yes,Yes,14,Yes,Yes,No,No,No,No,No,No,No,Month-to,No,Mailed c,25.55,372.45,No
+9154-QDGTH,Male,0,Yes,Yes,43,Yes,Yes,Fiber op,No,No,Yes,Yes,Yes,Yes,One year,Yes,Credit c,104.3,4451.85,No
+9163-GHAYE,Female,0,No,No,15,Yes,No,DSL,No,Yes,No,No,No,No,Month-to,No,Electron,48.85,736.8,No
+9172-ANCRX,Female,0,No,No,10,Yes,Yes,Fiber op,Yes,No,No,No,Yes,Yes,Month-to,Yes,Electron,98.7,973.25,Yes
+9173-IVZVP,Female,0,Yes,Yes,53,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,20.9,1146.05,No
+9174-IHETN,Female,0,No,Yes,50,Yes,No,Fiber op,No,No,No,No,No,No,Two year,No,Credit c,70.35,3533.6,No
+9178-JHUVJ,Male,0,Yes,Yes,24,Yes,Yes,No,No,No,No,No,No,No,Two year,Yes,Bank tra,24.1,587.4,No
+9184-GALIL,Female,0,Yes,Yes,38,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.45,781.25,No
+9190-MFJLN,Male,1,No,No,19,Yes,No,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Credit c,95.9,1777.9,Yes
+9191-MYQKX,Female,0,Yes,No,7,Yes,No,Fiber op,No,No,Yes,No,No,No,Month-to,Yes,Bank tra,75.15,496.9,Yes
+9206-GVPEQ,Male,0,Yes,No,13,No,No,DSL,Yes,No,No,Yes,Yes,Yes,Month-to,Yes,Electron,54.45,706.85,Yes
+9209-NWPGU,Male,0,No,No,44,Yes,No,DSL,Yes,No,No,Yes,Yes,No,One year,No,Electron,65.4,2774.55,No
+9223-UCPVT,Female,0,No,No,1,Yes,No,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,No,Electron,94.4,94.4,Yes
+9224-VTYID,Male,0,Yes,Yes,47,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Mailed c,90.5,4318.35,No
+9233-PSYHO,Female,1,No,No,45,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,One year,Yes,Bank tra,100.15,4459.8,No
+9236-NDUCW,Female,0,No,No,21,No,No,DSL,Yes,No,No,Yes,No,No,Two year,No,Mailed c,35.1,770.4,No
+9248-OJYKK,Male,1,No,No,1,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,76.45,76.45,Yes
+9251-WNSOD,Female,0,Yes,No,67,Yes,Yes,DSL,Yes,Yes,Yes,No,No,Yes,One year,No,Mailed c,75.1,5064.45,No
+9254-RBFON,Female,0,Yes,Yes,17,Yes,No,Fiber op,No,No,Yes,Yes,Yes,Yes,One year,No,Bank tra,98.6,1704.95,Yes
+9272-LSVYH,Male,0,No,No,10,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,No,Mailed c,70.15,735.5,No
+9274-CNFMO,Male,1,Yes,No,4,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,No,Electron,74.95,308.7,Yes
+9274-UARKJ,Female,0,No,No,15,Yes,No,Fiber op,No,Yes,No,No,Yes,No,Month-to,Yes,Bank tra,83.2,1130,No
+9281-OFDMF,Male,1,No,No,39,Yes,Yes,Fiber op,No,Yes,No,No,No,Yes,Month-to,No,Electron,90.7,3413.25,No
+9289-LBQVU,Male,0,Yes,No,64,Yes,Yes,DSL,No,Yes,No,Yes,No,Yes,One year,Yes,Mailed c,70.15,4480.7,No
+9298-WGMRW,Female,0,Yes,No,72,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,115.5,8312.75,No
+9300-RENDD,Male,0,No,No,1,Yes,No,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Electron,79.95,79.95,Yes
+9308-ANMVE,Male,0,No,Yes,47,Yes,No,DSL,Yes,Yes,No,No,No,No,Month-to,Yes,Electron,55.3,2654.05,No
+9317-WZPGV,Female,1,No,No,2,Yes,No,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Bank tra,79.75,159.4,Yes
+9318-NKNFC,Male,0,No,No,1,Yes,No,No,No,No,No,No,No,No,Month-to,Yes,Mailed c,18.85,18.85,Yes
+9337-SRRNI,Male,0,No,Yes,66,Yes,Yes,No,No,No,No,No,No,No,Two year,Yes,Credit c,25.3,1673.8,No
+9348-YVOMK,Male,0,No,No,4,Yes,No,DSL,No,No,No,No,No,No,Month-to,Yes,Credit c,44.8,176.2,No
+9351-HXDMR,Male,0,Yes,No,72,Yes,Yes,Fiber op,Yes,No,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,110.9,8240.85,No
+9355-NPPFS,Female,1,No,No,26,Yes,No,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Electron,78.8,2006.1,No
+9360-OMDZZ,Male,0,No,No,24,Yes,Yes,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,94.1,2322.85,No
+9361-YNQWJ,Female,0,No,No,64,Yes,Yes,No,No,No,No,No,No,No,One year,Yes,Bank tra,24.4,1601.2,No
+9362-MWODR,Female,0,No,Yes,40,Yes,No,DSL,Yes,No,No,Yes,Yes,No,Month-to,Yes,Credit c,64.1,2460.35,No
+9367-OIUXP,Male,0,No,No,4,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.7,73.05,No
+9367-TCUYN,Female,0,No,No,12,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.1,223.6,No
+9389-ACWBI,Female,0,Yes,Yes,5,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,No,Credit c,69.95,320.4,No
+9392-XBGTD,Male,0,No,Yes,27,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,20.6,581.85,No
+9398-MMQTO,Male,0,No,No,3,Yes,No,Fiber op,No,Yes,No,No,No,No,Month-to,No,Credit c,74.45,221.1,No
+9405-GPBBG,Female,0,No,No,64,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,110.5,7069.25,No
+9411-TPQQV,Female,0,No,No,40,No,No,DSL,Yes,No,No,Yes,Yes,Yes,One year,Yes,Bank tra,54.55,2236.2,No
+9420-LOJKX,Female,0,No,No,15,Yes,No,Fiber op,Yes,Yes,No,No,Yes,Yes,Month-to,Yes,Credit c,99.1,1426.4,Yes
+9443-JUBUO,Male,0,Yes,Yes,72,No,No,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,65.25,4478.85,No
+9445-ZUEQE,Male,0,Yes,Yes,27,Yes,Yes,Fiber op,No,Yes,No,Yes,No,No,Month-to,Yes,Credit c,85.2,2151.6,No
+9447-YPTBX,Female,0,Yes,No,50,Yes,No,No,No,No,No,No,No,No,One year,Yes,Bank tra,19.85,943.1,No
+9448-REEVD,Male,0,Yes,No,1,Yes,No,DSL,No,No,No,No,No,No,Month-to,No,Credit c,44.7,44.7,Yes
+9451-LPGOO,Male,0,No,No,7,Yes,Yes,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Electron,86.8,620.35,Yes
+9469-WEJBT,Male,0,Yes,No,37,Yes,No,Fiber op,No,No,Yes,Yes,No,Yes,Month-to,Yes,Electron,90.35,3419.3,No
+9470-XCCEM,Male,0,Yes,Yes,35,Yes,Yes,Fiber op,No,Yes,No,No,Yes,No,Month-to,Yes,Bank tra,89.65,3161.6,No
+9475-NNDGC,Male,0,Yes,No,71,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,One year,Yes,Bank tra,113.15,7953.25,No
+9481-IEBZY,Male,1,Yes,No,72,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Month-to,Yes,Credit c,112.9,8061.5,No
+9481-WHGWY,Female,0,Yes,Yes,70,Yes,No,DSL,Yes,No,No,Yes,Yes,Yes,Two year,No,Credit c,75.35,5437.75,No
+9483-GCPWE,Male,0,No,Yes,9,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,20.1,190.25,No
+9488-FVZCC,Female,0,Yes,Yes,72,Yes,Yes,DSL,Yes,Yes,Yes,Yes,No,Yes,Two year,Yes,Bank tra,79.5,5661.7,No
+9489-DEDVP,Female,0,Yes,Yes,70,Yes,Yes,DSL,Yes,Yes,No,No,Yes,No,Two year,Yes,Credit c,69.2,4872.35,No
+9489-UTFKA,Male,1,Yes,No,8,Yes,No,DSL,Yes,No,No,No,Yes,No,Month-to,No,Bank tra,60.9,551.95,No
+9494-MRNYX,Male,0,No,No,10,Yes,Yes,Fiber op,No,No,No,No,No,No,Month-to,No,Electron,75.05,786.3,No
+9495-SKLKD,Male,0,Yes,Yes,45,Yes,Yes,Fiber op,No,Yes,Yes,No,No,Yes,Month-to,Yes,Bank tra,95.95,4456.65,No
+9500-LTVBP,Female,0,No,No,35,Yes,Yes,Fiber op,No,No,No,Yes,No,No,Month-to,No,Credit c,80.05,2835.9,No
+9507-HSMMZ,Male,0,No,No,54,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,20,1149.65,No
+9522-ZSINC,Male,0,No,No,13,Yes,No,No,No,No,No,No,No,No,One year,Yes,Electron,19.95,253.8,No
+9546-KDTRB,Female,0,No,No,19,Yes,Yes,No,No,No,No,No,No,No,Month-to,No,Bank tra,24.7,465.85,No
+9547-ITEFG,Male,0,Yes,Yes,9,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,Yes,Credit c,102.6,897.75,No
+9548-LERKT,Male,0,Yes,No,24,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,19.75,483.15,No
+9548-ZMVTX,Male,0,Yes,Yes,72,Yes,Yes,Fiber op,No,Yes,Yes,Yes,No,No,Two year,No,Bank tra,90.45,6565.85,No
+9554-DFKIC,Male,0,Yes,Yes,30,Yes,Yes,DSL,Yes,No,No,No,No,No,Month-to,Yes,Bank tra,54.45,1588.7,No
+9555-SAHUZ,Female,0,Yes,Yes,38,Yes,No,DSL,Yes,Yes,No,No,No,No,Month-to,No,Electron,54.5,2076.05,No
+9558-IHEZX,Female,0,No,No,71,Yes,Yes,Fiber op,Yes,Yes,Yes,No,Yes,Yes,Two year,Yes,Credit c,106.75,7283.25,No
+9565-DJPIB,Female,0,No,Yes,4,Yes,Yes,Fiber op,No,Yes,No,No,Yes,No,Month-to,No,Mailed c,89.6,365.65,Yes
+9565-FLVCG,Male,0,Yes,Yes,65,Yes,Yes,DSL,Yes,Yes,No,No,No,Yes,Two year,Yes,Mailed c,69.55,4459.15,No
+9571-EDEBV,Male,0,Yes,No,71,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,One year,Yes,Credit c,98.65,6962.85,No
+9577-WJVCQ,Female,0,No,No,68,Yes,Yes,DSL,Yes,No,No,No,No,No,Month-to,No,Mailed c,54.45,3687.75,No
+9578-VRMNM,Female,0,No,No,16,Yes,Yes,DSL,No,No,Yes,No,No,Yes,Month-to,Yes,Credit c,65.2,1043.35,Yes
+9581-GVBXT,Male,0,Yes,Yes,59,No,No,DSL,Yes,No,Yes,No,No,No,One year,No,Mailed c,34.8,1980.3,No
+9584-EXCDZ,Female,0,No,No,17,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,No,Bank tra,70.5,1165.6,No
+9593-CVZKR,Female,0,Yes,Yes,56,Yes,Yes,No,No,No,No,No,No,No,Two year,Yes,Mailed c,24.45,1385.85,No
+9601-BRXPO,Female,0,Yes,No,25,Yes,Yes,Fiber op,No,No,Yes,Yes,Yes,Yes,Month-to,Yes,Bank tra,104.95,2566.5,Yes
+9611-CTWIH,Female,0,No,No,3,Yes,No,Fiber op,No,No,No,No,Yes,Yes,Month-to,Yes,Electron,89.45,240.45,Yes
+9617-UDPEU,Female,0,No,No,22,Yes,No,No,No,No,No,No,No,No,One year,Yes,Mailed c,19.25,412.55,No
+9619-GSATL,Female,0,No,No,43,Yes,No,DSL,No,Yes,No,Yes,No,No,One year,No,Electron,55.45,2444.25,No
+9620-ENEJV,Female,0,No,No,6,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,No,Credit c,70.55,433.95,No
+9626-WEQRM,Female,0,No,No,4,No,No,DSL,Yes,No,No,No,No,No,Month-to,Yes,Mailed c,29.15,110.05,No
+9633-XQABV,Female,0,No,No,3,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,70.25,229.7,No
+9639-BUJXT,Male,0,No,No,63,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,20.5,1328.15,No
+9640-ZSLDC,Female,0,Yes,Yes,53,Yes,No,DSL,No,No,Yes,No,No,Yes,One year,No,Credit c,60.6,3297,No
+9647-ERGBE,Female,0,Yes,Yes,30,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,Yes,Electron,100.05,3046.15,Yes
+9658-WYUFB,Female,0,No,No,17,Yes,Yes,Fiber op,Yes,Yes,No,No,Yes,No,Month-to,Yes,Electron,94.4,1617.5,Yes
+9667-EQRXU,Female,1,No,No,30,No,No,DSL,No,No,Yes,No,Yes,No,Month-to,Yes,Electron,40.3,1172.95,Yes
+9668-PUGNU,Male,0,Yes,No,71,Yes,Yes,No,No,No,No,No,No,No,Two year,Yes,Electron,24.5,1816.2,No
+9688-YGXVR,Female,0,No,No,44,Yes,No,Fiber op,No,Yes,Yes,No,Yes,No,Month-to,Yes,Credit c,88.15,3973.2,No
+9693-XMUOB,Male,1,Yes,No,59,No,No,DSL,No,Yes,No,No,Yes,Yes,Month-to,Yes,Electron,50.25,2997.45,No
+9695-IDRZR,Female,0,No,Yes,34,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,116.15,3946.9,No
+9696-RMYBA,Male,0,No,No,5,Yes,No,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Mailed c,80.1,398.55,No
+9705-IOVQQ,Male,1,Yes,Yes,61,Yes,Yes,Fiber op,No,Yes,No,No,Yes,Yes,One year,No,Electron,99,5969.3,No
+9710-NJERN,Female,0,No,No,39,Yes,No,No,No,No,No,No,No,No,Two year,No,Mailed c,20.15,826,No
+9711-FJTBX,Male,0,Yes,Yes,56,Yes,No,Fiber op,No,Yes,Yes,Yes,No,No,One year,Yes,Mailed c,85.85,4793.8,No
+9714-EDSUC,Male,0,No,No,4,Yes,No,Fiber op,Yes,Yes,No,Yes,No,Yes,Month-to,Yes,Mailed c,94.9,360.55,No
+9715-SBVSU,Male,0,Yes,Yes,14,Yes,No,DSL,Yes,Yes,No,No,No,Yes,Two year,Yes,Bank tra,61.4,815.55,No
+9722-UJOJR,Male,0,Yes,Yes,29,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,70.75,1974.8,Yes
+9728-FTTVZ,Female,0,No,No,1,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,69.2,69.2,Yes
+9732-EQMWY,Female,0,Yes,No,49,Yes,No,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,No,Electron,99.4,5025,No
+9732-OUYRN,Female,0,Yes,No,49,Yes,No,No,No,No,No,No,No,No,One year,No,Credit c,19,918.7,No
+9734-YWGEX,Female,0,No,No,9,Yes,Yes,Fiber op,No,No,Yes,No,Yes,Yes,Month-to,No,Credit c,98.3,923.5,Yes
+9746-MDMBK,Male,0,Yes,Yes,47,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,One year,Yes,Bank tra,113.45,5317.8,No
+9746-UGFAC,Female,0,No,No,22,Yes,No,No,No,No,No,No,No,No,One year,No,Bank tra,20.85,450.65,No
+9746-YKGXB,Male,0,Yes,Yes,52,No,No,DSL,Yes,No,Yes,No,No,Yes,One year,No,Bank tra,44.25,2276.1,No
+9754-CLVZW,Female,0,Yes,Yes,26,No,No,DSL,Yes,Yes,No,Yes,No,No,Month-to,No,Credit c,38.85,1025.15,No
+9755-JHNMN,Female,0,No,No,49,Yes,No,DSL,Yes,Yes,Yes,Yes,No,No,Two year,No,Bank tra,67.4,3306.85,No
+9758-MFWGD,Female,1,Yes,Yes,48,No,No,DSL,No,Yes,No,No,No,No,One year,No,Bank tra,29.9,1388.75,No
+9762-YAQAA,Male,0,No,No,39,Yes,Yes,Fiber op,No,Yes,No,No,No,No,One year,No,Credit c,81.4,3213.75,No
+9764-REAFF,Female,0,Yes,No,59,Yes,No,No,No,No,No,No,No,No,Two year,No,Bank tra,18.4,1057.85,No
+9776-OJUZI,Female,1,No,No,65,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,No,Month-to,Yes,Bank tra,95.45,6223.3,No
+9778-OGKQZ,Male,0,Yes,No,72,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,92,6782.15,No
+9779-DPNEJ,Female,0,Yes,Yes,22,Yes,No,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Electron,80.15,1790.65,No
+9786-IJYDL,Female,0,No,No,35,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Mailed c,113.2,3914.05,No
+9788-HNGUT,Male,0,Yes,No,72,Yes,Yes,Fiber op,Yes,Yes,Yes,Yes,Yes,Yes,Two year,Yes,Credit c,116.95,8594.4,No
+9798-OPFEM,Female,0,No,No,46,Yes,No,No,No,No,No,No,No,No,Two year,Yes,Electron,21.1,937.1,No
+9799-CAYJJ,Female,1,Yes,No,2,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,69.3,153.8,No
+9802-CAQUT,Female,0,Yes,Yes,72,Yes,Yes,Fiber op,Yes,Yes,Yes,No,Yes,Yes,Two year,No,Credit c,109.55,7887.25,No
+9818-XQCUV,Female,0,No,No,2,Yes,No,No,No,No,No,No,No,No,Month-to,No,Mailed c,20.35,45.3,No
+9824-BEMCV,Male,0,Yes,Yes,17,Yes,No,Fiber op,No,No,No,No,No,No,Month-to,Yes,Electron,69,1149.65,Yes
+9828-QHFBK,Male,0,No,No,24,Yes,No,DSL,Yes,No,No,No,No,No,Month-to,Yes,Electron,51.15,1275.7,No
+9830-ECLEN,Male,0,Yes,Yes,58,No,No,DSL,Yes,Yes,Yes,No,Yes,No,One year,No,Mailed c,50,2919.85,No
+9835-ZIITK,Male,1,Yes,No,66,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,One year,Yes,Electron,110.85,7491.75,Yes
+9837-BMCLM,Male,0,No,No,3,Yes,No,Fiber op,No,No,No,No,Yes,No,Month-to,Yes,Electron,78.5,242.05,Yes
+9838-BFCQT,Male,0,Yes,Yes,72,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Mailed c,26.1,1851.45,No
+9839-ETQOE,Male,0,No,Yes,43,No,No,DSL,Yes,Yes,Yes,No,No,No,Month-to,Yes,Electron,40.45,1912.85,No
+9842-EFSYY,Female,0,No,Yes,4,No,No,DSL,Yes,Yes,Yes,No,Yes,Yes,Month-to,Yes,Mailed c,57.2,223.75,No
+9845-QOMAD,Male,0,Yes,Yes,14,Yes,No,No,No,No,No,No,No,No,One year,No,Mailed c,19.75,309.35,No
+9851-QXEEQ,Male,0,No,No,41,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,Month-to,Yes,Electron,104.7,4346.4,Yes
+9862-KJTYK,Male,0,No,Yes,19,No,No,DSL,No,No,No,No,No,No,Month-to,Yes,Credit c,25.35,566.1,No
+9881-VCZEP,Female,0,Yes,No,25,Yes,Yes,DSL,No,Yes,No,No,No,No,Month-to,No,Electron,54.1,1373,No
+9885-AIBVB,Male,0,Yes,No,29,Yes,Yes,Fiber op,No,Yes,Yes,No,No,No,Month-to,Yes,Electron,85.8,2440.25,No
+9885-MFVSU,Female,0,Yes,Yes,35,No,No,DSL,Yes,No,No,Yes,Yes,No,Two year,Yes,Credit c,46.35,1662.05,No
+9888-ZCUMM,Male,0,Yes,Yes,64,No,No,DSL,Yes,No,Yes,Yes,Yes,Yes,Two year,Yes,Bank tra,60.05,3845.45,No
+9891-NQDBD,Female,0,Yes,No,28,Yes,Yes,No,No,No,No,No,No,No,One year,No,Mailed c,25.55,672.2,No
+9909-DFRJA,Female,0,No,No,26,Yes,No,Fiber op,Yes,No,Yes,Yes,No,Yes,One year,Yes,Bank tra,95.85,2475.35,No
+9912-OMZDS,Female,0,Yes,Yes,59,Yes,Yes,Fiber op,No,Yes,Yes,No,Yes,Yes,One year,Yes,Electron,106.15,6256.2,No
+9921-EZKBY,Male,0,No,Yes,33,Yes,Yes,Fiber op,Yes,No,Yes,No,No,Yes,Month-to,Yes,Bank tra,95.3,3275.15,No
+9931-DCEZH,Male,0,No,Yes,28,Yes,No,DSL,No,Yes,No,Yes,No,No,One year,Yes,Credit c,54.4,1516.6,No
+9938-EKRGF,Female,0,No,No,15,Yes,No,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Month-to,No,Mailed c,84.45,1287.85,No
+9938-TKDGL,Male,0,Yes,Yes,68,Yes,No,Fiber op,Yes,No,No,Yes,Yes,Yes,Two year,Yes,Electron,99.55,6668,No
+9940-HPQPG,Female,0,Yes,No,9,Yes,Yes,Fiber op,Yes,Yes,Yes,No,No,No,Month-to,No,Bank tra,91.75,865.8,Yes
+9953-ZMKSM,Male,0,No,No,63,Yes,Yes,No,No,No,No,No,No,No,Two year,No,Mailed c,25.25,1559.3,No
+9965-YOKZB,Male,1,No,No,9,Yes,Yes,Fiber op,No,No,No,No,No,Yes,Month-to,Yes,Electron,83.85,790.15,Yes
+9968-FFVVH,Male,0,No,No,63,Yes,Yes,DSL,Yes,Yes,Yes,Yes,No,No,One year,No,Bank tra,68.8,4111.35,No
+9970-QBCDA,Female,0,No,No,6,Yes,No,No,No,No,No,No,No,No,Month-to,No,Credit c,19.7,129.55,No
+9971-ZWPBF,Male,1,Yes,Yes,34,Yes,Yes,Fiber op,No,Yes,Yes,Yes,Yes,Yes,Month-to,Yes,Electron,108.9,3625.2,No
+9972-EWRJS,Female,0,Yes,Yes,67,Yes,No,No,No,No,No,No,No,No,Two year,Yes,Bank tra,19.25,1372.9,No
+9974-JFBHQ,Male,0,No,Yes,64,Yes,No,Fiber op,No,Yes,No,Yes,Yes,Yes,Month-to,Yes,Credit c,99.15,6171.2,No
+9975-GPKZU,Male,0,Yes,Yes,46,Yes,No,No,No,No,No,No,No,No,Two year,No,Credit c,19.75,856.5,No
+9987-LUTYD,Female,0,No,No,13,Yes,No,DSL,Yes,No,No,Yes,No,No,One year,No,Mailed c,55.15,742.9,No
+9993-LHIEB,Male,0,Yes,Yes,67,Yes,No,DSL,Yes,No,Yes,Yes,No,Yes,Two year,No,Mailed c,67.85,4627.65,No

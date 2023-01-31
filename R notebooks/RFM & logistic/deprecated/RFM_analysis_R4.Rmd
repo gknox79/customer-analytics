@@ -1,0 +1,431 @@
+---
+title: "RFM Analysis"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+  word_document: default
+editor_options:
+  chunk_output_type: console
+---
+
+### Introduction
+
+**RFM**, recency (**R**), frequency (**F**) and monetary value (**M**) are the most often used database marketing metrics used to quantify customer transaction history. RFM analysis segments customer into groups according to these measures and relates these segments to the likelihood of responding to a marketing offer. This notebook discusses the measures, segmentation, usefulness for guiding marketing decisions, and extensions to the basic model. 
+
+
+### Installing the packages and loading the data
+
+To illustrate the technique, we are going to use data from eBeer.
+
+```{r message=FALSE, warning=FALSE}
+
+options("scipen"=100, "digits"=3)
+
+library(data.table)
+library(foreign)
+library(dplyr)
+library(VGAM)
+library(memisc)
+
+# setwd("C:/Users/gknox/Dropbox/Customer Analytics/R notebooks/RFM & logistic")
+
+#ebeer<-data.frame(read.spss(file.choose()))
+
+ebeer <- data.frame(as.data.set(spss.system.file('./data/E-Beer.sav')))
+
+# set working directory where first file, E-beer.sav, was found/
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+
+getwd()
+```
+
+### Inspecting the data
+
+```{r}
+head(ebeer)
+
+summary(ebeer)
+```
+
+Each row is a customer. Acctnum is their id. We have gender, Recency (the number of months since the last purchase), Frequency (number of purchases), M (average amount spent per purchase), first purchase (number of months since first purchase), age, single, student, whether they received a mailing, did they respond.
+
+Let's look at the marketing variable: who gets a mailing in this dataset?
+```{r}
+table(ebeer$mailing)
+```
+
+How many people of those mailed respond?
+```{r}
+table(ebeer$respmail, useNA="always")
+```
+
+Check that there is only a response if someone gets a mailing in the first place.
+```{r}
+table(ebeer$mailing, ebeer$respmail)
+```
+
+Let's create a numeric 0/1 variable for respmail and mail, which are factors.
+```{r}
+ebeer$respmail.num<-as.numeric(ebeer$respmail)
+ebeer$mailing.num<-as.numeric(ebeer$mailing)
+```
+
+
+The probability of observing $x$ people respond out of $n$ people mailed is described by a binomial distribution.
+$$P(x|n, p) = {n \choose x} p^{x} (1-p)^{n-x}$$
+It has one paramter, $p$, the probability of response. If we fit the model to the data, the maximum likelihood estimate is of $p$ is 
+$$\hat{p} = \frac{x}{n}$$
+What is $x$, $n$ and $\hat{p}$ in our data? $x$ is the number of responses, 616. $n$ is the total number of people mailed, 4952. So therefore $\hat{p}$, the overall response rate (probability of response):
+
+```{r}
+p_hat<-sum(ebeer$respmail.num[ebeer$mailing.num==1])/sum(table(ebeer$respmail))
+p_hat
+```
+
+The standard error of the proportion is $\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$, and the 95% confidence interval is calculated as follows.
+```{r}
+n = sum(ebeer$mailing.num==1)
+alpha = .05
+z = qnorm(1-alpha/2)
+p_hat + c(-1,1)*z*sqrt(p_hat*(1-p_hat)/n)
+```
+
+Let's look at the distribution of raw RFM variables
+```{r}
+ebeer$F<-as.numeric(ebeer$F)
+par(mai=c(.9,.8,.2,.2))
+hist(ebeer$R, main="Recency", xlab="Recency: # months since last purchase")
+hist(ebeer$F, main="Frequency", xlab="Frequency: # purchases")
+hist(ebeer$M, main="Monetary", xlab="Monetary: avg amount spent per purchase")
+```
+
+### Creating R, F and M segments separately.
+
+Let's first create segments from each variable separately; 
+we build our own quantile function.  We create separate segments for R, F, and M. We do this by creating quantiles, divide into 20% most recent, 20% next most recent, etc.
+
+```{r}
+ntiles <- function(x, bins) {
+  quantiles = seq(from=0, to = 1, length.out=bins+1)
+  cut(ecdf(x)(x),breaks=quantiles, labels=F)
+}
+ebeer$Rgroup <- ntiles(ebeer$R, bins=5)  
+table(ebeer$Rgroup)
+```
+How many are in each quantile? (should be about the same, but exceptions ..  why?).
+Next, we look at the average recencey (time since last purchase) per R group.  Group 1 has the lowest (most recent), 5 the highest (least recent).
+```{r}
+aggregate(ebeer$R,list(ebeer$Rgroup), mean, na.rm="TRUE")
+```
+
+Now, let's examine how response rate vary with the recency groups we just created.
+```{r}
+respR<-aggregate(ebeer$respmail.num,list(ebeer$Rgroup), mean, na.rm="TRUE")
+barplot(respR[,2]~respR[,1], main="response by Recency group", xlab="Recency Group", ylab="average response")
+```
+
+**How would we describe response by recency?**
+
+Now we do it with frequency:
+```{r}
+ebeer$Fgroup <- ntiles(ebeer$F, bins=5)  
+table(ebeer$Fgroup)
+```
+Why only 3 segments, even though we asked for 5?
+
+The average frequency per F group, and response rate by F group:
+```{r}
+aggregate(ebeer$F,list(ebeer$Fgroup), mean)
+respF<-aggregate(ebeer$respmail.num,list(ebeer$Fgroup), mean, na.rm="TRUE")
+
+barplot(respF[,2]~respF[,1], main="response by Frequency group", xlab="Frequency Group", ylab="average response")
+```
+
+**What matters more in terms of response: R or F?**
+
+Lastly, let's segment by monetary value.
+```{r}
+ebeer$Mgroup <- ntiles(ebeer$M, bins=5)  
+table(ebeer$Mgroup)
+aggregate(ebeer$M,list(ebeer$Mgroup), mean)
+
+respM<-aggregate(ebeer$respmail.num,list(ebeer$Mgroup), mean, na.rm="TRUE")
+
+barplot(respM[,2]~respM[,1], main="response by Monetary value group", xlab="Monetary Value Group", ylab="average response")
+```
+
+Interesting.. why would people who spend more respond less?
+
+### Full RFM analysis
+
+Now do the full RFM analysis. 
+Remember, the idea is that 
+
+1. We first sort by R, create segments. (we already did this.)
+2. Within each R segment, we sort F and create RF segments.
+3. Within each RF segment, we sort M and create RFM segments.
+
+
+First, we change ebeer into data.table Within each R group, we create F groups -> RF groups.  Within each RF group, we create M groups -> RFM groups
+
+```{r}
+dt = data.table(ebeer)
+nbins = 5
+dt[, RFgroup := paste0(as.character(Rgroup), as.character(ntiles(F, bins = nbins))), by = c('Rgroup')]
+dt[, RFMgroup := paste0(as.character(RFgroup), as.character(ntiles(M, bins = nbins))), by = c('RFgroup')]
+
+# put it back to data.frame
+ebeer = data.frame(dt)
+
+# change it to a factor variable
+ebeer$RFMgroup<-as.factor(ebeer$RFMgroup)
+
+```
+
+How many RFM groups do we get with this procedure?  What would be the maximum number we could possibly get?
+```{r}
+length(unique(ebeer$RFMgroup))
+
+aggregate(list(num_customers=ebeer$acctnum), by = list(RFMsegment = ebeer$RFMgroup), FUN = "length")
+```
+
+How does response vary across RFM groups?  How many are above the breakeven line of targeting?
+Remember the breakeven $\tilde{p} = \frac{c}{m}$, where $c$ is the cost of marketing/mailing, and $m$ is the profit (margin) if the customer responds.
+
+```{r}
+respRFM<-aggregate(list(avgresp=ebeer$respmail.num),list(RFMgroup = ebeer$RFMgroup), mean, na.rm="TRUE")
+
+# attach number of mailings
+
+mailRFM<-aggregate(ebeer$mailing.num,list(ebeer$RFMgroup), sum)
+respRFM['sum_mailings']<-mailRFM[,2]
+
+# re-order from most to least, make picture better
+
+respRFM<-respRFM[order(respRFM[,2],decreasing=TRUE),]
+
+# add breakeven line
+
+c = 1.5
+m = 50
+brk = c/m
+
+bp<-barplot(respRFM[,2], main="response by RFM group", xlab="RFM Group", ylab="average response", xaxt="n")
+axis(1, at = bp[,1], labels=respRFM[,1], cex.axis=0.7, las=2)
+
+abline(h=brk)
+text(85, brk, "breakeven", cex=1, pos=3, col="black")
+```
+
+How many segments are above the breakeven, and therefore targeted? What segments are they?  As a percentage of the total segments?
+```{r}
+sum(respRFM[, 2] >= brk)
+
+list(respRFM[respRFM[, 2] >= brk, 1])
+
+sum(respRFM[, 2] >= brk) / length(unique(ebeer$RFMgroup))
+```
+
+OK, now let's apply this model to those customers who have not been mailed, sometimes called the "rollout" sample.
+
+First let's fit the model
+
+```{r}
+RFM_model <- lm(respmail.num ~ RFMgroup, data = ebeer)
+
+print(summary(RFM_model),digits=3) 
+```
+
+We separate the rollout data  (where there is no mailing/response) from everything else. Then, we'll score the new data, i.e., apply the predictions of the model to the new data.
+```{r}
+ebeer.rollout<-ebeer[is.na(ebeer$respmail), ]
+
+ebeer.rollout$RFMpred<-predict(RFM_model,ebeer.rollout)
+
+summary(ebeer.rollout$RFMpred)
+```
+
+We now have a probability of response to everyone in the rollout data. How many customers in the rollout would get mailed? as a fraction of the total, what would the profits and ROI be?
+```{r}
+sum(ebeer.rollout$RFMpred >= brk)
+
+# as a fraction of total
+
+sum(ebeer.rollout$RFMpred >= brk) / length(ebeer.rollout$RFMpred)
+
+# what would expected profits be of following this strategy?
+
+ebeer.rollout$RFMprofit <-
+  ifelse(ebeer.rollout$RFMpred >= brk, ebeer.rollout$RFMpred *m - c, 0)
+
+sum_profit = sum(ebeer.rollout$RFMprofit)
+
+sum_profit
+
+# what about the return on investment ROI?
+
+ebeer.rollout$RFMcost <- ifelse(ebeer.rollout$RFMpred >= brk, c, 0)
+
+sum_cost = sum(ebeer.rollout$RFMcost)
+  
+sum_profit / sum_cost
+
+# ROI
+```
+
+### Shrinking the estimates
+
+In RFM analysis, we fit a separate binomial model to every segment in the data. Our estimates of the segment specific response rates are
+$$\hat{p}_s = \frac{x_s}{n_s}$$
+here $x_s$ is the number of responses in segment $s$ (6 for segment 90), $n_s$ is the number of people mailed (16 for segment 90). 
+
+How much should we believe these estimates?  Some of these response probabilities are based on small segment sizes.  In the table below, I've sorted the segments from largest to smallest.  To see the smallest segments, see the last few entries.
+
+```{r}
+agg<-aggregate(list(ebeer$mailing.num, ebeer$respmail.num),list(ebeer$RFMgroup), sum, na.rm="TRUE")
+agg<-agg[order(agg[,2],decreasing=TRUE),]
+tot_mail<-agg[,2]
+tot_resp<-agg[,3]
+tot_noresp<-tot_mail-tot_resp
+prop_resp<-tot_resp/tot_mail
+tbl<-cbind(tot_mail,tot_resp, tot_noresp, prop_resp)
+head(tbl)
+
+tail(tbl)
+
+```
+
+For example, segment 61 is based on 36 people, 1 of whom responded, so the the response rate is .0278, just below the cutoff of .03. Its 95% confidence interval falls below this targeting threshold.
+
+```{r}
+p_hat=tbl[61,4][[1]]
+n = tbl[61,1][[1]]
+alpha = .05
+z = qnorm(1-alpha/2)
+p_hat + c(-1,1)*z*sqrt(p_hat*(1-p_hat)/n)
+```
+
+
+Right now we assume that these segments response rates are entirely independent of each other. 
+In other words, knowing what the overall response rate is tells us nothing about e.g., segment 90.
+
+But if we make an assumption about the distribution of response rates across segments, we could use that common distribution to "borrow" information from the other segments. Below is the distribution of response rates.  The red curve is a beta distribution, the distribution we will be using to describe how the response rates vary over segments.  
+
+```{r}
+par(mai=c(.9,.8,.2,.2))
+hist(respRFM[,2], density=10, breaks=20, main="Distribution of response rates across segments", xlab="segment-specific probability of response")
+curve(dbeta(x, .5, 3), add = TRUE, col = "red", lwd = 2)
+```
+
+**why use a beta distribution instead of e.g., a normal distribution?**
+
+
+We will fit the distribution of rates to the actual data.  So our assumption here is really just the form of the distribution. The parameters of the distribution will be estimated directly from the data.  (This is called Empirical Bayes estimation.)
+
+
+More formally, we assume that $p_s$ comes from a common beta distribution where $a$ and $b$ are parameters we fit to the data (just as $\mu$ and $\sigma$ are parameters you fit in the normal distribution).   $B(a,b)$ is an integration constant and is not important. This is the beta distribution. 
+$$ f(p | a,b) = \frac{p^{a-1} (1-p)^{b-1}}{B(a,b)}, \qquad a>0, b>0$$
+The mean of the beta distrtion is $E[p|a,b]=\frac{a}{a+b}$. Here are some of the [shapes](https://shiny.stat.ncsu.edu/bjreich/Beta_PDF/) the beta distribution can take on.
+
+Now to get the model for responses and the distribution of response rates, we have to sum up all the possible response rates and probabilities of them occuring that would have given rise to the responses.  In other words we have to integrate the binomial response given its response rate over its beta distribution. We get the resulting model, the Beta-binomial model:
+$$ 
+\begin{array}{ccl}
+P(x_s|n_s, a, b)&  = &  \displaystyle \int P(x_s | p_s, n_s) \;  f(p_s|a,b) \; dp_s \\
+& = & \displaystyle {n_s \choose x_s} \frac{B(a+x_s,b+n_s-x_s)}{B(a,b)} 
+\end{array}
+$$
+
+```{r}
+#install.packages("VGAM")
+library(VGAM)
+fit <- vglm(cbind(tot_resp,tot_noresp) ~ 1, betabinomialff, trace=TRUE)
+
+Coef(fit)
+# make them a and b
+
+a<-Coef(fit)[[1]]
+b<-Coef(fit)[[2]]
+```
+
+Now that $p_s$ has a distribution, we no longer have an estimate. We can talk about its posterior mean, after observing $x_s$ responses for segment $s$ in the model:
+$$
+\begin{array}{ccl}
+E(p_s|x_s, n_s) & = & \displaystyle \frac{a+x_s}{a+b+n_s}\\
+ & = & \displaystyle \frac{x_s}{n_s}  \left( \frac{n_s}{a+b+n_s} \right)  + \frac{a}{a+b} \left( \frac{a+b}{a+b+n_s} \right)
+\end{array}
+$$
+This shows exactly how much we rely on the individual segment estimate $\frac{x_s}{n_s}$ and the population response rate across segments $\frac{a}{a+b}$.  The expressions in parentheses are weights that sum to 1.  The more people mailed in each segment, the higher the weight $\left( \frac{n_s}{a+b+n_s} \right)$ relative to $a+b$, and therefore the more emphasis placed on the segment-specific response rate $\frac{x_s}{n_s}$.  In that case there is not so much "shrinking to the mean." On the other hand, if $n_s$ is small relative to $a+b$, the larger the weight $\left( \frac{a+b}{a+b+n_s} \right)$, and the more emphasis placed on the population mean, $\frac{a}{a+b}$.  
+
+```{r}
+post<-(a+tot_resp)/(a+b+tot_mail)
+
+tbl<-cbind(tbl,post)
+tbl<-tbl[order(prop_resp,decreasing=FALSE),]
+
+head(tbl)
+
+plot(tbl[,4], xaxt="n",col="red",xlab="RFM segments",ylab="actual and expected response per segment")
+points(tbl[,5], col='blue')
+legend('topleft',legend=c("estimate response rate", "posterior expected response rate"),col=c("red","blue"), pch=1)
+axis(1, at = 1:90, labels=agg[,1], cex.axis=0.7, las=2)
+abline(h=brk)
+```
+
+The posterior mean shrinks (up or down) the response rate to the overall mean response across segments depending on how much data there is.  The less data, the more shrinking.
+
+Are there any switches we would make using the posterior mean rather than the actual mean to target segments?
+```{r}
+sum(tbl[,4]>=brk)
+sum(tbl[,5]>=brk)
+```
+
+Here's an example of a segment that would not be targeted using the proportion responded but is targeted using the posterior mean.
+```{r}
+tbl[agg[,1]==353,]
+```
+
+
+### RFM analysis with transaction data
+
+As we mentioned in the beginning of class, one type of data is where a row is an order of a customer, i.e. a transaction. Then we need to calculate RFM by aggregating across transactions to the customer level.  I'll show a package, rfm, that does that for your here.
+
+```{r}
+library(rfm)
+library(lubridate)
+
+setwd("C:/Users/gknox/Dropbox/Customer Analytics/R notebooks/RFM & logistic")
+
+cdNOW <- read.csv('./data/CDnow.txt', header=FALSE, sep = "")
+
+colnames(cdNOW) <- c("CustomerID","InvoiceDate","Quantity","Amount")
+
+cdNOW[10:20,]
+```
+
+I've loaded in data from CDNow, which we discussed in the lecture.  Customer 4 in this data set is the same as customer 1 in the lecture.
+
+The main function that does the analysis is rfm_table_order. You have to indicate an analysis date, which is beyond the last date of the dataset, otherwise you get negative values for recenecy.  I set the analysis date as one day later than the max date in the data set.
+
+```{r}
+cdNOW$InvoiceDate <-ymd(cdNOW$InvoiceDate)
+head(cdNOW)
+summary(cdNOW)
+analysis_date <- lubridate::as_date("1998-07-01")
+
+rfm_analysis<-rfm_table_order(cdNOW, customer_id = CustomerID, order_date = InvoiceDate, revenue = Amount, analysis_date)
+rfm_analysis
+```
+
+(optional) How many people are in each RFM group, how much did they spend, and what RF combinations have a high spend?
+
+```{r}
+
+count<-aggregate(list(rfm_analysis$rfm$customer_id), by = list(rfm_analysis$rfm$rfm_score), FUN = "length")
+avgM<-aggregate(list(rfm_analysis$rfm$amount), by = list(rfm_analysis$rfm$rfm_score), FUN = "mean")
+rfm_tbl<-cbind(count, avgM[,2])
+colnames(rfm_tbl) <- c("RFM segment","number customers","Avg. amount spent")
+
+rfm_tbl
+```
